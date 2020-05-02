@@ -3,7 +3,7 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "MyApp <myapp@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.4",
     "@emotion/styled": "^10.0.4",
@@ -117,6 +117,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "build:stg": "cross-env GATSBY_ACTIVE_ENV=staging gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
