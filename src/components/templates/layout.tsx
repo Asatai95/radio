@@ -12,6 +12,8 @@ import { IndexQuery_ } from '../../../types/graphql-types'
 import { css } from '@emotion/core'
 import { Header } from "../organisms/header"
 import "../../styles/layout.css"
+// import { Image } from "../image"
+import 'bootstrap/dist/css/bootstrap.min.css'
 // import Author from "./author"
 
 const wrapper = css`
@@ -36,26 +38,29 @@ export const Layout = ({ children }: Layoutprops) => {
 `)
 
   return (
-    <main>
-      <Helmet
-        titleTemplate={`%s - ${data.site.siteMetadata.title}`}
-        defaultTitle={data.site.siteMetadata.title}
-        meta={[
-          {
-            name: 'description',
-            content: data.site.siteMetadata.description,
-          },
-          {
-            name: 'keywords',
-            content: 'gatsby, gatsbyjs, sample, demo, typescript',
-          },
-        ]}
-      />
-      <Header title={data.site.siteMetadata.title} />
-      <div css={wrapper}>
-        {children}
+    <div className="contentBlock">
+      <div className="backImage"></div>
+      <div className="container">
+        <Helmet
+          titleTemplate={`%s - ${data.site.siteMetadata.title}`}
+          defaultTitle={data.site.siteMetadata.title}
+          meta={[
+            {
+              name: 'description',
+              content: data.site.siteMetadata.description,
+            },
+            {
+              name: 'keywords',
+              content: 'gatsby, gatsbyjs, sample, demo, typescript',
+            },
+          ]}
+        />
+        <Header title={data.site.siteMetadata.title} />
+        <div css={wrapper}>
+          {children}
+        </div>
       </div>
-    </main>
+    </div>
   )
 }
 

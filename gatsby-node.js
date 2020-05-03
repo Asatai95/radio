@@ -11,4 +11,6 @@ require('ts-node').register({
     target: 'esnext',
   },
 })
-exports.createPages = require('./gatsby-node/index').createPages
+exports.createPages = require('./gatsby-node-api/author').createPages
+
+exports.createPages = require('./gatsby-node-api/top').createPages

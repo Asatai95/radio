@@ -33,7 +33,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
     actions: { createPage },
 }) => {
     const result = await graphql<Result>(query)
-    console.log(result)
     if (result.errors || !result.data) {
         console.log(result)
         throw result.errors
@@ -42,10 +41,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
     if (!edges || !edges) {
         throw new Error("undefined authors")
     }
-    const postTemplate = path.resolve("./src/components/templates/author.tsx")
+    console.log("edges")
+    console.log(edges)
+    const postTemplate = path.resolve("./src/components/pages/author.tsx")
     edges.forEach(edge => {
         createPage<AuthorContext>({
-            path: `/user/${edge.node.id}`,
+            path: `/author/`,
             component: postTemplate,
             context: { author: edge.node },
         })

@@ -347,7 +347,6 @@ export type ContentfulAuthor = Node & {
   name?: Maybe<Scalars['String']>;
   twitterHandle?: Maybe<Scalars['String']>;
   profilePhoto?: Maybe<ContentfulAsset>;
-  photo_gallery?: Maybe<Array<Maybe<ContentfulPhotoGallery>>>;
   biography?: Maybe<ContentfulAuthorBiographyTextNode>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
@@ -355,6 +354,7 @@ export type ContentfulAuthor = Node & {
   updatedAt?: Maybe<Scalars['Date']>;
   sys?: Maybe<ContentfulAuthorSys>;
   node_locale?: Maybe<Scalars['String']>;
+  photo_gallery?: Maybe<Array<Maybe<ContentfulPhotoGallery>>>;
   childContentfulAuthorBiographyTextNode?: Maybe<ContentfulAuthorBiographyTextNode>;
 };
 
@@ -776,6 +776,83 @@ export type ContentfulAuthorFieldsEnum =
   | 'profilePhoto___resize___width'
   | 'profilePhoto___resize___height'
   | 'profilePhoto___resize___aspectRatio'
+  | 'biography___id'
+  | 'biography___parent___id'
+  | 'biography___parent___parent___id'
+  | 'biography___parent___parent___children'
+  | 'biography___parent___children'
+  | 'biography___parent___children___id'
+  | 'biography___parent___children___children'
+  | 'biography___parent___internal___content'
+  | 'biography___parent___internal___contentDigest'
+  | 'biography___parent___internal___description'
+  | 'biography___parent___internal___fieldOwners'
+  | 'biography___parent___internal___ignoreType'
+  | 'biography___parent___internal___mediaType'
+  | 'biography___parent___internal___owner'
+  | 'biography___parent___internal___type'
+  | 'biography___children'
+  | 'biography___children___id'
+  | 'biography___children___parent___id'
+  | 'biography___children___parent___children'
+  | 'biography___children___children'
+  | 'biography___children___children___id'
+  | 'biography___children___children___children'
+  | 'biography___children___internal___content'
+  | 'biography___children___internal___contentDigest'
+  | 'biography___children___internal___description'
+  | 'biography___children___internal___fieldOwners'
+  | 'biography___children___internal___ignoreType'
+  | 'biography___children___internal___mediaType'
+  | 'biography___children___internal___owner'
+  | 'biography___children___internal___type'
+  | 'biography___internal___content'
+  | 'biography___internal___contentDigest'
+  | 'biography___internal___description'
+  | 'biography___internal___fieldOwners'
+  | 'biography___internal___ignoreType'
+  | 'biography___internal___mediaType'
+  | 'biography___internal___owner'
+  | 'biography___internal___type'
+  | 'biography___biography'
+  | 'biography___childMarkdownRemark___id'
+  | 'biography___childMarkdownRemark___frontmatter___title'
+  | 'biography___childMarkdownRemark___excerpt'
+  | 'biography___childMarkdownRemark___rawMarkdownBody'
+  | 'biography___childMarkdownRemark___html'
+  | 'biography___childMarkdownRemark___htmlAst'
+  | 'biography___childMarkdownRemark___excerptAst'
+  | 'biography___childMarkdownRemark___headings'
+  | 'biography___childMarkdownRemark___headings___value'
+  | 'biography___childMarkdownRemark___headings___depth'
+  | 'biography___childMarkdownRemark___timeToRead'
+  | 'biography___childMarkdownRemark___tableOfContents'
+  | 'biography___childMarkdownRemark___wordCount___paragraphs'
+  | 'biography___childMarkdownRemark___wordCount___sentences'
+  | 'biography___childMarkdownRemark___wordCount___words'
+  | 'biography___childMarkdownRemark___parent___id'
+  | 'biography___childMarkdownRemark___parent___children'
+  | 'biography___childMarkdownRemark___children'
+  | 'biography___childMarkdownRemark___children___id'
+  | 'biography___childMarkdownRemark___children___children'
+  | 'biography___childMarkdownRemark___internal___content'
+  | 'biography___childMarkdownRemark___internal___contentDigest'
+  | 'biography___childMarkdownRemark___internal___description'
+  | 'biography___childMarkdownRemark___internal___fieldOwners'
+  | 'biography___childMarkdownRemark___internal___ignoreType'
+  | 'biography___childMarkdownRemark___internal___mediaType'
+  | 'biography___childMarkdownRemark___internal___owner'
+  | 'biography___childMarkdownRemark___internal___type'
+  | 'spaceId'
+  | 'contentful_id'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'sys___revision'
+  | 'sys___contentType___sys___type'
+  | 'sys___contentType___sys___linkType'
+  | 'sys___contentType___sys___id'
+  | 'sys___contentType___sys___contentful_id'
+  | 'node_locale'
   | 'photo_gallery'
   | 'photo_gallery___id'
   | 'photo_gallery___parent___id'
@@ -842,6 +919,15 @@ export type ContentfulAuthorFieldsEnum =
   | 'photo_gallery___author___profilePhoto___title'
   | 'photo_gallery___author___profilePhoto___description'
   | 'photo_gallery___author___profilePhoto___node_locale'
+  | 'photo_gallery___author___biography___id'
+  | 'photo_gallery___author___biography___children'
+  | 'photo_gallery___author___biography___biography'
+  | 'photo_gallery___author___spaceId'
+  | 'photo_gallery___author___contentful_id'
+  | 'photo_gallery___author___createdAt'
+  | 'photo_gallery___author___updatedAt'
+  | 'photo_gallery___author___sys___revision'
+  | 'photo_gallery___author___node_locale'
   | 'photo_gallery___author___photo_gallery'
   | 'photo_gallery___author___photo_gallery___id'
   | 'photo_gallery___author___photo_gallery___children'
@@ -854,15 +940,6 @@ export type ContentfulAuthorFieldsEnum =
   | 'photo_gallery___author___photo_gallery___createdAt'
   | 'photo_gallery___author___photo_gallery___updatedAt'
   | 'photo_gallery___author___photo_gallery___node_locale'
-  | 'photo_gallery___author___biography___id'
-  | 'photo_gallery___author___biography___children'
-  | 'photo_gallery___author___biography___biography'
-  | 'photo_gallery___author___spaceId'
-  | 'photo_gallery___author___contentful_id'
-  | 'photo_gallery___author___createdAt'
-  | 'photo_gallery___author___updatedAt'
-  | 'photo_gallery___author___sys___revision'
-  | 'photo_gallery___author___node_locale'
   | 'photo_gallery___author___childContentfulAuthorBiographyTextNode___id'
   | 'photo_gallery___author___childContentfulAuthorBiographyTextNode___children'
   | 'photo_gallery___author___childContentfulAuthorBiographyTextNode___biography'
@@ -1085,83 +1162,6 @@ export type ContentfulAuthorFieldsEnum =
   | 'photo_gallery___childContentfulPhotoGalleryDescriptionTextNode___childMarkdownRemark___timeToRead'
   | 'photo_gallery___childContentfulPhotoGalleryDescriptionTextNode___childMarkdownRemark___tableOfContents'
   | 'photo_gallery___childContentfulPhotoGalleryDescriptionTextNode___childMarkdownRemark___children'
-  | 'biography___id'
-  | 'biography___parent___id'
-  | 'biography___parent___parent___id'
-  | 'biography___parent___parent___children'
-  | 'biography___parent___children'
-  | 'biography___parent___children___id'
-  | 'biography___parent___children___children'
-  | 'biography___parent___internal___content'
-  | 'biography___parent___internal___contentDigest'
-  | 'biography___parent___internal___description'
-  | 'biography___parent___internal___fieldOwners'
-  | 'biography___parent___internal___ignoreType'
-  | 'biography___parent___internal___mediaType'
-  | 'biography___parent___internal___owner'
-  | 'biography___parent___internal___type'
-  | 'biography___children'
-  | 'biography___children___id'
-  | 'biography___children___parent___id'
-  | 'biography___children___parent___children'
-  | 'biography___children___children'
-  | 'biography___children___children___id'
-  | 'biography___children___children___children'
-  | 'biography___children___internal___content'
-  | 'biography___children___internal___contentDigest'
-  | 'biography___children___internal___description'
-  | 'biography___children___internal___fieldOwners'
-  | 'biography___children___internal___ignoreType'
-  | 'biography___children___internal___mediaType'
-  | 'biography___children___internal___owner'
-  | 'biography___children___internal___type'
-  | 'biography___internal___content'
-  | 'biography___internal___contentDigest'
-  | 'biography___internal___description'
-  | 'biography___internal___fieldOwners'
-  | 'biography___internal___ignoreType'
-  | 'biography___internal___mediaType'
-  | 'biography___internal___owner'
-  | 'biography___internal___type'
-  | 'biography___biography'
-  | 'biography___childMarkdownRemark___id'
-  | 'biography___childMarkdownRemark___frontmatter___title'
-  | 'biography___childMarkdownRemark___excerpt'
-  | 'biography___childMarkdownRemark___rawMarkdownBody'
-  | 'biography___childMarkdownRemark___html'
-  | 'biography___childMarkdownRemark___htmlAst'
-  | 'biography___childMarkdownRemark___excerptAst'
-  | 'biography___childMarkdownRemark___headings'
-  | 'biography___childMarkdownRemark___headings___value'
-  | 'biography___childMarkdownRemark___headings___depth'
-  | 'biography___childMarkdownRemark___timeToRead'
-  | 'biography___childMarkdownRemark___tableOfContents'
-  | 'biography___childMarkdownRemark___wordCount___paragraphs'
-  | 'biography___childMarkdownRemark___wordCount___sentences'
-  | 'biography___childMarkdownRemark___wordCount___words'
-  | 'biography___childMarkdownRemark___parent___id'
-  | 'biography___childMarkdownRemark___parent___children'
-  | 'biography___childMarkdownRemark___children'
-  | 'biography___childMarkdownRemark___children___id'
-  | 'biography___childMarkdownRemark___children___children'
-  | 'biography___childMarkdownRemark___internal___content'
-  | 'biography___childMarkdownRemark___internal___contentDigest'
-  | 'biography___childMarkdownRemark___internal___description'
-  | 'biography___childMarkdownRemark___internal___fieldOwners'
-  | 'biography___childMarkdownRemark___internal___ignoreType'
-  | 'biography___childMarkdownRemark___internal___mediaType'
-  | 'biography___childMarkdownRemark___internal___owner'
-  | 'biography___childMarkdownRemark___internal___type'
-  | 'spaceId'
-  | 'contentful_id'
-  | 'createdAt'
-  | 'updatedAt'
-  | 'sys___revision'
-  | 'sys___contentType___sys___type'
-  | 'sys___contentType___sys___linkType'
-  | 'sys___contentType___sys___id'
-  | 'sys___contentType___sys___contentful_id'
-  | 'node_locale'
   | 'childContentfulAuthorBiographyTextNode___id'
   | 'childContentfulAuthorBiographyTextNode___parent___id'
   | 'childContentfulAuthorBiographyTextNode___parent___parent___id'
@@ -1238,7 +1238,6 @@ export type ContentfulAuthorFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   twitterHandle?: Maybe<StringQueryOperatorInput>;
   profilePhoto?: Maybe<ContentfulAssetFilterInput>;
-  photo_gallery?: Maybe<ContentfulPhotoGalleryFilterListInput>;
   biography?: Maybe<ContentfulAuthorBiographyTextNodeFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
@@ -1246,6 +1245,7 @@ export type ContentfulAuthorFilterInput = {
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulAuthorSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
+  photo_gallery?: Maybe<ContentfulPhotoGalleryFilterListInput>;
   childContentfulAuthorBiographyTextNode?: Maybe<ContentfulAuthorBiographyTextNodeFilterInput>;
 };
 
@@ -1809,6 +1809,15 @@ export type ContentfulImageFieldsEnum =
   | 'photo_gallery___author___profilePhoto___title'
   | 'photo_gallery___author___profilePhoto___description'
   | 'photo_gallery___author___profilePhoto___node_locale'
+  | 'photo_gallery___author___biography___id'
+  | 'photo_gallery___author___biography___children'
+  | 'photo_gallery___author___biography___biography'
+  | 'photo_gallery___author___spaceId'
+  | 'photo_gallery___author___contentful_id'
+  | 'photo_gallery___author___createdAt'
+  | 'photo_gallery___author___updatedAt'
+  | 'photo_gallery___author___sys___revision'
+  | 'photo_gallery___author___node_locale'
   | 'photo_gallery___author___photo_gallery'
   | 'photo_gallery___author___photo_gallery___id'
   | 'photo_gallery___author___photo_gallery___children'
@@ -1821,15 +1830,6 @@ export type ContentfulImageFieldsEnum =
   | 'photo_gallery___author___photo_gallery___createdAt'
   | 'photo_gallery___author___photo_gallery___updatedAt'
   | 'photo_gallery___author___photo_gallery___node_locale'
-  | 'photo_gallery___author___biography___id'
-  | 'photo_gallery___author___biography___children'
-  | 'photo_gallery___author___biography___biography'
-  | 'photo_gallery___author___spaceId'
-  | 'photo_gallery___author___contentful_id'
-  | 'photo_gallery___author___createdAt'
-  | 'photo_gallery___author___updatedAt'
-  | 'photo_gallery___author___sys___revision'
-  | 'photo_gallery___author___node_locale'
   | 'photo_gallery___author___childContentfulAuthorBiographyTextNode___id'
   | 'photo_gallery___author___childContentfulAuthorBiographyTextNode___children'
   | 'photo_gallery___author___childContentfulAuthorBiographyTextNode___biography'
@@ -3275,6 +3275,37 @@ export type ContentfulPhotoGalleryFieldsEnum =
   | 'author___profilePhoto___resize___width'
   | 'author___profilePhoto___resize___height'
   | 'author___profilePhoto___resize___aspectRatio'
+  | 'author___biography___id'
+  | 'author___biography___parent___id'
+  | 'author___biography___parent___children'
+  | 'author___biography___children'
+  | 'author___biography___children___id'
+  | 'author___biography___children___children'
+  | 'author___biography___internal___content'
+  | 'author___biography___internal___contentDigest'
+  | 'author___biography___internal___description'
+  | 'author___biography___internal___fieldOwners'
+  | 'author___biography___internal___ignoreType'
+  | 'author___biography___internal___mediaType'
+  | 'author___biography___internal___owner'
+  | 'author___biography___internal___type'
+  | 'author___biography___biography'
+  | 'author___biography___childMarkdownRemark___id'
+  | 'author___biography___childMarkdownRemark___excerpt'
+  | 'author___biography___childMarkdownRemark___rawMarkdownBody'
+  | 'author___biography___childMarkdownRemark___html'
+  | 'author___biography___childMarkdownRemark___htmlAst'
+  | 'author___biography___childMarkdownRemark___excerptAst'
+  | 'author___biography___childMarkdownRemark___headings'
+  | 'author___biography___childMarkdownRemark___timeToRead'
+  | 'author___biography___childMarkdownRemark___tableOfContents'
+  | 'author___biography___childMarkdownRemark___children'
+  | 'author___spaceId'
+  | 'author___contentful_id'
+  | 'author___createdAt'
+  | 'author___updatedAt'
+  | 'author___sys___revision'
+  | 'author___node_locale'
   | 'author___photo_gallery'
   | 'author___photo_gallery___id'
   | 'author___photo_gallery___parent___id'
@@ -3299,12 +3330,12 @@ export type ContentfulPhotoGalleryFieldsEnum =
   | 'author___photo_gallery___author___children'
   | 'author___photo_gallery___author___name'
   | 'author___photo_gallery___author___twitterHandle'
-  | 'author___photo_gallery___author___photo_gallery'
   | 'author___photo_gallery___author___spaceId'
   | 'author___photo_gallery___author___contentful_id'
   | 'author___photo_gallery___author___createdAt'
   | 'author___photo_gallery___author___updatedAt'
   | 'author___photo_gallery___author___node_locale'
+  | 'author___photo_gallery___author___photo_gallery'
   | 'author___photo_gallery___coverImage___id'
   | 'author___photo_gallery___coverImage___children'
   | 'author___photo_gallery___coverImage___contentful_id'
@@ -3339,37 +3370,6 @@ export type ContentfulPhotoGalleryFieldsEnum =
   | 'author___photo_gallery___childContentfulPhotoGalleryDescriptionTextNode___id'
   | 'author___photo_gallery___childContentfulPhotoGalleryDescriptionTextNode___children'
   | 'author___photo_gallery___childContentfulPhotoGalleryDescriptionTextNode___description'
-  | 'author___biography___id'
-  | 'author___biography___parent___id'
-  | 'author___biography___parent___children'
-  | 'author___biography___children'
-  | 'author___biography___children___id'
-  | 'author___biography___children___children'
-  | 'author___biography___internal___content'
-  | 'author___biography___internal___contentDigest'
-  | 'author___biography___internal___description'
-  | 'author___biography___internal___fieldOwners'
-  | 'author___biography___internal___ignoreType'
-  | 'author___biography___internal___mediaType'
-  | 'author___biography___internal___owner'
-  | 'author___biography___internal___type'
-  | 'author___biography___biography'
-  | 'author___biography___childMarkdownRemark___id'
-  | 'author___biography___childMarkdownRemark___excerpt'
-  | 'author___biography___childMarkdownRemark___rawMarkdownBody'
-  | 'author___biography___childMarkdownRemark___html'
-  | 'author___biography___childMarkdownRemark___htmlAst'
-  | 'author___biography___childMarkdownRemark___excerptAst'
-  | 'author___biography___childMarkdownRemark___headings'
-  | 'author___biography___childMarkdownRemark___timeToRead'
-  | 'author___biography___childMarkdownRemark___tableOfContents'
-  | 'author___biography___childMarkdownRemark___children'
-  | 'author___spaceId'
-  | 'author___contentful_id'
-  | 'author___createdAt'
-  | 'author___updatedAt'
-  | 'author___sys___revision'
-  | 'author___node_locale'
   | 'author___childContentfulAuthorBiographyTextNode___id'
   | 'author___childContentfulAuthorBiographyTextNode___parent___id'
   | 'author___childContentfulAuthorBiographyTextNode___parent___children'
@@ -3606,12 +3606,12 @@ export type ContentfulPhotoGalleryFieldsEnum =
   | 'images___photo_gallery___author___children'
   | 'images___photo_gallery___author___name'
   | 'images___photo_gallery___author___twitterHandle'
-  | 'images___photo_gallery___author___photo_gallery'
   | 'images___photo_gallery___author___spaceId'
   | 'images___photo_gallery___author___contentful_id'
   | 'images___photo_gallery___author___createdAt'
   | 'images___photo_gallery___author___updatedAt'
   | 'images___photo_gallery___author___node_locale'
+  | 'images___photo_gallery___author___photo_gallery'
   | 'images___photo_gallery___coverImage___id'
   | 'images___photo_gallery___coverImage___children'
   | 'images___photo_gallery___coverImage___contentful_id'
@@ -6105,15 +6105,14 @@ export type QuerySitePageArgs = {
   internalComponentName?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   matchPath?: Maybe<StringQueryOperatorInput>;
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  pluginCreator?: Maybe<SitePluginFilterInput>;
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
+  componentPath?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
-  context?: Maybe<SitePageContextFilterInput>;
-  pluginCreator?: Maybe<SitePluginFilterInput>;
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
-  componentPath?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -6130,8 +6129,6 @@ export type QuerySiteArgs = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
-  polyfill?: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -6312,7 +6309,6 @@ export type QueryContentfulAuthorArgs = {
   name?: Maybe<StringQueryOperatorInput>;
   twitterHandle?: Maybe<StringQueryOperatorInput>;
   profilePhoto?: Maybe<ContentfulAssetFilterInput>;
-  photo_gallery?: Maybe<ContentfulPhotoGalleryFilterListInput>;
   biography?: Maybe<ContentfulAuthorBiographyTextNodeFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
@@ -6320,6 +6316,7 @@ export type QueryContentfulAuthorArgs = {
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulAuthorSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
+  photo_gallery?: Maybe<ContentfulPhotoGalleryFilterListInput>;
   childContentfulAuthorBiographyTextNode?: Maybe<ContentfulAuthorBiographyTextNodeFilterInput>;
 };
 
@@ -6466,8 +6463,6 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>;
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
-  polyfill?: Maybe<Scalars['Boolean']>;
-  pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -6669,8 +6664,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___description'
   | 'port'
   | 'host'
-  | 'polyfill'
-  | 'pathPrefix'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -6763,8 +6756,6 @@ export type SiteFilterInput = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
-  polyfill?: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -6786,15 +6777,14 @@ export type SitePage = Node & {
   internalComponentName: Scalars['String'];
   componentChunkName: Scalars['String'];
   matchPath?: Maybe<Scalars['String']>;
+  isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
+  pluginCreator?: Maybe<SitePlugin>;
+  pluginCreatorId?: Maybe<Scalars['String']>;
+  componentPath?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
-  context?: Maybe<SitePageContext>;
-  pluginCreator?: Maybe<SitePlugin>;
-  pluginCreatorId?: Maybe<Scalars['String']>;
-  componentPath?: Maybe<Scalars['String']>;
 };
 
 export type SitePageConnection = {
@@ -6818,42 +6808,6 @@ export type SitePageConnectionGroupArgs = {
   field: SitePageFieldsEnum;
 };
 
-export type SitePageContext = {
-  author?: Maybe<SitePageContextAuthor>;
-};
-
-export type SitePageContextAuthor = {
-  id?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
-  biography?: Maybe<SitePageContextAuthorBiography>;
-};
-
-export type SitePageContextAuthorBiography = {
-  childMarkdownRemark?: Maybe<SitePageContextAuthorBiographyChildMarkdownRemark>;
-};
-
-export type SitePageContextAuthorBiographyChildMarkdownRemark = {
-  html?: Maybe<Scalars['String']>;
-};
-
-export type SitePageContextAuthorBiographyChildMarkdownRemarkFilterInput = {
-  html?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePageContextAuthorBiographyFilterInput = {
-  childMarkdownRemark?: Maybe<SitePageContextAuthorBiographyChildMarkdownRemarkFilterInput>;
-};
-
-export type SitePageContextAuthorFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  biography?: Maybe<SitePageContextAuthorBiographyFilterInput>;
-};
-
-export type SitePageContextFilterInput = {
-  author?: Maybe<SitePageContextAuthorFilterInput>;
-};
-
 export type SitePageEdge = {
   next?: Maybe<SitePage>;
   node: SitePage;
@@ -6866,6 +6820,87 @@ export type SitePageFieldsEnum =
   | 'internalComponentName'
   | 'componentChunkName'
   | 'matchPath'
+  | 'isCreatedByStatefulCreatePages'
+  | 'pluginCreator___id'
+  | 'pluginCreator___parent___id'
+  | 'pluginCreator___parent___parent___id'
+  | 'pluginCreator___parent___parent___children'
+  | 'pluginCreator___parent___children'
+  | 'pluginCreator___parent___children___id'
+  | 'pluginCreator___parent___children___children'
+  | 'pluginCreator___parent___internal___content'
+  | 'pluginCreator___parent___internal___contentDigest'
+  | 'pluginCreator___parent___internal___description'
+  | 'pluginCreator___parent___internal___fieldOwners'
+  | 'pluginCreator___parent___internal___ignoreType'
+  | 'pluginCreator___parent___internal___mediaType'
+  | 'pluginCreator___parent___internal___owner'
+  | 'pluginCreator___parent___internal___type'
+  | 'pluginCreator___children'
+  | 'pluginCreator___children___id'
+  | 'pluginCreator___children___parent___id'
+  | 'pluginCreator___children___parent___children'
+  | 'pluginCreator___children___children'
+  | 'pluginCreator___children___children___id'
+  | 'pluginCreator___children___children___children'
+  | 'pluginCreator___children___internal___content'
+  | 'pluginCreator___children___internal___contentDigest'
+  | 'pluginCreator___children___internal___description'
+  | 'pluginCreator___children___internal___fieldOwners'
+  | 'pluginCreator___children___internal___ignoreType'
+  | 'pluginCreator___children___internal___mediaType'
+  | 'pluginCreator___children___internal___owner'
+  | 'pluginCreator___children___internal___type'
+  | 'pluginCreator___internal___content'
+  | 'pluginCreator___internal___contentDigest'
+  | 'pluginCreator___internal___description'
+  | 'pluginCreator___internal___fieldOwners'
+  | 'pluginCreator___internal___ignoreType'
+  | 'pluginCreator___internal___mediaType'
+  | 'pluginCreator___internal___owner'
+  | 'pluginCreator___internal___type'
+  | 'pluginCreator___resolve'
+  | 'pluginCreator___name'
+  | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___name'
+  | 'pluginCreator___pluginOptions___path'
+  | 'pluginCreator___pluginOptions___short_name'
+  | 'pluginCreator___pluginOptions___start_url'
+  | 'pluginCreator___pluginOptions___background_color'
+  | 'pluginCreator___pluginOptions___theme_color'
+  | 'pluginCreator___pluginOptions___display'
+  | 'pluginCreator___pluginOptions___icon'
+  | 'pluginCreator___pluginOptions___fileName'
+  | 'pluginCreator___pluginOptions___spaceId'
+  | 'pluginCreator___pluginOptions___accessToken'
+  | 'pluginCreator___pluginOptions___cloudName'
+  | 'pluginCreator___pluginOptions___apiKey'
+  | 'pluginCreator___pluginOptions___apiSecret'
+  | 'pluginCreator___pluginOptions___resourceType'
+  | 'pluginCreator___pluginOptions___type'
+  | 'pluginCreator___pluginOptions___prefix'
+  | 'pluginCreator___pluginOptions___pathCheck'
+  | 'pluginCreator___nodeAPIs'
+  | 'pluginCreator___browserAPIs'
+  | 'pluginCreator___ssrAPIs'
+  | 'pluginCreator___pluginFilepath'
+  | 'pluginCreator___packageJson___name'
+  | 'pluginCreator___packageJson___description'
+  | 'pluginCreator___packageJson___version'
+  | 'pluginCreator___packageJson___main'
+  | 'pluginCreator___packageJson___license'
+  | 'pluginCreator___packageJson___dependencies'
+  | 'pluginCreator___packageJson___dependencies___name'
+  | 'pluginCreator___packageJson___dependencies___version'
+  | 'pluginCreator___packageJson___devDependencies'
+  | 'pluginCreator___packageJson___devDependencies___name'
+  | 'pluginCreator___packageJson___devDependencies___version'
+  | 'pluginCreator___packageJson___peerDependencies'
+  | 'pluginCreator___packageJson___peerDependencies___name'
+  | 'pluginCreator___packageJson___peerDependencies___version'
+  | 'pluginCreator___packageJson___keywords'
+  | 'pluginCreatorId'
+  | 'componentPath'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -6951,84 +6986,7 @@ export type SitePageFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'isCreatedByStatefulCreatePages'
-  | 'context___author___id'
-  | 'context___author___name'
-  | 'pluginCreator___id'
-  | 'pluginCreator___parent___id'
-  | 'pluginCreator___parent___parent___id'
-  | 'pluginCreator___parent___parent___children'
-  | 'pluginCreator___parent___children'
-  | 'pluginCreator___parent___children___id'
-  | 'pluginCreator___parent___children___children'
-  | 'pluginCreator___parent___internal___content'
-  | 'pluginCreator___parent___internal___contentDigest'
-  | 'pluginCreator___parent___internal___description'
-  | 'pluginCreator___parent___internal___fieldOwners'
-  | 'pluginCreator___parent___internal___ignoreType'
-  | 'pluginCreator___parent___internal___mediaType'
-  | 'pluginCreator___parent___internal___owner'
-  | 'pluginCreator___parent___internal___type'
-  | 'pluginCreator___children'
-  | 'pluginCreator___children___id'
-  | 'pluginCreator___children___parent___id'
-  | 'pluginCreator___children___parent___children'
-  | 'pluginCreator___children___children'
-  | 'pluginCreator___children___children___id'
-  | 'pluginCreator___children___children___children'
-  | 'pluginCreator___children___internal___content'
-  | 'pluginCreator___children___internal___contentDigest'
-  | 'pluginCreator___children___internal___description'
-  | 'pluginCreator___children___internal___fieldOwners'
-  | 'pluginCreator___children___internal___ignoreType'
-  | 'pluginCreator___children___internal___mediaType'
-  | 'pluginCreator___children___internal___owner'
-  | 'pluginCreator___children___internal___type'
-  | 'pluginCreator___internal___content'
-  | 'pluginCreator___internal___contentDigest'
-  | 'pluginCreator___internal___description'
-  | 'pluginCreator___internal___fieldOwners'
-  | 'pluginCreator___internal___ignoreType'
-  | 'pluginCreator___internal___mediaType'
-  | 'pluginCreator___internal___owner'
-  | 'pluginCreator___internal___type'
-  | 'pluginCreator___resolve'
-  | 'pluginCreator___name'
-  | 'pluginCreator___version'
-  | 'pluginCreator___pluginOptions___name'
-  | 'pluginCreator___pluginOptions___path'
-  | 'pluginCreator___pluginOptions___short_name'
-  | 'pluginCreator___pluginOptions___start_url'
-  | 'pluginCreator___pluginOptions___background_color'
-  | 'pluginCreator___pluginOptions___theme_color'
-  | 'pluginCreator___pluginOptions___display'
-  | 'pluginCreator___pluginOptions___icon'
-  | 'pluginCreator___pluginOptions___fileName'
-  | 'pluginCreator___pluginOptions___spaceId'
-  | 'pluginCreator___pluginOptions___accessToken'
-  | 'pluginCreator___pluginOptions___pathCheck'
-  | 'pluginCreator___nodeAPIs'
-  | 'pluginCreator___browserAPIs'
-  | 'pluginCreator___ssrAPIs'
-  | 'pluginCreator___pluginFilepath'
-  | 'pluginCreator___packageJson___name'
-  | 'pluginCreator___packageJson___description'
-  | 'pluginCreator___packageJson___version'
-  | 'pluginCreator___packageJson___main'
-  | 'pluginCreator___packageJson___license'
-  | 'pluginCreator___packageJson___dependencies'
-  | 'pluginCreator___packageJson___dependencies___name'
-  | 'pluginCreator___packageJson___dependencies___version'
-  | 'pluginCreator___packageJson___devDependencies'
-  | 'pluginCreator___packageJson___devDependencies___name'
-  | 'pluginCreator___packageJson___devDependencies___version'
-  | 'pluginCreator___packageJson___peerDependencies'
-  | 'pluginCreator___packageJson___peerDependencies___name'
-  | 'pluginCreator___packageJson___peerDependencies___version'
-  | 'pluginCreator___packageJson___keywords'
-  | 'pluginCreatorId'
-  | 'componentPath';
+  | 'internal___type';
 
 export type SitePageFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
@@ -7036,15 +6994,14 @@ export type SitePageFilterInput = {
   internalComponentName?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   matchPath?: Maybe<StringQueryOperatorInput>;
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  pluginCreator?: Maybe<SitePluginFilterInput>;
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
+  componentPath?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
-  context?: Maybe<SitePageContextFilterInput>;
-  pluginCreator?: Maybe<SitePluginFilterInput>;
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
-  componentPath?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageGroupConnection = {
@@ -7205,6 +7162,12 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___fileName'
   | 'pluginOptions___spaceId'
   | 'pluginOptions___accessToken'
+  | 'pluginOptions___cloudName'
+  | 'pluginOptions___apiKey'
+  | 'pluginOptions___apiSecret'
+  | 'pluginOptions___resourceType'
+  | 'pluginOptions___type'
+  | 'pluginOptions___prefix'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -7329,6 +7292,12 @@ export type SitePluginPluginOptions = {
   fileName?: Maybe<Scalars['String']>;
   spaceId?: Maybe<Scalars['String']>;
   accessToken?: Maybe<Scalars['String']>;
+  cloudName?: Maybe<Scalars['String']>;
+  apiKey?: Maybe<Scalars['String']>;
+  apiSecret?: Maybe<Scalars['String']>;
+  resourceType?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  prefix?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -7344,6 +7313,12 @@ export type SitePluginPluginOptionsFilterInput = {
   fileName?: Maybe<StringQueryOperatorInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   accessToken?: Maybe<StringQueryOperatorInput>;
+  cloudName?: Maybe<StringQueryOperatorInput>;
+  apiKey?: Maybe<StringQueryOperatorInput>;
+  apiSecret?: Maybe<StringQueryOperatorInput>;
+  resourceType?: Maybe<StringQueryOperatorInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  prefix?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -7380,15 +7355,20 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type IndexDivQueryItemQueryVariables = {};
+export type Unnamed_1_QueryVariables = {};
 
 
-export type IndexDivQueryItemQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+export type Unnamed_1_Query = { placeholderImage01?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, placeholderImage02?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type IndexDivQueryQueryVariables = {};
 
 
 export type IndexDivQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type IndexDivQueryItemQueryVariables = {};
+
+
+export type IndexDivQueryItemQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 export type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

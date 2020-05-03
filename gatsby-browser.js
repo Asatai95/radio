@@ -5,3 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+
+import './src/styles/layout.css'
+import 'typeface-domine'
+import 'typeface-montserrat'

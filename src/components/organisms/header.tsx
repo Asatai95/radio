@@ -1,31 +1,31 @@
 
 import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+// import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 import { LunrSearch } from '../molecules/lunrsearch'
 
-const style = {
-  container: css`
-    background: #ff5700;
-    margin-bottom: 1.45rem;
-  `,
-  wrapper: css`
-    display: grid;
-    grid-template-columns: auto 10rem;
-    grid-template-rows: auto;
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 1.45rem 1.0875rem;
-  `,
-  title: css`
-    margin: 0;
-    display: inline-block;
-  `,
-}
+// const style = {
+//   container: css`
+//     background: #ff5700;
+//     margin-bottom: 1.45rem;
+//   `,
+//   wrapper: css`
+//     display: grid;
+//     grid-template-columns: auto 10rem;
+//     grid-template-rows: auto;
+//     margin: 0 auto;
+//     max-width: 960px;
+//     padding: 1.45rem 1.0875rem;
+//   `,
+//   title: css`
+//     margin: 0;
+//     display: inline-block;
+//   `,
+// }
 
 const TitleLink = styled(Link)`
-  color: #fff;
+  color: #222;
   &:active,
   &:hover {
     color: #fff;
@@ -37,12 +37,39 @@ interface HeaderProps {
 }
 
 export const Header = ({ title }: HeaderProps) => (
-  <div css={style.container}>
-    <div css={style.wrapper}>
-      <h1 css={style.title}>
-        <TitleLink to="/">{title}</TitleLink>
-      </h1>
-      <LunrSearch limit={10} />
+  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <TitleLink to="/" className="navbar-brand">{title}</TitleLink>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item active">
+          <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Link</a>
+        </li>
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a className="dropdown-item" href="#">Action</a>
+            <a className="dropdown-item" href="#">Another action</a>
+            <div className="dropdown-divider"></div>
+            <a className="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form className="form-inline my-2 my-lg-0">
+        <LunrSearch limit={10} />
+        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
-  </div>
+  </nav>
 )
