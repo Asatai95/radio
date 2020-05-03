@@ -9,6 +9,7 @@ module.exports = {
     description: `沖縄のことをゆるーくお届けするラジオ`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

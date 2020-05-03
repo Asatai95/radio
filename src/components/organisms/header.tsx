@@ -5,25 +5,6 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { LunrSearch } from '../molecules/lunrsearch'
 
-// const style = {
-//   container: css`
-//     background: #ff5700;
-//     margin-bottom: 1.45rem;
-//   `,
-//   wrapper: css`
-//     display: grid;
-//     grid-template-columns: auto 10rem;
-//     grid-template-rows: auto;
-//     margin: 0 auto;
-//     max-width: 960px;
-//     padding: 1.45rem 1.0875rem;
-//   `,
-//   title: css`
-//     margin: 0;
-//     display: inline-block;
-//   `,
-// }
-
 const TitleLink = styled(Link)`
   color: #222;
   &:active,

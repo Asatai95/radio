@@ -15,12 +15,17 @@ import "../../styles/layout.css"
 // import { Image } from "../image"
 import 'bootstrap/dist/css/bootstrap.min.css'
 // import Author from "./author"
+import { CursoPoint } from "../atoms/Cursor"
+import { Footer } from "../organisms/footer"
 
-const wrapper = css`
+const style = {
+  wrapper: css`
     margin: 0 auto,
     maxWidth: 960,
     padding: 0 1.0875rem 1.45rem,
-`
+    background: 0,0,0 ;
+  `
+}
 interface Layoutprops {
   readonly children?: React.ReactNode | readonly React.ReactNode[]
 }
@@ -40,6 +45,7 @@ export const Layout = ({ children }: Layoutprops) => {
   return (
     <div className="contentBlock">
       <div className="backImage"></div>
+      <CursoPoint />
       <div className="container">
         <Helmet
           titleTemplate={`%s - ${data.site.siteMetadata.title}`}
@@ -56,9 +62,10 @@ export const Layout = ({ children }: Layoutprops) => {
           ]}
         />
         <Header title={data.site.siteMetadata.title} />
-        <div css={wrapper}>
+        <div css={style.wrapper}>
           {children}
         </div>
+        <Footer />
       </div>
     </div>
   )
