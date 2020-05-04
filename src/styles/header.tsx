@@ -1,20 +1,78 @@
 import { css } from '@emotion/core';
 
-export const container = css`
-    background: #ff5700;
-    margin-bottom: 1.45rem;
+export const navbar = css`
+    background: transparent;
+    height: 100px;
 `
 
-export const wrapper = css`
-    display: grid;
-    grid-template-columns: auto 10rem;
-    grid-template-rows: auto;
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 1.45rem 1.0875rem;
-`
+export const naviItem = {
+    naviBt : css`
+        width: 50px;
+        height: 30px;
+        position: relative;
+        border-color: transparent!important;
+    `,
+    menuicon:css`
+        width: 50px;
+        height: 30px;
+        position: fixed;
+        z-index: 99;
+        right: 150px;
+    `,
+    navitorigger01: css`
+        display: inline-block;
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(32,166, 242, .8);
+        border-radius: 8px;
+        will-change: transform;
+        transition: transform .2s ease-out, width .2s ease-out, opacity .2s ease-out;
+        top: 0;
+        width: 100%;
+    `,
+    navitorigger02 : css`
+        display: inline-block;
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(32,166, 242, .8);
+        border-radius: 8px;
+        will-change: transform;
+        transition: transform .2s ease-out, width .2s ease-out, opacity .2s ease-out;
+        top: 13px;
+        width: calc(100% - 5px);
+    `,
+    navitorigger03: css`
+        display: inline-block;
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(32,166, 242, .8);
+        border-radius: 8px;
+        will-change: transform;
+        transition: transform .2s ease-out, width .2s ease-out, opacity .2s ease-out;
+        bottom: 0;
+        width: calc(100% - 10px);
+    `
+}
 
-export const title = css`
-    margin: 0;
-    display: inline-block;
-`
+export const headeritem = {
+    div: css`
+        justify-content: flex-end;
+    `,
+    li: css`
+        margin: auto;
+        color: #222;
+        transition: color .2s ease-out;
+    `,
+    a: css`
+        text-decoration: none;
+    `
+}

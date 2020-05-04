@@ -9,8 +9,6 @@ type Props = {
 
 const Author: React.FC<Props> = ({ pathContext }) => {
     const contentItem = pathContext.author
-    console.log("contentItem")
-    console.log(contentItem)
     return (
         <Layout>
             <h1>Author name is {contentItem.name}</h1>

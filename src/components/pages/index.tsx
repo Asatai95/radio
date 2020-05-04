@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { IndexQuery } from '../../../types/graphql-types'
 import { Layout } from "../templates/layout"
+import { Section01 } from "../organisms/top_01"
 
 type Props = {
   data : IndexQuery
@@ -9,6 +10,7 @@ type Props = {
 
 const Component: React.FC<Props> = ({ data }) => (
   <Layout>
+    <Section01 />
     <div>
       <h1>Hi People</h1>
       <p>

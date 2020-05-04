@@ -668,9 +668,9 @@ pre tt:after {
   }
 }
 
-html,body,a{
+/* html,body,a{
   cursor: none;
-}
+} */
 
 .backImage {
   background: url("https://res.cloudinary.com/dh50en6xf/image/upload/v1588498911/IMG_0033_syi9dg.jpg");
@@ -687,4 +687,41 @@ html,body,a{
   width: 100%;
   height: 100%;
   position: relative;
+}
+
+.gatsby-image-wrapper {
+  width : 345px;
+  height: 20px;
+}
+
+.section-head .inner {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+}
+
+.l-inner {
+  width: calc(86% + 60px);
+  max-width: 1580px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.section-head .l-inner {
+  position: relative;
+  z-index: 3;
+  margin-top: 205px;
+  margin-top: 155px;
+}
+
+.scrolldown.hide-sml:after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 1px;
+  background-color: #212bff;
+  position: absolute;
+  top: 15px;
+  left: 112px;
 }
