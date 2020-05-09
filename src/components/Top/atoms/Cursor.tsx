@@ -1,6 +1,6 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
-import "../../styles/Cursor"
+import "../../../styles/Cursor"
 
 const anim = keyframes({
     from: {

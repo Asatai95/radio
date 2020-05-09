@@ -24,7 +24,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     //         })
     //     }
     // }
-    const IndexTemplate = path.resolve('./src/components/pages/index.tsx')
+    const IndexTemplate = path.resolve('./src/components/Top/pages/index.tsx')
     createPage({
         path: `/`,
         component: IndexTemplate,

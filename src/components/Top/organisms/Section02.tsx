@@ -1,9 +1,10 @@
 
 import React from 'react'
 import { css } from '@emotion/core'
+import { Gallery } from '../molecules/Gallery'
 // import { useStaticQuery, graphql } from 'gatsby'
 // // import { LunrSearch } from '../molecules/lunrsearch'
-import { innertop, bghead, linner, playbt, scrolldown, bg_img } from "../../../styles/shared"
+// import { innertop, bghead, linner, playbt, scrolldown, bg_img } from "../../../styles/shared"
 
 export const Section02 =  () => {
 
@@ -24,8 +25,10 @@ export const Section02 =  () => {
                             <li css={SectionContent.discographylistli}>
                                 <a className="cursor-react" href="#">
                                     <div className="metabox">
-                                        <h4 className="ttl f-light">Title</h4>
-                                        <p className="ttl-sub">Sub Tittle</p>
+                                        <p className="metainfo">PodCast</p>
+                                        <p className="sttl">ラジオをPodCastにて配信</p>
+                                        <h4 className="ttl f-light">Awamori in The Pocket</h4>
+                                        <p className="ttl-sub">今日も誰かを笑顔に</p>
                                     </div>
                                     <div className="thumbnail-list js-home-discography-slider swiper-container swiper-container-horizontal swiper-container-free-mode">
                                         <div className="swiper-wrapper"></div>
@@ -37,9 +40,7 @@ export const Section02 =  () => {
                 </div>
             </section>
             <div className="l-container-link-home">
-                <div className="section-contents-home section-link-home item-fadein is-visible is-animate-done">
-                    <div className=""></div>
-                </div>
+                <Gallery />
             </div>
         </main>
     )
