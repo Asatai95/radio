@@ -34,11 +34,26 @@ export const Image = () => {
   `)
   console.log(data)
   return (
-    <div>
+    <>
       <Img fixed={data.placeholderImage02.childImageSharp.fixed} />
       <Img fluid={data.placeholderImage01.childImageSharp.fluid} />
-    </div>
+    </>
   )
 }
 
+// export const cloudinaryImg = () => {
+//   const data = useStaticQuery(graphql`
+//     query CloudinaryImages {
+//       allCloudinaryMedia {
+//           edges {
+//               node {
+//                 secure_url
+//               }
+//           }
+//       }
+//     }
+//   `)
+//   console.log(data)
+//   // const img = data;
+// }
 

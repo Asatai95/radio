@@ -8,17 +8,17 @@
 import React from "react"
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from "gatsby"
-import { IndexQuery_ } from '../../../types/graphql-types'
+// import { IndexQuery_ } from '../../../types/graphql-types'
 import { css } from '@emotion/core'
-import { Header } from "../organisms/header"
+import { Header } from "../organisms/Header"
 import "../../styles/layout.css"
 // import { Image } from "../image"
 import 'bootstrap/dist/css/bootstrap.min.css'
 // import Author from "./author"
 import { CursoPoint } from "../atoms/Cursor"
-import { Footer } from "../organisms/footer"
-import { social } from "../../styles/shared"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Footer } from "../organisms/Footer"
+import { social } from "../../styles/Shared"
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const style = {
   wrapper: css`
@@ -28,6 +28,7 @@ const style = {
     background: 0,0,0 ;
   `,
   container: css`
+    padding: 0;
     background: rgb(255,255,255,.9);
   `
 }
@@ -36,7 +37,8 @@ interface Layoutprops {
 }
 
 export const Layout = ({ children }: Layoutprops) => {
-  const data = useStaticQuery<IndexQuery_>(graphql`
+  console.log(children)
+  const data = useStaticQuery(graphql`
     query IndexDivQueryItem {
       site {
         siteMetadata {
@@ -45,8 +47,9 @@ export const Layout = ({ children }: Layoutprops) => {
         }
       }
     }
-`)
-
+  `)
+  console.log("data")
+  console.log(data)
   return (
     <div className="contentBlock">
       <div className="backImage"></div>

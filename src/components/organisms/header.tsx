@@ -3,16 +3,9 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 // import { LunrSearch } from '../molecules/lunrsearch'
-import { navbar, naviItem, headeritem} from "../../styles/header"
+import { navbar, naviItem, headeritem} from "../../styles/Header"
 import Img from "gatsby-image"
-
-const TitleLink = styled(Link)`
-  color: #222;
-  &:active,
-  &:hover {
-    color: #fff;
-  }
-`
+import { css } from '@emotion/core'
 
 interface HeaderProps {
   readonly title: string
@@ -34,7 +27,7 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
   console.log(data)
   return (
     <nav css={navbar} className="navbar navbar-expand-lg navbar-light">
-      <TitleLink to="/" className="navbar-brand">
+      <TitleLink to="/" className="navbar-brand" css={headerLogo}>
         <Img fixed={data.LogoImage.childImageSharp.fixed} />
       </TitleLink>
       <div css={naviItem.menuicon} className="cursor-react menu-icon">
@@ -72,3 +65,15 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
     </nav>
   )
 }
+
+const TitleLink = styled(Link)`
+  color: #222;
+  &:active,
+  &:hover {
+    color: #fff;
+  }
+`
+const headerLogo = css`
+  position: fixed;
+  z-index: 10;
+`

@@ -12,7 +12,7 @@ export const inner = css`
 `;
 
 export const innertop = css`
-  height: 100vh;
+  height: 100vh!important;
   min-height: 500px;
 `
 
@@ -40,6 +40,9 @@ export const linner = {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+  `,
+  linnerimg: css`
+    width : 400px;
   `
 }
 
@@ -67,7 +70,6 @@ export const playbt = {
     color : rgb(32,166,242,.8);
     font-size: 20px;
     position: relative;
-    line-height: 1;
   `,
   img: css`
     width: 13px;
@@ -113,3 +115,16 @@ export const social = {
   left: 40px;
   `
 }
+
+export const bg_img = css`
+  min-width: 100%;
+  min-height: 100%;
+  height: 1080px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  right: 0%;
+  bottom: 0%;
+  transform: translate(-50%, -50%);
+`

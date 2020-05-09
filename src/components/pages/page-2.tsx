@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { Layout } from "../templates/layout"
+import { Layout } from "../templates/Layout"
 import SEO from "../seo"
 
 const SecondPage = () => (

@@ -1,9 +1,9 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { Layout } from "../templates/layout"
-import { AuthorContext } from "../../../gatsby-node-api"
+import { Layout } from "../templates/Layout"
+import { AuthorContext } from "../../../gatsby-node-api/"
 
-type Props = {
+export type Props = {
     pathContext: AuthorContext
 }
 

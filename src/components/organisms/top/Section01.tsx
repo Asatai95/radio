@@ -3,13 +3,9 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 // // import { LunrSearch } from '../molecules/lunrsearch'
-import { innertop, bghead, linner, playbt, scrolldown } from "../../styles/shared"
+import { innertop, bghead, linner, playbt, scrolldown, bg_img } from "../../../styles/shared"
 
-interface HeaderProps {
-  readonly title: string
-}
-
-export const Section01 : React.FC<HeaderProps> = () => {
+export const Section01 =  () => {
     const data = useStaticQuery(graphql`
         query CloudinaryImages {
             allCloudinaryMedia {
@@ -20,17 +16,14 @@ export const Section01 : React.FC<HeaderProps> = () => {
                 }
             }
         }
-    `
-    );
-    console.log(data)
+    `);
     const clImage = data.allCloudinaryMedia.edges;
-    console.log(clImage)
     return (
       <section css={SectionContent.main} className="section-head section-head-home">
           <div css={innertop} className="inner">
               <div css={bghead} className="bg-head">
-                    <div>
-
+                    <div className="bg_img_item">
+                        <img css={bg_img} src={clImage[3].node.secure_url} alt="" />
                     </div>
               </div>
               <div css={linner.linner01} className="l-inner">
@@ -44,7 +37,7 @@ export const Section01 : React.FC<HeaderProps> = () => {
                           </a>
                       </p>
                       <h2 className="copy f-light">
-                        <img src={clImage[1].node.secure_url} alt="" />
+                        <img css={linner.linnerimg} src={clImage[1].node.secure_url} alt="" />
                       </h2>
                   </div>
               </div>
@@ -57,7 +50,7 @@ export const Section01 : React.FC<HeaderProps> = () => {
           </div>
       </section>
     )
-};
+}
 
 const SectionContent = {
     main : css`
