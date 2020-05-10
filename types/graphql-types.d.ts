@@ -7580,12 +7580,17 @@ export type Unnamed_1_Query = { placeholderImage01?: Maybe<{ childImageSharp?: M
 export type Unnamed_2_QueryVariables = {};
 
 
-export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+export type Unnamed_2_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type Unnamed_3_QueryVariables = {};
 
 
-export type Unnamed_3_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+export type Unnamed_3_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type Unnamed_4_QueryVariables = {};
+
+
+export type Unnamed_4_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type CloudinaryImagesQueryVariables = {};
 

@@ -128,3 +128,22 @@ export const bg_img = css`
   bottom: 0%;
   transform: translate(-50%, -50%);
 `
+
+export const sectionlinkhome =  css`
+  width: 45%;
+  position: relative;
+  overflow: hidden;
+`
+
+export const headline = css`
+  font-size: 41px;
+  letter-spacing: 0.05em;
+`
+
+export const flight = css`
+  font-weight: 800;
+`
+
+export const showsml = css`
+  display: none;
+`

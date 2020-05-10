@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import Author from "./author"
 import { CursoPoint } from "../atoms/Cursor"
 import { Footer } from "../organisms/Footer"
-import { social } from "../../../styles/Shared"
+import { social, flight } from "../../../styles/Shared"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const style = {
@@ -75,7 +75,7 @@ export const Layout = ({ children }: Layoutprops) => {
         </div>
         <Footer />
         <nav css={[social.nav, navside]} className="nav-side">
-          <ul css={social.ul} className="social-list icon-list f-light">
+          <ul css={[ social.ul, flight ]} className="social-list icon-list f-light">
             <li>
               <a css={social.shareicon} href="#" className="cursor-react-sml" target="_blank">
                 {/* <FontAwesomeIcon icon={['fab', 'apple']} /> */}

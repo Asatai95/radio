@@ -3,7 +3,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 // // import { LunrSearch } from '../molecules/lunrsearch'
-import { innertop, bghead, linner, playbt, scrolldown, bg_img } from "../../../styles/shared"
+import { innertop, bghead, linner, playbt, scrolldown, bg_img, flight } from "../../../styles/shared"
 
 export const Section01 =  () => {
     const data = useStaticQuery(graphql`
@@ -36,7 +36,7 @@ export const Section01 =  () => {
                               <span css={playbt.text} className="text">Play</span>
                           </a>
                       </p>
-                      <h2 className="copy f-light">
+                      <h2 css={flight} className="copy f-light">
                         <img css={linner.linnerimg} src={clImage[1].node.secure_url} alt="" />
                       </h2>
                   </div>

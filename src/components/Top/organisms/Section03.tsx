@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 import { Information } from '../molecules/Information'
 // import { useStaticQuery, graphql } from 'gatsby'
 // // import { LunrSearch } from '../molecules/lunrsearch'
-// import { innertop, bghead, linner, playbt, scrolldown, bg_img } from "../../../styles/shared"
+import { flight } from "../../../styles/shared"
 
 export const Section03 =  () => {
 
@@ -11,8 +11,8 @@ export const Section03 =  () => {
         <section css={SectionContent.main} className="section-information-home">
             <div className="l-inner">
                 <div css={SectionContent.haedline} className="box-headline">
-                    <h3 css={SectionContent.headlinelight} className="headline f-light">INFORMATION</h3>
-                    <p className="icon-link f-light">
+                    <h3 css={[ SectionContent.headlinelight, flight ]} className="headline f-light">INFORMATION</h3>
+                    <p css={flight} className="icon-link f-light">
                         <a href="#" css={SectionContent.iconlink} className="cursor-react cursor-react-btn">+</a>
                     </p>
                 </div>
@@ -20,14 +20,17 @@ export const Section03 =  () => {
                     <div css={SectionContent.clearfixleft} className="l-left">
                         <ul css={SectionContent.navinformation} className="nav-information nav-btnlist">
                             <li css={SectionContent.navinformationli}>
-                                <a href="#" css={SectionContent.iconlink} className="cursor-react cursor-react-btn">All</a>
+                                <a href="#" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">All</a>
                             </li>
-                            <li>
-                                <a href="#" css={SectionContent.iconlink} className="cursor-react cursor-react-btn">News</a>
+                            <li css={SectionContent.navinformationli}>
+                                <a href="#" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">News</a>
+                            </li>
+                            <li css={SectionContent.navinformationli}>
+                                <a href="#" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">Radio</a>
                             </li>
                         </ul>
-                        <Information />
                     </div>
+                    <Information />
                 </div>
             </div>
         </section>
@@ -78,11 +81,26 @@ const SectionContent = {
         line-height: 1;
         padding-top: 9px;
         text-align: center;
-        border: 2px solid rgba(255, 255, 255, 0.18);
+        border: 2px solid rgb(32,166,242,.8);
         border-radius: 50%;
         transition: background .3s ease-out, border .3s ease-out;
     `,
+    iconlinkbtn: css`
+        position: relative;
+        display: inline-block;
+        min-width: 73px;
+        height: 35px;
+        border: 2px solid #1e1e1e;
+        border-radius: 19px;
+        text-align: center;
+        padding: 0 18px;
+        transition: background .3s ease-out, border .3s ease-out
+    `,
     clearfix: css`
+        @media screen and (min-width: 1101px) {
+            display: flex;
+            align-items: flex-start;
+        }
         min-height: 1%;
     `,
     clearfixleft: css`

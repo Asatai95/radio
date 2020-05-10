@@ -256,6 +256,9 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+a {
+  text-decoration: none!important;
+}
 img {
   max-width: 100%;
   margin-left: 0;
@@ -742,10 +745,6 @@ pre tt:after {
   left: 112px;
 }
 
-.f-light {
-  font-weight: 800;
-}
-
 .section-discography-home .nav-discography:after {
   content: "";
   display: block;
@@ -754,4 +753,29 @@ pre tt:after {
   visibility: hidden;
   line-height: 0;
   font-size: 0;
+}
+
+.discography-list.discography-list-home > li .thumbnail-list::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .92);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: background .3s ease-out;
+}
+
+.l-container-link-home .section-link-home .imgbox::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-attachment: fixed;
 }

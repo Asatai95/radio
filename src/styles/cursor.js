@@ -20,6 +20,8 @@ window.onload = function () {
                     cursor.classList.remove("hov_");
                 });
             }
+
+            // var elm = document.getElementById("informationlink");
             stopTextColor();
         }
     }
