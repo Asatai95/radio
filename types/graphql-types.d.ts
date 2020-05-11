@@ -37,6 +37,7 @@ export type CloudinaryMedia = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
+  asset_id?: Maybe<Scalars['String']>;
   public_id?: Maybe<Scalars['String']>;
   format?: Maybe<Scalars['String']>;
   version?: Maybe<Scalars['Int']>;
@@ -172,6 +173,7 @@ export type CloudinaryMediaFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
+  | 'asset_id'
   | 'public_id'
   | 'format'
   | 'version'
@@ -189,6 +191,7 @@ export type CloudinaryMediaFilterInput = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+  asset_id?: Maybe<StringQueryOperatorInput>;
   public_id?: Maybe<StringQueryOperatorInput>;
   format?: Maybe<StringQueryOperatorInput>;
   version?: Maybe<IntQueryOperatorInput>;
@@ -6385,6 +6388,7 @@ export type QueryCloudinaryMediaArgs = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+  asset_id?: Maybe<StringQueryOperatorInput>;
   public_id?: Maybe<StringQueryOperatorInput>;
   format?: Maybe<StringQueryOperatorInput>;
   version?: Maybe<IntQueryOperatorInput>;
@@ -7582,15 +7586,15 @@ export type Unnamed_2_QueryVariables = {};
 
 export type Unnamed_2_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
+export type IndexDivQueryAndCloudinaryImagesQueryVariables = {};
+
+
+export type IndexDivQueryAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
 export type Unnamed_3_QueryVariables = {};
 
 
-export type Unnamed_3_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-export type Unnamed_4_QueryVariables = {};
-
-
-export type Unnamed_4_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+export type Unnamed_3_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type CloudinaryImagesQueryVariables = {};
 

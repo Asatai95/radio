@@ -724,6 +724,11 @@ pre tt:after {
   padding-right: 30px;
 }
 
+.align-c {
+  font-weight: 300;
+  text-align: center;
+}
+
 .clearfix {
   min-height: 1%;
 }
@@ -778,4 +783,8 @@ pre tt:after {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5);
   background-attachment: fixed;
+}
+
+.section-contact-common a:hover {
+  color: rgb(32,166,242,.8);
 }

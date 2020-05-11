@@ -69,6 +69,7 @@ const styles = {
 
 const search = (query: string): readonly SearchResult[] => {
   const { index, store } = window.__LUNR__ && window.__LUNR__.en
+
   return query ? index.search(query).map(({ ref }) => store[ref]) : []
 }
 

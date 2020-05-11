@@ -22,35 +22,39 @@ interface FooterData {
 export const Footer: React.FC<FooterProps> = () => {
 
   const data: FooterData = useStaticQuery(graphql`
-    query {
+    query indexDivQueryAndCloudinaryImages {
+      allCloudinaryMedia {
+        edges {
+            node {
+              secure_url
+            }
+        }
+      }
       site {
         siteMetadata {
           title
         }
       }
+
     }
-  `)
+  `);
+  console.log("img")
+  console.log("foooter")
   console.log(data)
   return (
     <footer className="fixed-bottom" css={[outer, SiteFooter]}>
       <div className="container" css={[inner, SiteFooterContent]}>
         <section className="copyright">
-          <Link to="/">あわぽけ</Link> &copy; {new Date().getFullYear()}{' '}
+          <Link to="/">あわぽけ</Link>
           {data.site.siteMetadata.title && (
             <Link to="/">
               | ©{data.site.siteMetadata.title}
             </Link>
           )}
         </section>
-        <SiteFooterNav>
-          <Link to="/">Latest Posts</Link>
+        {/* <SiteFooterNav>
 
-          <a href="https://github.com/scttcper/gatsby-casper" target="_blank" rel="noopener noreferrer">
-            Casper
-          </a>
-
-          <a href="/rss.xml">RSS</a>
-        </SiteFooterNav>
+        </SiteFooterNav> */}
       </div>
     </footer>
   );

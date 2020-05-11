@@ -18,6 +18,8 @@ export const Section01 =  () => {
         }
     `);
     const clImage = data.allCloudinaryMedia.edges;
+    console.log("clImage")
+    console.log(clImage)
     return (
       <section css={SectionContent.main} className="section-head section-head-home">
           <div css={innertop} className="inner">
