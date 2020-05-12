@@ -1,5 +1,7 @@
 import React from 'react'
+import { FacebookProvider , Feed } from "react-facebook";
 import { css, keyframes } from '@emotion/core'
+import Insta from "../molecules/Instagram"
 // import { flight } from "../../../styles/shared"
 
 export const Section05 =  () => {
@@ -13,15 +15,23 @@ export const Section05 =  () => {
                     </p>
                 </div>
                 <div css={instagramfield.viewblock} className="insta_view_block">
-                    <div css={instagramfield.mainbox} className="main_box"></div>
+                    <Insta />
                 </div>
             </div>
             <div css={tips.block} className="tips">
                 <div css={tips.facebook} className="facebook-feed">
                     <div>
-                        <p css={tips.feedtext}>FaceBook</p>
+                        <p css={tips.feedtext}>Facebook</p>
                     </div>
-                    <div css={tips.facebookfeed}></div>
+                    <div css={tips.facebookfeed}>
+                        <FacebookProvider appId="731219860982553">
+                            <Feed link="https://www.facebook.com">
+                                {({ handleClick }) => (
+                                    <button type="button" onClick={handleClick}>Share on Feed</button>
+                                )}
+                            </Feed>
+                        </FacebookProvider>
+                    </div>
                 </div>
                 <div css={tips.support} className="support-title">
                     <div>
@@ -99,11 +109,6 @@ const instagramfield = {
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
     `,
-    mainbox: css`
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `
 }
 
 const tips = {
@@ -125,8 +130,8 @@ const tips = {
         font-weight: bold;
     `,
     facebookfeed: css`
-        height: 500px;
-        width : 500px;
+        max-height: 500px;
+        max-width : 500px;
     `,
     support: css`
         z-index: 50;

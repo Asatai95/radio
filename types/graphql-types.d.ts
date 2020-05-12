@@ -4920,6 +4920,7 @@ export type File = Node & {
   birthtimeMs?: Maybe<Scalars['Float']>;
   blksize?: Maybe<Scalars['Int']>;
   blocks?: Maybe<Scalars['Int']>;
+  url?: Maybe<Scalars['String']>;
   /** Copy file to static directory and return public url to it */
   publicURL?: Maybe<Scalars['String']>;
   childImageSharp?: Maybe<ImageSharp>;
@@ -5046,6 +5047,7 @@ export type FileFieldsEnum =
   | 'birthtimeMs'
   | 'blksize'
   | 'blocks'
+  | 'url'
   | 'publicURL'
   | 'childImageSharp___fixed___base64'
   | 'childImageSharp___fixed___tracedSVG'
@@ -5259,6 +5261,7 @@ export type FileFilterInput = {
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
   blksize?: Maybe<IntQueryOperatorInput>;
   blocks?: Maybe<IntQueryOperatorInput>;
+  url?: Maybe<StringQueryOperatorInput>;
   publicURL?: Maybe<StringQueryOperatorInput>;
   childImageSharp?: Maybe<ImageSharpFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5805,6 +5808,351 @@ export type ImageSharpSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type InstaNode = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  type?: Maybe<Scalars['String']>;
+  username?: Maybe<Scalars['String']>;
+  likes?: Maybe<Scalars['Int']>;
+  caption?: Maybe<Scalars['String']>;
+  thumbnails?: Maybe<Array<Maybe<InstaNodeThumbnails>>>;
+  mediaType?: Maybe<Scalars['String']>;
+  preview?: Maybe<Scalars['String']>;
+  original?: Maybe<Scalars['String']>;
+  timestamp?: Maybe<Scalars['Int']>;
+  dimensions?: Maybe<InstaNodeDimensions>;
+  localFile?: Maybe<File>;
+};
+
+export type InstaNodeConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<InstaNodeEdge>;
+  nodes: Array<InstaNode>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<InstaNodeGroupConnection>;
+};
+
+
+export type InstaNodeConnectionDistinctArgs = {
+  field: InstaNodeFieldsEnum;
+};
+
+
+export type InstaNodeConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: InstaNodeFieldsEnum;
+};
+
+export type InstaNodeDimensions = {
+  height?: Maybe<Scalars['Int']>;
+  width?: Maybe<Scalars['Int']>;
+};
+
+export type InstaNodeDimensionsFilterInput = {
+  height?: Maybe<IntQueryOperatorInput>;
+  width?: Maybe<IntQueryOperatorInput>;
+};
+
+export type InstaNodeEdge = {
+  next?: Maybe<InstaNode>;
+  node: InstaNode;
+  previous?: Maybe<InstaNode>;
+};
+
+export type InstaNodeFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'type'
+  | 'username'
+  | 'likes'
+  | 'caption'
+  | 'thumbnails'
+  | 'thumbnails___src'
+  | 'thumbnails___config_width'
+  | 'thumbnails___config_height'
+  | 'mediaType'
+  | 'preview'
+  | 'original'
+  | 'timestamp'
+  | 'dimensions___height'
+  | 'dimensions___width'
+  | 'localFile___sourceInstanceName'
+  | 'localFile___absolutePath'
+  | 'localFile___relativePath'
+  | 'localFile___extension'
+  | 'localFile___size'
+  | 'localFile___prettySize'
+  | 'localFile___modifiedTime'
+  | 'localFile___accessTime'
+  | 'localFile___changeTime'
+  | 'localFile___birthTime'
+  | 'localFile___root'
+  | 'localFile___dir'
+  | 'localFile___base'
+  | 'localFile___ext'
+  | 'localFile___name'
+  | 'localFile___relativeDirectory'
+  | 'localFile___dev'
+  | 'localFile___mode'
+  | 'localFile___nlink'
+  | 'localFile___uid'
+  | 'localFile___gid'
+  | 'localFile___rdev'
+  | 'localFile___ino'
+  | 'localFile___atimeMs'
+  | 'localFile___mtimeMs'
+  | 'localFile___ctimeMs'
+  | 'localFile___atime'
+  | 'localFile___mtime'
+  | 'localFile___ctime'
+  | 'localFile___birthtime'
+  | 'localFile___birthtimeMs'
+  | 'localFile___blksize'
+  | 'localFile___blocks'
+  | 'localFile___url'
+  | 'localFile___publicURL'
+  | 'localFile___childImageSharp___fixed___base64'
+  | 'localFile___childImageSharp___fixed___tracedSVG'
+  | 'localFile___childImageSharp___fixed___aspectRatio'
+  | 'localFile___childImageSharp___fixed___width'
+  | 'localFile___childImageSharp___fixed___height'
+  | 'localFile___childImageSharp___fixed___src'
+  | 'localFile___childImageSharp___fixed___srcSet'
+  | 'localFile___childImageSharp___fixed___srcWebp'
+  | 'localFile___childImageSharp___fixed___srcSetWebp'
+  | 'localFile___childImageSharp___fixed___originalName'
+  | 'localFile___childImageSharp___resolutions___base64'
+  | 'localFile___childImageSharp___resolutions___tracedSVG'
+  | 'localFile___childImageSharp___resolutions___aspectRatio'
+  | 'localFile___childImageSharp___resolutions___width'
+  | 'localFile___childImageSharp___resolutions___height'
+  | 'localFile___childImageSharp___resolutions___src'
+  | 'localFile___childImageSharp___resolutions___srcSet'
+  | 'localFile___childImageSharp___resolutions___srcWebp'
+  | 'localFile___childImageSharp___resolutions___srcSetWebp'
+  | 'localFile___childImageSharp___resolutions___originalName'
+  | 'localFile___childImageSharp___fluid___base64'
+  | 'localFile___childImageSharp___fluid___tracedSVG'
+  | 'localFile___childImageSharp___fluid___aspectRatio'
+  | 'localFile___childImageSharp___fluid___src'
+  | 'localFile___childImageSharp___fluid___srcSet'
+  | 'localFile___childImageSharp___fluid___srcWebp'
+  | 'localFile___childImageSharp___fluid___srcSetWebp'
+  | 'localFile___childImageSharp___fluid___sizes'
+  | 'localFile___childImageSharp___fluid___originalImg'
+  | 'localFile___childImageSharp___fluid___originalName'
+  | 'localFile___childImageSharp___fluid___presentationWidth'
+  | 'localFile___childImageSharp___fluid___presentationHeight'
+  | 'localFile___childImageSharp___sizes___base64'
+  | 'localFile___childImageSharp___sizes___tracedSVG'
+  | 'localFile___childImageSharp___sizes___aspectRatio'
+  | 'localFile___childImageSharp___sizes___src'
+  | 'localFile___childImageSharp___sizes___srcSet'
+  | 'localFile___childImageSharp___sizes___srcWebp'
+  | 'localFile___childImageSharp___sizes___srcSetWebp'
+  | 'localFile___childImageSharp___sizes___sizes'
+  | 'localFile___childImageSharp___sizes___originalImg'
+  | 'localFile___childImageSharp___sizes___originalName'
+  | 'localFile___childImageSharp___sizes___presentationWidth'
+  | 'localFile___childImageSharp___sizes___presentationHeight'
+  | 'localFile___childImageSharp___original___width'
+  | 'localFile___childImageSharp___original___height'
+  | 'localFile___childImageSharp___original___src'
+  | 'localFile___childImageSharp___resize___src'
+  | 'localFile___childImageSharp___resize___tracedSVG'
+  | 'localFile___childImageSharp___resize___width'
+  | 'localFile___childImageSharp___resize___height'
+  | 'localFile___childImageSharp___resize___aspectRatio'
+  | 'localFile___childImageSharp___resize___originalName'
+  | 'localFile___childImageSharp___id'
+  | 'localFile___childImageSharp___parent___id'
+  | 'localFile___childImageSharp___parent___children'
+  | 'localFile___childImageSharp___children'
+  | 'localFile___childImageSharp___children___id'
+  | 'localFile___childImageSharp___children___children'
+  | 'localFile___childImageSharp___internal___content'
+  | 'localFile___childImageSharp___internal___contentDigest'
+  | 'localFile___childImageSharp___internal___description'
+  | 'localFile___childImageSharp___internal___fieldOwners'
+  | 'localFile___childImageSharp___internal___ignoreType'
+  | 'localFile___childImageSharp___internal___mediaType'
+  | 'localFile___childImageSharp___internal___owner'
+  | 'localFile___childImageSharp___internal___type'
+  | 'localFile___id'
+  | 'localFile___parent___id'
+  | 'localFile___parent___parent___id'
+  | 'localFile___parent___parent___children'
+  | 'localFile___parent___children'
+  | 'localFile___parent___children___id'
+  | 'localFile___parent___children___children'
+  | 'localFile___parent___internal___content'
+  | 'localFile___parent___internal___contentDigest'
+  | 'localFile___parent___internal___description'
+  | 'localFile___parent___internal___fieldOwners'
+  | 'localFile___parent___internal___ignoreType'
+  | 'localFile___parent___internal___mediaType'
+  | 'localFile___parent___internal___owner'
+  | 'localFile___parent___internal___type'
+  | 'localFile___children'
+  | 'localFile___children___id'
+  | 'localFile___children___parent___id'
+  | 'localFile___children___parent___children'
+  | 'localFile___children___children'
+  | 'localFile___children___children___id'
+  | 'localFile___children___children___children'
+  | 'localFile___children___internal___content'
+  | 'localFile___children___internal___contentDigest'
+  | 'localFile___children___internal___description'
+  | 'localFile___children___internal___fieldOwners'
+  | 'localFile___children___internal___ignoreType'
+  | 'localFile___children___internal___mediaType'
+  | 'localFile___children___internal___owner'
+  | 'localFile___children___internal___type'
+  | 'localFile___internal___content'
+  | 'localFile___internal___contentDigest'
+  | 'localFile___internal___description'
+  | 'localFile___internal___fieldOwners'
+  | 'localFile___internal___ignoreType'
+  | 'localFile___internal___mediaType'
+  | 'localFile___internal___owner'
+  | 'localFile___internal___type';
+
+export type InstaNodeFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  username?: Maybe<StringQueryOperatorInput>;
+  likes?: Maybe<IntQueryOperatorInput>;
+  caption?: Maybe<StringQueryOperatorInput>;
+  thumbnails?: Maybe<InstaNodeThumbnailsFilterListInput>;
+  mediaType?: Maybe<StringQueryOperatorInput>;
+  preview?: Maybe<StringQueryOperatorInput>;
+  original?: Maybe<StringQueryOperatorInput>;
+  timestamp?: Maybe<IntQueryOperatorInput>;
+  dimensions?: Maybe<InstaNodeDimensionsFilterInput>;
+  localFile?: Maybe<FileFilterInput>;
+};
+
+export type InstaNodeGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<InstaNodeEdge>;
+  nodes: Array<InstaNode>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type InstaNodeSortInput = {
+  fields?: Maybe<Array<Maybe<InstaNodeFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type InstaNodeThumbnails = {
+  src?: Maybe<Scalars['String']>;
+  config_width?: Maybe<Scalars['Int']>;
+  config_height?: Maybe<Scalars['Int']>;
+};
+
+export type InstaNodeThumbnailsFilterInput = {
+  src?: Maybe<StringQueryOperatorInput>;
+  config_width?: Maybe<IntQueryOperatorInput>;
+  config_height?: Maybe<IntQueryOperatorInput>;
+};
+
+export type InstaNodeThumbnailsFilterListInput = {
+  elemMatch?: Maybe<InstaNodeThumbnailsFilterInput>;
+};
+
 export type Internal = {
   content?: Maybe<Scalars['String']>;
   contentDigest: Scalars['String'];
@@ -6159,6 +6507,8 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark?: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
+  instaNode?: Maybe<InstaNode>;
+  allInstaNode: InstaNodeConnection;
   cloudinaryMedia?: Maybe<CloudinaryMedia>;
   allCloudinaryMedia: CloudinaryMediaConnection;
   contentfulAsset?: Maybe<ContentfulAsset>;
@@ -6222,6 +6572,7 @@ export type QueryFileArgs = {
   birthtimeMs?: Maybe<FloatQueryOperatorInput>;
   blksize?: Maybe<IntQueryOperatorInput>;
   blocks?: Maybe<IntQueryOperatorInput>;
+  url?: Maybe<StringQueryOperatorInput>;
   publicURL?: Maybe<StringQueryOperatorInput>;
   childImageSharp?: Maybe<ImageSharpFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -6378,6 +6729,33 @@ export type QueryMarkdownRemarkArgs = {
 export type QueryAllMarkdownRemarkArgs = {
   filter?: Maybe<MarkdownRemarkFilterInput>;
   sort?: Maybe<MarkdownRemarkSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryInstaNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  username?: Maybe<StringQueryOperatorInput>;
+  likes?: Maybe<IntQueryOperatorInput>;
+  caption?: Maybe<StringQueryOperatorInput>;
+  thumbnails?: Maybe<InstaNodeThumbnailsFilterListInput>;
+  mediaType?: Maybe<StringQueryOperatorInput>;
+  preview?: Maybe<StringQueryOperatorInput>;
+  original?: Maybe<StringQueryOperatorInput>;
+  timestamp?: Maybe<IntQueryOperatorInput>;
+  dimensions?: Maybe<InstaNodeDimensionsFilterInput>;
+  localFile?: Maybe<FileFilterInput>;
+};
+
+
+export type QueryAllInstaNodeArgs = {
+  filter?: Maybe<InstaNodeFilterInput>;
+  sort?: Maybe<InstaNodeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -7189,6 +7567,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___apiSecret'
   | 'pluginCreator___pluginOptions___resourceType'
   | 'pluginCreator___pluginOptions___prefix'
+  | 'pluginCreator___pluginOptions___places'
+  | 'pluginCreator___pluginOptions___params___fields'
+  | 'pluginCreator___pluginOptions___version'
+  | 'pluginCreator___pluginOptions___username'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -7391,6 +7773,10 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___apiSecret'
   | 'pluginOptions___resourceType'
   | 'pluginOptions___prefix'
+  | 'pluginOptions___places'
+  | 'pluginOptions___params___fields'
+  | 'pluginOptions___version'
+  | 'pluginOptions___username'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -7520,6 +7906,10 @@ export type SitePluginPluginOptions = {
   apiSecret?: Maybe<Scalars['String']>;
   resourceType?: Maybe<Scalars['String']>;
   prefix?: Maybe<Scalars['String']>;
+  places?: Maybe<Array<Maybe<Scalars['String']>>>;
+  params?: Maybe<SitePluginPluginOptionsParams>;
+  version?: Maybe<Scalars['String']>;
+  username?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -7540,7 +7930,19 @@ export type SitePluginPluginOptionsFilterInput = {
   apiSecret?: Maybe<StringQueryOperatorInput>;
   resourceType?: Maybe<StringQueryOperatorInput>;
   prefix?: Maybe<StringQueryOperatorInput>;
+  places?: Maybe<StringQueryOperatorInput>;
+  params?: Maybe<SitePluginPluginOptionsParamsFilterInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+  username?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsParams = {
+  fields?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsParamsFilterInput = {
+  fields?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -7575,41 +7977,6 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>;
   glob?: Maybe<Scalars['String']>;
 };
-
-export type Unnamed_1_QueryVariables = {};
-
-
-export type Unnamed_1_Query = { placeholderImage01?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, placeholderImage02?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
-export type Unnamed_2_QueryVariables = {};
-
-
-export type Unnamed_2_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
-export type IndexDivQueryAndCloudinaryImagesQueryVariables = {};
-
-
-export type IndexDivQueryAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-export type Unnamed_3_QueryVariables = {};
-
-
-export type Unnamed_3_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
-export type CloudinaryImagesQueryVariables = {};
-
-
-export type CloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> } };
-
-export type IndexDivQueryQueryVariables = {};
-
-
-export type IndexDivQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-export type IndexDivQueryItemQueryVariables = {};
-
-
-export type IndexDivQueryItemQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 export type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

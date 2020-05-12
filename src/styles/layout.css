@@ -671,9 +671,12 @@ pre tt:after {
   }
 }
 
-/* html,body,a{
-  cursor: none;
-} */
+#navbarSupportedContent .mr-auto {
+  position: fixed;
+  z-index: 80;
+  margin: 0!important;
+}
+
 
 .backImage {
   background: url("https://res.cloudinary.com/dh50en6xf/image/upload/v1588498911/IMG_0033_syi9dg.jpg");
@@ -727,6 +730,7 @@ pre tt:after {
 .align-c {
   font-weight: 300;
   text-align: center;
+  margin: 0;
 }
 
 .clearfix {
@@ -787,4 +791,12 @@ pre tt:after {
 
 .section-contact-common a:hover {
   color: rgb(32,166,242,.8);
+}
+
+.cursor-pointer.hov_{
+  top: -20px;
+  left: -20px;
+  width:40px;
+  height: 40px;
+  background: rgba(30,144, 255);
 }

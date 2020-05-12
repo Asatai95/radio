@@ -21,7 +21,6 @@ window.onload = function () {
                 });
             }
 
-            // var elm = document.getElementById("informationlink");
             stopTextColor();
         }
     }
