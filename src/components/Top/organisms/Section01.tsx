@@ -19,14 +19,14 @@ export const Section01 =  () => {
     `);
 
     const clImage = data.allCloudinaryMedia.edges;
-    console.log("clImage")
-    console.log(clImage)
+
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={innertop} className="inner">
                 <div css={bghead} className="bg-head">
                       <div className="bg_img_item">
-                          <img css={bg_img} src={clImage[3].node.secure_url} alt="" />
+                          {/* <img css={bg_img} src={clImage[3].node.secure_url} alt="" /> */}
+                          <video src="https://res.cloudinary.com/dh50en6xf/video/upload/v1589470905/gatsby-source-cloudinary/my_media_bg_xemqa6.mp4"  muted webkit-playsinline playsinline autoplay loop></video>
                       </div>
                 </div>
                 <div css={linner.linner01} className="l-inner">
