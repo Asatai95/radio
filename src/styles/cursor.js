@@ -30,7 +30,7 @@ window.onload = function () {
                     console.log(elm)
                 });
                 feed[i].addEventListener("mouseout", function (e) {
-                    console.log(feed[i])
+                    console.log(e)
                 });
             }
 

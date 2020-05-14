@@ -13,7 +13,7 @@ const Component: React.FC<Props> = () => {
   )
 }
 
-export const pageQuery = useStaticQuery(graphql`
+export const pageQuery = graphql`
   query IndexPostsTitle {
     site {
       siteMetadata {
@@ -21,6 +21,6 @@ export const pageQuery = useStaticQuery(graphql`
       }
     }
   }
-`)
+`
 
 export default Component

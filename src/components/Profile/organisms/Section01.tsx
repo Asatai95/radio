@@ -46,7 +46,7 @@ const SectionContent = {
         margin-top: 0;
     `,
     block: css`
-        width: 90%;
+        width: 80%;
         margin: auto;
     `,
     h2: css`

@@ -1,23 +1,22 @@
 import React from 'react'
-import { FacebookProvider , Page } from "react-facebook";
 import { css, keyframes } from '@emotion/core'
 import { Instagram } from "../molecules/Instagram"
-// import { graphql, useStaticQuery } from 'gatsby';
+// import { graphql } from 'gatsby';
 // import { flight } from "../../../styles/shared"
 
 export const Section05 =  () => {
-    // const data = useStaticQuery(graphql`
+    // const data = graphql`
     //     query {
     //         allFacebookArticles {
-    //         edges {
-    //             node {
-    //             title,
-    //             description
+    //             edges {
+    //                 node {
+    //                 title,
+    //                 description
+    //                 }
     //             }
     //         }
-    //         }
     //     }
-    // `)
+    // `
     // console.log(data)
     return(
         <section css={styled.section} className="section-sns-common">
@@ -40,9 +39,7 @@ export const Section05 =  () => {
                         <p css={tips.feedtext}>Facebook</p>
                     </div>
                     <div css={tips.facebookfeed}>
-                    <FacebookProvider appId="731219860982553">
-                        <Page href="https://www.facebook.com" tabs="timeline" />
-                    </FacebookProvider>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fawapocke%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=731219860982553" width="340" height="500" css={facebookstyle} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     </div>
                 </div>
                 <div css={tips.support} className="support-title">
@@ -82,6 +79,11 @@ export const Section05 =  () => {
 const blockkeyframe =keyframes`
     0% {opacity: 0}
     100% {opacity: 1}
+`
+
+const facebookstyle = css`
+    border:none;
+    overflow:hidden;
 `
 
 const styled = {
