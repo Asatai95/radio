@@ -1,46 +1,25 @@
 import React from 'react'
-// import { FacebookProvider , Feed } from "react-facebook";
-import { css, keyframes } from '@emotion/core'
-import { Instagram } from "../molecules/Instagram"
-import { graphql, useStaticQuery } from 'gatsby';
+import { FacebookProvider , Feed } from "react-facebook";
+import { css } from '@emotion/core'
 // import { flight } from "../../../styles/shared"
 
-export const Section05 =  () => {
-    const data = useStaticQuery(graphql`
-        query {
-            allFacebookArticles {
-            edges {
-                node {
-                title,
-                description
-                }
-            }
-            }
-        }
-    `)
-    console.log(data)
+export const Section03 =  () => {
+
     return(
         <section css={styled.section} className="section-sns-common">
-            <div css={instagramfield.block} id="instagram_field" className="instagram_block">
-                <div css={instagramfield.title} className="instagram_field_title">
-                    <p css={instagramfield.titletext}>
-                        <a css={instagramfield.titlelink} href="https://www.instagram.com/awamori_in_the_pocket/">@awamori_in_the_pocket</a>
-                        <span css={instagramfield.titlespan}>on Instagram</span>
-                    </p>
-                </div>
-                <div css={instagramfield.viewblock} className="insta_view_block">
-                    <div css={instagramfield.mainbox} className="main_box" id="main_box">
-                        {Instagram()}
-                    </div>
-                </div>
-            </div>
             <div css={tips.block} className="tips">
                 <div css={tips.facebook} className="facebook-feed">
                     <div>
                         <p css={tips.feedtext}>Facebook</p>
                     </div>
                     <div css={tips.facebookfeed}>
-
+                        <FacebookProvider appId="731219860982553">
+                            <Feed link="https://www.facebook.com">
+                                {({ handleClick }) => (
+                                    <button type="button" onClick={handleClick}>Share on Feed</button>
+                                )}
+                            </Feed>
+                        </FacebookProvider>
                     </div>
                 </div>
                 <div css={tips.support} className="support-title">
@@ -77,55 +56,10 @@ export const Section05 =  () => {
     )
 }
 
-const blockkeyframe =keyframes`
-    0% {opacity: 0}
-    100% {opacity: 1}
-`
-
 const styled = {
     section: css`
         display: block;
     `,
-}
-
-const instagramfield = {
-    block: css`
-        height: 400px;
-        transition: all 1.5s ease-in-out;
-    `,
-    title: css`
-        padding: 30px;
-    `,
-    titletext: css`
-        text-align: center;
-        color: #222;
-        font-size: 25px;
-        font-weight: 800;
-        padding-bottom: 0;
-    `,
-    titlelink: css`
-        z-index: 50;
-        transition: all 1s ease;
-        font-weight: 800;
-    `,
-    titlespan: css`
-        color: #666666;
-        margin-left: 5px;
-    `,
-    viewblock: css`
-        display: block;
-        -webkit-animation-name: ${blockkeyframe};
-        animation-name: ${blockkeyframe};
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out;
-    `,
-    mainbox: css`
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `
 }
 
 const tips = {

@@ -7978,6 +7978,77 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type IndexSiteAndCloudinaryImagesQueryVariables = {};
+
+
+export type IndexSiteAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type Unnamed_1_QueryVariables = {};
+
+
+export type Unnamed_1_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type IndexProfileTitleQueryVariables = {};
+
+
+export type IndexProfileTitleQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type IndexDivLayoutQueryQueryVariables = {};
+
+
+export type IndexDivLayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
+export type Unnamed_2_QueryVariables = {};
+
+
+export type Unnamed_2_Query = { allInstaNode: { edges: Array<{ node: (
+        Pick<InstaNode, 'id' | 'likes' | 'mediaType' | 'preview' | 'original' | 'timestamp' | 'caption'>
+        & { thumbnails?: Maybe<Array<Maybe<Pick<InstaNodeThumbnails, 'src' | 'config_width' | 'config_height'>>>>, dimensions?: Maybe<Pick<InstaNodeDimensions, 'height' | 'width'>> }
+      ) }> } };
+
+export type Unnamed_3_QueryVariables = {};
+
+
+export type Unnamed_3_Query = { placeholderImage01?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, placeholderImage02?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type Unnamed_4_QueryVariables = {};
+
+
+export type Unnamed_4_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type Unnamed_5_QueryVariables = {};
+
+
+export type Unnamed_5_Query = { allInstaNode: { edges: Array<{ node: (
+        Pick<InstaNode, 'id' | 'likes' | 'mediaType' | 'preview' | 'original' | 'timestamp' | 'caption'>
+        & { thumbnails?: Maybe<Array<Maybe<Pick<InstaNodeThumbnails, 'src' | 'config_width' | 'config_height'>>>>, dimensions?: Maybe<Pick<InstaNodeDimensions, 'height' | 'width'>> }
+      ) }> } };
+
+export type IndexDivQueryAndCloudinaryImagesQueryVariables = {};
+
+
+export type IndexDivQueryAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type Unnamed_6_QueryVariables = {};
+
+
+export type Unnamed_6_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type CloudinaryImagesQueryVariables = {};
+
+
+export type CloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> } };
+
+export type IndexDivQueryQueryVariables = {};
+
+
+export type IndexDivQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type IndexDivQueryItemQueryVariables = {};
+
+
+export type IndexDivQueryItemQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
 export type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 export type GatsbyContentfulFixed_TracedSvgFragment = Pick<ContentfulFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;

@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { IndexQuery_ } from '../../../../types/graphql-types'
 import { Layout } from "../templates/Layout"
 import { Section01 } from "../organisms/Section01"
 import { Section02 } from "../organisms/Section02"
@@ -8,11 +7,9 @@ import { Section03 } from "../organisms/Section03"
 import { Section04 } from "../organisms/Section04"
 import { Section05 } from "../organisms/Section05"
 
-type Props = {
-  data ?: IndexQuery_
-}
+type Props = {}
 
-const Component: React.FC<Props> = ({ data }) => {
+const Component: React.FC<Props> = () => {
   return(
     <Layout>
       <Section01 />

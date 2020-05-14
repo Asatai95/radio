@@ -1,28 +1,32 @@
 import * as React from "react"
 import { useStaticQuery ,graphql } from "gatsby"
-import { IndexQuery_ } from '../../../../types/graphql-types'
 import { Layout } from "../templates/Layout"
 import { Section01 } from '../organisms/Section01'
-type Props = {
-  data ?: IndexQuery_
-}
+import { Section02 } from "../organisms/Section02"
+import { Contact } from "../organisms/Information"
+import { Section03 } from "../organisms/Section03"
 
-const Component: React.FC<Props> = ({ data }) => {
+type Props = {}
+
+const Component: React.FC<Props> = () => {
   return(
     <Layout>
         <Section01 />
+        <Section02 />
+        <Contact />
+        <Section03 />
     </Layout>
   )
 }
 
 export const pageQuery = useStaticQuery(graphql`
-  query IndexDivQuery {
+  query IndexProfileTitle {
     site {
       siteMetadata {
         title
       }
     }
   }
-`
+`)
 
 export default Component
