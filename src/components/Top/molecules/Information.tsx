@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { flight } from '../../../styles/Shared'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -22,43 +23,47 @@ export const Information = () => {
         }
     `)
 
+    const handleEvent =() =>{
+        console.log("test")
+    }
+
     return (
-        <ul css={styled.informationohome} className="information-list information-home l-right">
-            <li css={styled.li}>
-                <a css={styled.cursor} href="#" className="cursor-react" id="informationlink" onMouseOver={(event) => {setMouse(onhandle(event))}}>
-                    <div css={styled.imgbox} className="imgbox">
+        <ul css={style.informationohome} className="information-list information-home l-right">
+            <li className="feedInfo" css={style.li}>
+                <a css={style.cursor} href="#" className="cursor-react" id="informationlink">
+                    <div css={style.imgbox} className="imgbox">
                         <Img fixed={data.LogoImage.childImageSharp.fixed} />
                     </div>
-                    <div css={styled.metabox} className="metabox">
+                    <div css={style.metabox} className="metabox">
                         <div className="blink">
-                            <p css={[ styled.metainfo, flight ]} className="metainfo f-light">2019.09.04 - Media</p>
-                            <p css={styled.metainfo} className="ttl">【WEB掲載】デビュー曲「宇宙」の制作とCHRONICLEが目指す表現の追求【インタビュー】</p>
+                            <p css={[ style.metainfo, flight ]} className="metainfo f-light">2019.09.04 - Media</p>
+                            <p css={style.metainfo} className="ttl">【WEB掲載】デビュー曲「宇宙」の制作とCHRONICLEが目指す表現の追求【インタビュー】</p>
                         </div>
                     </div>
                 </a>
             </li>
-            <li css={styled.li}>
-                <a href="#" css={styled.cursor} className="cursor-react">
-                    <div css={styled.imgbox} className="imgbox">
+            <li css={style.li}>
+                <a href="#" css={style.cursor} className="cursor-react">
+                    <div css={style.imgbox} className="imgbox">
                         <Img fixed={data.LogoImage.childImageSharp.fixed} />
                     </div>
-                    <div css={styled.metabox} className="metabox">
+                    <div css={style.metabox} className="metabox">
                         <div className="blink">
-                            <p css={[ styled.metainfo, flight ]} className="metainfo f-light">2019.09.04 - Radio</p>
-                            <p css={styled.metainfo} className="ttl">【WEB掲載】デビュー曲「宇宙」の制作とCHRONICLEが目指す表現の追求【インタビュー】</p>
+                            <p css={[ style.metainfo, flight ]} className="metainfo f-light">2019.09.04 - Radio</p>
+                            <p css={style.metainfo} className="ttl">【WEB掲載】デビュー曲「宇宙」の制作とCHRONICLEが目指す表現の追求【インタビュー】</p>
                         </div>
                     </div>
                 </a>
             </li>
-            <li css={styled.li}>
-                <a href="#" css={styled.cursor} className="cursor-react">
-                    <div css={styled.imgbox} className="imgbox">
+            <li css={style.li}>
+                <a href="#" css={style.cursor} className="cursor-react">
+                    <div css={style.imgbox} className="imgbox">
                         <Img fixed={data.LogoImage.childImageSharp.fixed} />
                     </div>
-                    <div css={styled.metabox} className="metabox">
+                    <div css={style.metabox} className="metabox">
                         <div className="blink">
-                            <p css={[ styled.metainfo, flight ]} className="metainfo f-light">2019.09.04 - Blog</p>
-                            <p css={styled.metainfo} className="ttl">【WEB掲載】デビュー曲「宇宙」の制作とCHRONICLEが目指す表現の追求【インタビュー】</p>
+                            <p css={[ style.metainfo, flight ]} className="metainfo f-light">2019.09.04 - Blog</p>
+                            <p css={style.metainfo} className="ttl">【WEB掲載】デビュー曲「宇宙」の制作とCHRONICLEが目指す表現の追求【インタビュー】</p>
                         </div>
                     </div>
                 </a>
@@ -67,7 +72,7 @@ export const Information = () => {
     )
 }
 
-const styled = {
+const style = {
     informationohome: css`
         @media screen and (max-width: 800px){
             float: none;
@@ -106,13 +111,13 @@ const styled = {
     metabox: css`
         width: 100%;
         padding: 23px 40px 20px;
-        background-color: #232323;
+        background-color: rgb(32,166,242,.5);
         position: relative;
     `,
     metainfo: css`
         position: relative;
         z-index: 9;
-        color : #fff;
+        color : #222;
         fint-size: 16px;
     `
 }

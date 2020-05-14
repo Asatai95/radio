@@ -1,9 +1,11 @@
-const path = require("path")
+const path = require(`path`)
 import { GatsbyNode } from "gatsby"
 
 export const createPages: GatsbyNode["createPages"] = async ({
-    actions: { createPage },
+     actions, page
 }) => {
+    const {createPage} = actions
+    console.log(page)
     // function createContentListPages({ itemTotal, prefix, component, context, limit = 10 }) {
     //     const pageTotal = Math.ceil(itemTotal / limit)
     //     for (let page = 1; page <= pageTotal; page++) {
@@ -24,9 +26,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
     //         })
     //     }
     // }
-    const IndexTemplate = path.resolve('./src/components/Top/pages/index.tsx')
+    console.log(__dirname)
+    const IndexTemplate = path.resolve(`../src/components/Top/pages/index.tsx`)
     createPage({
-        path: `/`,
+        path: `/about`,
         component: IndexTemplate,
         context: {}
     })

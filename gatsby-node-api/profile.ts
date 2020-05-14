@@ -1,11 +1,11 @@
-const path = require("path")
+const path = require(`path`)
 import { GatsbyNode } from "gatsby"
 
-export const createPages: GatsbyNode["createPages"] = async ({
+export const createProfile: GatsbyNode["createPages"] = async ({
     actions: { createPage },
 }) => {
     console.log("createpage")
-    const IndexTemplate = path.resolve('./src/components/Profile/pages/index.tsx')
+    const IndexTemplate = path.resolve(`../src/components/Profile/pages/index.tsx`)
     createPage({
         path: `/about/`,
         component: IndexTemplate,

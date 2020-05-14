@@ -21,6 +21,19 @@ window.onload = function () {
                 });
             }
 
+            const feed = document.getElementsByClassName("feedInfo");
+            console.log(feed)
+            for(var i = 0; i < feed.length; i++){
+                feed[i].addEventListener("mouseover", function (e) {
+                    console.log(e)
+                    const elm = e.target.querySelector("img");
+                    console.log(elm)
+                });
+                feed[i].addEventListener("mouseout", function (e) {
+                    console.log(feed[i])
+                });
+            }
+
             stopTextColor();
         }
     }

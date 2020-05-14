@@ -8,8 +8,8 @@ import { scrolldown } from "../../../styles/shared"
 export const Section01 =  () => {
 
     return (
-        <section className="section-head section-head-home">
-            <div>
+        <section css={SectionContent.section} className="section-head section-head-home">
+            <div css={SectionContent.block}>
                 <div className="section-title">
                     <h2 css={SectionContent.h2}>Awamori in The Pocket</h2>
                 </div>
@@ -37,9 +37,17 @@ const blockkeyframe =keyframes`
 `
 
 const SectionContent = {
+    section: css`
+        margin-top: 50px;
+        position: relative;
+    `,
     body: css`
         margin: 60px auto;
         margin-top: 0;
+    `,
+    block: css`
+        width: 90%;
+        margin: auto;
     `,
     h2: css`
         font-size: 25px;
@@ -48,6 +56,7 @@ const SectionContent = {
     `,
     p: css`
         font-size: 17px;
+        font-weight: 800;
     `,
     scroll: css`
         @media (max-width: 1100px) {
@@ -60,5 +69,6 @@ const SectionContent = {
         animation-duration: 1s;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
+        bottom: -95px!important;
     `
 };

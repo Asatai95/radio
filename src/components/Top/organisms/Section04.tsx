@@ -7,7 +7,7 @@ export const Section04 =  () => {
         <section css={styled.section} className="section-contact-common">
             <div css={styled.sectionbox}>
                 <a css={styled.link} href="#" className="cursor-react-blue">
-                    <p className="align-c f-light">CONTACT US</p>
+                    <p css={styled.p} className="align-c f-light">CONTACT US</p>
                 </a>
             </div>
         </section>
@@ -22,12 +22,16 @@ const styled = {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #161616;
+        background-color: rgb(32,166,242,.5);
+        color: #222;
         height: 100%;
         font-size: 34px;
         transition: background .3s ease-out;
     `,
     sectionbox: css`
         height: 100%;
-    `
+    `,
+    p: css`
+        font-weight: 800;
+    `,
 }

@@ -7978,15 +7978,35 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type IndexSiteAndCloudinaryImagesQueryVariables = {};
+export type IndexPostsQueryAndCloudinaryImagesQueryVariables = {};
 
 
-export type IndexSiteAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+export type IndexPostsQueryAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 export type Unnamed_1_QueryVariables = {};
 
 
 export type Unnamed_1_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type IndexPostsTitleQueryVariables = {};
+
+
+export type IndexPostsTitleQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type IndexPostsLayoutQueryQueryVariables = {};
+
+
+export type IndexPostsLayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
+export type IndexSiteAndCloudinaryImagesQueryVariables = {};
+
+
+export type IndexSiteAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type Unnamed_2_QueryVariables = {};
+
+
+export type Unnamed_2_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type IndexProfileTitleQueryVariables = {};
 
@@ -7998,28 +8018,28 @@ export type IndexDivLayoutQueryQueryVariables = {};
 
 export type IndexDivLayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
-export type Unnamed_2_QueryVariables = {};
+export type Unnamed_3_QueryVariables = {};
 
 
-export type Unnamed_2_Query = { allInstaNode: { edges: Array<{ node: (
+export type Unnamed_3_Query = { allInstaNode: { edges: Array<{ node: (
         Pick<InstaNode, 'id' | 'likes' | 'mediaType' | 'preview' | 'original' | 'timestamp' | 'caption'>
         & { thumbnails?: Maybe<Array<Maybe<Pick<InstaNodeThumbnails, 'src' | 'config_width' | 'config_height'>>>>, dimensions?: Maybe<Pick<InstaNodeDimensions, 'height' | 'width'>> }
       ) }> } };
 
-export type Unnamed_3_QueryVariables = {};
-
-
-export type Unnamed_3_Query = { placeholderImage01?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, placeholderImage02?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
 export type Unnamed_4_QueryVariables = {};
 
 
-export type Unnamed_4_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+export type Unnamed_4_Query = { placeholderImage01?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, placeholderImage02?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type Unnamed_5_QueryVariables = {};
 
 
-export type Unnamed_5_Query = { allInstaNode: { edges: Array<{ node: (
+export type Unnamed_5_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type Unnamed_6_QueryVariables = {};
+
+
+export type Unnamed_6_Query = { allInstaNode: { edges: Array<{ node: (
         Pick<InstaNode, 'id' | 'likes' | 'mediaType' | 'preview' | 'original' | 'timestamp' | 'caption'>
         & { thumbnails?: Maybe<Array<Maybe<Pick<InstaNodeThumbnails, 'src' | 'config_width' | 'config_height'>>>>, dimensions?: Maybe<Pick<InstaNodeDimensions, 'height' | 'width'>> }
       ) }> } };
@@ -8029,10 +8049,10 @@ export type IndexDivQueryAndCloudinaryImagesQueryVariables = {};
 
 export type IndexDivQueryAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type Unnamed_6_QueryVariables = {};
+export type Unnamed_7_QueryVariables = {};
 
 
-export type Unnamed_6_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+export type Unnamed_7_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type CloudinaryImagesQueryVariables = {};
 

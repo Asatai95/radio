@@ -1,24 +1,24 @@
 import React from 'react'
-// import { FacebookProvider , Feed } from "react-facebook";
+import { FacebookProvider , Page } from "react-facebook";
 import { css, keyframes } from '@emotion/core'
 import { Instagram } from "../molecules/Instagram"
-import { graphql, useStaticQuery } from 'gatsby';
+// import { graphql, useStaticQuery } from 'gatsby';
 // import { flight } from "../../../styles/shared"
 
 export const Section05 =  () => {
-    const data = useStaticQuery(graphql`
-        query {
-            allFacebookArticles {
-            edges {
-                node {
-                title,
-                description
-                }
-            }
-            }
-        }
-    `)
-    console.log(data)
+    // const data = useStaticQuery(graphql`
+    //     query {
+    //         allFacebookArticles {
+    //         edges {
+    //             node {
+    //             title,
+    //             description
+    //             }
+    //         }
+    //         }
+    //     }
+    // `)
+    // console.log(data)
     return(
         <section css={styled.section} className="section-sns-common">
             <div css={instagramfield.block} id="instagram_field" className="instagram_block">
@@ -40,7 +40,9 @@ export const Section05 =  () => {
                         <p css={tips.feedtext}>Facebook</p>
                     </div>
                     <div css={tips.facebookfeed}>
-
+                    <FacebookProvider appId="731219860982553">
+                        <Page href="https://www.facebook.com" tabs="timeline" />
+                    </FacebookProvider>
                     </div>
                 </div>
                 <div css={tips.support} className="support-title">

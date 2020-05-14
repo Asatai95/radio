@@ -46,7 +46,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     const postTemplate = path.resolve("./src/components/pages/author.tsx")
     edges.forEach(edge => {
         createPage<AuthorContext>({
-            path: `/author/`,
+            path: `/author`,
             component: postTemplate,
             context: { author: edge.node },
         })
