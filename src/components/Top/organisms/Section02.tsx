@@ -46,10 +46,10 @@ export const Section02 =  () => {
                             <a css={SectionContent.cursorreactbtn} className="cursor-react cursor-react-btn" href="#">All</a>
                         </li>
                     </ul>
-                    <div css={SectionContent.discographylist} className="discography-list discography-list-home">
-                        <div css={SectionContent.slide_bg}></div>
+                    <div css={SectionContent.discographylist} className="discography-list discography-list-home item" id="react-link-item">
+                        <div css={SectionContent.slide_bg} className="bgslideImg"></div>
                         <div css={SectionContent.discographylistli}>
-                            <a className="cursor-react" href="#">
+                            <a className="cursor-react link-item" href="#">
                                 <div css={SectionContent.metabox} className="metabox">
                                     <p css={SectionContent.sttl} className="sttl">ラジオをPodCastにて配信</p>
                                     <h4 css={[ SectionContent.flight, flight ]} className="ttl f-light">Awamori in The Pocket</h4>

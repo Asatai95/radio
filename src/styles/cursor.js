@@ -26,17 +26,27 @@ window.onload = function () {
             for(var i = 0; i < feed.length; i++){
                 feed[i].addEventListener("mouseover", function (e) {
                     feed[0].classList.add("_hov")
-                    // elm.classList.add("_hov")
-                    // for(var i =0 ; i < elm.length; i++) {
-                    //     elm.classList.add("_hov")
-                    // }
                 });
                 feed[i].addEventListener("mouseout", function (e) {
                     feed[0].classList.remove("_hov")
-                    // elm.classList.remove("_hov")
-                    // for(i =0 ; i < elm.length; i++) {
-                    //     elm.classList.remove("_hov")
-                    // }
+                });
+            }
+
+            const slidimg = document.getElementById("react-link-item")
+            slidimg.addEventListener("mouseover", function (e) {
+                slidimg.classList.add("_hov")
+            });
+            slidimg.addEventListener("mouseout", function (e) {
+                slidimg.classList.remove("_hov")
+            });
+
+            const imgbox = document.getElementsByClassName("cursor-react-imgbox")
+            for(var i = 0; i < imgbox.length; i++){
+                imgbox[i].addEventListener("mouseover", function (e) {
+                    e.target.classList.add("_hov")
+                });
+                imgbox[i].addEventListener("mouseout", function (e) {
+                    e.target.classList.remove("_hov")
                 });
             }
 

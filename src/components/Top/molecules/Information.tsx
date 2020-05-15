@@ -10,7 +10,7 @@ export const Information = () => {
         query {
             LogoImage: file(relativePath: { eq: "Logo.png" }) {
                     childImageSharp {
-                        fixed(width: 250) {
+                        fixed(width: 230) {
                             ...GatsbyImageSharpFixed
                     }
                 }

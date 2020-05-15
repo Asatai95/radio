@@ -1000,12 +1000,40 @@ pre tt:after {
   color: #CF2E92;
 }
 
+.clearfix .feedInfo img {
+  transition: 1s!important;
+}
+
 .clearfix .feedInfo._hov img {
+  transition: 1s!important;
   transform: scale(1.1);
+}
+
+@keyframes blink {
+  0% { color: rgb(0,0,0) }
+  100% { color: rgb(0,0,0, .5) }
 }
 
 .clearfix .feedInfo._hov p {
   animation: blink .04s 0s linear infinite alternate-reverse;
   animation-fill-mode: both;
   will-change: opacity;
+}
+
+.cursor-react-imgbox img {
+  transition : 1s!important;
+}
+
+.cursor-react-imgbox._hov img {
+  transition : 1s!important;
+  transform: scale(1.1);
+}
+
+.discography-list-home.item._hov .cursor-react.link-item p,
+.discography-list-home.item._hov .cursor-react.link-item h4 {
+  color: #222;
+}
+
+.discography-list-home.item._hov .bgslideImg {
+  background: none;
 }

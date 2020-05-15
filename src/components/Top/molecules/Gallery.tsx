@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { sectionlinkhome, flight, showsml, headline } from "../../../styles/Shared"
+import { sectionlinkhome } from "../../../styles/Shared"
 import { useStaticQuery, graphql } from 'gatsby'
 
 export const Gallery = () => {
@@ -39,7 +39,7 @@ export const Gallery = () => {
                                     <p css={styled.headlinetext}>{n.createdAt}</p>
                                 </div>
                                 <a href="#" className="cursor-react">
-                                    <div css={styled.imgbox} className="imgbox">
+                                    <div css={styled.imgbox} className="imgbox cursor-react-imgbox">
                                         <img css={styled.imgitem} src={n.thumbnail[0].fixed.src} alt=""/>
                                     </div>
                                 </a>
@@ -60,7 +60,7 @@ export const Gallery = () => {
                                     <p css={styled.headlinetext}>{m.createdAt}</p>
                                 </div>
                                 <a href="#" className="cursor-react">
-                                    <div css={styled.imgbox} className="imgbox">
+                                    <div css={styled.imgbox} className="imgbox cursor-react-imgbox">
                                         <img css={styled.imgitem} src={m.thumbnail[0].fixed.src} alt=""/>
                                     </div>
                                 </a>
@@ -123,6 +123,7 @@ const styled = {
     imgbox: css`
         display: block;
         position: relative;
+        overflow: hidden;
     `,
     imgitem: css`
         transform: scale(1);
