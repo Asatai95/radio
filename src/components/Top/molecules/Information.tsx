@@ -5,12 +5,8 @@ import { flight } from '../../../styles/Shared'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 
-const onhandle = (event) =>{
-    console.log(event.target.name)
-}
-
 export const Information = () => {
-    const [mouse, setMouse] = useState("")
+
     const data = useStaticQuery(graphql`
         query {
             LogoImage: file(relativePath: { eq: "Logo.png" }) {
@@ -20,54 +16,42 @@ export const Information = () => {
                     }
                 }
             }
+            allContentfulInformation {
+                edges {
+                    node {
+                        createdAt(formatString: "YYYY.MM.DD")
+                        postExcerpt
+                        type
+                    }
+                }
+            }
         }
     `)
 
-    const handleEvent =() =>{
-        console.log("test")
-    }
-
+    const item = data.allContentfulInformation.edges.slice( 0, 7 );
+    console.log(item)
     return (
         <ul css={style.informationohome} className="information-list information-home l-right">
-            <li className="feedInfo" css={style.li}>
-                <a css={style.cursor} href="#" className="cursor-react" id="informationlink">
-                    <div css={style.imgbox} className="imgbox">
-                        <Img fixed={data.LogoImage.childImageSharp.fixed} />
-                    </div>
-                    <div css={style.metabox} className="metabox">
-                        <div className="blink">
-                            <p css={[ style.metainfo, flight ]} className="metainfo f-light">2019.09.04 - Media</p>
-                            <p css={style.metainfo} className="ttl">【WEB掲載】デビュー曲「宇宙」の制作とCHRONICLEが目指す表現の追求【インタビュー】</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li css={style.li}>
-                <a href="#" css={style.cursor} className="cursor-react">
-                    <div css={style.imgbox} className="imgbox">
-                        <Img fixed={data.LogoImage.childImageSharp.fixed} />
-                    </div>
-                    <div css={style.metabox} className="metabox">
-                        <div className="blink">
-                            <p css={[ style.metainfo, flight ]} className="metainfo f-light">2019.09.04 - Radio</p>
-                            <p css={style.metainfo} className="ttl">【WEB掲載】デビュー曲「宇宙」の制作とCHRONICLEが目指す表現の追求【インタビュー】</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li css={style.li}>
-                <a href="#" css={style.cursor} className="cursor-react">
-                    <div css={style.imgbox} className="imgbox">
-                        <Img fixed={data.LogoImage.childImageSharp.fixed} />
-                    </div>
-                    <div css={style.metabox} className="metabox">
-                        <div className="blink">
-                            <p css={[ style.metainfo, flight ]} className="metainfo f-light">2019.09.04 - Blog</p>
-                            <p css={style.metainfo} className="ttl">【WEB掲載】デビュー曲「宇宙」の制作とCHRONICLEが目指す表現の追求【インタビュー】</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
+            {
+                item.map((d) => {
+                    const n = d.node;
+                    return (
+                        <li className="feedInfo" css={style.li}>
+                            <a css={style.cursor} href="#" className="cursor-react" id="informationlink">
+                                <div css={style.imgbox} className="imgbox">
+                                    <Img fixed={data.LogoImage.childImageSharp.fixed} />
+                                </div>
+                                <div css={style.metabox} className="metabox">
+                                    <div className="blink">
+                                        <p css={[ style.metainfo, flight ]} className="metainfo f-light">{n.createdAt} - {n.type}</p>
+                                        <p css={style.metainfo} className="ttl">{n.postExcerpt}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    )
+                })
+            }
         </ul>
     )
 }
@@ -94,6 +78,7 @@ const style = {
         display: flex;
         justify-content: flex-start;
         align-items: stretch;
+        height: 160px;
     ` ,
     imgbox: css`
         display: flex;

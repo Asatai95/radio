@@ -71,5 +71,5 @@ const TitleLink = styled(Link)`
 `
 const headerLogo = css`
   position: fixed;
-  z-index: 30;
+  z-index: 80;
 `

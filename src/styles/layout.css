@@ -789,8 +789,25 @@ pre tt:after {
   background-attachment: fixed;
 }
 
+.l-container-link-home .section-link-home.content .imgbox::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-attachment: fixed;
+}
+
+.section-contact-common a {
+  transition: 1s;
+}
+
 .section-contact-common a:hover {
   color: rgb(255,255,255);
+  transform: scale(1.1);
 }
 
 .cursor-pointer.hov_{
@@ -817,6 +834,10 @@ pre tt:after {
   position: relative;
   z-index: 30;
   transition: .5s;
+}
+
+.insta_view_block .post img:hover {
+  transform: scale(1.1);
 }
 
 .insta_view_block .insta_box {
@@ -935,4 +956,45 @@ pre tt:after {
 .swiper-wrapper ul + ul {
     -webkit-animation: loop2 50s linear infinite;
     animation: loop2 50s linear infinite;
+}
+
+@media (min-width: 1200px){
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 100%!important;
+  }
+}
+
+@media (min-width: 992px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 100%!important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 100%!important;
+  }
+}
+
+@media (min-width: 576px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 100%!important;
+  }
+}
+
+.section-contents-home.section-link-home.item-fadein.content .imgbox img:hover {
+  transform: scale(1.1);
+}
+
+.nav-discography.nav-btnlist li a:hover,
+.nav-information.nav-btnlist li a:hover {
+  border: 2px solid #212bff;
+  background-color: #212bff;
+  transition: background .2s ease-out, border .2s ease-out;
+  transform: scale(1.1);
+  color : #fff;
+}
+
+.instagram_field_title .titletext a:hover {
+  color: #CF2E92;
 }

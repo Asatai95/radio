@@ -89,6 +89,7 @@ const facebookstyle = css`
 const styled = {
     section: css`
         display: block;
+        margin: 50px 0;
     `,
 }
 

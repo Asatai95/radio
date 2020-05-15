@@ -14,7 +14,7 @@ export const Section02 =  () => {
                     node {
                         title
                         thumbnail {
-                            fixed(width: 300, height: 300) {
+                            fixed(width: 300, height: 331) {
                                 src
                             }
                         }
@@ -23,11 +23,11 @@ export const Section02 =  () => {
             }
         }
     `);
-    const content = data.allContentfulPosts.edges;
+    const content = data.allContentfulPosts.edges.slice( -4 );
     const contentImg = content.map((d)=>{
-        const img = d.node.thumbnail.slice( -3 );
+        const img = d.node.thumbnail;
         for(var i=0; i < img.length; i++){
-            return <img css={SectionContent.imgs} src={img[i].fixed.src} alt="" />
+            return <li css={SectionContent.wrapsli}><img css={SectionContent.imgs} src={img[i].fixed.src} alt="" /></li>
         }
     })
 
@@ -58,10 +58,10 @@ export const Section02 =  () => {
                                 <div className="thumbnail-list js-home-discography-slider swiper-container swiper-container-horizontal swiper-container-free-mode">
                                     <div className="loop_wrap swiper-wrapper" css={SectionContent.swiperwrapper}>
                                         <ul css={SectionContent.wraps} className="item swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev">
-                                            <li css={SectionContent.wrapsli}>{contentImg}</li>
+                                            {contentImg}
                                         </ul>
                                         <ul css={SectionContent.wraps} className="item swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev">
-                                            <li css={SectionContent.wrapsli}>{contentImg}</li>
+                                            {contentImg}
                                         </ul>
                                     </div>
                                     <span css={SectionContent.swipernotification} className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
@@ -100,7 +100,7 @@ const SectionContent = {
         float: left;
         max-width: 500px;
         width: 23%;
-        margin-left: 30px;
+        margin-left: 100px;
         margin-bottom: 30px;
     `,
     h3: css`
@@ -275,7 +275,7 @@ const SectionContent = {
         display: inline-block;
         width: calc(100vw / 2);
         min-width: 150px;
-        margin: 0 20px 0 0;
+        margin: 0 0 0 0;
         list-style: none;
         text-align: center;
     `

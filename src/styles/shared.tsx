@@ -130,7 +130,7 @@ export const bg_img = css`
 `
 
 export const sectionlinkhome =  css`
-  width: 49%;
+  width: 50%;
   position: relative;
   overflow: hidden;
 `

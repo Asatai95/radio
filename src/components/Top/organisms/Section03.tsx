@@ -9,12 +9,12 @@ export const Section03 =  () => {
 
     return (
         <section css={SectionContent.main} className="section-information-home" id="information">
-            <div className="l-inner">
+            <div css={SectionContent.linner} className="l-inner">
                 <div css={SectionContent.haedline} className="box-headline">
                     <h3 css={[ SectionContent.headlinelight, flight ]} className="headline f-light">INFORMATION</h3>
-                    <p css={flight} className="icon-link f-light">
+                    {/* <p css={flight} className="icon-link f-light">
                         <a href="#" css={SectionContent.iconlink} className="cursor-react cursor-react-btn">+</a>
-                    </p>
+                    </p> */}
                 </div>
                 <div css={SectionContent.clearfix} className="l-container clearfix">
                     <div css={SectionContent.clearfixleft} className="l-left">
@@ -59,7 +59,7 @@ const SectionContent = {
             justify-content: space-between;
             align-items: center;
         }
-        margin-bottom: 36px;
+        margin-bottom: 50px;
     `,
     headlinelight: css`
         margin-top: 13px;
@@ -151,5 +151,7 @@ const SectionContent = {
             margin-bottom: 27px;
         }
     ` ,
-
+    linner: css`
+        padding-right: 0px!important;
+    `,
 };

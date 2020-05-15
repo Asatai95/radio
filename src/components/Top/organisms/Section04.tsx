@@ -16,7 +16,8 @@ export const Section04 =  () => {
 
 const styled = {
     section: css`
-        height: 240px;
+        height: 280px;
+        overflow: hidden;
     `,
     link: css`
         display: flex;

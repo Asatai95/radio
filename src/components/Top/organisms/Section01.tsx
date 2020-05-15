@@ -19,7 +19,6 @@ export const Section01 =  () => {
     `);
 
     const clImage = data.allCloudinaryMedia.edges;
-    console.log(clImage)
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={innertop} className="inner">
@@ -89,9 +88,12 @@ const SectionContent = {
         bottom: 0px!important;
     `,
     video: css`
-        width: 100%;
-        height: 100vh;
-        transform: scale(1.2);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
     `,
     bgColor: css`
         width: 100%;
@@ -101,8 +103,6 @@ const SectionContent = {
         z-index: 8;
     `,
     bgimgitem: css`
-        height: 100vh;
-        position: absolute;
         z-index: 5;
     `
 };
