@@ -997,7 +997,7 @@ pre tt:after {
 }
 
 .instagram_field_title .titletext a:hover {
-  color: #CF2E92;
+  color: #CF2E92!important;
 }
 
 .clearfix .feedInfo img {
@@ -1031,6 +1031,8 @@ pre tt:after {
 
 .discography-list-home.item._hov .cursor-react.link-item p,
 .discography-list-home.item._hov .cursor-react.link-item h4 {
+  -webkit-text-stroke: 1px #FFF;
+  text-stroke: 1px #FFF;
   color: #222;
 }
 
