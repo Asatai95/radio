@@ -14,6 +14,7 @@ window.onload = function () {
             const linkElem = document.querySelectorAll("a");
             for (let i = 0; i < linkElem.length; i++) {
                 linkElem[i].addEventListener("mouseover", function (e) {
+
                     cursor.classList.add("hov_");
                 });
                 linkElem[i].addEventListener("mouseout", function (e) {
@@ -22,15 +23,20 @@ window.onload = function () {
             }
 
             const feed = document.getElementsByClassName("feedInfo");
-            console.log(feed)
             for(var i = 0; i < feed.length; i++){
                 feed[i].addEventListener("mouseover", function (e) {
-                    console.log(e)
-                    const elm = e.target.querySelector("img");
-                    console.log(elm)
+                    feed[0].classList.add("_hov")
+                    // elm.classList.add("_hov")
+                    // for(var i =0 ; i < elm.length; i++) {
+                    //     elm.classList.add("_hov")
+                    // }
                 });
                 feed[i].addEventListener("mouseout", function (e) {
-                    console.log(e)
+                    feed[0].classList.remove("_hov")
+                    // elm.classList.remove("_hov")
+                    // for(i =0 ; i < elm.length; i++) {
+                    //     elm.classList.remove("_hov")
+                    // }
                 });
             }
 

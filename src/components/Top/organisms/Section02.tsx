@@ -14,7 +14,7 @@ export const Section02 =  () => {
                     node {
                         title
                         thumbnail {
-                            fixed(width: 300, height: 331) {
+                            fixed(width: 300, height: 300) {
                                 src
                             }
                         }
@@ -23,7 +23,7 @@ export const Section02 =  () => {
             }
         }
     `);
-    const content = data.allContentfulPosts.edges.slice( -4 );
+    const content = data.allContentfulPosts.edges.slice( -5 );
     const contentImg = content.map((d)=>{
         const img = d.node.thumbnail;
         for(var i=0; i < img.length; i++){

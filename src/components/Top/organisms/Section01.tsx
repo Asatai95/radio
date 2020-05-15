@@ -71,7 +71,7 @@ const SectionContent = {
     `,
     boxcopy: css`
         @media (min-width: 801px) {
-            margin-top: 300px;
+            margin-top: 200px;
         }
     `,
     scroll: css`

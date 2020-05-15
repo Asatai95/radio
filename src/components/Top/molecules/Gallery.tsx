@@ -13,7 +13,7 @@ export const Gallery = () => {
                         postExcerpt
                         createdAt(formatString: "YYYY/MM/DD")
                         thumbnail {
-                            fixed(width: 681, height: 380) {
+                            fixed(width: 720, height: 400) {
                                 src
                             }
                         }
@@ -24,8 +24,7 @@ export const Gallery = () => {
     `)
     const item01 = data.allContentfulPosts.edges.slice( -2 );
     const item02 = data.allContentfulPosts.edges.slice( -4, -2 );
-    console.log("data")
-    console.log(item02)
+
     return (
         <>
             <div css={styled.linkhome}>

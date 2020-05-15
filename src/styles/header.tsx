@@ -8,7 +8,7 @@ export const navbar = css`
     left: 0;
     right: 0;
     margin: auto;
-    width: 100%;
+    width: 85%;
 `
 
 export const naviItem = {

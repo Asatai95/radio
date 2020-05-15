@@ -64,6 +64,7 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
 
 const TitleLink = styled(Link)`
   color: #222;
+  top: 50px;
   &:active,
   &:hover {
     color: #fff;

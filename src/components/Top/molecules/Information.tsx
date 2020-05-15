@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import styled from '@emotion/styled'
+import React from 'react'
 import { css } from '@emotion/core'
 import { flight } from '../../../styles/Shared'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -29,7 +28,6 @@ export const Information = () => {
     `)
 
     const item = data.allContentfulInformation.edges.slice( 0, 7 );
-    console.log(item)
     return (
         <ul css={style.informationohome} className="information-list information-home l-right">
             {

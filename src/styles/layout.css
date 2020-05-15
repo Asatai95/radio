@@ -247,7 +247,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: Arial, Verdana;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -675,6 +675,7 @@ pre tt:after {
   position: fixed;
   z-index: 100;
   margin: 0!important;
+  top: 45px;
 }
 
 
@@ -997,4 +998,14 @@ pre tt:after {
 
 .instagram_field_title .titletext a:hover {
   color: #CF2E92;
+}
+
+.clearfix .feedInfo._hov img {
+  transform: scale(1.1);
+}
+
+.clearfix .feedInfo._hov p {
+  animation: blink .04s 0s linear infinite alternate-reverse;
+  animation-fill-mode: both;
+  will-change: opacity;
 }
