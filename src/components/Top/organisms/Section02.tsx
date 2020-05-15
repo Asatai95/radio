@@ -14,8 +14,8 @@ export const Section02 =  () => {
                     node {
                         title
                         thumbnail {
-                            fluid {
-                                base64
+                            fixed(width: 300, height: 300) {
+                                src
                             }
                         }
                     }
@@ -25,9 +25,9 @@ export const Section02 =  () => {
     `);
     const content = data.allContentfulPosts.edges;
     const contentImg = content.map((d)=>{
-        const img = d.node.thumbnail;
+        const img = d.node.thumbnail.slice( -3 );
         for(var i=0; i < img.length; i++){
-            return <img css={SectionContent.imgs} src={img[i].fluid.base64} alt="" />
+            return <img css={SectionContent.imgs} src={img[i].fixed.src} alt="" />
         }
     })
 

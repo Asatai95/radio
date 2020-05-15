@@ -1,8 +1,23 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { sectionlinkhome, flight, showsml, headline } from "../../../styles/Shared"
+import { useStaticQuery, graphql } from 'gatsby'
 
 export const Gallery = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            allContentfulPosts {
+                edges {
+                    node {
+                        title
+                        postExcerpt
+                        createdAt(formatString: "YYYY/MM/DD")
+                    }
+                }
+            }
+        }
+    `)
+    console.log(data)
     return (
         <>
             <div css={styled.linkhome}>
