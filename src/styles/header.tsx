@@ -3,6 +3,12 @@ import { css } from '@emotion/core';
 export const navbar = css`
     background: transparent;
     height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
 `
 
 export const naviItem = {

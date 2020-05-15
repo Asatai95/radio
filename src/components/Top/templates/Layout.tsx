@@ -24,6 +24,7 @@ const style = {
   container: css`
     padding: 0;
     background: rgb(255,255,255,.9);
+    position: relative;
   `
 }
 interface Layoutprops {

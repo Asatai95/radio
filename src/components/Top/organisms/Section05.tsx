@@ -19,7 +19,7 @@ export const Section05 =  () => {
     // `
     // console.log(data)
     return(
-        <section css={styled.section} className="section-sns-common">
+        <section css={styled.section} className="section-sns-common" id="sns">
             <div css={instagramfield.block} id="instagram_field" className="instagram_block">
                 <div css={instagramfield.title} className="instagram_field_title">
                     <p css={instagramfield.titletext}>
@@ -39,7 +39,7 @@ export const Section05 =  () => {
                         <p css={tips.feedtext}>Facebook</p>
                     </div>
                     <div css={tips.facebookfeed}>
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fawapocke%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=731219860982553" width="340" height="500" css={facebookstyle} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fawapocke%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=731219860982553" width="340" height="500" css={facebookstyle} scrolling="no" allow="encrypted-media"></iframe>
                     </div>
                 </div>
                 <div css={tips.support} className="support-title">

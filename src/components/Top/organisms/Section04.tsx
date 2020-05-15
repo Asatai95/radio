@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 
 export const Section04 =  () => {
     return(
-        <section css={styled.section} className="section-contact-common">
+        <section css={styled.section} className="section-contact-common" id="contact">
             <div css={styled.sectionbox}>
                 <a css={styled.link} href="#" className="cursor-react-blue">
                     <p css={styled.p} className="align-c f-light">CONTACT US</p>

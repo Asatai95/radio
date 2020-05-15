@@ -8,7 +8,7 @@ import { flight } from "../../../styles/shared"
 export const Section03 =  () => {
 
     return (
-        <section css={SectionContent.main} className="section-information-home">
+        <section css={SectionContent.main} className="section-information-home" id="information">
             <div className="l-inner">
                 <div css={SectionContent.haedline} className="box-headline">
                     <h3 css={[ SectionContent.headlinelight, flight ]} className="headline f-light">INFORMATION</h3>

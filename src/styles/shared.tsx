@@ -42,7 +42,7 @@ export const linner = {
     flex-direction: column;
   `,
   linnerimg: css`
-    width : 400px;
+    width : 500px;
   `
 }
 
@@ -61,13 +61,13 @@ export const playbt = {
     height: 53px;
     margin-right: 16px;
     padding-top: 0;
-    border: 1px solid rgb(32,166,242,.8);
+    border: 1px solid #e6e6e6;
     border-radius: 50%;
     text-align: center;
     transition: border .2s ease-out, background .2s ease-out;
   `,
   text: css`
-    color : rgb(32,166,242,.8);
+    color : #e6e6e6;
     font-size: 20px;
     position: relative;
   `,
