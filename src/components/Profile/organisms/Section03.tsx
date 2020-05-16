@@ -12,7 +12,7 @@ export const Section03 =  () => {
                         <p css={tips.feedtext}>Facebook</p>
                     </div>
                     <div css={tips.facebookfeed}>
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fawapocke%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=731219860982553" width="340" height="500" css={facebookstyle} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fawapocke%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=731219860982553" width="340" height="500" css={facebookstyle} scrolling="no" allow="encrypted-media"></iframe>
                     </div>
                 </div>
                 <div css={tips.support} className="support-title">

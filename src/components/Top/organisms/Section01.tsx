@@ -19,6 +19,10 @@ export const Section01 =  () => {
     `);
 
     const clImage = data.allCloudinaryMedia.edges;
+    console.log(clImage)
+    const item = clImage.map((d) => {
+        console.log(d.node.secure_url)
+    })
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={innertop} className="inner">
@@ -34,7 +38,7 @@ export const Section01 =  () => {
                         <p>
                             <a css={playbt.link} className="playbtn js-playbtn-head cursor-react cursor-react-btn" href="https://anchor.fm/pockeawa/episodes/Awamori-in-The-Pocket--1-e7vhpj">
                                 <span css={playbt.circle} className="circle">
-                                  <img css={playbt.img} src={clImage[8].node.secure_url} alt="" />
+                                  <img css={playbt.img} src={clImage[1].node.secure_url} alt="" />
                                 </span>
                                 <span css={playbt.text} className="text">Play</span>
                             </a>

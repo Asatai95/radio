@@ -5291,6 +5291,7 @@ export type ContentfulPosts = Node & {
   title?: Maybe<Scalars['String']>;
   postExcerpt?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
+  publishedAt?: Maybe<Scalars['Date']>;
   contentfulid?: Maybe<Scalars['Int']>;
   thumbnail?: Maybe<Array<Maybe<ContentfulAsset>>>;
   content?: Maybe<ContentfulPostsContentRichTextNode>;
@@ -5299,7 +5300,6 @@ export type ContentfulPosts = Node & {
   updatedAt?: Maybe<Scalars['Date']>;
   sys?: Maybe<ContentfulPostsSys>;
   node_locale?: Maybe<Scalars['String']>;
-  publishedAt?: Maybe<Scalars['Date']>;
   childContentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNode>;
 };
 
@@ -5312,7 +5312,7 @@ export type ContentfulPostsCreatedAtArgs = {
 };
 
 
-export type ContentfulPostsUpdatedAtArgs = {
+export type ContentfulPostsPublishedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -5320,7 +5320,7 @@ export type ContentfulPostsUpdatedAtArgs = {
 };
 
 
-export type ContentfulPostsPublishedAtArgs = {
+export type ContentfulPostsUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -5597,6 +5597,7 @@ export type ContentfulPostsFieldsEnum =
   | 'title'
   | 'postExcerpt'
   | 'createdAt'
+  | 'publishedAt'
   | 'contentfulid'
   | 'thumbnail'
   | 'thumbnail___id'
@@ -5735,7 +5736,6 @@ export type ContentfulPostsFieldsEnum =
   | 'sys___contentType___sys___id'
   | 'sys___contentType___sys___contentful_id'
   | 'node_locale'
-  | 'publishedAt'
   | 'childContentfulPostsContentRichTextNode___id'
   | 'childContentfulPostsContentRichTextNode___parent___id'
   | 'childContentfulPostsContentRichTextNode___parent___parent___id'
@@ -5786,6 +5786,7 @@ export type ContentfulPostsFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   postExcerpt?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
+  publishedAt?: Maybe<DateQueryOperatorInput>;
   contentfulid?: Maybe<IntQueryOperatorInput>;
   thumbnail?: Maybe<ContentfulAssetFilterListInput>;
   content?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
@@ -5794,7 +5795,6 @@ export type ContentfulPostsFilterInput = {
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulPostsSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  publishedAt?: Maybe<DateQueryOperatorInput>;
   childContentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
 };
 
@@ -7849,22 +7849,22 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark?: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
-  contentfulNextDate?: Maybe<ContentfulNextDate>;
-  allContentfulNextDate: ContentfulNextDateConnection;
-  contentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNode>;
-  allContentfulPostsContentRichTextNode: ContentfulPostsContentRichTextNodeConnection;
-  contentfulInformationContentRichTextNode?: Maybe<ContentfulInformationContentRichTextNode>;
-  allContentfulInformationContentRichTextNode: ContentfulInformationContentRichTextNodeConnection;
-  contentfulInformation?: Maybe<ContentfulInformation>;
-  allContentfulInformation: ContentfulInformationConnection;
-  contentfulPosts?: Maybe<ContentfulPosts>;
-  allContentfulPosts: ContentfulPostsConnection;
   instaNode?: Maybe<InstaNode>;
   allInstaNode: InstaNodeConnection;
   cloudinaryMedia?: Maybe<CloudinaryMedia>;
   allCloudinaryMedia: CloudinaryMediaConnection;
   contentfulAsset?: Maybe<ContentfulAsset>;
   allContentfulAsset: ContentfulAssetConnection;
+  contentfulNextDate?: Maybe<ContentfulNextDate>;
+  allContentfulNextDate: ContentfulNextDateConnection;
+  contentfulInformationContentRichTextNode?: Maybe<ContentfulInformationContentRichTextNode>;
+  allContentfulInformationContentRichTextNode: ContentfulInformationContentRichTextNodeConnection;
+  contentfulInformation?: Maybe<ContentfulInformation>;
+  allContentfulInformation: ContentfulInformationConnection;
+  contentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNode>;
+  allContentfulPostsContentRichTextNode: ContentfulPostsContentRichTextNodeConnection;
+  contentfulPosts?: Maybe<ContentfulPosts>;
+  allContentfulPosts: ContentfulPostsConnection;
   contentfulImageImageCreditsTextNode?: Maybe<ContentfulImageImageCreditsTextNode>;
   allContentfulImageImageCreditsTextNode: ContentfulImageImageCreditsTextNodeConnection;
   contentfulImageImageCaptionTextNode?: Maybe<ContentfulImageImageCaptionTextNode>;
@@ -8086,125 +8086,6 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
-export type QueryContentfulNextDateArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  date?: Maybe<DateQueryOperatorInput>;
-  contentfulid?: Maybe<IntQueryOperatorInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  sys?: Maybe<ContentfulNextDateSysFilterInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllContentfulNextDateArgs = {
-  filter?: Maybe<ContentfulNextDateFilterInput>;
-  sort?: Maybe<ContentfulNextDateSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulPostsContentRichTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  content?: Maybe<StringQueryOperatorInput>;
-  nodeType?: Maybe<StringQueryOperatorInput>;
-  json?: Maybe<JsonQueryOperatorInput>;
-};
-
-
-export type QueryAllContentfulPostsContentRichTextNodeArgs = {
-  filter?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
-  sort?: Maybe<ContentfulPostsContentRichTextNodeSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulInformationContentRichTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  content?: Maybe<StringQueryOperatorInput>;
-  nodeType?: Maybe<StringQueryOperatorInput>;
-  json?: Maybe<JsonQueryOperatorInput>;
-};
-
-
-export type QueryAllContentfulInformationContentRichTextNodeArgs = {
-  filter?: Maybe<ContentfulInformationContentRichTextNodeFilterInput>;
-  sort?: Maybe<ContentfulInformationContentRichTextNodeSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulInformationArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  postExcerpt?: Maybe<StringQueryOperatorInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  contentfulid?: Maybe<IntQueryOperatorInput>;
-  thumbnail?: Maybe<ContentfulAssetFilterListInput>;
-  content?: Maybe<ContentfulInformationContentRichTextNodeFilterInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  sys?: Maybe<ContentfulInformationSysFilterInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-  childContentfulInformationContentRichTextNode?: Maybe<ContentfulInformationContentRichTextNodeFilterInput>;
-};
-
-
-export type QueryAllContentfulInformationArgs = {
-  filter?: Maybe<ContentfulInformationFilterInput>;
-  sort?: Maybe<ContentfulInformationSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulPostsArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  title?: Maybe<StringQueryOperatorInput>;
-  postExcerpt?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  contentfulid?: Maybe<IntQueryOperatorInput>;
-  thumbnail?: Maybe<ContentfulAssetFilterListInput>;
-  content?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  sys?: Maybe<ContentfulPostsSysFilterInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-  publishedAt?: Maybe<DateQueryOperatorInput>;
-  childContentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
-};
-
-
-export type QueryAllContentfulPostsArgs = {
-  filter?: Maybe<ContentfulPostsFilterInput>;
-  sort?: Maybe<ContentfulPostsSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryInstaNodeArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -8281,6 +8162,125 @@ export type QueryContentfulAssetArgs = {
 export type QueryAllContentfulAssetArgs = {
   filter?: Maybe<ContentfulAssetFilterInput>;
   sort?: Maybe<ContentfulAssetSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulNextDateArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  date?: Maybe<DateQueryOperatorInput>;
+  contentfulid?: Maybe<IntQueryOperatorInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulNextDateSysFilterInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllContentfulNextDateArgs = {
+  filter?: Maybe<ContentfulNextDateFilterInput>;
+  sort?: Maybe<ContentfulNextDateSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulInformationContentRichTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  content?: Maybe<StringQueryOperatorInput>;
+  nodeType?: Maybe<StringQueryOperatorInput>;
+  json?: Maybe<JsonQueryOperatorInput>;
+};
+
+
+export type QueryAllContentfulInformationContentRichTextNodeArgs = {
+  filter?: Maybe<ContentfulInformationContentRichTextNodeFilterInput>;
+  sort?: Maybe<ContentfulInformationContentRichTextNodeSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulInformationArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  postExcerpt?: Maybe<StringQueryOperatorInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  contentfulid?: Maybe<IntQueryOperatorInput>;
+  thumbnail?: Maybe<ContentfulAssetFilterListInput>;
+  content?: Maybe<ContentfulInformationContentRichTextNodeFilterInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  sys?: Maybe<ContentfulInformationSysFilterInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+  childContentfulInformationContentRichTextNode?: Maybe<ContentfulInformationContentRichTextNodeFilterInput>;
+};
+
+
+export type QueryAllContentfulInformationArgs = {
+  filter?: Maybe<ContentfulInformationFilterInput>;
+  sort?: Maybe<ContentfulInformationSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulPostsContentRichTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  content?: Maybe<StringQueryOperatorInput>;
+  nodeType?: Maybe<StringQueryOperatorInput>;
+  json?: Maybe<JsonQueryOperatorInput>;
+};
+
+
+export type QueryAllContentfulPostsContentRichTextNodeArgs = {
+  filter?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
+  sort?: Maybe<ContentfulPostsContentRichTextNodeSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulPostsArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  postExcerpt?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  publishedAt?: Maybe<DateQueryOperatorInput>;
+  contentfulid?: Maybe<IntQueryOperatorInput>;
+  thumbnail?: Maybe<ContentfulAssetFilterListInput>;
+  content?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulPostsSysFilterInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+  childContentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
+};
+
+
+export type QueryAllContentfulPostsArgs = {
+  filter?: Maybe<ContentfulPostsFilterInput>;
+  sort?: Maybe<ContentfulPostsSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -9462,7 +9462,22 @@ export type Unnamed_2_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fi
 export type Unnamed_3_QueryVariables = {};
 
 
-export type Unnamed_3_Query = { allContentfulPosts: { edges: Array<{ node: (
+export type Unnamed_3_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
+export type Unnamed_4_QueryVariables = {};
+
+
+export type Unnamed_4_Query = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type Unnamed_5_QueryVariables = {};
+
+
+export type Unnamed_5_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type Unnamed_6_QueryVariables = {};
+
+
+export type Unnamed_6_Query = { allContentfulPosts: { edges: Array<{ node: (
         Pick<ContentfulPosts, 'title' | 'postExcerpt' | 'createdAt'>
         & { thumbnail?: Maybe<Array<Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>>> }
       ) }> }, allContentfulNextDate: { edges: Array<{ node: Pick<ContentfulNextDate, 'date'> }> } };
@@ -9482,15 +9497,15 @@ export type IndexSiteAndCloudinaryImagesQueryVariables = {};
 
 export type IndexSiteAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type Unnamed_4_QueryVariables = {};
+export type Unnamed_7_QueryVariables = {};
 
 
-export type Unnamed_4_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+export type Unnamed_7_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
-export type Unnamed_5_QueryVariables = {};
+export type Unnamed_8_QueryVariables = {};
 
 
-export type Unnamed_5_Query = { cloudinaryMedia?: Maybe<Pick<CloudinaryMedia, 'secure_url'>> };
+export type Unnamed_8_Query = { cloudinaryMedia?: Maybe<Pick<CloudinaryMedia, 'secure_url'>> };
 
 export type IndexProfileTitleQueryVariables = {};
 
@@ -9502,36 +9517,36 @@ export type IndexDivLayoutQueryQueryVariables = {};
 
 export type IndexDivLayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
-export type Unnamed_6_QueryVariables = {};
+export type Unnamed_9_QueryVariables = {};
 
 
-export type Unnamed_6_Query = { allInstaNode: { edges: Array<{ node: (
+export type Unnamed_9_Query = { allInstaNode: { edges: Array<{ node: (
         Pick<InstaNode, 'id' | 'likes' | 'mediaType' | 'preview' | 'original' | 'timestamp' | 'caption'>
         & { thumbnails?: Maybe<Array<Maybe<Pick<InstaNodeThumbnails, 'src' | 'config_width' | 'config_height'>>>>, dimensions?: Maybe<Pick<InstaNodeDimensions, 'height' | 'width'>> }
       ) }> } };
 
-export type Unnamed_7_QueryVariables = {};
+export type Unnamed_10_QueryVariables = {};
 
 
-export type Unnamed_7_Query = { placeholderImage01?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, placeholderImage02?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+export type Unnamed_10_Query = { placeholderImage01?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, placeholderImage02?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
-export type Unnamed_8_QueryVariables = {};
+export type Unnamed_11_QueryVariables = {};
 
 
-export type Unnamed_8_Query = { allContentfulPosts: { edges: Array<{ node: (
+export type Unnamed_11_Query = { allContentfulPosts: { edges: Array<{ node: (
         Pick<ContentfulPosts, 'title' | 'postExcerpt' | 'createdAt'>
         & { thumbnail?: Maybe<Array<Maybe<{ fixed?: Maybe<Pick<ContentfulFixed, 'src'>> }>>> }
       ) }> } };
 
-export type Unnamed_9_QueryVariables = {};
+export type Unnamed_12_QueryVariables = {};
 
 
-export type Unnamed_9_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, allContentfulInformation: { edges: Array<{ node: Pick<ContentfulInformation, 'createdAt' | 'postExcerpt' | 'type'> }> } };
+export type Unnamed_12_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, allContentfulInformation: { edges: Array<{ node: Pick<ContentfulInformation, 'createdAt' | 'postExcerpt' | 'type'> }> } };
 
-export type Unnamed_10_QueryVariables = {};
+export type Unnamed_13_QueryVariables = {};
 
 
-export type Unnamed_10_Query = { allInstaNode: { edges: Array<{ node: (
+export type Unnamed_13_Query = { allInstaNode: { edges: Array<{ node: (
         Pick<InstaNode, 'id' | 'likes' | 'mediaType' | 'preview' | 'original' | 'timestamp' | 'caption'>
         & { thumbnails?: Maybe<Array<Maybe<Pick<InstaNodeThumbnails, 'src' | 'config_width' | 'config_height'>>>>, dimensions?: Maybe<Pick<InstaNodeDimensions, 'height' | 'width'>> }
       ) }> } };
@@ -9541,20 +9556,20 @@ export type IndexDivQueryAndCloudinaryImagesQueryVariables = {};
 
 export type IndexDivQueryAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type Unnamed_11_QueryVariables = {};
+export type Unnamed_14_QueryVariables = {};
 
 
-export type Unnamed_11_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+export type Unnamed_14_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type CloudinaryImagesQueryVariables = {};
 
 
 export type CloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> } };
 
-export type Unnamed_12_QueryVariables = {};
+export type Unnamed_15_QueryVariables = {};
 
 
-export type Unnamed_12_Query = { allContentfulPosts: { edges: Array<{ node: (
+export type Unnamed_15_Query = { allContentfulPosts: { edges: Array<{ node: (
         Pick<ContentfulPosts, 'title'>
         & { thumbnail?: Maybe<Array<Maybe<{ fixed?: Maybe<Pick<ContentfulFixed, 'src'>> }>>> }
       ) }> } };

@@ -4,9 +4,9 @@ import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 // // import { LunrSearch } from '../molecules/lunrsearch'
 import { scrolldown } from "../../../styles/shared"
-import { colors } from '../../../styles/Colors'
+import { Pagination } from "../molecules/Pagination"
 
-export const Section01 =  () => {
+export const Section01 = (props) => {
     const data = useStaticQuery(graphql`
         query{
             allContentfulPosts(sort: { fields: [createdAt], order: ASC }) {
@@ -89,6 +89,7 @@ export const Section01 =  () => {
                 }
                 {elm()}
             </div>
+            <Pagination props={props}/>
             <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
                 ScrollDown
             </p>
