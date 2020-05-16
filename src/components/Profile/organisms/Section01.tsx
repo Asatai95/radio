@@ -1,14 +1,27 @@
 
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
-// import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 // // import { LunrSearch } from '../molecules/lunrsearch'
 import { scrolldown } from "../../../styles/shared"
 
 export const Section01 =  () => {
 
+    const data = useStaticQuery(graphql`
+        query {
+            cloudinaryMedia(public_id: {eq: "gatsby-source-cloudinary/awamori_img_ipbl30"}) {
+                secure_url
+              }
+          }
+          `
+    );
+    const clImage = data.cloudinaryMedia.secure_url;
+
     return (
         <section css={SectionContent.section} className="section-head section-head-home">
+            <div css={SectionContent.homebgimg} className="homebgimg">
+                <img css={SectionContent.bgtop} src={clImage} alt=""/>
+            </div>
             <div css={SectionContent.block}>
                 <div className="section-title">
                     <h2 css={SectionContent.h2}>Awamori in The Pocket</h2>
@@ -38,7 +51,9 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     section: css`
-        margin-top: 50px;
+        height: 90vh;
+        display: flex;
+        align-items: center;
         position: relative;
     `,
     body: css`
@@ -50,13 +65,15 @@ const SectionContent = {
         margin: auto;
     `,
     h2: css`
-        font-size: 25px;
+        font-size: 40px;
         font-weight: 800;
-        margin-bottom: 40px;
+        margin-bottom: 80px;
+        text-align: center;
     `,
     p: css`
-        font-size: 17px;
+        font-size: 20px;
         font-weight: 800;
+        text-align: center;
     `,
     scroll: css`
         @media (max-width: 1100px) {
@@ -69,6 +86,21 @@ const SectionContent = {
         animation-duration: 1s;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
-        bottom: -95px!important;
+        bottom: 35px!important;
+    `,
+    homebgimg: css`
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: -1;
+    `,
+    bgtop: css`
+        margin: 0;
+        width: 100%;
+        height: 111%;
+        text-align: center;
     `
 };

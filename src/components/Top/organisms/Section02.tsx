@@ -24,7 +24,7 @@ export const Section02 =  () => {
         }
     `);
     const content = data.allContentfulPosts.edges.slice( -5 );
-    const contentImg = content.map((d)=>{
+    const contentImg = content.map((d, n)=>{
         const img = d.node.thumbnail;
         for(var i=0; i < img.length; i++){
             return <li css={SectionContent.wrapsli}><img css={SectionContent.imgs} src={img[i].fixed.src} alt="" /></li>
@@ -260,6 +260,7 @@ const SectionContent = {
         position: absolute;
         background: rgb(0,0,0,.8);
         z-index: 3;
+        transition: .8s;
     `,
     swiperwrapper: css`
         position: relative;

@@ -21,7 +21,7 @@ interface FooterData {
 export const Footer: React.FC<FooterProps> = () => {
 
   const data: FooterData = useStaticQuery(graphql`
-    query indexPostsQueryAndCloudinaryImages {
+    query {
       allCloudinaryMedia {
         edges {
             node {
@@ -37,13 +37,13 @@ export const Footer: React.FC<FooterProps> = () => {
 
     }
   `);
-  console.log(data)
+
   return (
     <footer className="fixed-bottom" css={[outer, SiteFooter]}>
       <div className="container" css={[inner, SiteFooterContent]}>
         <SiteFooterSection className="copyright">
           <Link to="/">
-            <img src={data.allCloudinaryMedia.edges[2].node.secure_url} alt="" className="imglogo"/>
+            <img css={footerimg} id="footerLogo" src={data.allCloudinaryMedia.edges[2].node.secure_url} alt="" className="imglogo"/>
           </Link>
           {data.allCloudinaryMedia.edges[1].node.secure_url && (
             <Link to="/">
@@ -55,6 +55,10 @@ export const Footer: React.FC<FooterProps> = () => {
     </footer>
   );
 };
+
+const footerimg = css`
+  transition: .8s;
+`
 
 const SiteFooter = css`
   position: relative;
@@ -100,4 +104,3 @@ const SiteFooterSection = styled.section`
     width: 450px;
   }
 `;
-

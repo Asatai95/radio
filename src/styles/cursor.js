@@ -12,7 +12,7 @@ window.onload = function () {
                 setTimeout(cursorevent, 100);
             });
             const linkElem = document.querySelectorAll("a");
-            for (let i = 0; i < linkElem.length; i++) {
+            for (var i = 0; i < linkElem.length; i++) {
                 linkElem[i].addEventListener("mouseover", function (e) {
 
                     cursor.classList.add("hov_");
@@ -23,32 +23,42 @@ window.onload = function () {
             }
 
             const feed = document.getElementsByClassName("feedInfo");
-            for(var i = 0; i < feed.length; i++){
-                feed[i].addEventListener("mouseover", function (e) {
+            for(var n = 0; n < feed.length; n++){
+                feed[n].addEventListener("mouseover", function (e) {
                     feed[0].classList.add("_hov")
                 });
-                feed[i].addEventListener("mouseout", function (e) {
+                feed[n].addEventListener("mouseout", function (e) {
                     feed[0].classList.remove("_hov")
                 });
             }
 
             const slidimg = document.getElementById("react-link-item")
-            slidimg.addEventListener("mouseover", function (e) {
-                slidimg.classList.add("_hov")
-            });
-            slidimg.addEventListener("mouseout", function (e) {
-                slidimg.classList.remove("_hov")
-            });
+            try{
+                slidimg.addEventListener("mouseover", function (e) {
+                    slidimg.classList.add("_hov")
+                });
+                slidimg.addEventListener("mouseout", function (e) {
+                    slidimg.classList.remove("_hov")
+                });
+            } catch {}
 
             const imgbox = document.getElementsByClassName("cursor-react-imgbox")
-            for(var i = 0; i < imgbox.length; i++){
-                imgbox[i].addEventListener("mouseover", function (e) {
+            for(var m = 0; m < imgbox.length; m++){
+                imgbox[m].addEventListener("mouseover", function (e) {
                     e.target.classList.add("_hov")
                 });
-                imgbox[i].addEventListener("mouseout", function (e) {
+                imgbox[m].addEventListener("mouseout", function (e) {
                     e.target.classList.remove("_hov")
                 });
             }
+
+            const footerLogo = document.getElementById("footerLogo")
+            footerLogo.addEventListener("mouseover", function (e) {
+                footerLogo.classList.add("_hov")
+            });
+            footerLogo.addEventListener("mouseout", function (e) {
+                footerLogo.classList.remove("_hov")
+            });
 
             stopTextColor();
         }

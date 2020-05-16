@@ -1,7 +1,8 @@
 import * as React from "react"
-import { useStaticQuery ,graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { Layout } from "../templates/Layout"
 import { Section01 } from '../organisms/Section01'
+import { Section02 } from '../organisms/Section02'
 
 type Props = {}
 
@@ -9,6 +10,7 @@ const Component: React.FC<Props> = () => {
   return(
     <Layout>
         <Section01 />
+        <Section02 />
     </Layout>
   )
 }

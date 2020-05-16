@@ -29,7 +29,7 @@ export const Gallery = () => {
         <>
             <div css={styled.linkhome}>
                 {
-                    item01.map((d) => {
+                    item01.map((d, key) => {
                         const n = d.node;
                         return (
                             <div css={[styled.contenthome , sectionlinkhome]} className="section-contents-home section-link-home item-fadein is-visible is-animate-done content">
@@ -50,7 +50,7 @@ export const Gallery = () => {
             </div>
             <div css={styled.linkhome}>
                 {
-                    item02.map((x) => {
+                    item02.map((x, key) => {
                         const m = x.node;
                         return (
                             <div css={[styled.contenthome , sectionlinkhome]} className="section-contents-home section-link-home item-fadein is-visible is-animate-done content">

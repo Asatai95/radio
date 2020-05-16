@@ -1037,5 +1037,11 @@ pre tt:after {
 }
 
 .discography-list-home.item._hov .bgslideImg {
-  background: none;
+  transition: .8s;
+  background: rgb(0,0,0,0);
+}
+
+footer .copyright ._hov {
+  transition: .8s;
+  transform :scale(1.1);
 }

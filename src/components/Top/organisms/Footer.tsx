@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = () => {
       <div className="container" css={[inner, SiteFooterContent]}>
         <SiteFooterSection className="copyright">
           <Link to="/">
-            <img src={data.allCloudinaryMedia.edges[2].node.secure_url} alt="" className="imglogo"/>
+            <img css={footerimg} id="footerLogo" src={data.allCloudinaryMedia.edges[2].node.secure_url} alt="" className="imglogo"/>
           </Link>
           {data.allCloudinaryMedia.edges[1].node.secure_url && (
             <Link to="/">
@@ -55,6 +55,10 @@ export const Footer: React.FC<FooterProps> = () => {
     </footer>
   );
 };
+
+const footerimg = css`
+  transition: .8s;
+`
 
 const SiteFooter = css`
   position: relative;

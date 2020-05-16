@@ -56,7 +56,7 @@ export const Section02 =  () => {
                                         <div css={SectionContent.something} className="something">
                                             <p css={SectionContent.text}>
 
-                                                沖縄生まれ沖縄育ちのフロントエンジニアです。アメリカと日本のハーフ、現在は大学４年次です。愛知に出稼ぎに行ったり、オーストラリアに一年滞在したり、たまにラジオでペチャクチャしております。ラジオでは主に沖縄のグルメや海外生活のことを仲間と共有していきますので興味があれば、ぜひ気軽にコメントよろしくお願いします！
+                                                沖縄生まれ沖縄育ちのフロントエンジニアです。アメリカと日本のハーフ、現在は社会人一年目です。愛知に出稼ぎに行ったり、オーストラリアに一年滞在したり、たまにラジオでペチャクチャしております。ラジオでは主に沖縄のグルメや海外生活のことを仲間と共有していきますので興味があれば、ぜひ気軽にコメントよろしくお願いします！
 
                                             </p>
                                         </div>
@@ -169,22 +169,23 @@ const SectionContent = {
     `,
     profile_top: css`
         width: 35%;
-        height: 500px;
+        height: 530px;
         text-align: center;
     `,
     profile: css`
         width: 40%;
-        height: 560px;
+        height: 610px;
         text-align: center;
     `,
     img: css`
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         border: none;
         border-radius: 100px;
+        margin: unset;
     `,
     span: css`
-        font-size: 18px;
+        font-size: 30px;
         font-weight: 800;
     `,
     text: css`
@@ -210,14 +211,16 @@ const SectionContent = {
         justify-content: space-around;
     `,
     twitter: css`
-        font-size: 15px;
+        font-size: 17px;
         font-weight: 800;
         color: #55acee;
      `,
     instagram: css`
+        font-size: 17px;
         color: #3f729b;
     `,
     facebook : css`
+        font-size: 17px;
         color: #3B5998;
     `,
 };

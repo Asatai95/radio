@@ -27,8 +27,8 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
 
   console.log(data)
   return (
-    <nav css={navbar} className="navbar navbar-expand-lg navbar-light">
-      <TitleLink to="/" className="navbar-brand" css={headerLogo}>
+    <nav css={[navbar, design.nav]} className="navbar navbar-expand-lg navbar-light">
+      <TitleLink to="/" className="navbar-brand" css={design.headerLogo}>
         <Img fixed={data.LogoImage.childImageSharp.fixed} />
       </TitleLink>
       <div css={naviItem.menuicon} className="cursor-react menu-icon">
@@ -40,7 +40,7 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
       </div>
 
       <div css={headeritem.div} className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+        <ul css={design.ul} className="navbar-nav mr-auto">
           <li css={headeritem.li} className="nav-item">
             <a css={headeritem.a} className="nav-link" href="#">AWAPOKE</a>
           </li>
@@ -69,7 +69,18 @@ const TitleLink = styled(Link)`
     color: #fff;
   }
 `
-const headerLogo = css`
-  position: fixed;
-  z-index: 80;
-`
+
+const design = {
+  nav: css`
+    width: 100%;
+    background: rgb(32,166,242,.6)!important;
+    position: relative;
+  `,
+  headerLogo: css`
+    position: relative;
+  `,
+  ul: css`
+    position: relative!important;
+    top: unset!important;
+  `
+}

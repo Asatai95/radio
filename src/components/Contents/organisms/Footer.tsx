@@ -1,9 +1,7 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
-// import { setLightness } from 'polished';
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-// import { colors } from '../../../styles/Colors';
 import { outer, inner } from '../../../styles/Shared';
 
 interface FooterProps {
@@ -21,7 +19,7 @@ interface FooterData {
 export const Footer: React.FC<FooterProps> = () => {
 
   const data: FooterData = useStaticQuery(graphql`
-    query indexSiteAndCloudinaryImages {
+    query {
       allCloudinaryMedia {
         edges {
             node {
@@ -104,4 +102,3 @@ const SiteFooterSection = styled.section`
     width: 450px;
   }
 `;
-

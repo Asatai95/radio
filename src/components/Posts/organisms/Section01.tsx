@@ -1,23 +1,93 @@
 
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
-// import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 // // import { LunrSearch } from '../molecules/lunrsearch'
 import { scrolldown } from "../../../styles/shared"
+import { colors } from '../../../styles/Colors'
 
 export const Section01 =  () => {
+    const data = useStaticQuery(graphql`
+        query{
+            allContentfulPosts(sort: { fields: [createdAt], order: ASC }) {
+                edges {
+                    node {
+                        thumbnail {
+                            file {
+                                url
+                            }
+                        }
+                        title
+                        postExcerpt
+                        createdAt
+                    }
+                }
+            }
+            allContentfulNextDate {
+                edges {
+                    node {
+                        date(formatString: "MM/DD")
+                    }
+                }
+            }
+        }
+    `);
+
+    const item = data.allContentfulPosts.edges;
+    var flag = false;
+    if (item.length % 2 === 1){
+        flag = true;
+    }
+    var elm = () => {}
+    if (flag === true){
+        var elm = () => {
+            return <div css={SectionContent.space}></div>
+        }
+    }
+    const postItem = item.map((d) => {
+        if (d.node.postExcerpt !== undefined){
+            return d;
+        }
+    })
+
+    const date = data.allContentfulNextDate.edges[0];
+    console.log(date)
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={SectionContent.next} className="next-stream">
                 <span css={SectionContent.date} className="next-stream_date">
                     次回の収録日は
-                    <span css={SectionContent.text} id="js-next">未定</span>
+                    <span css={SectionContent.text} id="js-next">{date.node.date}</span>
                     です。
                 </span>
                 <br />
             </div>
             <div css={SectionContent.posts} id="posts">
-                ポスト
+
+                {
+                    postItem.map((d) => {
+                        return (
+                            <div css={SectionContent.post} className="post">
+                                <div css={SectionContent.postcontent} className="post-content">
+                                    <a href="#">
+                                        <img css={SectionContent.img} src={d.node.thumbnail[0].file.url} alt=""/>
+                                    </a>
+                                </div>
+                                <div css={SectionContent.postheader} className="post-header">
+                                    <h2 css={SectionContent.h2}>
+                                        <a css={SectionContent.link} href="#">
+                                            {d.node.title}
+                                        </a>
+                                    </h2>
+                                    <p css={SectionContent.p}>
+                                        {d.node.postExcerpt}
+                                    </p>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+                {elm()}
             </div>
             <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
                 ScrollDown
@@ -38,6 +108,7 @@ const SectionContent = {
         }
         @media (min-width: 801px) {
             position : relative;
+            padding: 50px 0;
         }
     `,
     next: css`
@@ -68,11 +139,51 @@ const SectionContent = {
     `,
     posts: css`
         float: unset;
-        justify-content: space-between;
         align-items: center;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+    `,
+    post: css`
+        width: 450px;
+        margin: 20px 80px;
+        margin-bottom: 50px;
+    `,
+    space: css`
+        width: 450px;
+        margin: 20px 80px;
+        margin-bottom: 50px;
+    `,
+    postcontent: css`
+        overflow: unset;
+        float: left;
+        width: 100%;
+    `,
+    postheader: css`
+        width: 85%;
+        margin: 20px auto;
+        margin-bottom: 0px;
+    `,
+    img: css`
+        width: 100%;
+        border-radius: 43px;
+        height: 280px;
+        margin-bottom: 20px;
+    `,
+    h2: css`
+        font-size: 19px;
+        font-weight: 800;
+    `,
+    link: css`
+        color: #0066c0;
+    `,
+    p:css`
+        font-size: 12px;
+        font-weight: 800;
+        color: #666666;
+        padding: 0;
     `,
     scroll: css`
         @media (max-width: 1100px) {
@@ -85,5 +196,7 @@ const SectionContent = {
         animation-duration: 1s;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
+        top: 500px;
+        bottom: unset!important;
     `
 };
