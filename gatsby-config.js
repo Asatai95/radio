@@ -58,17 +58,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-facebook`,
-      options: {
-        places: [`${110103447082952}`],
-        params: {
-          fields: 'hours, posts { message, created_time }',
-        },
-        key: process.env.FACEBOOK_GRAPH_TOKEN,
-        version: '5.0',
-      },
-    },
-    {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `awamori_in_the_pocket`,

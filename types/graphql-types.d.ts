@@ -5292,12 +5292,12 @@ export type ContentfulPosts = Node & {
   postExcerpt?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   publishedAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
   contentfulid?: Maybe<Scalars['Int']>;
   thumbnail?: Maybe<Array<Maybe<ContentfulAsset>>>;
   content?: Maybe<ContentfulPostsContentRichTextNode>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
-  updatedAt?: Maybe<Scalars['Date']>;
   sys?: Maybe<ContentfulPostsSys>;
   node_locale?: Maybe<Scalars['String']>;
   childContentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNode>;
@@ -5598,6 +5598,7 @@ export type ContentfulPostsFieldsEnum =
   | 'postExcerpt'
   | 'createdAt'
   | 'publishedAt'
+  | 'updatedAt'
   | 'contentfulid'
   | 'thumbnail'
   | 'thumbnail___id'
@@ -5729,7 +5730,6 @@ export type ContentfulPostsFieldsEnum =
   | 'content___json'
   | 'spaceId'
   | 'contentful_id'
-  | 'updatedAt'
   | 'sys___revision'
   | 'sys___contentType___sys___type'
   | 'sys___contentType___sys___linkType'
@@ -5787,12 +5787,12 @@ export type ContentfulPostsFilterInput = {
   postExcerpt?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   publishedAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
   contentfulid?: Maybe<IntQueryOperatorInput>;
   thumbnail?: Maybe<ContentfulAssetFilterListInput>;
   content?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulPostsSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
   childContentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
@@ -8266,12 +8266,12 @@ export type QueryContentfulPostsArgs = {
   postExcerpt?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   publishedAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
   contentfulid?: Maybe<IntQueryOperatorInput>;
   thumbnail?: Maybe<ContentfulAssetFilterListInput>;
   content?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulPostsSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
   childContentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
@@ -9038,9 +9038,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___apiSecret'
   | 'pluginCreator___pluginOptions___resourceType'
   | 'pluginCreator___pluginOptions___prefix'
-  | 'pluginCreator___pluginOptions___places'
-  | 'pluginCreator___pluginOptions___params___fields'
-  | 'pluginCreator___pluginOptions___version'
   | 'pluginCreator___pluginOptions___username'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
@@ -9244,9 +9241,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___apiSecret'
   | 'pluginOptions___resourceType'
   | 'pluginOptions___prefix'
-  | 'pluginOptions___places'
-  | 'pluginOptions___params___fields'
-  | 'pluginOptions___version'
   | 'pluginOptions___username'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
@@ -9377,9 +9371,6 @@ export type SitePluginPluginOptions = {
   apiSecret?: Maybe<Scalars['String']>;
   resourceType?: Maybe<Scalars['String']>;
   prefix?: Maybe<Scalars['String']>;
-  places?: Maybe<Array<Maybe<Scalars['String']>>>;
-  params?: Maybe<SitePluginPluginOptionsParams>;
-  version?: Maybe<Scalars['String']>;
   username?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
@@ -9401,19 +9392,8 @@ export type SitePluginPluginOptionsFilterInput = {
   apiSecret?: Maybe<StringQueryOperatorInput>;
   resourceType?: Maybe<StringQueryOperatorInput>;
   prefix?: Maybe<StringQueryOperatorInput>;
-  places?: Maybe<StringQueryOperatorInput>;
-  params?: Maybe<SitePluginPluginOptionsParamsFilterInput>;
-  version?: Maybe<StringQueryOperatorInput>;
   username?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsParams = {
-  fields?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsParamsFilterInput = {
-  fields?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {

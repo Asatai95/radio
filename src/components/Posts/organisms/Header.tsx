@@ -17,7 +17,7 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
     query {
       LogoImage: file(relativePath: { eq: "Logo.png" }) {
         childImageSharp {
-          fixed(width: 345, height: 20) {
+          fixed(width: 300, height: 20) {
             ...GatsbyImageSharpFixed
           }
         }

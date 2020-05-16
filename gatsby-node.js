@@ -49,7 +49,7 @@ exports.createPages = ({ actions, graphql }) => {
 			if (result.errors) {
 				return Promise.reject(result.errors)
 			}
-			const posts = result.data.allMarkdownRemark.edges
+			const posts = result.data.allContentfulPosts.edges
 			buildPagination(posts)
 		})
 }
