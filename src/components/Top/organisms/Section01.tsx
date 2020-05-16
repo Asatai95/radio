@@ -7,7 +7,7 @@ import { innertop, bghead, linner, playbt, scrolldown, bg_img, flight } from "..
 
 export const Section01 =  () => {
     const data = useStaticQuery(graphql`
-        query CloudinaryImages {
+        query {
             allCloudinaryMedia {
                 edges {
                     node {
