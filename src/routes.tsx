@@ -13,8 +13,8 @@ module.exports = [
     component: path.resolve(`src/components/Posts/pages/index.tsx`)
   },
   {
-    path: '/posts/:category',
-    component: path.resolve(`src/components/Posts/pages/index.tsx`)
+    path: '/posts/:id',
+    component: path.resolve(`src/components/Contents/pages/index.tsx`)
   },
   {
     path: '/404/',

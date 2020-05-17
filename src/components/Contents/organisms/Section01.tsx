@@ -2,27 +2,14 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
-// // import { LunrSearch } from '../molecules/lunrsearch'
 import { scrolldown } from "../../../styles/shared"
-// import { Pagination } from "../molecules/Pagination"
+// import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+// import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export const Section01 = () => {
+
     const data = useStaticQuery(graphql`
         query {
-            allContentfulPosts(sort: { fields: [createdAt], order: ASC }) {
-                edges {
-                    node {
-                        thumbnail {
-                            file {
-                                url
-                            }
-                        }
-                        title
-                        postExcerpt
-                        createdAt
-                    }
-                }
-            }
             allContentfulNextDate {
                 edges {
                     node {
@@ -30,18 +17,17 @@ export const Section01 = () => {
                     }
                 }
             }
+            allContentfulPosts(sort: {fields: [title], order: DESC}) {
+              nodes {
+                childContentfulPostsContentRichTextNode {
+                  content
+                }
+              }
+            }
         }
     `);
-
-    const item = data.allContentfulPosts.edges;
-    const postItem = item.map((d) => {
-        if (d.node.postExcerpt !== undefined){
-            return d;
-        }
-    })
-    console.log("postItem")
-    console.log(postItem)
-
+    const content = data.allContentfulPosts.nodes;
+    console.log(content)
     const date = data.allContentfulNextDate.edges[0];
     console.log(date)
     return (

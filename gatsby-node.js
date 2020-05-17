@@ -31,19 +31,19 @@ exports.createPages = ({ actions, graphql }) => {
 	return graphql(`
 			{
 				allContentfulPosts(sort: { fields: [id], order: DESC }) {
-          edges {
-              node {
-                  thumbnail {
-                      file {
-                          url
-                      }
-                  }
-                  title
-                  postExcerpt
-                  createdAt
-              }
-          }
-        }
+					edges {
+						node {
+							thumbnail {
+								file {
+									url
+								}
+							}
+							title
+							postExcerpt
+							createdAt
+						}
+					}
+        		}
 			}
 		`).then(result => {
 			if (result.errors) {
@@ -53,3 +53,41 @@ exports.createPages = ({ actions, graphql }) => {
 			buildPagination(posts)
 		})
 }
+
+exports.createPages = ({ graphql, actions }) => {
+	const { createPage } = actions
+	const postTemplate = path.resolve(`./src/components/Contents/pages/index.tsx`)
+	return new Promise((resolve, reject) => {
+	  graphql(`
+		{
+			allContentfulPosts(sort: { fields: [id], order: DESC }) {
+				edges {
+					node {
+						id
+						thumbnail {
+							file {
+								url
+							}
+						}
+						title
+						postExcerpt
+						createdAt
+						childContentfulPostsContentRichTextNode {
+							content
+						}
+					}
+				}
+			}
+		}
+	  `).then(result => {
+		result.data.allHnStory.edges.forEach(edge => {
+		  const node = edge.node
+		  createPage({
+			path: `/posts/${node.id}`,
+			component: postTemplate
+		  })
+		})
+		resolve()
+	  })
+	})
+  }
