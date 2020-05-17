@@ -676,6 +676,7 @@ pre tt:after {
   z-index: 100;
   margin: 0!important;
   top: 45px;
+  width :400px;
 }
 
 
@@ -798,12 +799,12 @@ pre tt:after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
   background-attachment: fixed;
 }
 
 .section-contact-common a {
-  transition: 1s;
+  transition: .8s;
 }
 
 .section-contact-common a:hover {
@@ -1024,9 +1025,21 @@ pre tt:after {
   transition : 1s!important;
 }
 
-.cursor-react-imgbox._hov img {
+.content-imgbox._hov .cursor-react-imgbox img {
   transition : 1s!important;
   transform: scale(1.1);
+}
+
+@keyframes blinktext {
+  0% { color: rgb(255,255,255) }
+  100% { color: rgb(255,255,255, .8) }
+}
+
+.content-imgbox._hov h3,
+.content-imgbox._hov p {
+  animation: blinktext .04s 0s linear infinite alternate-reverse;
+  animation-fill-mode: both;
+  will-change: opacity;
 }
 
 .discography-list-home.item._hov .cursor-react.link-item p,

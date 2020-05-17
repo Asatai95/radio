@@ -8,7 +8,7 @@ import { scrolldown } from "../../../styles/shared"
 
 export const Section01 = () => {
     const data = useStaticQuery(graphql`
-        query{
+        query {
             allContentfulPosts(sort: { fields: [createdAt], order: ASC }) {
                 edges {
                     node {

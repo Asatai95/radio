@@ -20,9 +20,7 @@ export const Section01 =  () => {
 
     const clImage = data.allCloudinaryMedia.edges;
     console.log(clImage)
-    const item = clImage.map((d) => {
-        console.log(d.node.secure_url)
-    })
+
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={innertop} className="inner">
@@ -44,7 +42,7 @@ export const Section01 =  () => {
                             </a>
                         </p>
                         <div css={flight} className="copy f-light">
-                          <img css={linner.linnerimg} src={clImage[6].node.secure_url} alt="" />
+                          <img css={linner.linnerimg} src={clImage[8].node.secure_url} alt="" />
                         </div>
                     </div>
                 </div>

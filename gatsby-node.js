@@ -22,7 +22,7 @@ exports.createPages = ({ actions, graphql }) => {
 		paginate({
 			createPage,
 			items: posts,
-			itemsPerPage: 20,
+			itemsPerPage: 10,
 			pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? "/" : "/page"),
 			component: path.resolve('src/components/Posts/organisms/Section01.tsx')
 		})
@@ -30,7 +30,7 @@ exports.createPages = ({ actions, graphql }) => {
 
 	return graphql(`
 			{
-				allContentfulPosts(sort: { fields: [createdAt], order: ASC }) {
+				allContentfulPosts(sort: { fields: [id], order: DESC }) {
           edges {
               node {
                   thumbnail {

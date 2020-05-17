@@ -31,10 +31,10 @@ export const Information = () => {
     return (
         <ul css={style.informationohome} className="information-list information-home l-right">
             {
-                item.map((d) => {
+                item.map((d, index) => {
                     const n = d.node;
                     return (
-                        <li className="feedInfo" css={style.li}>
+                        <li key={index} className="feedInfo" css={style.li}>
                             <a css={style.cursor} href="#" className="cursor-react" id="informationlink">
                                 <div css={style.imgbox} className="imgbox">
                                     <Img fixed={data.LogoImage.childImageSharp.fixed} />

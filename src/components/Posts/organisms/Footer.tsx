@@ -43,11 +43,11 @@ export const Footer: React.FC<FooterProps> = () => {
       <div className="container" css={[inner, SiteFooterContent]}>
         <SiteFooterSection className="copyright">
           <Link to="/">
-            <img css={footerimg} id="footerLogo" src={data.allCloudinaryMedia.edges[5].node.secure_url} alt="" className="imglogo"/>
+            <img css={footerimg} id="footerLogo" src={data.allCloudinaryMedia.edges[4].node.secure_url} alt="" className="imglogo"/>
           </Link>
           {data.allCloudinaryMedia.edges[1].node.secure_url && (
             <Link to="/">
-              <img src={data.allCloudinaryMedia.edges[3].node.secure_url} alt="" className="copyright"/>
+              <img src={data.allCloudinaryMedia.edges[2].node.secure_url} alt="" className="copyright"/>
             </Link>
           )}
         </SiteFooterSection>

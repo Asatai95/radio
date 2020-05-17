@@ -14,7 +14,6 @@ window.onload = function () {
             const linkElem = document.querySelectorAll("a");
             for (var i = 0; i < linkElem.length; i++) {
                 linkElem[i].addEventListener("mouseover", function (e) {
-
                     cursor.classList.add("hov_");
                 });
                 linkElem[i].addEventListener("mouseout", function (e) {
@@ -24,11 +23,12 @@ window.onload = function () {
 
             const feed = document.getElementsByClassName("feedInfo");
             for(var n = 0; n < feed.length; n++){
+                const number = n;
                 feed[n].addEventListener("mouseover", function (e) {
-                    feed[0].classList.add("_hov")
+                    feed[number].classList.add("_hov")
                 });
                 feed[n].addEventListener("mouseout", function (e) {
-                    feed[0].classList.remove("_hov")
+                    feed[number].classList.remove("_hov")
                 });
             }
 
@@ -42,23 +42,26 @@ window.onload = function () {
                 });
             } catch {}
 
-            const imgbox = document.getElementsByClassName("cursor-react-imgbox")
+            const imgbox = document.getElementsByClassName("content-imgbox")
             for(var m = 0; m < imgbox.length; m++){
+                const index = m;
                 imgbox[m].addEventListener("mouseover", function (e) {
-                    e.target.classList.add("_hov")
+                    imgbox[index].classList.add("_hov")
                 });
                 imgbox[m].addEventListener("mouseout", function (e) {
-                    e.target.classList.remove("_hov")
+                    imgbox[index].classList.remove("_hov")
                 });
             }
 
             const footerLogo = document.getElementById("footerLogo")
-            footerLogo.addEventListener("mouseover", function (e) {
-                footerLogo.classList.add("_hov")
-            });
-            footerLogo.addEventListener("mouseout", function (e) {
-                footerLogo.classList.remove("_hov")
-            });
+            try{
+                footerLogo.addEventListener("mouseover", function (e) {
+                    footerLogo.classList.add("_hov")
+                });
+                footerLogo.addEventListener("mouseout", function (e) {
+                    footerLogo.classList.remove("_hov")
+                });
+            } catch {}
 
             stopTextColor();
         }

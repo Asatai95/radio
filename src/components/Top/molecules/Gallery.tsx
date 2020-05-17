@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 export const Gallery = () => {
     const data = useStaticQuery(graphql`
         query {
-            allContentfulPosts {
+            allContentfulPosts(sort: { fields: [title], order: DESC }) {
                 edges {
                     node {
                         title
@@ -22,24 +22,27 @@ export const Gallery = () => {
             }
         }
     `)
-    const item01 = data.allContentfulPosts.edges.slice( -2 );
-    const item02 = data.allContentfulPosts.edges.slice( -4, -2 );
+    const item01 = data.allContentfulPosts.edges.slice( 0, 2 );
+    const item02 = data.allContentfulPosts.edges.slice( 2, 4 );
+    console.log("item")
+    console.log(item01)
+    console.log(item02)
 
     return (
         <>
-            <div css={styled.linkhome}>
+            <div css={styled.linkhome} id="linkhomesection01">
                 {
-                    item01.map((d, key) => {
+                    item01.map((d, index) => {
                         const n = d.node;
                         return (
-                            <div css={[styled.contenthome , sectionlinkhome]} className="section-contents-home section-link-home item-fadein is-visible is-animate-done content">
+                            <div key={index} css={[styled.contenthome , sectionlinkhome]} className="section-contents-home section-link-home item-fadein is-visible is-animate-done content content-imgbox">
                                 <div css={styled.headline} className="box-headline">
                                     <h3 css={styled.headlineh3} className="headline f-light">{n.title}</h3>
                                     <p css={styled.headlinetext}>{n.postExcerpt}</p>
                                     <p css={styled.headlinetext}>{n.createdAt}</p>
                                 </div>
                                 <a href="#" className="cursor-react">
-                                    <div css={styled.imgbox} className="imgbox cursor-react-imgbox">
+                                    <div css={styled.imgbox} className="imgbox cursor-react-imgbox top">
                                         <img css={styled.imgitem} src={n.thumbnail[0].fixed.src} alt=""/>
                                     </div>
                                 </a>
@@ -48,19 +51,19 @@ export const Gallery = () => {
                     })
                 }
             </div>
-            <div css={styled.linkhome}>
+            <div css={styled.linkhome} id="linkhomesection02">
                 {
-                    item02.map((x, key) => {
+                    item02.map((x, index) => {
                         const m = x.node;
                         return (
-                            <div css={[styled.contenthome , sectionlinkhome]} className="section-contents-home section-link-home item-fadein is-visible is-animate-done content">
+                            <div key={index} css={[styled.contenthome , sectionlinkhome]} className="section-contents-home section-link-home item-fadein is-visible is-animate-done content content-imgbox">
                                 <div css={styled.headline} className="box-headline">
                                     <h3 css={styled.headlineh3} className="headline f-light">{m.title}</h3>
                                     <p css={styled.headlinetext}>{m.postExcerpt}</p>
                                     <p css={styled.headlinetext}>{m.createdAt}</p>
                                 </div>
                                 <a href="#" className="cursor-react">
-                                    <div css={styled.imgbox} className="imgbox cursor-react-imgbox">
+                                    <div css={styled.imgbox} id="bottom" className="imgbox cursor-react-imgbox bottom">
                                         <img css={styled.imgitem} src={m.thumbnail[0].fixed.src} alt=""/>
                                     </div>
                                 </a>
