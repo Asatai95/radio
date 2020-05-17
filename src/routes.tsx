@@ -13,6 +13,10 @@ module.exports = [
     component: path.resolve(`src/components/Posts/pages/index.tsx`)
   },
   {
+    path: '/posts/test',
+    component: path.resolve(`src/components/Contents/pages/index.tsx`)
+  },
+  {
     path: '/posts/:id',
     component: path.resolve(`src/components/Contents/pages/index.tsx`)
   },

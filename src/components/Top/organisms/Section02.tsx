@@ -27,7 +27,7 @@ export const Section02 =  () => {
     const contentImg = content.map((d, n)=>{
         const img = d.node.thumbnail;
         for(var i=0; i < img.length; i++){
-            return <li key={i} css={SectionContent.wrapsli}><img css={SectionContent.imgs} src={img[i].fixed.src} alt="" /></li>
+            return <li key={n} css={SectionContent.wrapsli}><img css={SectionContent.imgs} src={img[i].fixed.src} alt="" /></li>
         }
     })
 

@@ -24,9 +24,6 @@ export const Gallery = () => {
     `)
     const item01 = data.allContentfulPosts.edges.slice( 0, 2 );
     const item02 = data.allContentfulPosts.edges.slice( 2, 4 );
-    console.log("item")
-    console.log(item01)
-    console.log(item02)
 
     return (
         <>

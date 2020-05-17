@@ -14,7 +14,7 @@ export const inner = css`
 export const innertop = css`
   height: 100vh!important;
   min-height: 500px;
-`
+`;
 
 export const bghead = css`
   position: absolute;
@@ -26,7 +26,7 @@ export const bghead = css`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-`
+`;
 
 export const linner = {
   linner01: css`
@@ -43,7 +43,7 @@ export const linner = {
   `,
   linnerimg: css`
     width : 500px;
-  `
+  `,
 }
 
 export const playbt = {
@@ -80,7 +80,7 @@ export const playbt = {
     left: 0;
     bottom: 0;
     margin: auto!important;
-  `
+  `,
 }
 
 export const scrolldown = css`
@@ -94,7 +94,7 @@ export const scrolldown = css`
   transform: rotate(90deg);
   transform-origin: center center;
   margin-bottom: 77px;
-`
+`;
 
 export const social = {
   shareicon :css`
@@ -113,7 +113,7 @@ export const social = {
   z-index: 4;
   bottom: 40px;
   left: 40px;
-  `
+  `,
 }
 
 export const bg_img = css`
@@ -127,23 +127,23 @@ export const bg_img = css`
   right: 0%;
   bottom: 0%;
   transform: translate(-50%, -50%);
-`
+`;
 
 export const sectionlinkhome =  css`
   width: 50%;
   position: relative;
   overflow: hidden;
-`
+`;
 
 export const headline = css`
   font-size: 41px;
   letter-spacing: 0.05em;
-`
+`;
 
 export const flight = css`
   font-weight: 800;
-`
+`;
 
 export const showsml = css`
   display: none;
-`
+`;

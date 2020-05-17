@@ -80,11 +80,16 @@ exports.createPages = ({ graphql, actions }) => {
 			}
 		}
 	  `).then(result => {
-		result.data.allHnStory.edges.forEach(edge => {
+		result.data.allContentfulPosts.edges.forEach(edge => {
 		  const node = edge.node
+		  console.log("node")
+		  console.log(node)
 		  createPage({
 			path: `/posts/${node.id}`,
-			component: postTemplate
+			component: postTemplate,
+			context: {
+				id: node.id
+			}
 		  })
 		})
 		resolve()

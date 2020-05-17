@@ -65,9 +65,9 @@ export const Section01 = (props) => {
             <div css={SectionContent.posts} id="posts">
 
                 {
-                    postItem.map((d) => {
+                    postItem.map((d, index) => {
                         return (
-                            <div css={SectionContent.post} className="post">
+                            <div key={index} css={SectionContent.post} className="post">
                                 <div css={SectionContent.postcontent} className="post-content">
                                     <a href="#">
                                         <img css={SectionContent.img} src={d.node.thumbnail[0].file.url} alt=""/>

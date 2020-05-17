@@ -9444,30 +9444,35 @@ export type Unnamed_3_QueryVariables = {};
 
 export type Unnamed_3_Query = { allContentfulNextDate: { edges: Array<{ node: Pick<ContentfulNextDate, 'date'> }> }, allContentfulPosts: { nodes: Array<{ childContentfulPostsContentRichTextNode?: Maybe<Pick<ContentfulPostsContentRichTextNode, 'content'>> }> } };
 
-export type IndexPostsTitleQueryVariables = {};
+export type Unnamed_4_QueryVariables = {
+  id: Scalars['String'];
+};
 
 
-export type IndexPostsTitleQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-export type Unnamed_4_QueryVariables = {};
-
-
-export type Unnamed_4_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+export type Unnamed_4_Query = { allContentfulPosts: { edges: Array<{ node: (
+        Pick<ContentfulPosts, 'id' | 'title' | 'postExcerpt' | 'createdAt'>
+        & { thumbnail?: Maybe<Array<Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>>>, childContentfulPostsContentRichTextNode?: Maybe<Pick<ContentfulPostsContentRichTextNode, 'content'>> }
+      ) }> } };
 
 export type Unnamed_5_QueryVariables = {};
 
 
-export type Unnamed_5_Query = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+export type Unnamed_5_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 export type Unnamed_6_QueryVariables = {};
 
 
-export type Unnamed_6_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+export type Unnamed_6_Query = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 export type Unnamed_7_QueryVariables = {};
 
 
-export type Unnamed_7_Query = { allContentfulPosts: { edges: Array<{ node: (
+export type Unnamed_7_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type Unnamed_8_QueryVariables = {};
+
+
+export type Unnamed_8_Query = { allContentfulPosts: { edges: Array<{ node: (
         Pick<ContentfulPosts, 'title' | 'postExcerpt' | 'createdAt'>
         & { thumbnail?: Maybe<Array<Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>>> }
       ) }> }, allContentfulNextDate: { edges: Array<{ node: Pick<ContentfulNextDate, 'date'> }> } };
@@ -9487,15 +9492,15 @@ export type IndexSiteAndCloudinaryImagesQueryVariables = {};
 
 export type IndexSiteAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type Unnamed_8_QueryVariables = {};
-
-
-export type Unnamed_8_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
 export type Unnamed_9_QueryVariables = {};
 
 
-export type Unnamed_9_Query = { cloudinaryMedia?: Maybe<Pick<CloudinaryMedia, 'secure_url'>> };
+export type Unnamed_9_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type Unnamed_10_QueryVariables = {};
+
+
+export type Unnamed_10_Query = { cloudinaryMedia?: Maybe<Pick<CloudinaryMedia, 'secure_url'>> };
 
 export type IndexProfileTitleQueryVariables = {};
 
@@ -9507,36 +9512,36 @@ export type IndexDivLayoutQueryQueryVariables = {};
 
 export type IndexDivLayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
-export type Unnamed_10_QueryVariables = {};
+export type Unnamed_11_QueryVariables = {};
 
 
-export type Unnamed_10_Query = { allInstaNode: { edges: Array<{ node: (
+export type Unnamed_11_Query = { allInstaNode: { edges: Array<{ node: (
         Pick<InstaNode, 'id' | 'likes' | 'mediaType' | 'preview' | 'original' | 'timestamp' | 'caption'>
         & { thumbnails?: Maybe<Array<Maybe<Pick<InstaNodeThumbnails, 'src' | 'config_width' | 'config_height'>>>>, dimensions?: Maybe<Pick<InstaNodeDimensions, 'height' | 'width'>> }
       ) }> } };
 
-export type Unnamed_11_QueryVariables = {};
-
-
-export type Unnamed_11_Query = { placeholderImage01?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, placeholderImage02?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
 export type Unnamed_12_QueryVariables = {};
 
 
-export type Unnamed_12_Query = { allContentfulPosts: { edges: Array<{ node: (
-        Pick<ContentfulPosts, 'title' | 'postExcerpt' | 'createdAt'>
-        & { thumbnail?: Maybe<Array<Maybe<{ fixed?: Maybe<Pick<ContentfulFixed, 'src'>> }>>> }
-      ) }> } };
+export type Unnamed_12_Query = { placeholderImage01?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, placeholderImage02?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type Unnamed_13_QueryVariables = {};
 
 
-export type Unnamed_13_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, allContentfulInformation: { edges: Array<{ node: Pick<ContentfulInformation, 'createdAt' | 'postExcerpt' | 'type'> }> } };
+export type Unnamed_13_Query = { allContentfulPosts: { edges: Array<{ node: (
+        Pick<ContentfulPosts, 'title' | 'postExcerpt' | 'createdAt'>
+        & { thumbnail?: Maybe<Array<Maybe<{ fixed?: Maybe<Pick<ContentfulFixed, 'src'>> }>>> }
+      ) }> } };
 
 export type Unnamed_14_QueryVariables = {};
 
 
-export type Unnamed_14_Query = { allInstaNode: { edges: Array<{ node: (
+export type Unnamed_14_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, allContentfulInformation: { edges: Array<{ node: Pick<ContentfulInformation, 'createdAt' | 'postExcerpt' | 'type'> }> } };
+
+export type Unnamed_15_QueryVariables = {};
+
+
+export type Unnamed_15_Query = { allInstaNode: { edges: Array<{ node: (
         Pick<InstaNode, 'id' | 'likes' | 'mediaType' | 'preview' | 'original' | 'timestamp' | 'caption'>
         & { thumbnails?: Maybe<Array<Maybe<Pick<InstaNodeThumbnails, 'src' | 'config_width' | 'config_height'>>>>, dimensions?: Maybe<Pick<InstaNodeDimensions, 'height' | 'width'>> }
       ) }> } };
@@ -9546,20 +9551,20 @@ export type IndexDivQueryAndCloudinaryImagesQueryVariables = {};
 
 export type IndexDivQueryAndCloudinaryImagesQuery = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> }, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type Unnamed_15_QueryVariables = {};
-
-
-export type Unnamed_15_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
 export type Unnamed_16_QueryVariables = {};
 
 
-export type Unnamed_16_Query = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> } };
+export type Unnamed_16_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type Unnamed_17_QueryVariables = {};
 
 
-export type Unnamed_17_Query = { allContentfulPosts: { edges: Array<{ node: (
+export type Unnamed_17_Query = { allCloudinaryMedia: { edges: Array<{ node: Pick<CloudinaryMedia, 'secure_url'> }> } };
+
+export type Unnamed_18_QueryVariables = {};
+
+
+export type Unnamed_18_Query = { allContentfulPosts: { edges: Array<{ node: (
         Pick<ContentfulPosts, 'title'>
         & { thumbnail?: Maybe<Array<Maybe<{ fixed?: Maybe<Pick<ContentfulFixed, 'src'>> }>>> }
       ) }> } };
