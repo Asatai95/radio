@@ -12,13 +12,13 @@ const Component: React.FC<Props> = ({data}) => {
   console.log(content)
   return(
     <Layout>
-       <Section01 />
+       <Section01 children={content}/>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query($id: String) {
     allContentfulPosts(filter: { id: { eq: $id } }) {
       edges {
         node {
@@ -32,7 +32,7 @@ export const pageQuery = graphql`
           postExcerpt
           createdAt
           childContentfulPostsContentRichTextNode {
-            content
+            json
           }
         }
       }

@@ -63,11 +63,11 @@ module.exports = {
         username: `awamori_in_the_pocket`,
       },
     },
-    {
-      resolve: `gatsby-plugin-routes`,
-      options: {
-        path: `${__dirname}/src/routes.tsx`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-routes`,
+    //   options: {
+    //     path: `${__dirname}/src/routes.tsx`,
+    //   },
+    // },
   ],
 }

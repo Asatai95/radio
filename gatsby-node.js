@@ -56,8 +56,43 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.createPages = ({ graphql, actions }) => {
 	const { createPage } = actions
+	const docError = () => {
+		const errorTemplate = path.resolve(`./src/components/Top/pages/index.tsx`)
+		createPage({
+			path: `/404/`,
+			component: errorTemplate,
+			context: {}
+		})
+	}
+	const docTop = () => {
+		const IndexTemplate = path.resolve(`./src/components/Top/pages/index.tsx`)
+		createPage({
+			path: `/`,
+			component: IndexTemplate,
+			context: {}
+		})
+	}
+
+	const docProfile = () => {
+		const IndexTemplate = path.resolve(`../src/components/Profile/pages/index.tsx`)
+		createPage({
+			path: `/about/`,
+			component: IndexTemplate,
+			context: {}
+		})
+	}
+
+	const docPost = () => {
+		const IndexTemplate = path.resolve(`../src/components/Posts/pages/index.tsx`)
+		createPage({
+			path: `/posts/`,
+			component: IndexTemplate,
+			context: {}
+		})
+	}
+
 	const postTemplate = path.resolve(`./src/components/Contents/pages/index.tsx`)
-	return new Promise((resolve, reject) => {
+	const docs = new Promise((resolve, reject) => {
 	  graphql(`
 		{
 			allContentfulPosts(sort: { fields: [id], order: DESC }) {
@@ -73,7 +108,7 @@ exports.createPages = ({ graphql, actions }) => {
 						postExcerpt
 						createdAt
 						childContentfulPostsContentRichTextNode {
-							content
+							json
 						}
 					}
 				}
@@ -82,8 +117,6 @@ exports.createPages = ({ graphql, actions }) => {
 	  `).then(result => {
 		result.data.allContentfulPosts.edges.forEach(edge => {
 		  const node = edge.node
-		  console.log("node")
-		  console.log(node)
 		  createPage({
 			path: `/posts/${node.id}`,
 			component: postTemplate,
@@ -95,4 +128,5 @@ exports.createPages = ({ graphql, actions }) => {
 		resolve()
 	  })
 	})
+	return Promise.all([docs, docPost, docProfile, docTop, docError]);
   }

@@ -3,11 +3,44 @@ import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 import { scrolldown } from "../../../styles/shared"
-// import { BLOCKS, MARKS } from '@contentful/rich-text-types';
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-export const Section01 = () => {
+interface Layoutprops {
+    readonly children?: React.ReactNode | readonly React.ReactNode[]
+}
 
+export const Section01 = ({children}: Layoutprops) => {
+
+    // contentful rich_textのmarkdow
+    const contents = children.allContentfulPosts.edges[0].node.childContentfulPostsContentRichTextNode.json;
+
+    const Bold = ({ children }: Layoutprops) => <span className="bold">{children}</span>
+    const Text = ({ children }: Layoutprops) => <p className="align-center">{children}</p>
+    const Link = ({ children }: Layoutprops) => <iframe height="102" width="700" src={children} frameBorder="0" scrolling="no"></iframe>
+
+    const options =  {
+        renderMark: {
+            [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+        },
+        renderNode: {
+            [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+            // [INLINES.HYPERLINK]: node => {
+            //     if (node.data.uri.indexOf("anchor.fm") !== -1){
+            //         <Link>{node.data.uri}</Link>
+            //     }
+            // },
+            [INLINES.HYPERLINK]: node => {
+                <Link>{node.data.uri}</Link>
+            },
+        },
+        renderText: text => text.replace('!', '?'),
+    }
+    const item = documentToReactComponents(contents, options)
+    console.log(item)
+    const docs = item.map((d) => {
+        return d;
+    })
     const data = useStaticQuery(graphql`
         query {
             allContentfulNextDate {
@@ -17,19 +50,10 @@ export const Section01 = () => {
                     }
                 }
             }
-            allContentfulPosts(sort: {fields: [title], order: DESC}) {
-              nodes {
-                childContentfulPostsContentRichTextNode {
-                  content
-                }
-              }
-            }
         }
     `);
-    const content = data.allContentfulPosts.nodes;
-    console.log(content)
     const date = data.allContentfulNextDate.edges[0];
-    console.log(date)
+
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={SectionContent.next} className="next-stream">
@@ -41,7 +65,7 @@ export const Section01 = () => {
                 <br />
             </div>
             <div css={SectionContent.posts} id="posts">
-
+                {docs}
             </div>
             <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
                 ScrollDown

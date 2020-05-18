@@ -7849,6 +7849,8 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark?: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
+  contentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNode>;
+  allContentfulPostsContentRichTextNode: ContentfulPostsContentRichTextNodeConnection;
   instaNode?: Maybe<InstaNode>;
   allInstaNode: InstaNodeConnection;
   cloudinaryMedia?: Maybe<CloudinaryMedia>;
@@ -7861,8 +7863,6 @@ export type Query = {
   allContentfulInformationContentRichTextNode: ContentfulInformationContentRichTextNodeConnection;
   contentfulInformation?: Maybe<ContentfulInformation>;
   allContentfulInformation: ContentfulInformationConnection;
-  contentfulPostsContentRichTextNode?: Maybe<ContentfulPostsContentRichTextNode>;
-  allContentfulPostsContentRichTextNode: ContentfulPostsContentRichTextNodeConnection;
   contentfulPosts?: Maybe<ContentfulPosts>;
   allContentfulPosts: ContentfulPostsConnection;
   contentfulImageImageCreditsTextNode?: Maybe<ContentfulImageImageCreditsTextNode>;
@@ -8002,6 +8002,7 @@ export type QuerySitePageArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -8081,6 +8082,25 @@ export type QueryMarkdownRemarkArgs = {
 export type QueryAllMarkdownRemarkArgs = {
   filter?: Maybe<MarkdownRemarkFilterInput>;
   sort?: Maybe<MarkdownRemarkSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulPostsContentRichTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  content?: Maybe<StringQueryOperatorInput>;
+  nodeType?: Maybe<StringQueryOperatorInput>;
+  json?: Maybe<JsonQueryOperatorInput>;
+};
+
+
+export type QueryAllContentfulPostsContentRichTextNodeArgs = {
+  filter?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
+  sort?: Maybe<ContentfulPostsContentRichTextNodeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -8233,25 +8253,6 @@ export type QueryContentfulInformationArgs = {
 export type QueryAllContentfulInformationArgs = {
   filter?: Maybe<ContentfulInformationFilterInput>;
   sort?: Maybe<ContentfulInformationSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulPostsContentRichTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  content?: Maybe<StringQueryOperatorInput>;
-  nodeType?: Maybe<StringQueryOperatorInput>;
-  json?: Maybe<JsonQueryOperatorInput>;
-};
-
-
-export type QueryAllContentfulPostsContentRichTextNodeArgs = {
-  filter?: Maybe<ContentfulPostsContentRichTextNodeFilterInput>;
-  sort?: Maybe<ContentfulPostsContentRichTextNodeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -8856,6 +8857,7 @@ export type SitePage = Node & {
   children: Array<Node>;
   internal: Internal;
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
+  context?: Maybe<SitePageContext>;
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
   componentPath?: Maybe<Scalars['String']>;
@@ -8880,6 +8882,14 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: SitePageFieldsEnum;
+};
+
+export type SitePageContext = {
+  id?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -8981,6 +8991,7 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___id'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -9073,6 +9084,7 @@ export type SitePageFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -9442,16 +9454,16 @@ export type Unnamed_2_Query = { LogoImage?: Maybe<{ childImageSharp?: Maybe<{ fi
 export type Unnamed_3_QueryVariables = {};
 
 
-export type Unnamed_3_Query = { allContentfulNextDate: { edges: Array<{ node: Pick<ContentfulNextDate, 'date'> }> }, allContentfulPosts: { nodes: Array<{ childContentfulPostsContentRichTextNode?: Maybe<Pick<ContentfulPostsContentRichTextNode, 'content'>> }> } };
+export type Unnamed_3_Query = { allContentfulNextDate: { edges: Array<{ node: Pick<ContentfulNextDate, 'date'> }> } };
 
 export type Unnamed_4_QueryVariables = {
-  id: Scalars['String'];
+  id?: Maybe<Scalars['String']>;
 };
 
 
 export type Unnamed_4_Query = { allContentfulPosts: { edges: Array<{ node: (
         Pick<ContentfulPosts, 'id' | 'title' | 'postExcerpt' | 'createdAt'>
-        & { thumbnail?: Maybe<Array<Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>>>, childContentfulPostsContentRichTextNode?: Maybe<Pick<ContentfulPostsContentRichTextNode, 'content'>> }
+        & { thumbnail?: Maybe<Array<Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>>>, childContentfulPostsContentRichTextNode?: Maybe<Pick<ContentfulPostsContentRichTextNode, 'json'>> }
       ) }> } };
 
 export type Unnamed_5_QueryVariables = {};
