@@ -37,9 +37,6 @@ export const Section02 =  () => {
                 <div css={SectionContent.clearfix} className="l-container l-inner clearfix">
                     <div css={SectionContent.boxheadline} className="box-headline l-left">
                         <h3 css={SectionContent.h3}>RADIO</h3>
-                        {/* <p css={[ SectionContent.iconlinklight, flight ]} className="icon-link f-light">
-                            <a css={SectionContent.iconcursorreactbtn} className="cursor-react cursor-react-btn" href="#">+</a>
-                        </p> */}
                     </div>
                     <ul css={SectionContent.navdiscography} className="nav-discography nav-btnlist l-right">
                         <li css={SectionContent.navdiscographyli}>

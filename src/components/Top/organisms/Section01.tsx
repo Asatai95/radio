@@ -27,7 +27,6 @@ export const Section01 =  () => {
                 <div css={bghead} className="bg-head">
                     <div css={SectionContent.bgColor} className="bg-color"></div>
                     <div css={SectionContent.bgimgitem} className="bg_img_item">
-                        {/* <img css={bg_img} src={clImage[3].node.secure_url} alt="" /> */}
                         <video css={SectionContent.video} autoPlay loop muted playsInline src="https://res.cloudinary.com/dh50en6xf/video/upload/c_fill,h_766/v1589470905/gatsby-source-cloudinary/my_media_bg_xemqa6.mp4"></video>
                     </div>
                 </div>
