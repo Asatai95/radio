@@ -7,6 +7,7 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { compose } from 'ramda'
 
 interface Layoutprops {
     readonly children?: React.ReactNode | readonly React.ReactNode[]
@@ -64,30 +65,77 @@ export const Section01 = ({children}: Layoutprops) => {
     const date = data.allContentfulNextDate.edges[0];
     const image = children.allContentfulPosts.edges[0].node.thumbnail[0].file.url;
 
-    const handleClick = (e) => {
+    const handleNextClick = (e) => {
         e.preventDefault();
         const id = children.allContentfulPosts.edges[0].node.id;
-        console.log(id)
         const item = data.allContentfulPosts.edges;
         const ids = item.map((d) => {
             var datas = d.node.id;
             return datas;
         })
         const index = ids.indexOf(id);
-        var flag = true;
         if (index === ids.length -1){
-            flag = false;
+            return false;
         }
-        const listItem = ids[index];
-        console.log(listItem)
+        const listItem = ids[index + 1];
         var protocol = location.protocol;
         var host = location.hostname ;
         if(host === "localhost"){
             host = "localhost:8000";
         }
-        console.log(`${protocol}//${host}/posts/${listItem}`)
-        // window.location.href = `${protocol}//${host}/posts/${listItem}`
+        window.location.href = `${protocol}//${host}/posts/${listItem}`
     };
+
+    const handlePreClick = (e) => {
+        e.preventDefault();
+        const id = children.allContentfulPosts.edges[0].node.id;
+        const item = data.allContentfulPosts.edges;
+        const ids = item.map((d) => {
+            var datas = d.node.id;
+            return datas;
+        })
+        const index = ids.indexOf(id);
+        if (index === 0){
+            return false;
+        }
+        const listItem = ids[index - 1];
+        var protocol = location.protocol;
+        var host = location.hostname ;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        window.location.href = `${protocol}//${host}/posts/${listItem}`
+    }
+    const linkItempre = () => {
+        const id = children.allContentfulPosts.edges[0].node.id;
+        const item = data.allContentfulPosts.edges;
+        const ids = item.map((d) => {
+            var datas = d.node.id;
+            return datas;
+        })
+        const index = ids.indexOf(id);
+        var previousBtitem = true;
+        if (index === 0){
+            previousBtitem = false;
+        }
+        return previousBtitem;
+    }
+
+    const linkItemne = () => {
+        const id = children.allContentfulPosts.edges[0].node.id;
+        const item = data.allContentfulPosts.edges;
+        const ids = item.map((d) => {
+            var datas = d.node.id;
+            return datas;
+        })
+        const index = ids.indexOf(id);
+        var nextBtitem = true;
+        if (index === ids.length){
+            nextBtitem = false;
+        }
+        return nextBtitem;
+    }
+
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={SectionContent.next} className="next-stream">
@@ -104,12 +152,26 @@ export const Section01 = ({children}: Layoutprops) => {
                 </div>
                 {docs}
                 <div css={SectionContent.BtBox} className="pageBt">
-                    <a href="#" onClick={(e) => handleClick(e)}>
-                        <Button className={BtStyle().buttonBack}>PREVIOUS</Button>
-                    </a>
-                    <a href="#">
-                        <Button className={BtStyle().buttonNext}>NEXT</Button>
-                    </a>
+                    {linkItempre() === true && (
+                        <a href="#" onClick={(e) => handlePreClick(e)}>
+                            <Button className={BtStyle().buttonBack}>PREVIOUS</Button>
+                        </a>
+                    )}
+                    {linkItempre() === false && (
+                        <a href="#">
+                            <Button disabled={true} className={BtStyle().buttonBack}>PREVIOUS</Button>
+                        </a>
+                    )}
+                    {linkItemne() === true && (
+                        <a href="#" onClick={(e) => handleNextClick(e)}>
+                            <Button className={BtStyle().buttonNext}>NEXT</Button>
+                        </a>
+                    )}
+                    {linkItemne() === false && (
+                        <a href="#">
+                            <Button disabled={true} className={BtStyle().buttonNext}>NEXT</Button>
+                        </a>
+                    )}
                 </div>
             </div>
             <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
@@ -165,7 +227,7 @@ const SectionContent = {
         align-items: center;
         justify-content: space-between;
         width: 85%;
-        margin: 50px auto;
+        margin: 70px auto;
         margin-bottom: 0;
     `,
     imgBox: css`

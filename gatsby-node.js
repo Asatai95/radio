@@ -106,8 +106,8 @@ exports.createPages = ({ graphql, actions }) => {
 				}
 			}
 		`).then(res => {
-			const data = res.site.siteMetadata.title;
-			console.log(data)
+			console.log(res)
+			const data = `Awamori in the Pocket`;
 			createPage({
 				path: `/about/`,
 				component: docProfile,

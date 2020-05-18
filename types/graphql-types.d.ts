@@ -8885,10 +8885,12 @@ export type SitePageConnectionGroupArgs = {
 };
 
 export type SitePageContext = {
+  tite?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
+  tite?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -8991,6 +8993,7 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___tite'
   | 'context___id'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
@@ -9581,10 +9584,10 @@ export type Unnamed_18_Query = { allContentfulPosts: { edges: Array<{ node: (
         & { thumbnail?: Maybe<Array<Maybe<{ fixed?: Maybe<Pick<ContentfulFixed, 'src'>> }>>> }
       ) }> } };
 
-export type IndexDivQueryQueryVariables = {};
+export type Unnamed_19_QueryVariables = {};
 
 
-export type IndexDivQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+export type Unnamed_19_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 export type IndexDivQueryItemQueryVariables = {};
 
