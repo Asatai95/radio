@@ -1,23 +1,8 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import { Instagram } from "../molecules/Instagram"
-// import { graphql } from 'gatsby';
-// import { flight } from "../../../styles/shared"
 
 export const Section05 =  () => {
-    // const data = graphql`
-    //     query {
-    //         allFacebookArticles {
-    //             edges {
-    //                 node {
-    //                 title,
-    //                 description
-    //                 }
-    //             }
-    //         }
-    //     }
-    // `
-    // console.log(data)
     return(
         <section css={styled.section} className="section-sns-common" id="sns">
             <div css={instagramfield.block} id="instagram_field" className="instagram_block">

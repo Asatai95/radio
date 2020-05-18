@@ -85,7 +85,8 @@ export const Section01 = ({children}: Layoutprops) => {
         if(host === "localhost"){
             host = "localhost:8000";
         }
-        window.location.href = `${protocol}//${host}/posts/${listItem}`
+        console.log(`${protocol}//${host}/posts/${listItem}`)
+        // window.location.href = `${protocol}//${host}/posts/${listItem}`
     };
     return (
         <section css={SectionContent.main} className="section-head section-head-home">

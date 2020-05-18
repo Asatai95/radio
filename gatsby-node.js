@@ -62,41 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
 	const docPost = path.resolve(`./src/components/Posts/pages/index.tsx`)
 
 	const postTemplate = path.resolve(`./src/components/Contents/pages/index.tsx`)
-	const doc = graphql(`
-		{
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-	`).then(res => {
-		const data = res.site.siteMetadata.title;
-		console.log("data")
-		console.log(data)
-		createPage({
-			path: `/about/`,
-			component: docProfile,
-			context: {
-				tite: data
-			}
-		})
-		createPage({
-			path: `/posts/`,
-			component: docPost,
-			context: {
-				tite: data
-			}
-		})
-		createPage({
-			path: `/`,
-			component: path.resolve(`./src/components/Top/pages/index.tsx`),
-			context: {
-				tite: data
-			}
-		})
-		resolve()
-	})
+
 	const docs = new Promise((resolve, reject) => {
 		graphql(`
 			{
@@ -130,8 +96,41 @@ exports.createPages = ({ graphql, actions }) => {
 					}
 				})
 			})
+		})
+		graphql(`
+			{
+				site {
+					siteMetadata {
+						title
+					}
+				}
+			}
+		`).then(res => {
+			const data = res.site.siteMetadata.title;
+			console.log(data)
+			createPage({
+				path: `/about/`,
+				component: docProfile,
+				context: {
+					tite: data
+				}
+			})
+			createPage({
+				path: `/posts/`,
+				component: docPost,
+				context: {
+					tite: data
+				}
+			})
+			createPage({
+				path: `/`,
+				component: docTop,
+				context: {
+					tite: data
+				}
+			})
+		})
 		resolve()
-	  })
 	})
-	return Promise.all([doc, docs]);
+	return Promise.all([docs]);
   }
