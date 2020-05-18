@@ -1,10 +1,10 @@
-
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
-import { innertop, bghead, linner, playbt, scrolldown, flight } from "../../../styles/shared"
+import { bghead, linner, playbt, flight } from "../../../styles/shared"
 
-export const Section01 =  () => {
+
+export const MainImg = () => {
     const data = useStaticQuery(graphql`
         query {
             allCloudinaryMedia {
@@ -18,11 +18,9 @@ export const Section01 =  () => {
     `);
 
     const clImage = data.allCloudinaryMedia.edges;
-    console.log(clImage)
-
-    return (
+    return(
         <section css={SectionContent.main} className="section-head section-head-home">
-            <div css={innertop} className="inner">
+            <div css={SectionContent.innertop} className="inner">
                 <div css={bghead} className="bg-head">
                     <div css={SectionContent.bgColor} className="bg-color"></div>
                     <div css={SectionContent.bgimgitem} className="bg_img_item">
@@ -40,7 +38,7 @@ export const Section01 =  () => {
                             </a>
                         </p>
                         <div css={flight} className="copy f-light">
-                          <img css={linner.linnerimg} src={clImage[8].node.secure_url} alt="" />
+                          <img css={SectionContent.flightImg} src={clImage[8].node.secure_url} alt="" />
                         </div>
                     </div>
                 </div>
@@ -48,9 +46,9 @@ export const Section01 =  () => {
                     <li></li>
                 </ul>
             </div>
-            <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
-                ScrollDown
-            </p>
+            <div css={SectionContent.topbg}>
+                <img css={SectionContent.mainImg} src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589807488/gatsby-source-cloudinary/RADIO_xsndev.png" alt=""/>
+            </div>
         </section>
     )
 }
@@ -65,14 +63,11 @@ const SectionContent = {
         @media (max-width: 800px) {
             padding-top : 41px;
         }
-        @media (min-width: 801px) {
-            position : relative;
-        }
+        position : relative;
     `,
-    boxcopy: css`
-        @media (min-width: 801px) {
-            margin-top: 200px;
-        }
+    flightImg: css`
+        width: 380px;
+        margin: 0;
     `,
     scroll: css`
         @media (max-width: 1100px) {
@@ -104,5 +99,21 @@ const SectionContent = {
     `,
     bgimgitem: css`
         z-index: 5;
+    `,
+    topbg: css`
+        position: absolute;
+        bottom: -130px;
+        height: 180px;
+        text-align: center;
+        width: 100%;
+    `,
+    innertop: css`
+        position: relative;
+        height: 430px;
+        overflow: hidden;
+    `,
+    mainImg: css`
+        height: 100%;
+        width: 100%;
     `
 };

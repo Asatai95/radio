@@ -14,7 +14,7 @@ interface Layoutprops {
 
 export const Section01 = ({children}: Layoutprops) => {
 
-    const contents = children.allContentfulPosts.edges[0].node.childContentfulPostsContentRichTextNode.json;
+    const contents = children.allContentfulInformation.edges[0].node.childContentfulPostsContentRichTextNode.json;
 
     const Bold = ({ children }: Layoutprops) => <span css={SectionContent.bold} className="bold">{children}</span>
     const Text = ({ children }: Layoutprops) => <p className="align-center">{children}</p>
@@ -52,23 +52,33 @@ export const Section01 = ({children}: Layoutprops) => {
                     }
                 }
             }
-            allContentfulPosts(sort: { fields: [title], order: ASC }) {
+            allContentfulInformation {
                 edges {
-                    node {
+                  node {
+                    thumbnail {
+                      file {
+                        url
+                      }
                       title
-                      id
                     }
+                    postExcerpt
+                    createdAt
+                    id
+                    childContentfulInformationContentRichTextNode {
+                      json
+                    }
+                  }
                 }
             }
         }
     `);
     const date = data.allContentfulNextDate.edges[0];
-    const image = children.allContentfulPosts.edges[0].node.thumbnail[0].file.url;
+    const image = children.allContentfulInformation.edges[0].node.thumbnail[0].file.url;
 
     const handleNextClick = (e) => {
         e.preventDefault();
-        const id = children.allContentfulPosts.edges[0].node.id;
-        const item = data.allContentfulPosts.edges;
+        const id = children.allContentfulInformation.edges[0].node.id;
+        const item = data.allContentfulInformation.edges;
         const ids = item.map((d) => {
             var datas = d.node.id;
             return datas;
@@ -83,13 +93,13 @@ export const Section01 = ({children}: Layoutprops) => {
         if(host === "localhost"){
             host = "localhost:8000";
         }
-        window.location.href = `${protocol}//${host}/posts/${listItem}`
+        window.location.href = `${protocol}//${host}/info/${listItem}`
     };
 
     const handlePreClick = (e) => {
         e.preventDefault();
-        const id = children.allContentfulPosts.edges[0].node.id;
-        const item = data.allContentfulPosts.edges;
+        const id = children.allContentfulInformation.edges[0].node.id;
+        const item = data.allContentfulInformation.edges;
         const ids = item.map((d) => {
             var datas = d.node.id;
             return datas;
@@ -104,11 +114,11 @@ export const Section01 = ({children}: Layoutprops) => {
         if(host === "localhost"){
             host = "localhost:8000";
         }
-        window.location.href = `${protocol}//${host}/posts/${listItem}`
+        window.location.href = `${protocol}//${host}/info/${listItem}`
     }
     const linkItempre = () => {
-        const id = children.allContentfulPosts.edges[0].node.id;
-        const item = data.allContentfulPosts.edges;
+        const id = children.allContentfulInformation.edges[0].node.id;
+        const item = data.allContentfulInformation.edges;
         const ids = item.map((d) => {
             var datas = d.node.id;
             return datas;
@@ -122,8 +132,8 @@ export const Section01 = ({children}: Layoutprops) => {
     }
 
     const linkItemne = () => {
-        const id = children.allContentfulPosts.edges[0].node.id;
-        const item = data.allContentfulPosts.edges;
+        const id = children.allContentfulInformation.edges[0].node.id;
+        const item = data.allContentfulInformation.edges;
         const ids = item.map((d) => {
             var datas = d.node.id;
             return datas;

@@ -32,6 +32,29 @@ window.onload = function () {
                 });
             }
 
+            const postimg = document.getElementsByClassName("postImgLink");
+            const imgCotents = document.getElementsByClassName("postContentImg");
+            for(var n = 0; n < postimg.length; n++){
+                const number = n;
+                postimg[n].addEventListener("mouseover", function (e) {
+                    imgCotents[number].classList.add("_hov")
+                });
+                postimg[n].addEventListener("mouseout", function (e) {
+                    imgCotents[number].classList.remove("_hov")
+                });
+            }
+
+            const postimgitem = document.getElementsByClassName("postImg");
+            for(var n = 0; n < postimgitem.length; n++){
+                const number = n;
+                postimgitem[n].addEventListener("mouseover", function (e) {
+                    imgCotents[number].classList.add("_hov")
+                });
+                postimgitem[n].addEventListener("mouseout", function (e) {
+                    imgCotents[number].classList.remove("_hov")
+                });
+            }
+
             const slidimg = document.getElementById("react-link-item")
             try{
                 slidimg.addEventListener("mouseover", function (e) {

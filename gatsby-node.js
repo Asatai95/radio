@@ -60,9 +60,10 @@ exports.createPages = ({ graphql, actions }) => {
 	const docTop = path.resolve(`./src/components/Top/pages/index.tsx`)
 	const docProfile = path.resolve(`./src/components/Profile/pages/index.tsx`)
 	const docPost = path.resolve(`./src/components/Posts/pages/index.tsx`)
+	const docInfo = path.resolve(`./src/components/Information/pages/index.tsx`)
 
 	const postTemplate = path.resolve(`./src/components/Contents/pages/index.tsx`)
-
+	const docsInfo = path.resolve(`./src/components/InfoPost/pages/index.tsx`)
 	const docs = new Promise((resolve, reject) => {
 		graphql(`
 			{
@@ -97,6 +98,33 @@ exports.createPages = ({ graphql, actions }) => {
 				})
 			})
 		})
+
+		graphql(`
+			{
+				allContentfulInformation {
+					edges {
+						node {
+							createdAt(formatString: "YYYY.MM.DD")
+							postExcerpt
+							type
+							id
+						}
+					}
+				}
+			}
+		`).then(result => {
+			result.data.allContentfulInformation.edges.forEach(edge => {
+				const node = edge.node
+				createPage({
+					path: `/posts/${node.id}`,
+					component: docsInfo,
+					context: {
+						id: node.id
+					}
+				})
+			})
+		})
+
 		graphql(`
 			{
 				site {
@@ -125,6 +153,13 @@ exports.createPages = ({ graphql, actions }) => {
 			createPage({
 				path: `/`,
 				component: docTop,
+				context: {
+					tite: data
+				}
+			})
+			createPage({
+				path: `/info/`,
+				component: docInfo,
 				context: {
 					tite: data
 				}
