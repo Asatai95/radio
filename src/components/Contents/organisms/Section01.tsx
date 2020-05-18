@@ -5,6 +5,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { scrolldown } from "../../../styles/shared"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 interface Layoutprops {
     readonly children?: React.ReactNode | readonly React.ReactNode[]
@@ -12,12 +14,10 @@ interface Layoutprops {
 
 export const Section01 = ({children}: Layoutprops) => {
 
-    // contentful rich_textのmarkdow
     const contents = children.allContentfulPosts.edges[0].node.childContentfulPostsContentRichTextNode.json;
 
-    const Bold = ({ children }: Layoutprops) => <span className="bold">{children}</span>
+    const Bold = ({ children }: Layoutprops) => <span css={SectionContent.bold} className="bold">{children}</span>
     const Text = ({ children }: Layoutprops) => <p className="align-center">{children}</p>
-    const Link = ({ children }: Layoutprops) => <iframe height="102" width="700" src={children} frameBorder="0" scrolling="no"></iframe>
 
     const options =  {
         renderMark: {
@@ -25,19 +25,21 @@ export const Section01 = ({children}: Layoutprops) => {
         },
         renderNode: {
             [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-            // [INLINES.HYPERLINK]: node => {
-            //     if (node.data.uri.indexOf("anchor.fm") !== -1){
-            //         <Link>{node.data.uri}</Link>
-            //     }
-            // },
-            [INLINES.HYPERLINK]: node => {
-                <Link>{node.data.uri}</Link>
+            [INLINES.HYPERLINK]: (node, children) => {
+                if (node.data.uri.indexOf("anchor.fm") !== -1){
+                    return(
+                        <iframe height="102" width="700" src={node.data.uri} frameBorder="0" scrolling="no"></iframe>
+                    )
+                } else {
+                    return(
+                        <a href={node.data.uri} target="_blink">{children}</a>
+                    )
+                }
             },
         },
         renderText: text => text.replace('!', '?'),
     }
     const item = documentToReactComponents(contents, options)
-    console.log(item)
     const docs = item.map((d) => {
         return d;
     })
@@ -50,10 +52,41 @@ export const Section01 = ({children}: Layoutprops) => {
                     }
                 }
             }
+            allContentfulPosts {
+                edges {
+                  node {
+                    id
+                  }
+                }
+              }
         }
     `);
     const date = data.allContentfulNextDate.edges[0];
+    const image = children.allContentfulPosts.edges[0].node.thumbnail[0].file.url;
 
+    const handleClick = (e) => {
+        e.preventDefault();
+        const id = children.allContentfulPosts.edges[0].node.id;
+        console.log(id)
+        const item = data.allContentfulPosts.edges;
+        const ids = item.map((d) => {
+            var datas = d.node.id;
+            return datas;
+        })
+        const index = ids.indexOf(id);
+        var flag = true;
+        if (index === ids.length -1){
+            flag = false;
+        }
+        const listItem = ids[index];
+        console.log(listItem)
+        var protocol = location.protocol;
+        var host = location.hostname ;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        window.location.href = `${protocol}//${host}/posts/${listItem}`
+    };
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={SectionContent.next} className="next-stream">
@@ -65,7 +98,18 @@ export const Section01 = ({children}: Layoutprops) => {
                 <br />
             </div>
             <div css={SectionContent.posts} id="posts">
+                <div css={SectionContent.imgBox}>
+                    <img css={SectionContent.img} src={image} alt=""/>
+                </div>
                 {docs}
+                <div css={SectionContent.BtBox} className="pageBt">
+                    <a href="#" onClick={(e) => handleClick(e)}>
+                        <Button className={BtStyle().buttonBack}>PREVIOUS</Button>
+                    </a>
+                    <a href="#">
+                        <Button className={BtStyle().buttonNext}>NEXT</Button>
+                    </a>
+                </div>
             </div>
             <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
                 ScrollDown
@@ -73,6 +117,31 @@ export const Section01 = ({children}: Layoutprops) => {
         </section>
     )
 }
+
+const BtStyle = makeStyles({
+    buttonBack: {
+        color: "#fff",
+        background: "linear-gradient(45deg, rgb(33, 150, 243) 30%, rgb(33, 203, 243) 90%)",
+        width: "150px",
+        height: "40px",
+        border: "solid rgba(0,0,0,.21)",
+        borderWidth: "1px 1px 4px",
+        padding: "0px 8px",
+        textShadow: "0 1px 0 rgba(0,0,0,.15)",
+        transition: ".8s",
+    },
+    buttonNext: {
+        color: "#fff",
+        background: "linear-gradient(225deg, rgb(33, 150, 243) 30%, rgb(33, 203, 243) 90%)",
+        width: "150px",
+        height: "40px",
+        border: "solid rgba(0,0,0,.21)",
+        borderWidth: "1px 1px 4px",
+        padding: "0px 8px",
+        textShadow: "0 1px 0 rgba(0,0,0,.15)",
+        transition: ".8s",
+    }
+})
 
 const blockkeyframe =keyframes`
     0% {opacity: 0}
@@ -87,7 +156,28 @@ const SectionContent = {
         @media (min-width: 801px) {
             position : relative;
             padding: 50px 0;
+            padding-bottom: 0;
         }
+    `,
+    BtBox: css`
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 85%;
+        margin: 50px auto;
+        margin-bottom: 0;
+    `,
+    imgBox: css`
+        width: 70%;
+        height: 350px;
+        margin: 70px auto;
+        margin-top: 0;
+        border-radius: 5px;
+    `,
+    img: css`
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
     `,
     next: css`
         margin: 50px auto;
@@ -115,53 +205,18 @@ const SectionContent = {
         color: #fff;
         border-radius: 3px;
     `,
+    bold: css`
+        font-weight: 800;
+    `,
     posts: css`
-        float: unset;
-        align-items: center;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: auto;
-    `,
-    post: css`
-        width: 450px;
-        margin: 20px 80px;
-        margin-bottom: 50px;
-    `,
-    space: css`
-        width: 450px;
-        margin: 20px 80px;
-        margin-bottom: 50px;
-    `,
-    postcontent: css`
-        overflow: unset;
-        float: left;
-        width: 100%;
-    `,
-    postheader: css`
-        width: 85%;
-        margin: 20px auto;
-        margin-bottom: 0px;
-    `,
-    img: css`
-        width: 100%;
-        border-radius: 43px;
-        height: 280px;
-        margin-bottom: 20px;
-    `,
-    h2: css`
-        font-size: 19px;
-        font-weight: 800;
-    `,
-    link: css`
-        color: #0066c0;
-    `,
-    p:css`
-        font-size: 12px;
-        font-weight: 800;
-        color: #666666;
-        padding: 0;
+       display: flex;
+       align-items: flex-start;
+       justify-content: center;
+       width: 60%;
+       height: 100%;
+       flex-direction: column;
+       margin: auto;
+       padding: 30px 0;
     `,
     scroll: css`
         @media (max-width: 1100px) {

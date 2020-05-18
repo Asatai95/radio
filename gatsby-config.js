@@ -62,12 +62,6 @@ module.exports = {
       options: {
         username: `awamori_in_the_pocket`,
       },
-    },
-    // {
-    //   resolve: `gatsby-plugin-routes`,
-    //   options: {
-    //     path: `${__dirname}/src/routes.tsx`,
-    //   },
-    // },
+    }
   ],
 }

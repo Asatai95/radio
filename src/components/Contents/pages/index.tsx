@@ -2,17 +2,20 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Layout } from "../templates/Layout"
 import { Section01 } from "../organisms/Section01"
+import { Section02 } from "../organisms/Section02"
+import { Contact } from "../organisms/Information"
 
 type Props = {
-  data: string;
+  readonly data?: string;
 }
 
 const Component: React.FC<Props> = ({data}) => {
   const content = data;
-  console.log(content)
   return(
     <Layout>
        <Section01 children={content}/>
+       <Contact />
+       <Section02 />
     </Layout>
   )
 }

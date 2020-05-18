@@ -56,77 +56,82 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.createPages = ({ graphql, actions }) => {
 	const { createPage } = actions
-	const docError = () => {
-		const errorTemplate = path.resolve(`./src/components/Top/pages/index.tsx`)
-		createPage({
-			path: `/404/`,
-			component: errorTemplate,
-			context: {}
-		})
-	}
-	const docTop = () => {
-		const IndexTemplate = path.resolve(`./src/components/Top/pages/index.tsx`)
-		createPage({
-			path: `/`,
-			component: IndexTemplate,
-			context: {}
-		})
-	}
 
-	const docProfile = () => {
-		const IndexTemplate = path.resolve(`../src/components/Profile/pages/index.tsx`)
-		createPage({
-			path: `/about/`,
-			component: IndexTemplate,
-			context: {}
-		})
-	}
-
-	const docPost = () => {
-		const IndexTemplate = path.resolve(`../src/components/Posts/pages/index.tsx`)
-		createPage({
-			path: `/posts/`,
-			component: IndexTemplate,
-			context: {}
-		})
-	}
+	const docTop = path.resolve(`./src/components/Top/pages/index.tsx`)
+	const docProfile = path.resolve(`./src/components/Profile/pages/index.tsx`)
+	const docPost = path.resolve(`./src/components/Posts/pages/index.tsx`)
 
 	const postTemplate = path.resolve(`./src/components/Contents/pages/index.tsx`)
-	const docs = new Promise((resolve, reject) => {
-	  graphql(`
+	const doc = graphql(`
 		{
-			allContentfulPosts(sort: { fields: [id], order: DESC }) {
-				edges {
-					node {
-						id
-						thumbnail {
-							file {
-								url
+			site {
+				siteMetadata {
+					title
+				}
+			}
+		}
+	`).then(res => {
+		const data = res.site.siteMetadata.title;
+		console.log("data")
+		console.log(data)
+		createPage({
+			path: `/about/`,
+			component: docProfile,
+			context: {
+				tite: data
+			}
+		})
+		createPage({
+			path: `/posts/`,
+			component: docPost,
+			context: {
+				tite: data
+			}
+		})
+		createPage({
+			path: `/`,
+			component: path.resolve(`./src/components/Top/pages/index.tsx`),
+			context: {
+				tite: data
+			}
+		})
+		resolve()
+	})
+	const docs = new Promise((resolve, reject) => {
+		graphql(`
+			{
+				allContentfulPosts(sort: { fields: [id], order: DESC }) {
+					edges {
+						node {
+							id
+							thumbnail {
+								file {
+									url
+								}
 							}
-						}
-						title
-						postExcerpt
-						createdAt
-						childContentfulPostsContentRichTextNode {
-							json
+							title
+							postExcerpt
+							createdAt
+							childContentfulPostsContentRichTextNode {
+								json
+							}
 						}
 					}
 				}
 			}
-		}
-	  `).then(result => {
-		result.data.allContentfulPosts.edges.forEach(edge => {
-		  const node = edge.node
-		  createPage({
-			path: `/posts/${node.id}`,
-			component: postTemplate,
-			context: {
-				id: node.id
-			}
-		  })
-		})
+	  	`).then(result => {
+			result.data.allContentfulPosts.edges.forEach(edge => {
+				const node = edge.node
+				createPage({
+					path: `/posts/${node.id}`,
+					component: postTemplate,
+					context: {
+						id: node.id
+					}
+				})
+			})
 		resolve()
 	  })
 	})
-	return Promise.all([docs, docPost, docProfile, docTop, docError]);
+	return Promise.all([doc, docs]);
   }

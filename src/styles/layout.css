@@ -147,11 +147,11 @@ samp {
 figure {
   margin: 1em 40px;
 }
-hr {
+/* hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
-}
+} */
 button,
 input,
 optgroup,
@@ -523,7 +523,7 @@ iframe {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-hr {
+/* hr {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -535,7 +535,7 @@ hr {
   background: hsla(0, 0%, 0%, 0.2);
   border: none;
   height: 1px;
-}
+} */
 address {
   margin-left: 0;
   margin-right: 0;
@@ -1057,4 +1057,19 @@ pre tt:after {
 footer .copyright ._hov {
   transition: .8s;
   transform :scale(1.1);
+}
+
+.section-head.section-head-home #posts hr {
+  border-top: 3px solid rgb(81, 165, 255, .5);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.section-head.section-head-home #posts ul {
+  list-style: disc!important;
+}
+
+.pageBt button:hover {
+  border: 0;
+  transform: scale(1.1);
 }
