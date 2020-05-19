@@ -38,6 +38,16 @@ export const Information = ({ children }: Layoutprops) => {
         console.log(children)
         var item = data.allContentfulInformation.edges.slice( 0, 7 );
     }
+
+    const link = (d) => {
+        var protocol = location.protocol;
+        var host = location.hostname ;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        return `${protocol}//${host}/info/${d}`;
+    }
+
     return (
         <ul css={style.informationohome} className="information-list information-home l-right">
             {
@@ -49,7 +59,7 @@ export const Information = ({ children }: Layoutprops) => {
                     }
                     return (
                         <li key={index} className="feedInfo" css={style.li}>
-                            <a css={style.cursor} href={n.id} className="cursor-react" id="informationlink">
+                            <a css={style.cursor} href={link(n.id)} className="cursor-react" id="informationlink">
                                 <div css={style.imgbox} className="imgbox">
                                     <Img fixed={data.LogoImage.childImageSharp.fixed} />
                                 </div>

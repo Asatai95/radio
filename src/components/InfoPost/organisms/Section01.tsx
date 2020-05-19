@@ -14,8 +14,17 @@ interface Layoutprops {
 
 export const Section01 = ({children}: Layoutprops) => {
 
-    const contents = children.allContentfulInformation.edges[0].node.childContentfulPostsContentRichTextNode.json;
+    const contents = children.allContentfulInformation.edges[0].node.childContentfulInformationContentRichTextNode.json;
 
+    // const link = () => {
+    //     var protocol = location.protocol;
+    //     var host = location.hostname ;
+    //     if(host === "localhost"){
+    //         host = "localhost:8000";
+    //     }
+    //     const url = children.allContentfulInformation.edges[0].node.id;
+    //     return `${protocol}//${host}/posts/${url}`;
+    // }
     const Bold = ({ children }: Layoutprops) => <span css={SectionContent.bold} className="bold">{children}</span>
     const Text = ({ children }: Layoutprops) => <p className="align-center">{children}</p>
 
@@ -65,21 +74,25 @@ export const Section01 = ({children}: Layoutprops) => {
                       file {
                         url
                       }
-                      title
                     }
                     postExcerpt
-                    createdAt
+                    createdAt(formatString: "YYYY.MM.DD")
                     id
                     childContentfulInformationContentRichTextNode {
-                      json
+                        json
                     }
                   }
                 }
             }
         }
     `);
+
     const date = data.allContentfulNextDate.edges[0];
-    const image = children.allContentfulInformation.edges[0].node.thumbnail[0].file.url;
+    try {
+        var image = children.allContentfulInformation.edges[0].node.thumbnail[0].file.url;
+    } catch {
+        var image = false;
+    }
 
     const handleNextClick = (e) => {
         e.preventDefault();
@@ -152,6 +165,13 @@ export const Section01 = ({children}: Layoutprops) => {
         return nextBtitem;
     }
 
+    const sharetype = children.allContentfulInformation.edges[0].node.type;
+    const sharetext = children.allContentfulInformation.edges[0].node.postExcerpt;
+    const sharedate = children.allContentfulInformation.edges[0].node.createdAt;
+    const twitterShare = () => {
+        const text = "https://twitter.com/intent/tweet?text="+sharetype+"-"+sharetext+"["+sharedate+"]"
+        return text;
+    }
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={SectionContent.next} className="next-stream">
@@ -164,10 +184,36 @@ export const Section01 = ({children}: Layoutprops) => {
             </div>
             <div css={SectionContent.posts} id="posts">
                 <div css={SectionContent.imgBox}>
-                    <img css={SectionContent.img} src={image} alt=""/>
+                    { image !== false && (
+                        <img css={SectionContent.img} src={image} alt=""/>
+                    )}
                 </div>
-                {docs}
+                <div>
+                    <p css={SectionContent.shareTextp}>{sharedate} - {sharetype}</p>
+                    <h1 css={SectionContent.shareTexth1}>{sharetext}</h1>
+                </div>
+                <div css={SectionContent.shareBox}>
+                    <div css={SectionContent.shareBoxdiv}>
+                        <p css={SectionContent.sharep}>Share</p>
+                        <ul css={SectionContent.shareul}>
+                            <li css={SectionContent.shareli}>
+                                <a css={SectionContent.shareLink} href={twitterShare()} data-size="large" target="_blink">
+                                    <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876561/gatsby-source-image/Twitter_Logo_Blue_tq6hjt.png" alt=""/>
+                                </a>
+                            </li>
+                            <li css={SectionContent.shareli}>
+                                <a css={SectionContent.shareLink} href="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.facebook.com%2Fawapocke%2F&layout=button_count&size=small&appId=731219860982553&width=80&height=20" target="_blink">
+                                    <img css={SectionContent.shareLinkimg} src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div css={SectionContent.mainContent}>
+                        {docs}
+                    </div>
+                </div>
                 <div css={SectionContent.BtBox} className="pageBt">
+
                     {linkItempre() === true && (
                         <a href="#" onClick={(e) => handlePreClick(e)}>
                             <Button className={BtStyle().buttonBack}>PREVIOUS</Button>
@@ -178,6 +224,9 @@ export const Section01 = ({children}: Layoutprops) => {
                             <Button disabled={true} className={BtStyle().buttonDisable}>PREVIOUS</Button>
                         </a>
                     )}
+                    <a href="/info" css={backListlink} className="backlink">
+                        <Button className={BtStyle().buttonBacklist}>Back List</Button>
+                    </a>
                     {linkItemne() === true && (
                         <a href="#" onClick={(e) => handleNextClick(e)}>
                             <Button className={BtStyle().buttonNext}>NEXT</Button>
@@ -190,8 +239,22 @@ export const Section01 = ({children}: Layoutprops) => {
                     )}
                 </div>
             </div>
+            <div className="sideBar">
+                <ul className="banner-list">
+                    <li>
+                        <a href="https://www.facebook.com/awapocke/">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://anchor.fm/pockeawa">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
-                ScrollDown
+                INFORMATION
             </p>
         </section>
     )
@@ -230,8 +293,24 @@ const BtStyle = makeStyles({
         textShadow: "0 1px 0 rgba(0,0,0,.15)",
         transition: ".8s",
         borderRadius: "30px",
+    },
+    buttonBacklist: {
+        color: "#222",
+        background: "rgb(255,255,255)",
+        width: "150px",
+        height: "45px",
+        border: "solid rgba(0,0,0,.21)",
+        borderWidth: "1px 1px 4px",
+        padding: "0px 8px",
+        textShadow: "0 1px 0 rgba(0,0,0,.15)",
+        transition: ".8s",
+        borderRadius: "30px",
     }
 })
+
+const backListlink = css`
+    text-decoration: none;
+`
 
 const blockkeyframe =keyframes`
     0% {opacity: 0}
@@ -246,14 +325,19 @@ const SectionContent = {
         @media (min-width: 801px) {
             position : relative;
             padding: 50px 0;
-            padding-bottom: 0;
+            padding-top: 300px;
+            padding-bottom: 150px;
         }
+    `,
+    mainContent: css`
+        width: 75%;
+        padding: 10px;
     `,
     BtBox: css`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 85%;
+        width: 70%;
         margin: 70px auto;
         margin-bottom: 0;
     `,
@@ -263,9 +347,66 @@ const SectionContent = {
         margin: 70px auto;
         margin-top: 0;
         border-radius: 5px;
+        text-align: center;
+    `,
+    shareTextp: css`
+        font-size: 14px;
+    `,
+    shareTexth1: css`
+        margin-top: 11px;
+        font-size: 28px;
+        font-weight: 800;
+    `,
+    shareLink: css`
+        height: 56px;
+        width: 56px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `,
+    shareLinkimg: css`
+        width: 70%;
+    `,
+    sharep: css`
+        font-size: 25px;
+        font-weight: 800;
+        margin: 0;
+        height: 50px;
+        display: flex;
+        align-items: center;
+    `,
+    shareBox: css`
+        display: flex;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    `,
+    shareBoxdiv: css`
+        display: flex;
+        align-items: flex-start;
+        width: 25%;
+    `,
+    shareul: css`
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 45%;
+        margin-left: 10px;
+    `,
+    shareli: css`
+        list-style: none;
+        margin: 0;
+        height: 56px;
+        width: 56px;
+        position: relative;
+        border: 1px solid rgb(81, 165, 255);
+        border-radius: 30px;
     `,
     img: css`
-        width: 100%;
+        margin: 0;
+        width: 70%;
         height: 100%;
         border-radius: 5px;
     `,
@@ -302,7 +443,7 @@ const SectionContent = {
        display: flex;
        align-items: flex-start;
        justify-content: center;
-       width: 60%;
+       width: 80%;
        height: 100%;
        flex-direction: column;
        margin: auto;
@@ -319,7 +460,8 @@ const SectionContent = {
         animation-duration: 1s;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
-        top: 500px;
+        top: 300px;
         bottom: unset!important;
+        position: fixed!important;
     `
 };

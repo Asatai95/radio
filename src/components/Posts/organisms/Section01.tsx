@@ -98,9 +98,23 @@ export const Section01 = (props) => {
                 }
                 {elm()}
             </div>
+            <div className="sideBar">
+                <ul className="banner-list">
+                    <li>
+                        <a href="https://www.facebook.com/awapocke/">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://anchor.fm/pockeawa">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <Pagination props={props} />
-            <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
-                ScrollDown
+            <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml bar radio">
+                RADIO
             </p>
         </section>
     )
@@ -211,7 +225,8 @@ const SectionContent = {
         animation-duration: 1s;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
-        top: 500px;
+        top: 400px;
         bottom: unset!important;
+        position: fixed!important;
     `
 };

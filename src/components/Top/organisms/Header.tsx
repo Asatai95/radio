@@ -50,6 +50,9 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
           <li css={headeritem.li} className="nav-item">
             <a css={headeritem.a} className="nav-link" href="/info">INFORMATION</a>
           </li>
+          <li css={headeritem.li} className="nav-item">
+            <a css={headeritem.a} className="nav-link" href="/contact">CONTACT</a>
+          </li>
         </ul>
       </div>
     </nav>

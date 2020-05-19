@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Layout } from "../templates/Layout"
 import { Section01 } from "../organisms/Section01"
 import { Section02 } from "../organisms/Section02"
+import { Section03 } from "../organisms/Section03"
 import { MainImg } from "../organisms/MainImg"
 
 type Props = {
@@ -15,6 +16,7 @@ const Component: React.FC<Props> = ({data}) => {
     <Layout>
         <MainImg />
         <Section01 children={content}/>
+        <Section03 />
         <Section02 />
     </Layout>
   )
@@ -29,10 +31,13 @@ export const pageQuery = graphql`
               file {
                 url
               }
-              title
             }
+            childContentfulInformationContentRichTextNode {
+                json
+            }
+            type
             postExcerpt
-            createdAt
+            createdAt(formatString: "YYYY.MM.DD")
             id
           }
         }

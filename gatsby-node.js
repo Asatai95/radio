@@ -15,7 +15,7 @@ require('ts-node').register({
 const path = require("path")
 const { paginate } = require("gatsby-awesome-pagination")
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = ({ graphql, actions }) => {
 	const { createPage } = actions
 
 	const buildPagination = posts => {
@@ -30,34 +30,15 @@ exports.createPages = ({ actions, graphql }) => {
 		})
 	}
 
-	return graphql(`
-			{
-				allContentfulPosts(sort: { fields: [id], order: DESC }) {
-					edges {
-						node {
-							thumbnail {
-								file {
-									url
-								}
-							}
-							title
-							postExcerpt
-							createdAt
-						}
-					}
-        		}
-			}
-		`).then(result => {
-			if (result.errors) {
-				return Promise.reject(result.errors)
-			}
-			const posts = result.data.allContentfulPosts.edges
-			buildPagination(posts)
+	const buildPaginationInfo = posts => {
+		paginate({
+			createPage,
+			items: posts,
+			itemsPerPage: 7,
+			pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? "/" : "/page"),
+			component: path.resolve('src/components/Information/organisms/Section01.tsx')
 		})
-}
-
-exports.createPages = ({ graphql, actions }) => {
-	const { createPage } = actions
+	}
 
 	const docTop = path.resolve(`./src/components/Top/pages/index.tsx`)
 	const docProfile = path.resolve(`./src/components/Profile/pages/index.tsx`)
@@ -68,6 +49,60 @@ exports.createPages = ({ graphql, actions }) => {
 	const postTemplate = path.resolve(`./src/components/Contents/pages/index.tsx`)
 	const docsInfo = path.resolve(`./src/components/InfoPost/pages/index.tsx`)
 	const docs = new Promise((resolve, reject) => {
+
+		graphql(`
+			{
+				allContentfulPosts(sort: { fields: [id], order: DESC }) {
+					edges {
+						node {
+							id
+							thumbnail {
+								file {
+									url
+								}
+							}
+							title
+							postExcerpt
+							createdAt
+							childContentfulPostsContentRichTextNode {
+								json
+							}
+						}
+					}
+				}
+			}
+		`).then(result => {
+			if (result.errors) {
+				return Promise.reject(result.errors)
+			}
+			const posts = result.data.allContentfulPosts.edges
+			buildPagination(posts)
+		})
+
+		graphql(`
+			{
+				allContentfulInformation {
+					edges {
+						node {
+							createdAt(formatString: "YYYY.MM.DD")
+							postExcerpt
+							type
+							id
+							childContentfulInformationContentRichTextNode {
+								json
+							}
+						}
+					}
+				}
+			}
+		`).then(result => {
+			if (result.errors) {
+				return Promise.reject(result.errors)
+			}
+			const posts = result.data.allContentfulInformation.edges
+			buildPaginationInfo(posts)
+		})
+
 		graphql(`
 			{
 				allContentfulPosts(sort: { fields: [id], order: DESC }) {
@@ -111,6 +146,9 @@ exports.createPages = ({ graphql, actions }) => {
 							postExcerpt
 							type
 							id
+							childContentfulInformationContentRichTextNode {
+								json
+							}
 						}
 					}
 				}

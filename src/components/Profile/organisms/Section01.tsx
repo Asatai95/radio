@@ -37,8 +37,22 @@ export const Section01 =  () => {
                     </p>
                 </div>
             </div>
-            <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
-                ScrollDown
+            <div className="sideBar">
+                <ul className="banner-list">
+                    <li>
+                        <a href="https://www.facebook.com/awapocke/">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://anchor.fm/pockeawa">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml bar profile">
+                PROFILE
             </p>
         </section>
     )
@@ -51,10 +65,11 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     section: css`
-        height: 90vh;
+        height: 800px;
         display: flex;
         align-items: center;
         position: relative;
+        padding-top: 200px;
     `,
     body: css`
         margin: 60px auto;
@@ -86,7 +101,10 @@ const SectionContent = {
         animation-duration: 1s;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
-        bottom: 35px!important;
+        top: 400px;
+        height: 20px!important;
+        position:fixed!important;
+        z-index: 80;
     `,
     homebgimg: css`
         position: absolute;
@@ -100,7 +118,7 @@ const SectionContent = {
     bgtop: css`
         margin: 0;
         width: 100%;
-        height: 111%;
+        height: 115%;
         text-align: center;
     `
 };

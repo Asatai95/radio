@@ -1,5 +1,6 @@
 import React from 'react'
-import { css } from '@emotion/core'
+import { css, keyframes } from '@emotion/core'
+import { scrolldown } from "../../../styles/Shared"
 
 export const Section01 = () => {
     return (
@@ -16,9 +17,31 @@ export const Section01 = () => {
                     </div>
                 </div>
             </div>
+            <div className="sideBar">
+                <ul className="banner-list">
+                    <li>
+                        <a href="https://www.facebook.com/awapocke/">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://anchor.fm/pockeawa">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p css={[scrolldown, styled.scroll]} className="scrolldown hide-sml bar contact">
+                CONTACT
+            </p>
         </section>
     )
 }
+
+const blockkeyframe = keyframes`
+    0% {opacity: 0}
+    100% {opacity: 1}
+`
 
 const styled = {
     main : css`
@@ -152,4 +175,19 @@ const styled = {
         width: 50%;
         height: auto;
     `,
+    scroll: css`
+        @media (max-width: 1100px) {
+            right: -2%;
+        }
+        display: block;
+        -webkit-animation-name: ${blockkeyframe};
+        animation-name: ${blockkeyframe};
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        top: 300px;
+        bottom: unset!important;
+        position: fixed!important;
+    `
 }

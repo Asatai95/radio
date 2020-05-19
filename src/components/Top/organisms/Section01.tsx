@@ -44,8 +44,19 @@ export const Section01 =  () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="sideBar">
                 <ul className="banner-list">
-                    <li></li>
+                    <li>
+                        <a href="https://www.facebook.com/awapocke/">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://anchor.fm/pockeawa">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">

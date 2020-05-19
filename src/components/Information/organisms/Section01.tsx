@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { css } from '@emotion/core'
+import { css, keyframes } from '@emotion/core'
 import { Information } from '../molecules/Information'
 import { useStaticQuery, graphql } from 'gatsby'
-import { flight } from "../../../styles/Shared"
+import { scrolldown } from "../../../styles/Shared"
+import { Pagination } from "../molecules/Pagination"
 
-export const Section01 =  () => {
+export const Section01 =  (props) => {
+    console.log(props)
     const [typeValue, setValue] = useState("")
     const data = useStaticQuery(graphql`
         query {
@@ -15,6 +17,13 @@ export const Section01 =  () => {
                         createdAt(formatString: "YYYY.MM.DD")
                         postExcerpt
                         type
+                    }
+                }
+            }
+            allContentfulNextDate {
+                edges {
+                    node {
+                        date(formatString: "MM/DD")
                     }
                 }
             }
@@ -39,17 +48,24 @@ export const Section01 =  () => {
         return itemTypeList;
     })
 
+    const date = data.allContentfulNextDate.edges[0];
+
     return (
         <section css={SectionContent.main} className="section-information-home" id="information">
+            <div css={SectionContent.next} className="next-stream">
+                <span css={SectionContent.date} className="next-stream_date">
+                    次回の収録日は
+                    <span css={SectionContent.text} id="js-next">{date.node.date}</span>
+                    です。
+                </span>
+                <br />
+            </div>
             <div css={SectionContent.linner} className="l-inner">
-                <div css={SectionContent.haedline} className="box-headline">
-                    <h3 css={[ SectionContent.headlinelight, flight ]} className="headline f-light">INFORMATION</h3>
-                </div>
                 <div css={SectionContent.clearfix} className="l-container clearfix">
                     <div css={SectionContent.clearfixleft} className="l-left">
                         <ul css={SectionContent.navinformation} className="nav-information nav-btnlist">
                             <li css={SectionContent.navinformationli}>
-                                <a href="/info" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">All</a>
+                                <a href="/info" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn active">All</a>
                             </li>
                             { typeList.find((d) => d === "News") && (
                                 <li css={SectionContent.navinformationli}>
@@ -65,10 +81,33 @@ export const Section01 =  () => {
                     </div>
                     <Information children={typeValue} />
                 </div>
+                <Pagination props={props} />
             </div>
+            <div className="sideBar">
+                <ul className="banner-list">
+                    <li>
+                        <a href="https://www.facebook.com/awapocke/">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://anchor.fm/pockeawa">
+                            <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml bar">
+                INFORMATION
+            </p>
         </section>
     )
 }
+
+const blockkeyframe =keyframes`
+    0% {opacity: 0}
+    100% {opacity: 1}
+`
 
 const SectionContent = {
     main : css`
@@ -76,8 +115,8 @@ const SectionContent = {
             padding-top : 50px;
             padding-bottom: 60px;
         }
-        padding-top: 90px;
-        padding-bottom: 141px;
+        padding-top: 300px;
+        padding-bottom: 50px;
         overflow: hidden;
     `,
     haedline: css`
@@ -93,6 +132,32 @@ const SectionContent = {
             align-items: center;
         }
         margin-bottom: 50px;
+    `,
+    next: css`
+        margin: 50px auto;
+        text-align: center;
+        margin-top: 0;
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+    `,
+    date: css`
+        display: inline-block;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+    `,
+    text: css`
+        margin-right: 5px;
+        margin-left: 5px;
+        background-color: rgb(81, 165, 255);
+        padding: 5px 10px;
+        color: #fff;
+        border-radius: 3px;
     `,
     headlinelight: css`
         margin-top: 13px;
@@ -130,11 +195,13 @@ const SectionContent = {
         transition: background .3s ease-out, border .3s ease-out
     `,
     clearfix: css`
-        @media screen and (min-width: 1101px) {
-            display: flex;
-            align-items: flex-start;
-        }
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
         min-height: 1%;
+        width: 90%;
+        margin : auto;
+        margin-bottom: 100px;
     `,
     clearfixleft: css`
         @media screen and (max-width: 800px) {
@@ -154,37 +221,31 @@ const SectionContent = {
         width: 32.89%;
     `,
     navinformation: css`
-        @media screen and (max-width: 800px){
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            width: calc(100% + 60px);
-            float: none;
-            margin-top: 26px;
-            margin-left: -30px;
-            padding-left: 30px;
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
-        }
-        @media screen and (max-width: 1100px) and (min-width: 801px){
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-        }
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 50px;
     `,
     navinformationli: css`
-        @media screen and (max-width: 800px) {
-            margin-right: 15px;
-            margin-bottom: 0;
-        }
-        @media screen and (max-width: 1100px) and (min-width: 801px){
-            margin-right: 15px;
-        }
-        @media screen and (min-width: 1101px){
-            margin-bottom: 27px;
-        }
+        margin: 0 15px;
     ` ,
     linner: css`
         padding-right: 0px!important;
     `,
+    scroll: css`
+        @media (max-width: 1100px) {
+            right: -2%;
+        }
+        display: block;
+        -webkit-animation-name: ${blockkeyframe};
+        animation-name: ${blockkeyframe};
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        top: 300px;
+        bottom: unset!important;
+        position: fixed!important;
+        width: 150px!important;
+    `
 };
