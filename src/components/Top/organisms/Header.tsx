@@ -23,7 +23,6 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
     }
   `)
 
-  console.log(data)
   return (
     <nav css={navbar} className="navbar navbar-expand-lg navbar-light">
       <TitleLink to="/" className="navbar-brand" css={headerLogo}>
