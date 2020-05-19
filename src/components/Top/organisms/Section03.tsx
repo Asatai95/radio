@@ -54,12 +54,12 @@ export const Section03 =  () => {
                             </li>
                             { typeList.find((d) => d === "News") && (
                                 <li css={SectionContent.navinformationli}>
-                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">News</a>
+                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn infoLinkitem">News</a>
                                 </li>
                             )}
                             { typeList.find((d) => d === "Radio") && (
                                 <li css={SectionContent.navinformationli}>
-                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">Radio</a>
+                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn infoLinkitem">Radio</a>
                                 </li>
                             )}
                         </ul>

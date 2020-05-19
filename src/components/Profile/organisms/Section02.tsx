@@ -9,9 +9,9 @@ export const Section02 =  () => {
     return (
         <section className="section-head section-head-home">
             <div className="user_info">
-                <h2 css={SectionContent.h2}>パーソナリティ紹介</h2>
                 <div css={SectionContent.box_body} className="box_info">
                     <div css={SectionContent.body}>
+                        <h2 css={SectionContent.h2}>パーソナリティ紹介</h2>
                         <div css={SectionContent.back_screen}></div>
                         <div css={SectionContent.profile_top} className="profile">
                             <img css={SectionContent.img} src="https://res.cloudinary.com/hchyaihwv/image/upload/v1572704906/iob6zfw5ipv0sffihf9s.jpg" alt=""/>

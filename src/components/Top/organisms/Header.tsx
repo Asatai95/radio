@@ -2,11 +2,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-// import { LunrSearch } from '../molecules/lunrsearch'
 import { navbar, naviItem, headeritem} from "../../../styles/Header"
 import Img from "gatsby-image"
 import { css } from '@emotion/core'
-// import { LunrSearch } from "../molecules/lunrsearch"
 
 interface HeaderProps {
   readonly title: string
@@ -66,8 +64,8 @@ const TitleLink = styled(Link)`
   &:hover {
     color: #fff;
   }
-`
+`;
 const headerLogo = css`
   position: fixed;
   z-index: 80;
-`
+`;

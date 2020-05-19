@@ -62,10 +62,6 @@ const TitleLink = styled(Link)`
     color: #fff;
   }
 `
-const headerLogo = css`
-  position: fixed;
-  z-index: 30;
-`
 
 const Posts = {
   navbar: css`

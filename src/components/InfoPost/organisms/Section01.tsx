@@ -253,7 +253,7 @@ export const Section01 = ({children}: Layoutprops) => {
                     </li>
                 </ul>
             </div>
-            <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
+            <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml bar">
                 INFORMATION
             </p>
         </section>
@@ -391,8 +391,8 @@ const SectionContent = {
         margin: 0;
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        width: 45%;
+        justify-content: flex-start;
+        width: 100%;
         margin-left: 10px;
     `,
     shareli: css`
@@ -463,5 +463,6 @@ const SectionContent = {
         top: 300px;
         bottom: unset!important;
         position: fixed!important;
+        width: 110px!important;
     `
 };

@@ -37,7 +37,6 @@ export const Footer: React.FC<FooterProps> = () => {
 
     }
   `);
-  console.log(data)
   return (
     <footer className="fixed-bottom" css={[outer, SiteFooter]}>
       <div className="container" css={[inner, SiteFooterContent]}>

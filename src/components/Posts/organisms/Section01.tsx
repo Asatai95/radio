@@ -225,7 +225,7 @@ const SectionContent = {
         animation-duration: 1s;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
-        top: 400px;
+        top: 300px;
         bottom: unset!important;
         position: fixed!important;
     `

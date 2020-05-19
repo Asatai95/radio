@@ -69,12 +69,12 @@ export const Section01 =  (props) => {
                             </li>
                             { typeList.find((d) => d === "News") && (
                                 <li css={SectionContent.navinformationli}>
-                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">News</a>
+                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn infoLinkitem">News</a>
                                 </li>
                             )}
                             { typeList.find((d) => d === "Radio") && (
                                 <li css={SectionContent.navinformationli}>
-                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">Radio</a>
+                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn infoLinkitem">Radio</a>
                                 </li>
                             )}
                         </ul>
@@ -246,6 +246,6 @@ const SectionContent = {
         top: 300px;
         bottom: unset!important;
         position: fixed!important;
-        width: 150px!important;
+        width: 110px!important;
     `
 };

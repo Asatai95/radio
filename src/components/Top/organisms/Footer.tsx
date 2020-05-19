@@ -59,7 +59,7 @@ export const Footer: React.FC<FooterProps> = () => {
 
 const footerimg = css`
   transition: .8s;
-`
+`;
 
 const SiteFooter = css`
   position: relative;

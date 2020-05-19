@@ -33,7 +33,7 @@ interface Layoutprops {
 
 export const Layout = ({ children }: Layoutprops) => {
   const data = useStaticQuery(graphql`
-    query IndexDivQueryItem {
+    query {
       site {
         siteMetadata {
           title

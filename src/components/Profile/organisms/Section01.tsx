@@ -2,7 +2,6 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
-// // import { LunrSearch } from '../molecules/lunrsearch'
 import { scrolldown } from "../../../styles/Shared"
 
 export const Section01 =  () => {
@@ -101,7 +100,7 @@ const SectionContent = {
         animation-duration: 1s;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
-        top: 400px;
+        top: 300px;
         height: 20px!important;
         position:fixed!important;
         z-index: 80;

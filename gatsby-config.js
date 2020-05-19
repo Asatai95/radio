@@ -29,7 +29,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/awamori_img.png`,
+        icon: `src/images/logoImg.png`,
       },
     },
     `gatsby-plugin-typescript`,

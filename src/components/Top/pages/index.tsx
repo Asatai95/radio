@@ -17,12 +17,15 @@ const Component: React.FC<Props> = () => {
       <Section03 />
       <Section04 />
       <Section05 />
+      {/* <>
+        <p>{data.site?.siteMetadata?.title}</p>
+      </> */}
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query {
+  query IndexDivQuery {
     site {
       siteMetadata {
         title

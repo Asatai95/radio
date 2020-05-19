@@ -1101,10 +1101,10 @@ footer .copyright ._hov {
 
 .nav-information li .cursor-react-btn.active {
   border: 2px solid #212bff;
-    background-color: #212bff;
-    transition: background .2s ease-out, border .2s ease-out;
-    transform: scale(1.1);
-    color: #fff;
+  background-color: #212bff;
+  transition: background .2s ease-out, border .2s ease-out;
+  transform: scale(1.1);
+  color: #fff;
   font-weight: 800;
 }
 
@@ -1135,7 +1135,7 @@ footer .copyright ._hov {
 
 .sideBar {
   position: fixed;
-  top: 650px;
+  top: 600px;
   margin: auto;
   z-index: 90;
 }
