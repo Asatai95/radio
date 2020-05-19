@@ -4,6 +4,7 @@ import { Layout } from "../templates/Layout"
 import { Section01 } from "../organisms/Section01"
 import { Section02 } from "../organisms/Section02"
 import { Contact } from "../organisms/Information"
+import { MainImg } from "../organisms/MainImg"
 
 type Props = {
   readonly data?: string;
@@ -13,6 +14,7 @@ const Component: React.FC<Props> = ({data}) => {
   const content = data;
   return(
     <Layout>
+      <MainImg />
        <Section01 children={content}/>
        <Contact />
        <Section02 />

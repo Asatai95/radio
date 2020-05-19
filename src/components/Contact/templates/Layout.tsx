@@ -8,9 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { CursorPoint } from "../atoms/Cursor"
 import { Footer } from "../organisms/Footer"
 import { social, flight } from "../../../styles/Shared"
-// import Author from "./author"
-// import { Image } from "../image"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const style = {
   wrapper: css`
@@ -30,7 +27,7 @@ interface Layoutprops {
 
 export const Layout = ({ children }: Layoutprops) => {
   const data = useStaticQuery(graphql`
-    query IndexDivLayoutQuery {
+    query {
       site {
         siteMetadata {
           title
@@ -45,18 +42,18 @@ export const Layout = ({ children }: Layoutprops) => {
       <CursorPoint />
       <div css={style.container} className="container">
         <Helmet
-          titleTemplate={`%s - ${data.site.siteMetadata.title}`}
-          defaultTitle={data.site.siteMetadata.title}
-          meta={[
-            {
-              name: 'description',
-              content: data.site.siteMetadata.description,
-            },
-            {
-              name: 'keywords',
-              content: 'gatsby, gatsbyjs, sample, demo, typescript',
-            },
-          ]}
+            titleTemplate={`%s - ${data.site.siteMetadata.title}`}
+            defaultTitle={data.site.siteMetadata.title}
+            meta={[
+              {
+                name: 'description',
+                content: data.site.siteMetadata.description,
+              },
+              {
+                name: 'keywords',
+                content: 'gatsby, gatsbyjs, sample, demo, typescript',
+              },
+            ]}
         />
         <Header title={data.site.siteMetadata.title} />
         <div css={style.wrapper}>

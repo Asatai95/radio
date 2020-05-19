@@ -1,36 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { css } from '@emotion/core'
 import { Information } from '../molecules/Information'
-// import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 // // import { LunrSearch } from '../molecules/lunrsearch'
-import { flight } from "../../../styles/shared"
+import { flight } from "../../../styles/Shared"
 
 export const Section03 =  () => {
+    const [typeValue, setValue] = useState("")
+    const data = useStaticQuery(graphql`
+        query {
+            allContentfulInformation {
+                edges {
+                    node {
+                        id
+                        createdAt(formatString: "YYYY.MM.DD")
+                        postExcerpt
+                        type
+                    }
+                }
+            }
+        }
+    `)
+
+    const item = data.allContentfulInformation.edges;
+    const query = item.map((d, index) => {
+        return d.node;
+    })
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        const dataItem = query.filter((n) => {
+            return n.type === e.target.textContent;
+        })
+        return setValue(dataItem);
+    }
+
+    const typeList = item.map((y, key) => {
+        const itemTypeList = y.node.type;
+        return itemTypeList;
+    })
 
     return (
         <section css={SectionContent.main} className="section-information-home" id="information">
             <div css={SectionContent.linner} className="l-inner">
                 <div css={SectionContent.haedline} className="box-headline">
                     <h3 css={[ SectionContent.headlinelight, flight ]} className="headline f-light">INFORMATION</h3>
-                    {/* <p css={flight} className="icon-link f-light">
-                        <a href="#" css={SectionContent.iconlink} className="cursor-react cursor-react-btn">+</a>
-                    </p> */}
                 </div>
                 <div css={SectionContent.clearfix} className="l-container clearfix">
                     <div css={SectionContent.clearfixleft} className="l-left">
                         <ul css={SectionContent.navinformation} className="nav-information nav-btnlist">
                             <li css={SectionContent.navinformationli}>
-                                <a href="#" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">All</a>
+                                <a href="/info" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">All</a>
                             </li>
-                            <li css={SectionContent.navinformationli}>
-                                <a href="#" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">News</a>
-                            </li>
-                            <li css={SectionContent.navinformationli}>
-                                <a href="#" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">Radio</a>
-                            </li>
+                            { typeList.find((d) => d === "News") && (
+                                <li css={SectionContent.navinformationli}>
+                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">News</a>
+                                </li>
+                            )}
+                            { typeList.find((d) => d === "Radio") && (
+                                <li css={SectionContent.navinformationli}>
+                                    <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn">Radio</a>
+                                </li>
+                            )}
                         </ul>
                     </div>
-                    <Information />
+                    <Information children={typeValue} />
                 </div>
             </div>
         </section>

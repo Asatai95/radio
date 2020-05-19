@@ -1074,10 +1074,6 @@ footer .copyright ._hov {
   transform: scale(1.1);
 }
 
-.postContentImg._hov .post-content {
-  border: none;
-}
-
 .postContentImg._hov img {
   transform: scale(1.1);
 }

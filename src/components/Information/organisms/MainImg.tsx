@@ -1,7 +1,7 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
-import { bghead, linner, playbt, flight } from "../../../styles/shared"
+import { bghead, linner, playbt, flight } from "../../../styles/Shared"
 
 
 export const MainImg = () => {
@@ -28,9 +28,9 @@ export const MainImg = () => {
                     </div>
                 </div>
                 <div css={linner.linner01} className="l-inner">
-                    <div css={SectionContent.boxcopy} className="box-copy">
+                    <div className="box-copy">
                         <p>
-                            <a css={playbt.link} className="playbtn js-playbtn-head cursor-react cursor-react-btn" href="https://anchor.fm/pockeawa/episodes/Awamori-in-The-Pocket--1-e7vhpj">
+                            <a css={playbt.link} className="playbtn js-playbtn-head cursor-react cursor-react-btn" href="https://anchor.fm/pockeawa">
                                 <span css={playbt.circle} className="circle">
                                   <img css={playbt.img} src={clImage[1].node.secure_url} alt="" />
                                 </span>
@@ -47,7 +47,7 @@ export const MainImg = () => {
                 </ul>
             </div>
             <div css={SectionContent.topbg}>
-                <img css={SectionContent.mainImg} src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589807488/gatsby-source-cloudinary/RADIO_xsndev.png" alt=""/>
+                <img css={SectionContent.mainImg} src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589854192/gatsby-source-image/INFORMATION_qezjfl.png" alt=""/>
             </div>
         </section>
     )

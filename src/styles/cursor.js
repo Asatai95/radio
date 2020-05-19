@@ -34,23 +34,23 @@ window.onload = function () {
 
             const postimg = document.getElementsByClassName("postImgLink");
             const imgCotents = document.getElementsByClassName("postContentImg");
-            for(var n = 0; n < postimg.length; n++){
-                const number = n;
-                postimg[n].addEventListener("mouseover", function (e) {
+            for(var x = 0; x < postimg.length; x++){
+                const number = x;
+                postimg[x].addEventListener("mouseover", function (e) {
                     imgCotents[number].classList.add("_hov")
                 });
-                postimg[n].addEventListener("mouseout", function (e) {
+                postimg[x].addEventListener("mouseout", function (e) {
                     imgCotents[number].classList.remove("_hov")
                 });
             }
 
             const postimgitem = document.getElementsByClassName("postImg");
-            for(var n = 0; n < postimgitem.length; n++){
-                const number = n;
-                postimgitem[n].addEventListener("mouseover", function (e) {
+            for(var y = 0; y < postimgitem.length; y++){
+                const number = y;
+                postimgitem[y].addEventListener("mouseover", function (e) {
                     imgCotents[number].classList.add("_hov")
                 });
-                postimgitem[n].addEventListener("mouseout", function (e) {
+                postimgitem[y].addEventListener("mouseout", function (e) {
                     imgCotents[number].classList.remove("_hov")
                 });
             }

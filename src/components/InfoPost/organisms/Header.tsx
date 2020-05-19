@@ -38,13 +38,13 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
       <div css={headeritem.div} className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul css={Posts.ul} className="navbar-nav mr-auto">
           <li css={headeritem.li} className="nav-item">
-            <a css={headeritem.a} className="nav-link" href="#">AWAPOKE</a>
+            <a css={headeritem.a} className="nav-link" href="/about">AWAPOKE</a>
           </li>
           <li css={headeritem.li} className="nav-item">
-            <a css={headeritem.a} className="nav-link" href="#">RADIO</a>
+            <a css={headeritem.a} className="nav-link" href="/posts">RADIO</a>
           </li>
           <li css={headeritem.li} className="nav-item">
-            <a css={headeritem.a} className="nav-link" href="#">INFORMATION</a>
+            <a css={headeritem.a} className="nav-link" href="/info">INFORMATION</a>
           </li>
         </ul>
       </div>

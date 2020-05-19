@@ -4,7 +4,11 @@ import { flight } from '../../../styles/Shared'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 
-export const Information = () => {
+interface Layoutprops {
+    readonly children?: React.ReactNode | readonly React.ReactNode[]
+}
+
+export const Information = ({ children }: Layoutprops) => {
 
     const data = useStaticQuery(graphql`
         query {
@@ -18,6 +22,7 @@ export const Information = () => {
             allContentfulInformation {
                 edges {
                     node {
+                        id
                         createdAt(formatString: "YYYY.MM.DD")
                         postExcerpt
                         type
@@ -27,15 +32,24 @@ export const Information = () => {
         }
     `)
 
-    const item = data.allContentfulInformation.edges.slice( 0, 7 );
+    if (children.length > 0 && children !== ""){
+        var item = children.slice( 0, 7 );
+    } else {
+        console.log(children)
+        var item = data.allContentfulInformation.edges.slice( 0, 7 );
+    }
     return (
         <ul css={style.informationohome} className="information-list information-home l-right">
             {
                 item.map((d, index) => {
-                    const n = d.node;
+                    if (d.node){
+                        var n = d.node;
+                    } else {
+                        var n = d;
+                    }
                     return (
                         <li key={index} className="feedInfo" css={style.li}>
-                            <a css={style.cursor} href="#" className="cursor-react" id="informationlink">
+                            <a css={style.cursor} href={n.id} className="cursor-react" id="informationlink">
                                 <div css={style.imgbox} className="imgbox">
                                     <Img fixed={data.LogoImage.childImageSharp.fixed} />
                                 </div>

@@ -4,7 +4,6 @@ import { css } from '@emotion/core'
 import { Gallery } from '../molecules/Gallery'
 import { flight } from "../../../styles/Shared"
 import { useStaticQuery, graphql } from 'gatsby'
-// // import { LunrSearch } from '../molecules/lunrsearch'
 
 export const Section02 =  () => {
     const data = useStaticQuery(graphql`
@@ -12,6 +11,7 @@ export const Section02 =  () => {
             allContentfulPosts {
                 edges {
                     node {
+                        id
                         title
                         thumbnail {
                             fixed(width: 300, height: 300) {
@@ -40,13 +40,13 @@ export const Section02 =  () => {
                     </div>
                     <ul css={SectionContent.navdiscography} className="nav-discography nav-btnlist l-right">
                         <li css={SectionContent.navdiscographyli}>
-                            <a css={SectionContent.cursorreactbtn} className="cursor-react cursor-react-btn" href="#">All</a>
+                            <a css={SectionContent.cursorreactbtn} className="cursor-react cursor-react-btn" href="/posts">All</a>
                         </li>
                     </ul>
                     <div css={SectionContent.discographylist} className="discography-list discography-list-home item" id="react-link-item">
                         <div css={SectionContent.slide_bg} className="bgslideImg"></div>
                         <div css={SectionContent.discographylistli}>
-                            <a className="cursor-react link-item" href="#">
+                            <a className="cursor-react link-item" href="/posts">
                                 <div css={SectionContent.metabox} className="metabox">
                                     <p css={SectionContent.sttl} className="sttl">ラジオをPodCastにて配信</p>
                                     <h4 css={[ SectionContent.flight, flight ]} className="ttl f-light">Awamori in The Pocket</h4>
@@ -65,7 +65,6 @@ export const Section02 =  () => {
                                 </div>
                             </a>
                         </div>
-
                     </div>
                 </div>
             </section>

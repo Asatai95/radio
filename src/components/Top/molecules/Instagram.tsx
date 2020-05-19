@@ -32,8 +32,8 @@ export const Instagram = () => {
     const url = (d) => {
         return "https://www.instagram.com/p/" + d.node.id
     }
-    const items = insta.map((d) =>
-        <div className="post">
+    const items = insta.map((d, index) =>
+        <div key={index} className="post">
             <a href={url(d)} target="_blank">
                 <img src={d.node.thumbnails[2].src} alt="" />
             </a>

@@ -1,10 +1,9 @@
 import React from 'react'
-import { css } from '@emotion/core'
+import { css, keyframes } from '@emotion/core'
 
-export const Section03 =  () => {
-
+export const Section02 =  () => {
     return(
-        <section css={styled.section} className="section-sns-common">
+        <section css={styled.section} className="section-sns-common" id="sns">
             <div css={tips.block} className="tips">
                 <div css={tips.facebook} className="facebook-feed">
                     <div>
@@ -48,16 +47,22 @@ export const Section03 =  () => {
     )
 }
 
-const styled = {
-    section: css`
-        display: block;
-    `,
-}
+const blockkeyframe =keyframes`
+    0% {opacity: 0}
+    100% {opacity: 1}
+`
 
 const facebookstyle = css`
     border:none;
     overflow:hidden;
 `
+
+const styled = {
+    section: css`
+        display: block;
+        margin: 50px 0;
+    `,
+}
 
 const tips = {
     block: css`

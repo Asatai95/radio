@@ -22,7 +22,7 @@ const Component: React.FC<Props> = ({data}) => {
 
 export const pageQuery = graphql`
   query($id: String) {
-    allContentfulInformation {
+    allContentfulInformation(filter: { id: { eq: $id } }) {
         edges {
           node {
             thumbnail {

@@ -1,12 +1,11 @@
 import React from 'react'
 import { css } from '@emotion/core'
-// import { flight } from "../../../styles/shared"
 
 export const Section04 =  () => {
     return(
         <section css={styled.section} className="section-contact-common" id="contact">
             <div css={styled.sectionbox}>
-                <a css={styled.link} href="#" className="cursor-react-blue">
+                <a css={styled.link} href="/contact" className="cursor-react-blue">
                     <p css={styled.p} className="align-c f-light">CONTACT US</p>
                 </a>
             </div>

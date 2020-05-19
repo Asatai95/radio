@@ -60,9 +60,6 @@ export const Layout = ({ children }: Layoutprops) => {
               content: 'gatsby, gatsbyjs, sample, demo, typescript',
             },
           ]}
-          noscript={[
-            {innerHTML: `<link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/dh50en6xf/image/upload/v1589520314/gatsby-source-cloudinary/awamori_img_ipbl30.png" />`}
-          ]}
         />
         <Header title={data.site.siteMetadata.title} />
         <div css={style.wrapper}>

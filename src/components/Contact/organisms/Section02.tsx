@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 
-export const Section03 =  () => {
+export const Section02 =  () => {
 
     return(
         <section css={styled.section} className="section-sns-common">

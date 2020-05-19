@@ -3,7 +3,7 @@ import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 // // import { LunrSearch } from '../molecules/lunrsearch'
-import { scrolldown } from "../../../styles/shared"
+import { scrolldown } from "../../../styles/Shared"
 
 export const Section01 =  () => {
 

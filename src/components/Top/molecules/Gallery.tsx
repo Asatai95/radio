@@ -9,6 +9,7 @@ export const Gallery = () => {
             allContentfulPosts(sort: { fields: [title], order: DESC }) {
                 edges {
                     node {
+                        id
                         title
                         postExcerpt
                         createdAt(formatString: "YYYY/MM/DD")
@@ -25,6 +26,15 @@ export const Gallery = () => {
     const item01 = data.allContentfulPosts.edges.slice( 0, 2 );
     const item02 = data.allContentfulPosts.edges.slice( 2, 4 );
 
+    const link = (d) => {
+        var protocol = location.protocol;
+        var host = location.hostname ;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        return `${protocol}//${host}/posts/${d}`;
+    }
+
     return (
         <>
             <div css={styled.linkhome} id="linkhomesection01">
@@ -38,7 +48,7 @@ export const Gallery = () => {
                                     <p css={styled.headlinetext}>{n.postExcerpt}</p>
                                     <p css={styled.headlinetext}>{n.createdAt}</p>
                                 </div>
-                                <a href="#" className="cursor-react">
+                                <a href={link(n.id)} className="cursor-react">
                                     <div css={styled.imgbox} className="imgbox cursor-react-imgbox top">
                                         <img css={styled.imgitem} src={n.thumbnail[0].fixed.src} alt=""/>
                                     </div>
@@ -59,7 +69,7 @@ export const Gallery = () => {
                                     <p css={styled.headlinetext}>{m.postExcerpt}</p>
                                     <p css={styled.headlinetext}>{m.createdAt}</p>
                                 </div>
-                                <a href="#" className="cursor-react">
+                                <a href={link(m.id)} className="cursor-react">
                                     <div css={styled.imgbox} id="bottom" className="imgbox cursor-react-imgbox bottom">
                                         <img css={styled.imgitem} src={m.thumbnail[0].fixed.src} alt=""/>
                                     </div>

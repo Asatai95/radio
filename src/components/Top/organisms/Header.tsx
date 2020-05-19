@@ -28,7 +28,7 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
   console.log(data)
   return (
     <nav css={navbar} className="navbar navbar-expand-lg navbar-light">
-      <TitleLink to="/page-2/" className="navbar-brand" css={headerLogo}>
+      <TitleLink to="/" className="navbar-brand" css={headerLogo}>
         <Img fixed={data.LogoImage.childImageSharp.fixed} />
       </TitleLink>
       <div css={naviItem.menuicon} className="cursor-react menu-icon">
@@ -45,10 +45,10 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
             <a css={headeritem.a} className="nav-link" href="/about">AWAPOKE</a>
           </li>
           <li css={headeritem.li} className="nav-item">
-            <a css={headeritem.a} className="nav-link" href="#radio">RADIO</a>
+            <a css={headeritem.a} className="nav-link" href="/posts">RADIO</a>
           </li>
           <li css={headeritem.li} className="nav-item">
-            <a css={headeritem.a} className="nav-link" href="#information">INFORMATION</a>
+            <a css={headeritem.a} className="nav-link" href="/info">INFORMATION</a>
           </li>
         </ul>
       </div>

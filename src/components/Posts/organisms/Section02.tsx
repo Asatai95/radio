@@ -1,7 +1,6 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
 // import { graphql } from 'gatsby';
-// import { flight } from "../../../styles/shared"
 
 export const Section02 =  () => {
     return(

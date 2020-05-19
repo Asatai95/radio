@@ -1,15 +1,6 @@
 import React from 'react'
-import { css, keyframes } from '@emotion/core'
+import { css } from '@emotion/core'
 import "../../../styles/Cursor"
-
-// const anim = keyframes({
-//     from: {
-//         background: 'rgba(30,144, 255, 0.05)',
-//     },
-//     to: {
-//         background: 'rgba(30,144, 255, 0.1)',
-//     },
-// });
 
 const style = {
     cursor: css`

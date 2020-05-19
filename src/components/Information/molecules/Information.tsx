@@ -2,24 +2,21 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
-import { scrolldown } from "../../../styles/Shared"
-import { Pagination } from "../molecules/Pagination"
+// // import { LunrSearch } from '../molecules/lunrsearch'
+import { scrolldown, flight } from "../../../styles/Shared"
+// import { Pagination } from "../molecules/Pagination"
+import Img from "gatsby-image"
 
-export const Section01 = (props) => {
+export const Information = (props) => {
     const data = useStaticQuery(graphql`
         query{
-            allContentfulPosts(sort: { fields: [createdAt], order: ASC }) {
+            allContentfulInformation {
                 edges {
                     node {
-                        thumbnail {
-                            file {
-                                url
-                            }
-                        }
-                        id
-                        title
+                        createdAt(formatString: "YYYY.MM.DD")
                         postExcerpt
-                        createdAt
+                        type
+                        id
                     }
                 }
             }
@@ -30,10 +27,17 @@ export const Section01 = (props) => {
                     }
                 }
             }
+            LogoImage: file(relativePath: { eq: "Logo.png" }) {
+                    childImageSharp {
+                        fixed(width: 230) {
+                            ...GatsbyImageSharpFixed
+                    }
+                }
+            }
         }
     `);
 
-    const item = data.allContentfulPosts.edges;
+    const item = data.allContentfulInformation.edges;
     var flag = false;
     if (item.length % 2 === 1){
         flag = true;
@@ -58,9 +62,8 @@ export const Section01 = (props) => {
         if(host === "localhost"){
             host = "localhost:8000";
         }
-        return `${protocol}//${host}/posts/${d}`;
+        return `${protocol}//${host}/info/${d}`;
     }
-
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={SectionContent.next} className="next-stream">
@@ -71,34 +74,33 @@ export const Section01 = (props) => {
                 </span>
                 <br />
             </div>
-            <div css={SectionContent.posts} id="posts">
+            <div css={SectionContent.posts} id="postsImg">
 
-                {
-                    postItem.map((d, index) => {
-                        return (
-                            <div key={index} css={SectionContent.post} className="post postContentImg">
-                                <div css={SectionContent.postcontent} className="post-content">
-                                    <a href={link(d.node.id)}>
-                                        <img className="postImg" css={SectionContent.img} src={d.node.thumbnail[0].file.url} alt=""/>
+                <ul css={style.informationohome} className="information-list information-home l-right">
+                    {
+                        postItem.map((d, index) => {
+                            const n = d.node;
+                            return (
+                                <li key={index} className="feedInfo" css={style.li}>
+                                    <a css={style.cursor} href={link(d.node.id)} className="cursor-react" id="informationlink">
+                                        <div css={style.imgbox} className="imgbox">
+                                            <Img fixed={data.LogoImage.childImageSharp.fixed} />
+                                        </div>
+                                        <div css={style.metabox} className="metabox">
+                                            <div className="blink">
+                                                <p css={[ style.metainfo, flight ]} className="metainfo f-light">{n.createdAt} - {n.type}</p>
+                                                <p css={style.metainfo} className="ttl">{n.postExcerpt}</p>
+                                            </div>
+                                        </div>
                                     </a>
-                                </div>
-                                <div css={SectionContent.postheader} className="post-header">
-                                    <h2 css={SectionContent.h2}>
-                                        <a className="postImgLink" css={SectionContent.link} href={link(d.node.id)}>
-                                            {d.node.title}
-                                        </a>
-                                    </h2>
-                                    <p css={SectionContent.p}>
-                                        {d.node.postExcerpt}
-                                    </p>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
                 {elm()}
             </div>
-            <Pagination props={props} />
+            {/* <Pagination props={props}/> */}
             <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml">
                 ScrollDown
             </p>
@@ -113,7 +115,7 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
-        padding-top : 300px;
+        padding-top : 250px;
         @media (min-width: 801px) {
             position : relative;
             padding: 50px 0;
@@ -215,3 +217,54 @@ const SectionContent = {
         bottom: unset!important;
     `
 };
+
+const style = {
+    informationohome: css`
+        @media screen and (max-width: 800px){
+            float: none;
+            width: 100%;
+        }
+        @media screen and (max-width: 1100px) and (min-width: 801px){
+            float: none;
+            width: 100%;
+        }
+        @media screen and (min-width: 1101px){
+            float: left;
+            width: calc(100%);
+        }
+    `,
+    li: css`
+        margin-bottom: 3px;
+    ` ,
+    cursor: css`
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        height: 160px;
+    ` ,
+    imgbox: css`
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 284px;
+        overflow: hidden;
+        background-color : #cccccc;
+    `,
+    corsorimg: css`
+        transform: scale(1);
+        transform-origin: center center;
+        transition: transform .4s ease-out;
+    `,
+    metabox: css`
+        width: 100%;
+        padding: 23px 40px 20px;
+        background-color: rgb(32,166,242,.5);
+        position: relative;
+    `,
+    metainfo: css`
+        position: relative;
+        z-index: 9;
+        color : #222;
+        fint-size: 16px;
+    `
+}

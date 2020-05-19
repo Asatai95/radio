@@ -2,7 +2,7 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
-import { scrolldown } from "../../../styles/shared"
+import { scrolldown } from "../../../styles/Shared"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Button } from '@material-ui/core';
@@ -26,11 +26,17 @@ export const Section01 = ({children}: Layoutprops) => {
         renderNode: {
             [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
             [INLINES.HYPERLINK]: (node, children) => {
-                if (node.data.uri.indexOf("anchor.fm") !== -1){
-                    return(
-                        <iframe height="102" width="700" src={node.data.uri} frameBorder="0" scrolling="no"></iframe>
-                    )
-                } else {
+                try{
+                    if (node.data.uri.indexOf("anchor.fm") !== -1){
+                        return(
+                            <iframe height="102" width="700" src={node.data.uri} frameBorder="0" scrolling="no"></iframe>
+                        )
+                    } else {
+                        return(
+                            <a href={node.data.uri} target="_blink">{children}</a>
+                        )
+                    }
+                } catch {
                     return(
                         <a href={node.data.uri} target="_blink">{children}</a>
                     )
@@ -186,31 +192,34 @@ const BtStyle = makeStyles({
         color: "#fff",
         background: "linear-gradient(45deg, rgb(33, 150, 243) 30%, rgb(33, 203, 243) 90%)",
         width: "150px",
-        height: "40px",
+        height: "45px",
         border: "solid rgba(0,0,0,.21)",
         borderWidth: "1px 1px 4px",
         padding: "0px 8px",
         textShadow: "0 1px 0 rgba(0,0,0,.15)",
         transition: ".8s",
+        borderRadius: "30px",
     },
     buttonDisable: {
         background: "rgba(0, 0, 0, 0.26)",
         width: "150px",
-        height: "40px",
+        height: "45px",
         border: "none",
         padding: "0px 8px",
         textShadow: "0 1px 0 rgba(0,0,0,.15)",
+        borderRadius: "30px",
     },
     buttonNext: {
         color: "#fff",
         background: "linear-gradient(225deg, rgb(33, 150, 243) 30%, rgb(33, 203, 243) 90%)",
         width: "150px",
-        height: "40px",
+        height: "45px",
         border: "solid rgba(0,0,0,.21)",
         borderWidth: "1px 1px 4px",
         padding: "0px 8px",
         textShadow: "0 1px 0 rgba(0,0,0,.15)",
         transition: ".8s",
+        borderRadius: "30px",
     }
 })
 
