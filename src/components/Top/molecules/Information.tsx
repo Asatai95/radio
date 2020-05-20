@@ -38,15 +38,6 @@ export const Information = ({ children }: Layoutprops) => {
         var item = data.allContentfulInformation.edges.slice( 0, 7 );
     }
 
-    const link = (d) => {
-        var protocol = location.protocol;
-        var host = location.hostname ;
-        if(host === "localhost"){
-            host = "localhost:8000";
-        }
-        return `${protocol}//${host}/info/${d}`;
-    }
-
     return (
         <ul css={style.informationohome} className="information-list information-home l-right">
             {
@@ -75,6 +66,15 @@ export const Information = ({ children }: Layoutprops) => {
             }
         </ul>
     )
+}
+
+const link = (d) => {
+    var protocol = location.protocol;
+    var host = location.hostname ;
+    if(host === "localhost"){
+        host = "localhost:8000";
+    }
+    return `${protocol}//${host}/info/${d}`;
 }
 
 const style = {

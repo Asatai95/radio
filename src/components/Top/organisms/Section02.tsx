@@ -129,13 +129,13 @@ const SectionContent = {
     `,
     navdiscography: css`
         @media screen and (max-width: 800px) {
-            width: calc(100% + 60px);
+            width: 15%;
+            height: 58px;
+            display: flex;
+            align-items: center;
             float: none;
-            margin-top: 26px;
             margin-left: -30px;
             padding-left: 30px;
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
         }
         display: flex;
         justify-content: flex-start;

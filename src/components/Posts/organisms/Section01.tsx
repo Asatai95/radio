@@ -56,15 +56,6 @@ export const Section01 = ({children} : Layoutprops) => {
 
     const date = data.allContentfulNextDate.edges[0];
 
-    const link = (d) => {
-        var protocol = location.protocol;
-        var host = location.hostname ;
-        if(host === "localhost"){
-            host = "localhost:8000";
-        }
-        return `${protocol}//${host}/posts/${d}`;
-    }
-
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={SectionContent.next} className="next-stream">
@@ -122,6 +113,15 @@ export const Section01 = ({children} : Layoutprops) => {
             </p>
         </section>
     )
+}
+
+const link = (d) => {
+    var protocol = location.protocol;
+    var host = location.hostname ;
+    if(host === "localhost"){
+        host = "localhost:8000";
+    }
+    return `${protocol}//${host}/posts/${d}`;
 }
 
 const blockkeyframe =keyframes`

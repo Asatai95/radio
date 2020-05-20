@@ -12,6 +12,15 @@ interface Layoutprops {
     readonly children?: React.ReactNode | readonly React.ReactNode[]
 }
 
+const itemLink = (listItem) => {
+    var protocol = location.protocol;
+    var host = location.hostname ;
+    if(host === "localhost"){
+        host = "localhost:8000";
+    }
+    window.location.href = `${protocol}//${host}/posts/${listItem}`
+}
+
 export const Section01 = ({children}: Layoutprops) => {
 
     const contents = children.allContentfulPosts.edges[0].node.childContentfulPostsContentRichTextNode.json;
@@ -84,12 +93,7 @@ export const Section01 = ({children}: Layoutprops) => {
             return false;
         }
         const listItem = ids[index + 1];
-        var protocol = location.protocol;
-        var host = location.hostname ;
-        if(host === "localhost"){
-            host = "localhost:8000";
-        }
-        window.location.href = `${protocol}//${host}/posts/${listItem}`
+        itemLink(listItem)
     };
 
     const handlePreClick = (e) => {
@@ -105,12 +109,7 @@ export const Section01 = ({children}: Layoutprops) => {
             return false;
         }
         const listItem = ids[index - 1];
-        var protocol = location.protocol;
-        var host = location.hostname ;
-        if(host === "localhost"){
-            host = "localhost:8000";
-        }
-        window.location.href = `${protocol}//${host}/posts/${listItem}`
+        itemLink(listItem)
     }
     const linkItempre = () => {
         const id = children.allContentfulPosts.edges[0].node.id;

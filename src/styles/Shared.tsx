@@ -133,6 +133,9 @@ export const sectionlinkhome =  css`
   width: 50%;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 export const headline = css`

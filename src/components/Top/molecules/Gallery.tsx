@@ -26,15 +26,6 @@ export const Gallery = () => {
     const item01 = data.allContentfulPosts.edges.slice( 0, 2 );
     const item02 = data.allContentfulPosts.edges.slice( 2, 4 );
 
-    const link = (d) => {
-        var protocol = location.protocol;
-        var host = location.hostname ;
-        if(host === "localhost"){
-            host = "localhost:8000";
-        }
-        return `${protocol}//${host}/posts/${d}`;
-    }
-
     return (
         <>
             <div css={styled.linkhome} id="linkhomesection01">
@@ -81,6 +72,15 @@ export const Gallery = () => {
             </div>
         </>
     );
+}
+
+const link = (d) => {
+    var protocol = location.protocol;
+    var host = location.hostname ;
+    if(host === "localhost"){
+        host = "localhost:8000";
+    }
+    return `${protocol}//${host}/posts/${d}`;
 }
 
 const styled = {
@@ -140,11 +140,17 @@ const styled = {
         transform-origin: center center;
         transition: transform .4s ease-out;
         margin-bottom: 0;
+        @media screen and (max-width: 650px) {
+            width: 100%;
+        }
     `,
     linkhome: css`
         display: flex;
         justify-content: center;
         align-items: flex-start;
         flex-wrap: wrap;
+        @media screen and (max-width: 650px) {
+            display: block;
+        }
     `
 }

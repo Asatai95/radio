@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { css } from '@emotion/core'
 
 export const Pagination = ( item ) => {
-  console.log(item)
+
   const nextPath = item.props.pageContext.nextPagePath;
   const prevPath = item.props.pageContext.previousPagePath;
 
