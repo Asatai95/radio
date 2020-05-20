@@ -24,7 +24,7 @@ export const naviItem = {
         position: fixed;
         z-index: 99;
         top:60px;
-        right: 150px;
+        right: 80px;
     `,
     navitorigger01: css`
         display: inline-block;

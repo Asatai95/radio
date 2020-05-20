@@ -835,6 +835,12 @@ pre tt:after {
   display: block;
 }
 
+@media (max-width: 992px) {
+  .insta_view_block .post {
+    height: 200px!important;
+  }
+}
+
 .insta_view_block .post img {
   width: 100%;
   height: 100%;

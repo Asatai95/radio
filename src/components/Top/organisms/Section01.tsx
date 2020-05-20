@@ -72,9 +72,6 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
-        @media (max-width: 800px) {
-            padding-top : 41px;
-        }
         @media (min-width: 801px) {
             position : relative;
         }
@@ -87,6 +84,10 @@ const SectionContent = {
     scroll: css`
         @media (max-width: 1100px) {
             right: -2%;
+        }
+        @media (max-width: 810px) {
+            top: 600px;
+            bottom: unset;
         }
         display: block;
         -webkit-animation-name: ${blockkeyframe};
