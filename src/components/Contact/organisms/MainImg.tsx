@@ -30,7 +30,7 @@ export const MainImg = () => {
                 <div css={linner.linner01} className="l-inner">
                     <div className="box-copy">
                         <p>
-                            <a css={playbt.link} className="playbtn js-playbtn-head cursor-react cursor-react-btn" href="https://anchor.fm/pockeawa/episodes/Awamori-in-The-Pocket--1-e7vhpj">
+                            <a css={playbt.link} className="playbtn js-playbtn-head cursor-react cursor-react-btn" href="https://anchor.fm/pockeawa" target="_blink">
                                 <span css={playbt.circle} className="circle">
                                   <img css={playbt.img} src={clImage[1].node.secure_url} alt="" />
                                 </span>

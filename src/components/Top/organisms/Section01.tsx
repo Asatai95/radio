@@ -31,7 +31,7 @@ export const Section01 =  () => {
                 <div css={linner.linner01} className="l-inner">
                     <div css={SectionContent.boxcopy} className="box-copy">
                         <p>
-                            <a css={playbt.link} className="playbtn js-playbtn-head cursor-react cursor-react-btn" href="https://anchor.fm/pockeawa">
+                            <a css={playbt.link} className="playbtn js-playbtn-head cursor-react cursor-react-btn" href="https://anchor.fm/pockeawa" target="_blink">
                                 <span css={playbt.circle} className="circle">
                                   <img css={playbt.img} src={clImage[1].node.secure_url} alt="" />
                                 </span>
@@ -47,12 +47,12 @@ export const Section01 =  () => {
             <div className="sideBar">
                 <ul className="banner-list">
                     <li>
-                        <a href="https://www.facebook.com/awapocke/">
+                        <a href="https://www.facebook.com/awapocke/" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
                         </a>
                     </li>
                     <li>
-                        <a href="https://anchor.fm/pockeawa">
+                        <a href="https://anchor.fm/pockeawa" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
                         </a>
                     </li>

@@ -11,7 +11,7 @@ interface Layoutprops {
 export const Pagination = ({ props }: Layoutprops) => {
 	const previousPagePath = props;
 	const nextPagePath = props;
-	console.log("props")
+	console.log("props apgn")
 	console.log(props)
 	return (
 		<div className="pageBt" css={styled.box}>

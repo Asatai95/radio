@@ -142,6 +142,11 @@ export const Section01 = ({children}: Layoutprops) => {
         return nextBtitem;
     }
 
+    const handledisAbledClick = (e) => {
+        e.preventDefault();
+        return false;
+    }
+
     return (
         <section css={SectionContent.main} className="section-head section-head-home">
             <div css={SectionContent.next} className="next-stream">
@@ -164,17 +169,20 @@ export const Section01 = ({children}: Layoutprops) => {
                         </a>
                     )}
                     {linkItempre() === false && (
-                        <a href="#">
+                        <a href="#" onClick={(e) => handledisAbledClick(e)} css={disabledBt}>
                             <Button disabled={true} className={BtStyle().buttonDisable}>PREVIOUS</Button>
                         </a>
                     )}
+                    <a href="/info" css={backListlink} className="backlink">
+                        <Button className={BtStyle().buttonBacklist}>Back List</Button>
+                    </a>
                     {linkItemne() === true && (
                         <a href="#" onClick={(e) => handleNextClick(e)}>
                             <Button className={BtStyle().buttonNext}>NEXT</Button>
                         </a>
                     )}
                     {linkItemne() === false && (
-                        <a href="#">
+                        <a href="#" onClick={(e) => handledisAbledClick(e)} css={disabledBt}>
                             <Button disabled={true} className={BtStyle().buttonDisable}>NEXT</Button>
                         </a>
                     )}
@@ -183,12 +191,12 @@ export const Section01 = ({children}: Layoutprops) => {
             <div className="sideBar">
                 <ul className="banner-list">
                     <li>
-                        <a href="https://www.facebook.com/awapocke/">
+                        <a href="https://www.facebook.com/awapocke/" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
                         </a>
                     </li>
                     <li>
-                        <a href="https://anchor.fm/pockeawa">
+                        <a href="https://anchor.fm/pockeawa" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
                         </a>
                     </li>
@@ -234,8 +242,28 @@ const BtStyle = makeStyles({
         textShadow: "0 1px 0 rgba(0,0,0,.15)",
         transition: ".8s",
         borderRadius: "30px",
+    },
+    buttonBacklist: {
+        color: "#222",
+        background: "rgb(255,255,255)",
+        width: "150px",
+        height: "45px",
+        border: "solid rgba(0,0,0,.21)",
+        borderWidth: "1px 1px 4px",
+        padding: "0px 8px",
+        textShadow: "0 1px 0 rgba(0,0,0,.15)",
+        transition: ".8s",
+        borderRadius: "30px",
     }
 })
+
+const backListlink = css`
+    text-decoration: none;
+`
+
+const disabledBt = css`
+    pointer-events: none;
+`
 
 const blockkeyframe =keyframes`
     0% {opacity: 0}
@@ -249,7 +277,7 @@ const SectionContent = {
         }
         @media (min-width: 801px) {
             position : relative;
-            padding: 50px 0;
+            padding-top: 300px;
             padding-bottom: 0;
         }
     `,

@@ -1,7 +1,7 @@
 
 import React from 'react'
-import styled from '@emotion/styled'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+// import styled from '@emotion/styled'
+import { useStaticQuery, graphql } from 'gatsby'
 import { naviItem, headeritem} from "../../../styles/Header"
 import Img from "gatsby-image"
 import { css } from '@emotion/core'
@@ -24,9 +24,9 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
   `)
   return (
     <nav css={Posts.navbar} className="navbar navbar-expand-lg navbar-light">
-      <TitleLink to="/" className="navbar-brand" css={Posts.headerLogo}>
+      <a href="/" className="navbar-brand" css={Posts.headerLogo}>
         <Img fixed={data.LogoImage.childImageSharp.fixed} />
-      </TitleLink>
+      </a>
       <div css={naviItem.menuicon} className="cursor-react menu-icon">
         <button css={naviItem.naviBt} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-torigger-icon" css={naviItem.navitorigger01}></span>
@@ -55,13 +55,6 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
   )
 }
 
-const TitleLink = styled(Link)`
-  color: #222;
-  &:active,
-  &:hover {
-    color: #fff;
-  }
-`
 
 const Posts = {
   navbar: css`
@@ -79,6 +72,11 @@ const Posts = {
   `,
   headerLogo: css`
     position: relative;
+    color: #222;
+    &:active,
+    &:hover {
+      color: #fff;
+    }
   `,
   ul: css`
     position: relative!important;

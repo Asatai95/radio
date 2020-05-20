@@ -165,6 +165,11 @@ export const Section01 = ({children}: Layoutprops) => {
         return nextBtitem;
     }
 
+    const handledisAbledClick = (e) => {
+        e.preventDefault();
+        return false;
+    }
+
     const sharetype = children.allContentfulInformation.edges[0].node.type;
     const sharetext = children.allContentfulInformation.edges[0].node.postExcerpt;
     const sharedate = children.allContentfulInformation.edges[0].node.createdAt;
@@ -220,7 +225,7 @@ export const Section01 = ({children}: Layoutprops) => {
                         </a>
                     )}
                     {linkItempre() === false && (
-                        <a href="#">
+                        <a href="#" onClick={(e) => handledisAbledClick(e)} css={disabledBt}>
                             <Button disabled={true} className={BtStyle().buttonDisable}>PREVIOUS</Button>
                         </a>
                     )}
@@ -233,7 +238,7 @@ export const Section01 = ({children}: Layoutprops) => {
                         </a>
                     )}
                     {linkItemne() === false && (
-                        <a href="#">
+                        <a href="#" onClick={(e) => handledisAbledClick(e)} css={disabledBt}>
                             <Button disabled={true} className={BtStyle().buttonDisable}>NEXT</Button>
                         </a>
                     )}
@@ -242,12 +247,12 @@ export const Section01 = ({children}: Layoutprops) => {
             <div className="sideBar">
                 <ul className="banner-list">
                     <li>
-                        <a href="https://www.facebook.com/awapocke/">
+                        <a href="https://www.facebook.com/awapocke/" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
                         </a>
                     </li>
                     <li>
-                        <a href="https://anchor.fm/pockeawa">
+                        <a href="https://anchor.fm/pockeawa" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
                         </a>
                     </li>
@@ -307,6 +312,10 @@ const BtStyle = makeStyles({
         borderRadius: "30px",
     }
 })
+
+const disabledBt = css`
+    pointer-events: none;
+`
 
 const backListlink = css`
     text-decoration: none;
@@ -397,7 +406,7 @@ const SectionContent = {
     `,
     shareli: css`
         list-style: none;
-        margin: 0;
+        margin: 0 3px;
         height: 56px;
         width: 56px;
         position: relative;

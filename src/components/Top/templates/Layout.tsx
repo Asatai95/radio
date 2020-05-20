@@ -2,17 +2,13 @@
 import React from "react"
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from "gatsby"
-// import { IndexQuery_ } from '../../../types/graphql-types'
 import { css } from '@emotion/core'
 import { Header } from "../organisms/Header"
 import "../../../styles/layout.css"
-// import { Image } from "../image"
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import Author from "./author"
 import { CursorPoint } from "../atoms/Cursor"
 import { Footer } from "../organisms/Footer"
 import { social, flight } from "../../../styles/Shared"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const style = {
   wrapper: css`

@@ -5,8 +5,13 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { scrolldown } from "../../../styles/Shared"
 import { Pagination } from "../molecules/Pagination"
 
-export const Section01 =  (props) => {
-    console.log(props)
+interface Layoutprops {
+    readonly children?: React.ReactNode | readonly React.ReactNode[]
+}
+
+export const Section01 =  ({children}: Layoutprops) => {
+    console.log("children info")
+    console.log(children)
     const [typeValue, setValue] = useState("")
     const data = useStaticQuery(graphql`
         query {
@@ -37,9 +42,16 @@ export const Section01 =  (props) => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        const dataItem = query.filter((n) => {
-            return n.type === e.target.textContent;
-        })
+
+        if(e.target.textContent === "All") {
+            var dataItem = query;
+        } else {
+            var dataItem = query.filter((n) => {
+                return n.type === e.target.textContent;
+            })
+        }
+        console.log("data")
+        console.log(dataItem)
         return setValue(dataItem);
     }
 
@@ -65,7 +77,7 @@ export const Section01 =  (props) => {
                     <div css={SectionContent.clearfixleft} className="l-left">
                         <ul css={SectionContent.navinformation} className="nav-information nav-btnlist">
                             <li css={SectionContent.navinformationli}>
-                                <a href="/info" css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn active">All</a>
+                                <a href="#" onClick={(e) => handleClick(e)} css={SectionContent.iconlinkbtn} className="cursor-react cursor-react-btn infoLinkitem active">All</a>
                             </li>
                             { typeList.find((d) => d === "News") && (
                                 <li css={SectionContent.navinformationli}>
@@ -81,17 +93,17 @@ export const Section01 =  (props) => {
                     </div>
                     <Information children={typeValue} />
                 </div>
-                <Pagination props={props} />
+                <Pagination props={children} />
             </div>
             <div className="sideBar">
                 <ul className="banner-list">
                     <li>
-                        <a href="https://www.facebook.com/awapocke/">
+                        <a href="https://www.facebook.com/awapocke/" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
                         </a>
                     </li>
                     <li>
-                        <a href="https://anchor.fm/pockeawa">
+                        <a href="https://anchor.fm/pockeawa" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
                         </a>
                     </li>

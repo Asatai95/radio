@@ -1,4 +1,4 @@
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 // import { setLightness } from 'polished';
 import React from 'react';
 import styled from '@emotion/styled';
@@ -40,16 +40,15 @@ export const Footer: React.FC<FooterProps> = () => {
 
   return (
     <footer className="fixed-bottom" css={[outer, SiteFooter]}>
-      <div></div>
       <div className="container" css={[inner, SiteFooterContent]}>
         <SiteFooterSection className="copyright">
-          <Link to="/">
+          <a href="/">
             <img css={footerimg} id="footerLogo" src={data.allCloudinaryMedia.edges[4].node.secure_url} alt="" className="imglogo"/>
-          </Link>
+          </a>
           {data.allCloudinaryMedia.edges[1].node.secure_url && (
-            <Link to="/">
+            <a href="/">
               <img src={data.allCloudinaryMedia.edges[2].node.secure_url} alt="" className="copyright"/>
-            </Link>
+            </a>
           )}
         </SiteFooterSection>
       </div>

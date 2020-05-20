@@ -87,12 +87,19 @@ window.onload = function () {
             } catch {}
 
             const informationLink = document.getElementsByClassName("infoLinkitem")
+            const removeClassElm = document.querySelectorAll(".infoLinkitem")
             for(var t = 0; t < informationLink.length; t++){
                 const indexItem = t;
                 informationLink[t].addEventListener("click", function (e) {
-                    if (informationLink[indexItem].classList.indexOf("active") === -1){
-                        informationLink[indexItem].classList.add("active")
-                    }
+                    removeClassElm.forEach(function(elm){
+                        var elmlist = elm.classList;
+                        for(var i = 0; i < elmlist.length; i++){
+                            if (elm.classList[i] === "active"){
+                                elm.classList.remove("active")
+                            }
+                        }
+                    })
+                    informationLink[indexItem].classList.add("active")
                 });
             }
 

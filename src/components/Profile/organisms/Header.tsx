@@ -25,12 +25,11 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
     }
   `)
 
-  console.log(data)
   return (
     <nav css={[navbar, design.nav]} className="navbar navbar-expand-lg navbar-light">
-      <TitleLink to="/" className="navbar-brand" css={design.headerLogo}>
+      <a href="/" className="navbar-brand" css={design.headerLogo}>
         <Img fixed={data.LogoImage.childImageSharp.fixed} />
-      </TitleLink>
+      </a>
       <div css={naviItem.menuicon} className="cursor-react menu-icon">
         <button css={naviItem.naviBt} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-torigger-icon" css={naviItem.navitorigger01}></span>
@@ -59,14 +58,6 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
   )
 }
 
-const TitleLink = styled(Link)`
-  color: #222;
-  &:active,
-  &:hover {
-    color: #fff;
-  }
-`
-
 const design = {
   nav: css`
     width: 100%;
@@ -75,6 +66,11 @@ const design = {
   `,
   headerLogo: css`
     position: relative;
+    color: #222;
+    &:active,
+    &:hover {
+      color: #fff;
+    }
   `,
   ul: css`
     position: relative!important;

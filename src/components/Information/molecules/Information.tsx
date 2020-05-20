@@ -35,7 +35,6 @@ export const Information = ({ children }: Layoutprops) => {
     if (children.length > 0 && children !== ""){
         var item = children.slice( 0, 7 );
     } else {
-        console.log(children)
         var item = data.allContentfulInformation.edges.slice( 0, 7 );
     }
 

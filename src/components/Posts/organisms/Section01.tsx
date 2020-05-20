@@ -5,7 +5,13 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { scrolldown } from "../../../styles/Shared"
 import { Pagination } from "../molecules/Pagination"
 
-export const Section01 = (props) => {
+interface Layoutprops {
+    readonly children?: React.ReactNode | readonly React.ReactNode[]
+}
+
+export const Section01 = ({children} : Layoutprops) => {
+    console.log("children posts")
+    console.log(children)
     const data = useStaticQuery(graphql`
         query{
             allContentfulPosts(sort: { fields: [createdAt], order: ASC }) {
@@ -101,18 +107,18 @@ export const Section01 = (props) => {
             <div className="sideBar">
                 <ul className="banner-list">
                     <li>
-                        <a href="https://www.facebook.com/awapocke/">
+                        <a href="https://www.facebook.com/awapocke/" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589876664/gatsby-source-image/f_logo_RGB-Blue_58_a5hpfv.png" alt=""/>
                         </a>
                     </li>
                     <li>
-                        <a href="https://anchor.fm/pockeawa">
+                        <a href="https://anchor.fm/pockeawa" target="_blink">
                             <img src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589891899/gatsby-source-image/unnamed_woquid.png" alt=""/>
                         </a>
                     </li>
                 </ul>
             </div>
-            <Pagination props={props} />
+            <Pagination props={children} />
             <p css={[scrolldown, SectionContent.scroll]} className="scrolldown hide-sml bar radio">
                 RADIO
             </p>

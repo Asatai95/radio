@@ -167,6 +167,9 @@ button,
 input {
   overflow: visible;
 }
+button {
+  outline: none!important;
+}
 button,
 select {
   text-transform: none;
@@ -258,6 +261,7 @@ body {
 }
 a {
   text-decoration: none!important;
+  outline: none!important;
 }
 img {
   max-width: 100%;
@@ -1042,11 +1046,17 @@ pre tt:after {
   will-change: opacity;
 }
 
+@keyframes blinkradioblock {
+  0% { color: rgb(33,43,255) }
+  100% { color: rgb(33,43,255, .7) }
+}
+
 .discography-list-home.item._hov .cursor-react.link-item p,
 .discography-list-home.item._hov .cursor-react.link-item h4 {
-  -webkit-text-stroke: 1px #FFF;
-  text-stroke: 1px #FFF;
-  color: #222;
+  animation: blinkradioblock .04s 0s linear infinite alternate-reverse;
+  -webkit-text-stroke: .3px #FFF;
+  text-stroke: .3px #FFF;
+  color: #212bff;
 }
 
 .discography-list-home.item._hov .bgslideImg {
@@ -1076,6 +1086,10 @@ footer .copyright ._hov {
 .pageBt button:hover {
   border: 0;
   transform: scale(1.1);
+}
+
+.pageBt .backlink button:hover {
+  background: rgb(255, 255, 255);
 }
 
 .postContentImg._hov img {
@@ -1129,7 +1143,7 @@ footer .copyright ._hov {
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
-    padding: 5px;
+    padding: 2px;
   }
 }
 

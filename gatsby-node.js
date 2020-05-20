@@ -19,11 +19,12 @@ exports.createPages = ({ graphql, actions }) => {
 	const { createPage } = actions
 
 	const buildPagination = posts => {
+		console.log(posts)
 		paginate({
 			createPage,
 			items: posts,
 			itemsPerPage: 5,
-			pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? "/posts" : "/posts/page"),
+			pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? "/item" : "/item/page"),
 			component: path.resolve('src/components/Posts/organisms/Section01.tsx')
 		})
 	}
@@ -33,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
 			createPage,
 			items: posts,
 			itemsPerPage: 7,
-			pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? "/info" : "/info/page"),
+			pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? "/infoitem" : "/infoitem/page"),
 			component: path.resolve('src/components/Information/organisms/Section01.tsx')
 		})
 	}
@@ -74,6 +75,7 @@ exports.createPages = ({ graphql, actions }) => {
 				return Promise.reject(result.errors)
 			}
 			const posts = result.data.allContentfulPosts.edges
+			console.log(posts)
 			buildPagination(posts)
 		})
 
@@ -181,13 +183,13 @@ exports.createPages = ({ graphql, actions }) => {
 					tite: data
 				}
 			})
-			// createPage({
-			// 	path: `/posts/`,
-			// 	component: docPost,
-			// 	context: {
-			// 		tite: data
-			// 	}
-			// })
+			createPage({
+				path: `/posts/`,
+				component: docPost,
+				context: {
+					tite: data
+				}
+			})
 			createPage({
 				path: `/`,
 				component: docTop,
@@ -202,13 +204,13 @@ exports.createPages = ({ graphql, actions }) => {
 					tite: data
 				}
 			})
-			// createPage({
-			// 	path: `/info/`,
-			// 	component: docInfo,
-			// 	context: {
-			// 		tite: data
-			// 	}
-			// })
+			createPage({
+				path: `/info/`,
+				component: docInfo,
+				context: {
+					tite: data
+				}
+			})
 		})
 		resolve()
 	})
