@@ -5353,9 +5353,9 @@ export type ContentfulPostsContentRichTextNode = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  content?: Maybe<Scalars['String']>;
   /** @deprecated This field is deprecated, please use 'json' instead. */
   nodeType?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['String']>;
   json?: Maybe<Scalars['JSON']>;
 };
 
@@ -5473,8 +5473,8 @@ export type ContentfulPostsContentRichTextNodeFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'content'
   | 'nodeType'
+  | 'content'
   | 'json';
 
 export type ContentfulPostsContentRichTextNodeFilterInput = {
@@ -5482,8 +5482,8 @@ export type ContentfulPostsContentRichTextNodeFilterInput = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  content?: Maybe<StringQueryOperatorInput>;
   nodeType?: Maybe<StringQueryOperatorInput>;
+  content?: Maybe<StringQueryOperatorInput>;
   json?: Maybe<JsonQueryOperatorInput>;
 };
 
@@ -5725,8 +5725,8 @@ export type ContentfulPostsFieldsEnum =
   | 'content___internal___mediaType'
   | 'content___internal___owner'
   | 'content___internal___type'
-  | 'content___content'
   | 'content___nodeType'
+  | 'content___content'
   | 'content___json'
   | 'spaceId'
   | 'contentful_id'
@@ -5774,8 +5774,8 @@ export type ContentfulPostsFieldsEnum =
   | 'childContentfulPostsContentRichTextNode___internal___mediaType'
   | 'childContentfulPostsContentRichTextNode___internal___owner'
   | 'childContentfulPostsContentRichTextNode___internal___type'
-  | 'childContentfulPostsContentRichTextNode___content'
   | 'childContentfulPostsContentRichTextNode___nodeType'
+  | 'childContentfulPostsContentRichTextNode___content'
   | 'childContentfulPostsContentRichTextNode___json';
 
 export type ContentfulPostsFilterInput = {
@@ -8244,8 +8244,8 @@ export type QueryContentfulPostsContentRichTextNodeArgs = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  content?: Maybe<StringQueryOperatorInput>;
   nodeType?: Maybe<StringQueryOperatorInput>;
+  content?: Maybe<StringQueryOperatorInput>;
   json?: Maybe<JsonQueryOperatorInput>;
 };
 

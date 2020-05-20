@@ -1,6 +1,5 @@
 import React from 'react'
-import { css, keyframes } from '@emotion/core'
-// import { graphql } from 'gatsby';
+import { css } from '@emotion/core'
 
 export const Section02 =  () => {
     return(
@@ -47,11 +46,6 @@ export const Section02 =  () => {
         </section>
     )
 }
-
-const blockkeyframe =keyframes`
-    0% {opacity: 0}
-    100% {opacity: 1}
-`
 
 const facebookstyle = css`
     border:none;

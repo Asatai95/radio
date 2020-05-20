@@ -10,8 +10,6 @@ interface Layoutprops {
 }
 
 export const Section01 = ({children} : Layoutprops) => {
-    console.log("children posts")
-    console.log(children)
     const data = useStaticQuery(graphql`
         query{
             allContentfulPosts(sort: { fields: [createdAt], order: ASC }) {

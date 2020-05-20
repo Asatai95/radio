@@ -8,9 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { CursorPoint } from "../atoms/Cursor"
 import { Footer } from "../organisms/Footer"
 import { social, flight } from "../../../styles/Shared"
-// import Author from "./author"
-// import { Image } from "../image"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const style = {
   wrapper: css`

@@ -5,13 +5,15 @@ import { Section01 } from '../organisms/Section01'
 import { Section02 } from '../organisms/Section02'
 import { MainImg } from "../organisms/MainImg"
 
-type Props = {}
+interface Layoutprops {
+  readonly children?: React.ReactNode | readonly React.ReactNode[]
+}
 
-const Component: React.FC<Props> = () => {
+const Component: React.FC<Layoutprops> = (children) => {
   return(
     <Layout>
         <MainImg />
-        <Section01 />
+        <Section01 children={children}/>
         <Section02 />
     </Layout>
   )

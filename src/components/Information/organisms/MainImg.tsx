@@ -3,7 +3,6 @@ import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 import { bghead, linner, playbt, flight } from "../../../styles/Shared"
 
-
 export const MainImg = () => {
     const data = useStaticQuery(graphql`
         query {

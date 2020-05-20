@@ -1,7 +1,6 @@
 
 import React from 'react'
 import { css } from '@emotion/core'
-// import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled';
 
 export const Section02 =  () => {

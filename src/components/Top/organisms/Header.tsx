@@ -1,7 +1,6 @@
 
 import React from 'react'
-import styled from '@emotion/styled'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { navbar, naviItem, headeritem} from "../../../styles/Header"
 import Img from "gatsby-image"
 import { css } from '@emotion/core'

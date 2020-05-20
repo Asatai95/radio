@@ -193,6 +193,7 @@ button::-moz-focus-inner {
 button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
+
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
@@ -1083,7 +1084,7 @@ footer .copyright ._hov {
   list-style: disc!important;
 }
 
-.pageBt button:hover {
+.pageBt a button:hover {
   border: 0;
   transform: scale(1.1);
 }
@@ -1174,4 +1175,14 @@ footer .copyright ._hov {
 .sideBar ul li img:hover {
   opacity: 1;
   transform : scale(1.1);
+}
+
+.pageBt .makeStyles-buttonDisable-2:hover {
+  transform: scale(1.0);
+  background: rgba(0, 0, 0, 0.26);
+}
+
+#cursor-pointer,
+#pointer {
+  display: none;
 }

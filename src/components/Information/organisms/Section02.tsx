@@ -64,46 +64,6 @@ const styled = {
     `,
 }
 
-const instagramfield = {
-    block: css`
-        height: 400px;
-        transition: all 1.5s ease-in-out;
-    `,
-    title: css`
-        padding: 30px;
-    `,
-    titletext: css`
-        text-align: center;
-        color: #222;
-        font-size: 25px;
-        font-weight: 800;
-        padding-bottom: 0;
-    `,
-    titlelink: css`
-        z-index: 50;
-        transition: all 1s ease;
-        font-weight: 800;
-    `,
-    titlespan: css`
-        color: #666666;
-        margin-left: 5px;
-    `,
-    viewblock: css`
-        display: block;
-        -webkit-animation-name: ${blockkeyframe};
-        animation-name: ${blockkeyframe};
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out;
-    `,
-    mainbox: css`
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `
-}
-
 const tips = {
     block: css`
         display: flex;

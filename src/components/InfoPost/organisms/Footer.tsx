@@ -1,4 +1,4 @@
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';

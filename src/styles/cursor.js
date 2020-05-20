@@ -4,6 +4,8 @@ window.onload = function () {
         const cursor = document.getElementById("cursor-pointer");
         const pointer = document.getElementById("pointer");
         if (cursor !== null) {
+            cursor.style.display = "block";
+            pointer.style.display = "block";
             document.addEventListener("mousemove", function (e) {
                 pointer.style.transform = "translate(" + e.clientX + "px, " + e.clientY + "px)";
                 var cursorevent = function(){

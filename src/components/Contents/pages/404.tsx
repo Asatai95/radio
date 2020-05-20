@@ -1,12 +1,12 @@
-import React from 'react'
+import { PageProps } from "gatsby"
+import * as React from "react"
+import { Layout } from "../templates/Layout"
 
-export default function NotFound() {
-  if (typeof window !== 'undefined') {
-    window.location.href = '/';
-  }
+const Error404Page: React.FC<PageProps> = () => (
+  <Layout>
+    <h1>You are here!</h1>
+    <h2>But nothing found for you #404</h2>
+  </Layout>
+)
 
-  return null;
-}
-
-
-
+export default Error404Page

@@ -1,9 +1,7 @@
-import { Link, graphql, useStaticQuery } from 'gatsby';
-// import { setLightness } from 'polished';
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-// import { colors } from '../../../styles/Colors';
 import { outer, inner } from '../../../styles/Shared';
 
 interface FooterProps {

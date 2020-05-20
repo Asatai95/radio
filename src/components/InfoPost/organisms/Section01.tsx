@@ -15,16 +15,6 @@ interface Layoutprops {
 export const Section01 = ({children}: Layoutprops) => {
 
     const contents = children.allContentfulInformation.edges[0].node.childContentfulInformationContentRichTextNode.json;
-
-    // const link = () => {
-    //     var protocol = location.protocol;
-    //     var host = location.hostname ;
-    //     if(host === "localhost"){
-    //         host = "localhost:8000";
-    //     }
-    //     const url = children.allContentfulInformation.edges[0].node.id;
-    //     return `${protocol}//${host}/posts/${url}`;
-    // }
     const Bold = ({ children }: Layoutprops) => <span css={SectionContent.bold} className="bold">{children}</span>
     const Text = ({ children }: Layoutprops) => <p className="align-center">{children}</p>
 

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { css } from '@emotion/core'
 import { Information } from '../molecules/Information'
 import { useStaticQuery, graphql } from 'gatsby'
-// // import { LunrSearch } from '../molecules/lunrsearch'
 import { flight } from "../../../styles/Shared"
 
 export const Section03 =  () => {

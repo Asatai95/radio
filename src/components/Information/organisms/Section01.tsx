@@ -10,8 +10,6 @@ interface Layoutprops {
 }
 
 export const Section01 =  ({children}: Layoutprops) => {
-    console.log("children info")
-    console.log(children)
     const [typeValue, setValue] = useState("")
     const data = useStaticQuery(graphql`
         query {
@@ -50,8 +48,7 @@ export const Section01 =  ({children}: Layoutprops) => {
                 return n.type === e.target.textContent;
             })
         }
-        console.log("data")
-        console.log(dataItem)
+
         return setValue(dataItem);
     }
 

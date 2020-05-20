@@ -1,7 +1,6 @@
 
 import React from 'react'
-import styled from '@emotion/styled'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { naviItem, headeritem} from "../../../styles/Header"
 import Img from "gatsby-image"
 import { css } from '@emotion/core'
@@ -54,11 +53,6 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
     </nav>
   )
 }
-
-const headerLogo = css`
-  position: fixed;
-  z-index: 30;
-`
 
 const Posts = {
   navbar: css`

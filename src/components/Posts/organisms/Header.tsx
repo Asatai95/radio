@@ -1,12 +1,9 @@
 
 import React from 'react'
-import styled from '@emotion/styled'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-// import { LunrSearch } from '../molecules/lunrsearch'
+import { useStaticQuery, graphql } from 'gatsby'
 import { naviItem, headeritem} from "../../../styles/Header"
 import Img from "gatsby-image"
 import { css } from '@emotion/core'
-// import { LunrSearch } from "../molecules/lunrsearch"
 
 interface HeaderProps {
   readonly title: string
