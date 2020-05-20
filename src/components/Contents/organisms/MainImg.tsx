@@ -42,9 +42,6 @@ export const MainImg = () => {
                         </div>
                     </div>
                 </div>
-                <ul className="banner-list">
-                    <li></li>
-                </ul>
             </div>
             <div css={SectionContent.topbg}>
                 <img css={SectionContent.mainImg} src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589807488/gatsby-source-cloudinary/RADIO_xsndev.png" alt=""/>

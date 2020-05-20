@@ -42,9 +42,6 @@ export const MainImg = () => {
                         </div>
                     </div>
                 </div>
-                <ul className="banner-list">
-                    <li></li>
-                </ul>
             </div>
             <div css={SectionContent.topbg}>
                 <img css={SectionContent.mainImg} src="https://res.cloudinary.com/dh50en6xf/image/upload/v1589854183/gatsby-source-image/CONTACT_kbtzgb.png" alt=""/>
