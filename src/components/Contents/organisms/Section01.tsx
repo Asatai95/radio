@@ -13,12 +13,14 @@ interface Layoutprops {
 }
 
 const itemLink = (listItem) => {
-    var protocol = location.protocol;
-    var host = location.hostname ;
-    if(host === "localhost"){
-        host = "localhost:8000";
+    if (typeof location !== "undefined") {
+        var protocol = location.protocol;
+        var host = location.hostname ;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        window.location.href = `${protocol}//${host}/posts/${listItem}`
     }
-    window.location.href = `${protocol}//${host}/posts/${listItem}`
 }
 
 export const Section01 = ({children}: Layoutprops) => {

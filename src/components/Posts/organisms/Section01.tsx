@@ -116,12 +116,14 @@ export const Section01 = ({children} : Layoutprops) => {
 }
 
 const link = (d) => {
-    var protocol = location.protocol;
-    var host = location.hostname ;
-    if(host === "localhost"){
-        host = "localhost:8000";
+    if (typeof location !== "undefined") {
+        var protocol = location.protocol;
+        var host = location.hostname ;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        return `${protocol}//${host}/posts/${d}`;
     }
-    return `${protocol}//${host}/posts/${d}`;
 }
 
 const blockkeyframe =keyframes`

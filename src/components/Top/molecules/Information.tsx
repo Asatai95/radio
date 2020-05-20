@@ -69,12 +69,14 @@ export const Information = ({ children }: Layoutprops) => {
 }
 
 const link = (d) => {
-    var protocol = location.protocol;
-    var host = location.hostname ;
-    if(host === "localhost"){
-        host = "localhost:8000";
+    if (typeof location !== "undefined") {
+        var protocol = location.protocol;
+        var host = location.hostname ;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        return `${protocol}//${host}/info/${d}`;
     }
-    return `${protocol}//${host}/info/${d}`;
 }
 
 const style = {
