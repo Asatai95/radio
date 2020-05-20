@@ -56,7 +56,9 @@ export const Layout = ({ children }: Layoutprops) => {
               content: 'gatsby, gatsbyjs, sample, demo, typescript',
             },
           ]}
-        />
+        >
+           <script src="../../../styles/Cursor.js" type="text/javascript" />
+        </Helmet>
         <Header title={data.site.siteMetadata.title} />
         <div css={style.wrapper}>
           {children}

@@ -23,6 +23,7 @@ export const naviItem = {
         height: 30px;
         position: fixed;
         z-index: 99;
+        top:60px;
         right: 150px;
     `,
     navitorigger01: css`
@@ -32,7 +33,7 @@ export const naviItem = {
         right: 0;
         width: 100%;
         height: 1px;
-        background-color: rgb(32,166, 242, .8);
+        background-color: rgb(255,255,255);
         border-radius: 8px;
         will-change: transform;
         transition: transform .2s ease-out, width .2s ease-out, opacity .2s ease-out;
@@ -46,7 +47,7 @@ export const naviItem = {
         right: 0;
         width: 100%;
         height: 1px;
-        background-color: rgb(32,166, 242, .8);
+        background-color: rgb(255,255,255);
         border-radius: 8px;
         will-change: transform;
         transition: transform .2s ease-out, width .2s ease-out, opacity .2s ease-out;
@@ -60,7 +61,7 @@ export const naviItem = {
         right: 0;
         width: 100%;
         height: 1px;
-        background-color: rgb(32,166, 242, .8);
+        background-color: rgb(255,255,255);
         border-radius: 8px;
         will-change: transform;
         transition: transform .2s ease-out, width .2s ease-out, opacity .2s ease-out;
