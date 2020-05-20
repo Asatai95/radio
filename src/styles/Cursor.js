@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
+
     window.onload = function () {
         var item = window.setInterval(myCallback, 500);
         function myCallback() {
@@ -113,4 +113,3 @@ document.addEventListener("DOMContentLoaded", function(){
         clearInterval(item);
         }
     };
-});
