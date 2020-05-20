@@ -125,7 +125,7 @@ const SectionContent = {
             padding-bottom: 60px;
         }
         padding-top: 300px;
-        padding-bottom: 50px;
+        padding-bottom: 150px;
         overflow: hidden;
     `,
     haedline: css`

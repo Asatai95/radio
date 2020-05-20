@@ -23,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 		graphql(`
 			{
-				allContentfulPosts(sort: { fields: [id], order: DESC }) {
+				allContentfulPosts(sort: { fields: [title], order: DESC }) {
 					edges {
 						node {
 							id
@@ -41,23 +41,6 @@ exports.createPages = ({ graphql, actions }) => {
 						}
 					}
 				}
-			}
-		`).then(result => {
-			if (result.errors) {
-				return Promise.reject(result.errors)
-			}
-			const posts = result.data.allContentfulPosts.edges
-			paginate({
-				createPage,
-				items: posts,
-				itemsPerPage: 10,
-				pathPrefix: ({ pageNumber, numberOfPages }) => pageNumber === 0 ? '/posts' : '/posts/page',
-				component: path.resolve('./src/components/Posts/pages/index.tsx')
-			})
-		})
-
-		graphql(`
-			{
 				allContentfulInformation(sort: { fields: [createdAt], order: DESC }) {
 					edges {
 						node {
@@ -81,8 +64,17 @@ exports.createPages = ({ graphql, actions }) => {
 			if (result.errors) {
 				return Promise.reject(result.errors)
 			}
+
+			const posts = result.data.allContentfulPosts.edges
+			paginate({
+				createPage,
+				items: posts,
+				itemsPerPage: 10,
+				pathPrefix: ({ pageNumber, numberOfPages }) => pageNumber === 0 ? '/posts' : '/posts/page',
+				component: path.resolve('./src/components/Posts/pages/index.tsx')
+			})
+
 			const postItems = result.data.allContentfulInformation.edges
-			console.log(postItems)
 			paginate({
 				createPage,
 				items: postItems,

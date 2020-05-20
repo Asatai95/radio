@@ -3059,9 +3059,9 @@ export type ContentfulInformationContentRichTextNode = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  content?: Maybe<Scalars['String']>;
   /** @deprecated This field is deprecated, please use 'json' instead. */
   nodeType?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['String']>;
   json?: Maybe<Scalars['JSON']>;
 };
 
@@ -3179,8 +3179,8 @@ export type ContentfulInformationContentRichTextNodeFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'content'
   | 'nodeType'
+  | 'content'
   | 'json';
 
 export type ContentfulInformationContentRichTextNodeFilterInput = {
@@ -3188,8 +3188,8 @@ export type ContentfulInformationContentRichTextNodeFilterInput = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  content?: Maybe<StringQueryOperatorInput>;
   nodeType?: Maybe<StringQueryOperatorInput>;
+  content?: Maybe<StringQueryOperatorInput>;
   json?: Maybe<JsonQueryOperatorInput>;
 };
 
@@ -3430,8 +3430,8 @@ export type ContentfulInformationFieldsEnum =
   | 'content___internal___mediaType'
   | 'content___internal___owner'
   | 'content___internal___type'
-  | 'content___content'
   | 'content___nodeType'
+  | 'content___content'
   | 'content___json'
   | 'spaceId'
   | 'contentful_id'
@@ -3479,8 +3479,8 @@ export type ContentfulInformationFieldsEnum =
   | 'childContentfulInformationContentRichTextNode___internal___mediaType'
   | 'childContentfulInformationContentRichTextNode___internal___owner'
   | 'childContentfulInformationContentRichTextNode___internal___type'
-  | 'childContentfulInformationContentRichTextNode___content'
   | 'childContentfulInformationContentRichTextNode___nodeType'
+  | 'childContentfulInformationContentRichTextNode___content'
   | 'childContentfulInformationContentRichTextNode___json';
 
 export type ContentfulInformationFilterInput = {
@@ -8197,8 +8197,8 @@ export type QueryContentfulInformationContentRichTextNodeArgs = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  content?: Maybe<StringQueryOperatorInput>;
   nodeType?: Maybe<StringQueryOperatorInput>;
+  content?: Maybe<StringQueryOperatorInput>;
   json?: Maybe<JsonQueryOperatorInput>;
 };
 
@@ -8886,6 +8886,7 @@ export type SitePageConnectionGroupArgs = {
 
 export type SitePageContext = {
   tite?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
   pageNumber?: Maybe<Scalars['Int']>;
   humanPageNumber?: Maybe<Scalars['Int']>;
   skip?: Maybe<Scalars['Int']>;
@@ -8893,11 +8894,11 @@ export type SitePageContext = {
   numberOfPages?: Maybe<Scalars['Int']>;
   previousPagePath?: Maybe<Scalars['String']>;
   nextPagePath?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
   tite?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
   pageNumber?: Maybe<IntQueryOperatorInput>;
   humanPageNumber?: Maybe<IntQueryOperatorInput>;
   skip?: Maybe<IntQueryOperatorInput>;
@@ -8905,7 +8906,6 @@ export type SitePageContextFilterInput = {
   numberOfPages?: Maybe<IntQueryOperatorInput>;
   previousPagePath?: Maybe<StringQueryOperatorInput>;
   nextPagePath?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -9008,6 +9008,7 @@ export type SitePageFieldsEnum =
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
   | 'context___tite'
+  | 'context___id'
   | 'context___pageNumber'
   | 'context___humanPageNumber'
   | 'context___skip'
@@ -9015,7 +9016,6 @@ export type SitePageFieldsEnum =
   | 'context___numberOfPages'
   | 'context___previousPagePath'
   | 'context___nextPagePath'
-  | 'context___id'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'

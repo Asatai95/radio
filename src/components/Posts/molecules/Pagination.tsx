@@ -36,8 +36,8 @@ const styled = {
     font-size: 18px;
   `,
   blackBox: css`
-    width: "150px";
-    height: "45px";
+    width: 150px;
+    height: 45px;
   `
 }
 

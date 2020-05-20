@@ -10,8 +10,7 @@ interface Layoutprops {
   readonly children?: React.ReactNode | readonly React.ReactNode[]
 }
 
-const Component: React.FC<Layoutprops> = ({children}) => {
-  console.log(children)
+const Component: React.FC<Layoutprops> = (children) => {
   return(
     <Layout>
         <MainImg />
