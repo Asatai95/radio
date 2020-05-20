@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect}from 'react'
 import { css } from '@emotion/core'
 import { flight } from '../../../styles/Shared'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -10,6 +10,21 @@ interface Layoutprops {
 
 export const Information = ({ children }: Layoutprops) => {
 
+    const [protocols, setProtocol] = useState("")
+    const [hostnames, setHostname] = useState("")
+    useEffect(() => {
+        setProtocol(location.protocol)
+        setHostname(location.hostname)
+    }, [])
+
+    const link = (d) => {
+        var protocol = protocols;
+        var host = hostnames;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        return `${protocol}//${host}/info/${d}`;
+    }
     const data = useStaticQuery(graphql`
         query {
             LogoImage: file(relativePath: { eq: "Logo.png" }) {
@@ -66,17 +81,6 @@ export const Information = ({ children }: Layoutprops) => {
             }
         </ul>
     )
-}
-
-const link = (d) => {
-    if (typeof location !== "undefined") {
-        var protocol = location.protocol;
-        var host = location.hostname ;
-        if(host === "localhost"){
-            host = "localhost:8000";
-        }
-        return `${protocol}//${host}/info/${d}`;
-    }
 }
 
 const style = {

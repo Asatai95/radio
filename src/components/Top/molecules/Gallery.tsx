@@ -1,9 +1,25 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { css } from '@emotion/core'
 import { sectionlinkhome } from "../../../styles/Shared"
 import { useStaticQuery, graphql } from 'gatsby'
 
 export const Gallery = () => {
+    const [protocols, setProtocol] = useState("")
+    const [hostnames, setHostname] = useState("")
+    useEffect(() => {
+        setProtocol(location.protocol)
+        setHostname(location.hostname)
+    }, [])
+
+    const link = (d) => {
+        var protocol = protocols;
+        var host = hostnames;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        return `${protocol}//${host}/posts/${d}`;
+    }
+
     const data = useStaticQuery(graphql`
         query {
             allContentfulPosts(sort: { fields: [title], order: DESC }) {
@@ -72,17 +88,6 @@ export const Gallery = () => {
             </div>
         </>
     );
-}
-
-const link = (d) => {
-    if (typeof location !== "undefined") {
-        var protocol = location.protocol;
-        var host = location.hostname ;
-        if(host === "localhost"){
-            host = "localhost:8000";
-        }
-        return `${protocol}//${host}/posts/${d}`;
-    }
 }
 
 const styled = {

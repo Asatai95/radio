@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 import { scrolldown } from "../../../styles/Shared"
@@ -12,19 +12,22 @@ interface Layoutprops {
     readonly children?: React.ReactNode | readonly React.ReactNode[]
 }
 
-const itemLink = (listItem) => {
-    if (typeof location !== "undefined") {
-        var protocol = location.protocol;
-        var host = location.hostname ;
+export const Section01 = ({children}: Layoutprops) => {
+    const [protocols, setProtocol] = useState("")
+    const [hostnames, setHostname] = useState("")
+    useEffect(() => {
+        setProtocol(location.protocol)
+        setHostname(location.hostname)
+    }, [])
+
+    const itemLink = (listItem) => {
+        var protocol = protocols;
+        var host = hostnames;
         if(host === "localhost"){
             host = "localhost:8000";
         }
         window.location.href = `${protocol}//${host}/info/${listItem}`
     }
-}
-
-export const Section01 = ({children}: Layoutprops) => {
-
     const contents = children.allContentfulInformation.edges[0].node.childContentfulInformationContentRichTextNode.json;
     const Bold = ({ children }: Layoutprops) => <span css={SectionContent.bold} className="bold">{children}</span>
     const Text = ({ children }: Layoutprops) => <p className="align-center">{children}</p>

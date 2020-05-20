@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { css, keyframes } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 import { scrolldown } from "../../../styles/Shared"
@@ -10,6 +10,21 @@ interface Layoutprops {
 }
 
 export const Section01 = ({children} : Layoutprops) => {
+    const [protocols, setProtocol] = useState("")
+    const [hostnames, setHostname] = useState("")
+    useEffect(() => {
+        setProtocol(location.protocol)
+        setHostname(location.hostname)
+    }, [])
+
+    const link = (d) => {
+        var protocol = protocols;
+        var host = hostnames;
+        if(host === "localhost"){
+            host = "localhost:8000";
+        }
+        return `${protocol}//${host}/posts/${d}`;
+    }
     const data = useStaticQuery(graphql`
         query{
             allContentfulPosts(sort: { fields: [createdAt], order: ASC }) {
@@ -113,17 +128,6 @@ export const Section01 = ({children} : Layoutprops) => {
             </p>
         </section>
     )
-}
-
-const link = (d) => {
-    if (typeof location !== "undefined") {
-        var protocol = location.protocol;
-        var host = location.hostname ;
-        if(host === "localhost"){
-            host = "localhost:8000";
-        }
-        return `${protocol}//${host}/posts/${d}`;
-    }
 }
 
 const blockkeyframe =keyframes`
