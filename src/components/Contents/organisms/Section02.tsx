@@ -77,7 +77,7 @@ const tips = {
         @media (max-width: 420px) {
             flex-direction: column;
             text-align: center;
-            width: 90%;
+            width: 91%;
         }
     `,
     facebook: css`

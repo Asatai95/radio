@@ -187,7 +187,7 @@ export const Section01 = ({children}: Layoutprops) => {
                         <img css={SectionContent.img} src={image} alt=""/>
                     )}
                 </div>
-                <div>
+                <div css={SectionContent.titleBox}>
                     <p css={SectionContent.shareTextp}>{sharedate} - {sharetype}</p>
                     <h1 css={SectionContent.shareTexth1}>{sharetext}</h1>
                 </div>
@@ -322,6 +322,9 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
+        @media (max-width: 420px) {
+            padding-top: 200px!important;
+        }
         @media (max-width: 800px) {
             padding-top : 41px;
         }
@@ -335,6 +338,9 @@ const SectionContent = {
     mainContent: css`
         width: 75%;
         padding: 10px;
+        @media (max-width: 420px) {
+            width: 100%;
+        }
     `,
     BtBox: css`
         display: flex;
@@ -343,6 +349,11 @@ const SectionContent = {
         width: 70%;
         margin: 70px auto;
         margin-bottom: 0;
+        @media (max-width: 420px) {
+            width: 100%;
+            margin: 70px auto!important;
+            margin-top: 50px!important;
+        }
     `,
     imgBox: css`
         width: 70%;
@@ -351,6 +362,9 @@ const SectionContent = {
         margin-top: 0;
         border-radius: 5px;
         text-align: center;
+        @media (max-width: 420px) {
+            width: 100%;
+        }
     `,
     shareTextp: css`
         font-size: 14px;
@@ -389,6 +403,9 @@ const SectionContent = {
         display: flex;
         align-items: flex-start;
         width: 25%;
+        @media (max-width: 420px) {
+            display: none;
+        }
     `,
     shareul: css`
         margin: 0;
@@ -412,6 +429,9 @@ const SectionContent = {
         width: 70%;
         height: 100%;
         border-radius: 5px;
+        @media (max-width: 420px) {
+            width: 100%;
+        }
     `,
     next: css`
         margin: 50px auto;
@@ -451,6 +471,15 @@ const SectionContent = {
        flex-direction: column;
        margin: auto;
        padding: 30px 0;
+       @media (max-width: 420px) {
+            width: 90%;
+       }
+    `,
+    titleBox: css`
+        @media (max-width: 420px) {
+            border-bottom: 2px solid rgb(81,165,255, .8);
+            padding-bottom: 30px;
+        }
     `,
     scroll: css`
         @media (max-width: 1100px) {

@@ -46,7 +46,7 @@ export const Contact = () => {
                     どんな些細なご意見でもお待ちしています。なお、ご感想は番組内でご紹介させていただくことがあります。おたよりをもらえると、素直に嬉しいです。
                 </p>
                 <div css={styled.contact} className="contact_form_box">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUjZumzA-zrJ439t9rgE95nuTKK_9EJAu0VfvfiBfhC5ckig/viewform?embedded=true" width="640" height="800" frameBorder="0" marginHeight="0" marginWidth="0">読み込んでいます…</iframe>
+                    <iframe css={styled.iframe} src="https://docs.google.com/forms/d/e/1FAIpQLSeUjZumzA-zrJ439t9rgE95nuTKK_9EJAu0VfvfiBfhC5ckig/viewform?embedded=true" width="640" height="800" frameBorder="0" marginHeight="0" marginWidth="0">読み込んでいます…</iframe>
                 </div>
             </div>
         </div>
@@ -91,12 +91,19 @@ const styled = {
         height: 100%;
         margin: 50px auto;
         margin-bottom: 0;
+        @media (max-width: 420px) {
+            margin-top: 0;
+        }
     `,
     sharebox: css`
         width: 48%;
         text-align: left;
         margin: unset;
         height: 350px;
+        @media (max-width: 420px) {
+            width: 100%;
+            height: auto;
+        }
     `,
     infobox: css`
         width: 80%;
@@ -104,11 +111,20 @@ const styled = {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        @media (max-width: 420px) {
+            display: block;
+            text-align: center;
+            width: 90%;
+            height: auto;
+        }
     `,
     h2: css`
         font-size: 1.6rem;
         font-weight: 800;
         margin-bottom: 30px;
+        @media (max-width: 420px) {
+            text-align: center;
+        }
     `,
     podcasth2: css`
         font-size: 1.6rem;
@@ -141,6 +157,9 @@ const styled = {
         width: 35%;
         height: 350px;
         position: relative;
+        @media (max-width: 420px) {
+            width: 100%;
+        }
     `,
     podcastul: css`
         margin: unset;
@@ -175,11 +194,21 @@ const styled = {
         font-size: 20px;
         font-weight: 800;
     `,
+    iframe: css`
+        @media (max-width: 420px) {
+            height: 1050px;
+            width: 340px;
+        }
+    `,
     formcontent: css`
         margin: unset;
         margin-top: 50px;
         text-align: center;
         width: 50%;
         height: auto;
+        @media (max-width: 420px) {
+            width: 90%;
+            margin-top: 100px;
+        }
     `,
 }

@@ -120,6 +120,9 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
+        @media (max-width: 420px) {
+            padding-top: 230px!important;
+        }
         @media (max-width: 800px) {
             padding-top : 50px;
             padding-bottom: 60px;
@@ -211,6 +214,9 @@ const SectionContent = {
         width: 90%;
         margin : auto;
         margin-bottom: 100px;
+        @media screen and (max-width: 420px) {
+            margin-bottom: 80px;
+        }
     `,
     clearfixleft: css`
         @media screen and (max-width: 800px) {
@@ -234,12 +240,19 @@ const SectionContent = {
         justify-content: flex-start;
         align-items: flex-start;
         height: 50px;
+        @media (max-width: 420px) {
+            margin: 0;
+            justify-content: center;
+        }
     `,
     navinformationli: css`
         margin: 0 15px;
     ` ,
     linner: css`
         padding-right: 0px!important;
+        @media screen and (max-width: 420px) {
+            padding: 0;
+        }
     `,
     scroll: css`
         @media (max-width: 1100px) {

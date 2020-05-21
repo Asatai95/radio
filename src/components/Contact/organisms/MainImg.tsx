@@ -57,6 +57,9 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
+        @media (max-width: 420px) {
+            padding-top: 0!important;
+        }
         @media (max-width: 800px) {
             padding-top : 41px;
         }
@@ -103,6 +106,10 @@ const SectionContent = {
         height: 180px;
         text-align: center;
         width: 100%;
+        @media (max-width: 420px) {
+            bottom: -100px;
+            height: 130px;
+        }
     `,
     innertop: css`
         position: relative;

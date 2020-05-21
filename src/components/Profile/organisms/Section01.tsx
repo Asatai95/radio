@@ -69,6 +69,9 @@ const SectionContent = {
         align-items: center;
         position: relative;
         padding-top: 200px;
+        @media (max-width: 420px) {
+            height: auto;
+        }
     `,
     body: css`
         margin: 60px auto;
@@ -83,11 +86,17 @@ const SectionContent = {
         font-weight: 800;
         margin-bottom: 80px;
         text-align: center;
+        @media (max-width: 420px) {
+            font-size: 30px;
+        }
     `,
     p: css`
         font-size: 20px;
         font-weight: 800;
         text-align: center;
+        @media (max-width: 420px) {
+            font-size: 18px;
+        }
     `,
     scroll: css`
         @media (max-width: 1100px) {

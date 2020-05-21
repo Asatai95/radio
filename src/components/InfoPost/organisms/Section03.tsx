@@ -17,6 +17,15 @@ const styled = {
     section: css`
         height: 280px;
         overflow: hidden;
+        @media (max-width: 420px) {
+            height: 200px;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background: rgb(32,166,242,.5);
+            color: #FFF;
+            border-bottom: solid 4px #627295;
+            border-radius: 3px;
+        }
     `,
     link: css`
         display: flex;
@@ -27,6 +36,9 @@ const styled = {
         height: 100%;
         font-size: 34px;
         transition: background .3s ease-out;
+        @media (max-width: 420px) {
+            background-color: unset;
+        }
     `,
     sectionbox: css`
         height: 100%;

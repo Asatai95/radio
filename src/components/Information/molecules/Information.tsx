@@ -87,6 +87,9 @@ const style = {
     informationohome: css`
         width: 95%;
         margin: 0 auto;
+        @media screen and (max-width: 420px) {
+            width: 100%;
+        }
         @media screen and (max-width: 800px){
             float: none;
         }
@@ -113,6 +116,9 @@ const style = {
         flex: 0 0 284px;
         overflow: hidden;
         background-color : #cccccc;
+        @media screen and (max-width: 420px) {
+            display: none;
+        }
     `,
     corsorimg: css`
         transform: scale(1);
@@ -124,6 +130,10 @@ const style = {
         padding: 23px 40px 20px;
         background-color: rgb(32,166,242,.5);
         position: relative;
+        @media (max-width: 420px) {
+            border-bottom: solid 4px #627295;
+            border-radius: 3px;
+        }
     `,
     metainfo: css`
         position: relative;

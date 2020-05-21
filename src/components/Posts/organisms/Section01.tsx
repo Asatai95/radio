@@ -138,6 +138,9 @@ const blockkeyframe =keyframes`
 const SectionContent = {
     main : css`
         padding-top : 300px;
+        @media (max-width: 420px) {
+            padding-top: 200px!important;
+        }
         @media (min-width: 801px) {
             position : relative;
             padding: 50px 0;

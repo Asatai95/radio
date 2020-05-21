@@ -13,7 +13,7 @@ export const Section01 = () => {
                         どんな些細なご意見でもお待ちしています。なお、ご感想は番組内でご紹介させていただくことがあります。おたよりをもらえると、素直に嬉しいです。
                     </p>
                     <div css={styled.contact} className="contact_form_box">
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUjZumzA-zrJ439t9rgE95nuTKK_9EJAu0VfvfiBfhC5ckig/viewform?embedded=true" width="640" height="800" frameBorder="0" marginHeight="0" marginWidth="0">読み込んでいます…</iframe>
+                        <iframe css = {styled.iframe} src="https://docs.google.com/forms/d/e/1FAIpQLSeUjZumzA-zrJ439t9rgE95nuTKK_9EJAu0VfvfiBfhC5ckig/viewform?embedded=true" width="640" height="800" frameBorder="0" marginHeight="0" marginWidth="0">読み込んでいます…</iframe>
                     </div>
                 </div>
             </div>
@@ -46,6 +46,9 @@ const blockkeyframe = keyframes`
 const styled = {
     main : css`
         padding-top : 150px;
+        @media (max-width: 420px) {
+            padding-top : 80px!important;
+        }
         @media (min-width: 801px) {
             position : relative;
             padding: 50px 0;
@@ -174,6 +177,15 @@ const styled = {
         text-align: center;
         width: 50%;
         height: auto;
+        @media (max-width: 420px) {
+            width: 90%;
+        }
+    `,
+    iframe: css`
+        @media (max-width: 420px) {
+            width: 340px;
+            height: 1050px;
+        }
     `,
     scroll: css`
         @media (max-width: 1100px) {

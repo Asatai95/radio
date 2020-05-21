@@ -30,7 +30,10 @@ const styled = {
 		justify-content: space-around;
 		margin: auto;
 		padding-top: 50px;
-		border-top: 3px solid rgb(81,165,255, .6);
+    border-top: 3px solid rgb(81,165,255, .6);
+    @media (max-width: 420px) {
+      width: 100%;
+    }
   `,
   p : css`
     margin: 0;

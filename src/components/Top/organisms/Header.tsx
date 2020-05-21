@@ -28,15 +28,15 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
         <Img fixed={data.LogoImage.childImageSharp.fixed} />
       </a>
       <div css={naviItem.menuicon} className="cursor-react menu-icon">
-        <button css={naviItem.naviBt} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-torigger-icon" css={naviItem.navitorigger01}></span>
-          <span className="navbar-torigger-icon" css={naviItem.navitorigger02}></span>
-          <span className="navbar-torigger-icon" css={naviItem.navitorigger03}></span>
+        <button css={naviItem.naviBt} id="hamburger" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-torigger-icon first" css={naviItem.navitorigger01}></span>
+          <span className="navbar-torigger-icon middle" css={naviItem.navitorigger02}></span>
+          <span className="navbar-torigger-icon last" css={naviItem.navitorigger03}></span>
         </button>
       </div>
 
       <div css={headeritem.div} className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+        <ul css={styled.ul} className="navbar-nav mr-auto">
           <li css={headeritem.li} className="nav-item">
             <a css={headeritem.a} className="nav-link" href="/about">AWAPOKE</a>
           </li>
@@ -72,3 +72,18 @@ const TitleLink = css`
   }
 
 `;
+
+const styled = {
+  ul: css`
+    @media screen and (max-width: 420px) {
+      transition: .5s;
+      top: 0!important;
+      background: rgb(0,0,0,.8);
+      width: 200px!important;
+      left: 0;
+      padding: 50px 0;
+      border-radius: 5px;
+      transform: translate(-250px,-250px);
+    }
+  `,
+}

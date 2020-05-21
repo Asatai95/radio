@@ -28,10 +28,10 @@ export const Header : React.FC<HeaderProps> = ({ title }: HeaderProps) => {
         <Img fixed={data.LogoImage.childImageSharp.fixed} />
       </a>
       <div css={naviItem.menuicon} className="cursor-react menu-icon">
-        <button css={naviItem.naviBt} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-torigger-icon" css={naviItem.navitorigger01}></span>
-          <span className="navbar-torigger-icon" css={naviItem.navitorigger02}></span>
-          <span className="navbar-torigger-icon" css={naviItem.navitorigger03}></span>
+        <button css={naviItem.naviBt} id="hamburger" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-torigger-icon first" css={naviItem.navitorigger01}></span>
+          <span className="navbar-torigger-icon middle" css={naviItem.navitorigger02}></span>
+          <span className="navbar-torigger-icon last" css={naviItem.navitorigger03}></span>
         </button>
       </div>
 
@@ -69,10 +69,17 @@ const Posts = {
     width: 100%;
     background: rgb(32,166,242,.6)!important;
     position: relative;
+    @media (max-width: 420px) {
+      background: transparent!important;
+      position: absolute;
+    }
   `,
   headerLogo: css`
     position: relative;
     color: #222;
+    @media (max-width: 420px) {
+      display: none;
+    }
     &:active,
     &:hover {
       color: #fff;

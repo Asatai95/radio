@@ -75,6 +75,7 @@ const tips = {
         @media (max-width: 420px) {
             flex-direction: column;
             text-align: center;
+            width: 91%;
         }
     `,
     facebook: css`
@@ -123,6 +124,9 @@ const tips = {
         font-weight: 800;
         padding: 0;
         line-height: 2.5rem;
+        @media (max-width: 420px) {
+            font-size: 13px;
+        }
     `,
     backbg: css`
         background: url("https://res.cloudinary.com/hchyaihwv/image/upload/e_art:peacock,q_100/v1572851882/IMG_0033.jpg");

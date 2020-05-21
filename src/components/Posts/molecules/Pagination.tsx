@@ -31,6 +31,7 @@ const styled = {
     border-top: 3px solid rgb(81,165,255, .6);
     @media (max-width: 420px) {
       width: 100%;
+      padding-top: 30px;
     }
   `,
   p : css`

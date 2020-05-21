@@ -684,6 +684,41 @@ pre tt:after {
   width :500px;
 }
 
+@keyframes scaleItem {
+  0% {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@media screen and (max-width: 420px){
+  .collapse.action {
+    display: block!important;
+  }
+  .collapse.action.anime .mr-auto {
+    transform: translate(0px,0px)!important;
+  }
+  .navbar-toggler.action{
+    animation: scaleItem .3s 0s linear infinite alternate-reverse;
+    animation-fill-mode: both;
+  }
+  .navbar-toggler.action .navbar-torigger-icon.first {
+    transform: rotate(45deg)!important;
+    top: 14px!important;
+    left: 2px!important;
+  }
+  .navbar-toggler.action .navbar-torigger-icon.middle {
+    transform: rotate(-45deg)!important;
+    left: 1px!important;
+    top: 14px!important;
+    width : 100%!important;
+  }
+  .navbar-toggler.action .navbar-torigger-icon.last {
+    display: none!important;
+  }
+}
 
 .backImage {
   background: url("https://res.cloudinary.com/dh50en6xf/image/upload/v1588498911/IMG_0033_syi9dg.jpg");
