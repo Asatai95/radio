@@ -85,13 +85,19 @@ export const Information = ({ children }: Layoutprops) => {
 
 const style = {
     informationohome: css`
-        @media screen and (max-width: 800px){
+        @media screen and (max-width: 420px){
             float: none;
             width: 100%;
+            margin-left: 0;
+        }
+        @media screen and (max-width: 896px) and (min-width: 421px){
+            float: none;
+            width: 100%;
+            margin: 0 20px;
         }
         @media screen and (max-width: 1100px) and (min-width: 801px){
             float: none;
-            width: 100%;
+            width: 95%;
         }
         @media screen and (min-width: 1101px){
             float: left;
@@ -114,6 +120,9 @@ const style = {
         flex: 0 0 284px;
         overflow: hidden;
         background-color : #cccccc;
+        @media screen and (max-width: 420px){
+            display: none;
+        }
     `,
     corsorimg: css`
         transform: scale(1);

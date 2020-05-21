@@ -82,6 +82,10 @@ const instagramfield = {
     block: css`
         height: 400px;
         transition: all 1.5s ease-in-out;
+        @media screen and (max-width: 420px) {
+            padding: 100px 0;
+            padding-top: 0;
+        }
     `,
     title: css`
         padding: 30px;
@@ -115,6 +119,7 @@ const instagramfield = {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
     `
 }
 
@@ -128,6 +133,14 @@ const tips = {
         margin-top: 100px;
         margin-bottom: 50px;
         z-index: 50;
+        @media screen and (max-width: 992px) {
+            display: block;
+            text-align: center;
+            margin-top : 0;
+        }
+        @media screen and (max-width: 420px) {
+            height: auto;
+        }
     `,
     facebook: css`
         z-index: 50;
@@ -139,6 +152,10 @@ const tips = {
     facebookfeed: css`
         max-height: 500px;
         max-width : 500px;
+        @media screen and (max-width: 992px) {
+            margin: auto;
+            margin-bottom: 50px;
+        }
     `,
     support: css`
         z-index: 50;
@@ -172,11 +189,22 @@ const tips = {
         font-weight: 800;
         padding: 0;
         line-height: 2.5rem;
+        @media screen and (max-width: 420px) {
+            font-size: 13px;
+        }
     `,
     backbg: css`
         background: url("https://res.cloudinary.com/hchyaihwv/image/upload/e_art:peacock,q_100/v1572851882/IMG_0033.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         border-radius: 5px;
+        @media screen and (max-width: 992px) and (min-width: 421px) {
+            width: 350px;
+            margin: auto;
+        }
+        @media screen and (max-width: 420px) {
+            width: 300px;
+            margin: auto;
+        }
     `
 }

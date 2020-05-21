@@ -60,8 +60,15 @@ const TitleLink = css`
   top: 50px;
   position: fixed;
   z-index: 80;
+  @media screen and (max-width: 420px) {
+    display: none;
+  }
+  @media screen and (max-width: 896px) and (min-width: 421px) {
+    top: 20px;
+  }
   &:active,
   &:hover {
     color: #fff;
   }
+
 `;

@@ -43,6 +43,12 @@ export const linner = {
   `,
   linnerimg: css`
     width : 500px;
+    @media screen and (max-width: 420px) {
+      width: auto;
+    }
+    @media screen and (max-width: 896px) and (min-width: 421px){
+      width: 350px;
+    }
   `,
 }
 
@@ -94,6 +100,11 @@ export const scrolldown = css`
   transform: rotate(90deg);
   transform-origin: center center;
   margin-bottom: 77px;
+  @media screen and (max-width: 420px) {
+    display: none!important;
+    position: fixed;
+    top: 550px;
+  }
 `;
 
 export const social = {

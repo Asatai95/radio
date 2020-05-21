@@ -85,9 +85,13 @@ const SectionContent = {
         @media (max-width: 1100px) {
             right: -2%;
         }
-        @media (max-width: 810px) {
+        @media screen and (max-width: 896px) and (min-width: 421px) {
             top: 600px;
-            bottom: unset;
+            bottom: unset!important;
+        }
+        @media (max-width: 420px) {
+            top: 0;
+            top: 600px;
         }
         display: block;
         -webkit-animation-name: ${blockkeyframe};

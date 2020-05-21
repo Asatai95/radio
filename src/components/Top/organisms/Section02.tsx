@@ -93,6 +93,11 @@ const SectionContent = {
         @media (max-width: 1100px) {
             width: 230px;
         }
+        @media (max-width: 420px) {
+            float: none;
+            margin-bottom: 25px;
+            margin-left: 30px;
+        }
         float: left;
         max-width: 500px;
         width: 23%;
@@ -103,6 +108,9 @@ const SectionContent = {
         font-size: 41px;
         font-weight: 800;
         letter-spacing: 0.05em;
+        @media screen and (max-width: 896px) and (min-width: 421px){
+            font-size: 40px;
+        }
     `,
     iconlinklight: css`
         @media screen and (min-width: 801px){
@@ -128,7 +136,7 @@ const SectionContent = {
         transition: background .3s ease-out, border .3s ease-out;
     `,
     navdiscography: css`
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 896px) and (min-width: 421px){
             width: 15%;
             height: 58px;
             display: flex;
@@ -136,6 +144,16 @@ const SectionContent = {
             float: none;
             margin-left: -30px;
             padding-left: 30px;
+            padding-top: 0;
+        }
+        @media screen and (max-width: 420px){
+            height: 58px;
+            display: flex;
+            align-items: center;
+            float: none;
+            width: auto;
+            padding-left: 30px;
+            margin-bottom: 30px;
         }
         display: flex;
         justify-content: flex-start;
@@ -257,6 +275,9 @@ const SectionContent = {
         background: rgb(0,0,0,.8);
         z-index: 3;
         transition: .8s;
+        @media screen and (max-width: 420px){
+            background: rgb(0,0,0,.6);
+        }
     `,
     swiperwrapper: css`
         position: relative;
@@ -267,6 +288,9 @@ const SectionContent = {
         left: 50%;
         margin-left: -50vw;
         overflow: hidden;
+        @media screen and (max-width: 420px){
+            height: 250px;
+        }
     `,
     wrapsli: css`
         display: inline-block;
@@ -275,5 +299,9 @@ const SectionContent = {
         margin: 0 0 0 0;
         list-style: none;
         text-align: center;
+        @media screen and (max-width: 420px){
+            width: calc(100vw / 4);
+            min-width: 200px;
+        }
     `
 };

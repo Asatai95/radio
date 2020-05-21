@@ -25,6 +25,14 @@ export const naviItem = {
         z-index: 99;
         top:60px;
         right: 80px;
+        @media screen and (max-width: 420px) {
+            padding: 8px;
+            border: 2px solid rgba(0,0,0,.3);
+            border-radius: 5px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 421px) {
+            top: 30px;
+        }
     `,
     navitorigger01: css`
         display: inline-block;

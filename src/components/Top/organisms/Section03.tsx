@@ -72,9 +72,13 @@ export const Section03 =  () => {
 
 const SectionContent = {
     main : css`
-        @media (max-width: 800px) {
-            padding-top : 50px;
-            padding-bottom: 60px;
+        @media screen and (max-width: 896px) and (min-width: 421px) {
+            padding: 80px 0;
+            padding-top: 30px;
+        }
+        @media screen and (max-width: 420px) {
+            padding-top: 30px;
+            padding-bottom: 80px;
         }
         padding-top: 90px;
         padding-bottom: 141px;
@@ -86,11 +90,15 @@ const SectionContent = {
             justify-content: space-between;
             align-items: center;
         }
-        @media (max-width: 800px) {
+        @media screen and (max-width: 896px) and (min-width: 421px) {
             margin-bottom: 26px;
+            padding-left: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        @media screen and (max-width: 420px){
+            padding-left: 30px;
         }
         margin-bottom: 50px;
     `,
@@ -137,11 +145,19 @@ const SectionContent = {
         min-height: 1%;
     `,
     clearfixleft: css`
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 420px) {
+            padding-left: 30px;
             float: none;
             max-width: 100%;
             width: 100%;
             margin-bottom: 35px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 421px) {
+            float: none;
+            max-width: 100%;
+            width: 100%;
+            margin-bottom: 35px;
+            padding-left: 30px;
         }
         @media screen and (max-width: 1100px) and (min-width: 801px){
             float: none;
@@ -186,5 +202,12 @@ const SectionContent = {
     ` ,
     linner: css`
         padding-right: 0px!important;
+        @media screen and (max-width: 420px) {
+            padding: 0px!important;
+        }
+        @media screen and (max-width: 896px) and (min-width: 421px){
+            padding: 0px!important;
+            margin: 0!important;
+        }
     `,
 };
