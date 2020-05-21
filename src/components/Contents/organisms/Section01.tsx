@@ -307,6 +307,7 @@ const SectionContent = {
         border-radius: 5px;
         @media (max-width: 420px) {
             width: 100%;
+            height: 300px;
         }
     `,
     img: css`

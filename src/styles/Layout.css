@@ -694,13 +694,18 @@ pre tt:after {
 }
 
 @media screen and (max-width: 420px){
-  .collapse.action {
+  .collapse {
     display: block!important;
   }
-  .collapse.action.anime .mr-auto {
+  .collapse.anime .mr-auto {
     transform: translate(0px,0px)!important;
   }
-  .navbar-toggler.action{
+  .collapse.anime .mr-auto li,
+  .navbar-light .collapse.anime .navbar-nav .nav-link:focus,
+  .navbar-light .collapse.anime .navbar-nav .nav-link:hover {
+    color : #fff!important;
+  }
+  .navbar-toggler.action {
     animation: scaleItem .3s 0s linear infinite alternate-reverse;
     animation-fill-mode: both;
   }
@@ -1188,6 +1193,12 @@ footer .copyright ._hov {
   border-bottom: 2px solid rgb(81, 165, 255, .8);
   color : #222!important;
   text-shadow: 0px 0px 5px #fff;
+}
+
+@media (max-width: 420px) {
+  .navbar-light .navbar-nav .nav-link.active {
+    color: #fff!important;
+  }
 }
 
 .pageBy .backlink button:hover {

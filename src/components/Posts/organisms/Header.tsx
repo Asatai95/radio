@@ -87,5 +87,16 @@ const Posts = {
   ul: css`
     position: relative!important;
     top: unset!important;
+    @media screen and (max-width: 420px) {
+      transition: .5s;
+      top: 0!important;
+      background: rgb(0,0,0,.8);
+      width: 200px!important;
+      left: 0;
+      padding: 50px 0;
+      border-radius: 5px;
+      transform: translate(-250px,-250px);
+      position: fixed!important;
+    }
   `,
 }

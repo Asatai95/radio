@@ -84,6 +84,7 @@ const styled = {
       padding: 50px 0;
       border-radius: 5px;
       transform: translate(-250px,-250px);
+      position: fixed!important;
     }
   `,
 }

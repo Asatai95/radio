@@ -103,20 +103,7 @@ window.onload = function () {
                 hamburger.addEventListener("click", function (e) {
 
                     hamburger.classList.toggle("action")
-                    if (hamburger.classList.contains("action")){
-                        setTimeout(function(){
-                            navbarSupportedContent.classList.toggle("action")
-                        }, 500)
-                    } else {
-                        navbarSupportedContent.classList.toggle("action")
-                    }
-                    if (hamburger.classList.contains("action")){
-                        setTimeout(function(){
-                            navbarSupportedContent.classList.toggle("anime")
-                        }, 500)
-                    } else {
-                        navbarSupportedContent.classList.toggle("anime")
-                    }
+                    navbarSupportedContent.classList.toggle("anime")
                 });
             } catch {}
             stopTextColor();
