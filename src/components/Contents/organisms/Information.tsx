@@ -46,7 +46,8 @@ export const Contact = () => {
                     どんな些細なご意見でもお待ちしています。なお、ご感想は番組内でご紹介させていただくことがあります。おたよりをもらえると、素直に嬉しいです。
                 </p>
                 <div css={styled.contact} className="contact_form_box">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUjZumzA-zrJ439t9rgE95nuTKK_9EJAu0VfvfiBfhC5ckig/viewform?embedded=true" width="640" height="800" frameBorder="0" marginHeight="0" marginWidth="0">読み込んでいます…</iframe>
+                    <iframe css={styled.googlePc} src="https://docs.google.com/forms/d/e/1FAIpQLSeUjZumzA-zrJ439t9rgE95nuTKK_9EJAu0VfvfiBfhC5ckig/viewform?embedded=true" width="640" height="800" frameBorder="0" marginHeight="0" marginWidth="0">読み込んでいます…</iframe>
+                    <iframe css={styled.googleSp} src="https://docs.google.com/forms/d/e/1FAIpQLSeUjZumzA-zrJ439t9rgE95nuTKK_9EJAu0VfvfiBfhC5ckig/viewform?embedded=true" width="340" height="1050" frameBorder="0" marginHeight="0" marginWidth="0">読み込んでいます…</iframe>
                 </div>
             </div>
         </div>
@@ -97,6 +98,24 @@ const styled = {
         text-align: left;
         margin: unset;
         height: 350px;
+        @media (max-width: 420px) {
+            height: auto;
+            width: 100%;
+        }
+    `,
+    googleSp: css`
+        display: none;
+        @media (max-width: 420px) {
+            display: block;
+        }
+    `,
+    googlePc: css`
+        @media (min-width: 420px) {
+            display: block;
+        }
+        @media (max-width: 420px) {
+            display: none;
+        }
     `,
     infobox: css`
         width: 80%;
@@ -104,6 +123,11 @@ const styled = {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        @media (max-width: 420px) {
+            width: 90%;
+            display: block;
+            height: auto;
+        }
     `,
     h2: css`
         font-size: 1.6rem;
@@ -126,6 +150,9 @@ const styled = {
         padding: 0;
         font-size: 17px;
         font-weight: 800;
+        @media (max-width: 420px) {
+            font-size: 16px;
+        }
     `,
     sharetext: css`
         margin: 30px auto;
@@ -141,6 +168,9 @@ const styled = {
         width: 35%;
         height: 350px;
         position: relative;
+        @media (max-width: 420px) {
+            width: 100%;
+        }
     `,
     podcastul: css`
         margin: unset;
@@ -181,5 +211,8 @@ const styled = {
         text-align: center;
         width: 50%;
         height: auto;
+        @media (max-width: 420px) {
+            width: 90%;
+        }
     `,
 }

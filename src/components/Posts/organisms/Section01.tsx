@@ -183,6 +183,9 @@ const SectionContent = {
         width: 450px;
         margin: 20px 80px;
         margin-bottom: 50px;
+        @media (max-width: 420px) {
+            margin: 20px 20px;
+        }
     `,
     space: css`
         width: 450px;

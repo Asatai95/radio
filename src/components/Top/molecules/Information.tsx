@@ -134,6 +134,13 @@ const style = {
         padding: 23px 40px 20px;
         background-color: rgb(32,166,242,.5);
         position: relative;
+        @media screen and (max-width: 420px) {
+            text-decoration: none;
+            background: rgb(32,166,242,.5);
+            color: #FFF;
+            border-bottom: solid 4px #627295;
+            border-radius: 3px;
+        }
     `,
     metainfo: css`
         position: relative;

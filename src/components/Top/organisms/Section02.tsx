@@ -188,6 +188,9 @@ const SectionContent = {
         text-align: center;
         padding: 0 18px;
         transition: background .3s ease-out, border .3s ease-out;
+        @media screen and (max-width: 420px) {
+            padding: 2px 18px;
+        }
     `,
     discographylist: css`
         border-bottom: 1px solid #333;
@@ -210,6 +213,9 @@ const SectionContent = {
         z-index: 4;
         left: 50%;
         transform: translateX(-50%);
+        @media screen and (max-width: 420px) {
+            padding-top: 35px;
+        }
     ` ,
     metainfo: css`
         margin-bottom: 13px;
@@ -226,6 +232,9 @@ const SectionContent = {
         font-size: 35px;
         margin-bottom: 15px;
         color: #fff;
+        @media screen and (max-width: 420px) {
+            font-size: 25px;
+        }
     `,
     ttlsub: css`
         font-size: 15px;
@@ -289,7 +298,7 @@ const SectionContent = {
         margin-left: -50vw;
         overflow: hidden;
         @media screen and (max-width: 420px){
-            height: 250px;
+            height: 210px;
         }
     `,
     wrapsli: css`

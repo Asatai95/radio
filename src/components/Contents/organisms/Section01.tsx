@@ -276,6 +276,9 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
+        @media (max-width: 420px) {
+            padding-top: 250px!important;
+        }
         @media (max-width: 800px) {
             padding-top : 41px;
         }
@@ -292,6 +295,9 @@ const SectionContent = {
         width: 85%;
         margin: 70px auto;
         margin-bottom: 0;
+        @media (max-width: 420px) {
+            width: 100%;
+        }
     `,
     imgBox: css`
         width: 70%;
@@ -299,6 +305,9 @@ const SectionContent = {
         margin: 70px auto;
         margin-top: 0;
         border-radius: 5px;
+        @media (max-width: 420px) {
+            width: 100%;
+        }
     `,
     img: css`
         width: 100%;
@@ -343,6 +352,9 @@ const SectionContent = {
        flex-direction: column;
        margin: auto;
        padding: 30px 0;
+       @media (max-width: 420px) {
+           width: 90%;
+       }
     `,
     scroll: css`
         @media (max-width: 1100px) {

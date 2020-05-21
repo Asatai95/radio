@@ -74,6 +74,11 @@ const tips = {
         margin-top: 50px;
         margin-bottom: 100px;
         z-index: 50;
+        @media (max-width: 420px) {
+            flex-direction: column;
+            text-align: center;
+            width: 90%;
+        }
     `,
     facebook: css`
         z-index: 50;
@@ -88,6 +93,9 @@ const tips = {
     `,
     support: css`
         z-index: 50;
+        @media (max-width: 420px) {
+            margin-top: 80px;
+        }
     `,
     title: css`
         font-size: 25px;
@@ -118,6 +126,9 @@ const tips = {
         font-weight: 800;
         padding: 0;
         line-height: 2.5rem;
+        @media (max-width: 420px) {
+            font-size: 13px;
+        }
     `,
     backbg: css`
         background: url("https://res.cloudinary.com/hchyaihwv/image/upload/e_art:peacock,q_100/v1572851882/IMG_0033.jpg");

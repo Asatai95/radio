@@ -136,6 +136,9 @@ const SectionContent = {
         text-align: center;
         padding: 0 18px;
         transition: background .3s ease-out, border .3s ease-out
+        @media screen and (max-width: 420px) {
+            padding: 2px 18px;
+        }
     `,
     clearfix: css`
         @media screen and (min-width: 1101px) {

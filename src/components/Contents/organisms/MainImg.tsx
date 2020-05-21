@@ -57,6 +57,9 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
+        @media (max-width: 420px) {
+            padding: 0!important;
+        }
         @media (max-width: 800px) {
             padding-top : 41px;
         }

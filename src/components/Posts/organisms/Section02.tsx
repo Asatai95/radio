@@ -56,6 +56,9 @@ const styled = {
     section: css`
         display: block;
         margin: 50px 0;
+        @media (max-width: 420px) {
+            margin-top: 80px;
+        }
     `,
 }
 
@@ -69,6 +72,10 @@ const tips = {
         margin-top: 50px;
         margin-bottom: 100px;
         z-index: 50;
+        @media (max-width: 420px) {
+            flex-direction: column;
+            text-align: center;
+        }
     `,
     facebook: css`
         z-index: 50;
@@ -83,6 +90,9 @@ const tips = {
     `,
     support: css`
         z-index: 50;
+        @media (max-width: 420px) {
+            margin-top: 80px;
+        }
     `,
     title: css`
         font-size: 25px;

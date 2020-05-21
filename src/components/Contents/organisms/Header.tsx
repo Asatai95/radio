@@ -67,10 +67,17 @@ const Posts = {
     width: 100%;
     background: rgb(32,166,242,.6)!important;
     position: relative;
+    @media (max-width: 420px) {
+      background: transparent!important;
+      position: absolute;
+    }
   `,
   headerLogo: css`
     position: relative;
     color: #222;
+    @media (max-width: 420px) {
+      display: none;
+    }
     &:active,
     &:hover {
       color: #fff;

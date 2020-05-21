@@ -1125,6 +1125,12 @@ footer .copyright ._hov {
   list-style: disc!important;
 }
 
+@media (max-width: 420px) {
+  .pageBt a button {
+    width: 100px;
+  }
+}
+
 .pageBt a button:hover {
   border: 0;
   transform: scale(1.1);
@@ -1245,5 +1251,11 @@ footer .copyright ._hov {
   #cursor-pointer,
   #pointer {
     display: none!important;
+  }
+}
+
+@media screen and (max-width: 420px){
+  #posts iframe {
+    width: 100%;
   }
 }
