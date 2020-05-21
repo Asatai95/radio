@@ -79,13 +79,22 @@ const tips = {
             text-align: center;
             width: 91%;
         }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            display: block;
+        }
     `,
     facebook: css`
         z-index: 50;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            text-align: center;
+        }
     `,
     feedtext: css`
         font-size: 25px;
         font-weight: bold;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            margin: auto;
+        }
     `,
     facebookfeed: css`
         max-height: 500px;
@@ -95,6 +104,10 @@ const tips = {
         z-index: 50;
         @media (max-width: 420px) {
             margin-top: 80px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            margin-top: 80px;
+            text-align: center;
         }
     `,
     title: css`
@@ -129,11 +142,18 @@ const tips = {
         @media (max-width: 420px) {
             font-size: 13px;
         }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            font-size: 16px;
+        }
     `,
     backbg: css`
         background: url("https://res.cloudinary.com/hchyaihwv/image/upload/e_art:peacock,q_100/v1572851882/IMG_0033.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         border-radius: 5px;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 300px;
+            margin:auto;
+        }
     `
 }

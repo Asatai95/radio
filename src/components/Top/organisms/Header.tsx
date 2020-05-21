@@ -60,10 +60,10 @@ const TitleLink = css`
   top: 50px;
   position: fixed;
   z-index: 80;
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
-  @media screen and (max-width: 896px) and (min-width: 421px) {
+  @media screen and (max-width: 896px) and (min-width: 481px) {
     top: 20px;
   }
   &:active,
@@ -75,7 +75,7 @@ const TitleLink = css`
 
 const styled = {
   ul: css`
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 480px) {
       transition: .5s;
       top: 0!important;
       background: rgb(0,0,0,.8);

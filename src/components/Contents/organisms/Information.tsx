@@ -102,6 +102,11 @@ const styled = {
             height: auto;
             width: 100%;
         }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
     `,
     googleSp: css`
         display: none;
@@ -116,6 +121,9 @@ const styled = {
         @media (max-width: 420px) {
             display: none;
         }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 100%!important;
+        }
     `,
     infobox: css`
         width: 80%;
@@ -125,6 +133,10 @@ const styled = {
         justify-content: space-around;
         @media (max-width: 420px) {
             width: 90%;
+            display: block;
+            height: auto;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             display: block;
             height: auto;
         }
@@ -171,6 +183,9 @@ const styled = {
         @media (max-width: 420px) {
             width: 100%;
         }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 100%;
+        }
     `,
     podcastul: css`
         margin: unset;
@@ -212,6 +227,9 @@ const styled = {
         width: 50%;
         height: auto;
         @media (max-width: 420px) {
+            width: 90%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 90%;
         }
     `,

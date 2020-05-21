@@ -69,7 +69,7 @@ const SectionContent = {
         align-items: center;
         position: relative;
         padding-top: 200px;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             height: auto;
         }
     `,
@@ -86,7 +86,7 @@ const SectionContent = {
         font-weight: 800;
         margin-bottom: 80px;
         text-align: center;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             font-size: 30px;
         }
     `,
@@ -94,7 +94,10 @@ const SectionContent = {
         font-size: 20px;
         font-weight: 800;
         text-align: center;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
+            font-size: 18px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             font-size: 18px;
         }
     `,

@@ -57,11 +57,11 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             padding: 0!important;
         }
-        @media (max-width: 800px) {
-            padding-top : 41px;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            padding: 0;
         }
         position : relative;
     `,

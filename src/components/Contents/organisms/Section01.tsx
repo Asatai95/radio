@@ -276,7 +276,7 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             padding-top: 250px!important;
         }
         @media (max-width: 800px) {
@@ -287,6 +287,9 @@ const SectionContent = {
             padding-top: 300px;
             padding-bottom: 0;
         }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            padding-top: 250px!important;
+        }
     `,
     BtBox: css`
         display: flex;
@@ -295,7 +298,10 @@ const SectionContent = {
         width: 85%;
         margin: 70px auto;
         margin-bottom: 0;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 100%;
         }
     `,
@@ -305,9 +311,12 @@ const SectionContent = {
         margin: 70px auto;
         margin-top: 0;
         border-radius: 5px;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 100%;
             height: 300px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 90%;
         }
     `,
     img: css`
@@ -353,9 +362,12 @@ const SectionContent = {
        flex-direction: column;
        margin: auto;
        padding: 30px 0;
-       @media (max-width: 420px) {
+       @media (max-width: 480px) {
            width: 90%;
        }
+       @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 80%;
+        }
     `,
     scroll: css`
         @media (max-width: 1100px) {

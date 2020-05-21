@@ -693,7 +693,39 @@ pre tt:after {
   }
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 480px){
+  .collapse {
+    display: block!important;
+  }
+  .collapse.anime .mr-auto {
+    transform: translate(0px,0px)!important;
+  }
+  .collapse.anime .mr-auto li,
+  .navbar-light .collapse.anime .navbar-nav .nav-link:focus,
+  .navbar-light .collapse.anime .navbar-nav .nav-link:hover {
+    color : #fff!important;
+  }
+  .navbar-toggler.action {
+    animation: scaleItem .3s 0s linear infinite alternate-reverse;
+    animation-fill-mode: both;
+  }
+  .navbar-toggler.action .navbar-torigger-icon.first {
+    transform: rotate(45deg)!important;
+    top: 14px!important;
+    left: 2px!important;
+  }
+  .navbar-toggler.action .navbar-torigger-icon.middle {
+    transform: rotate(-45deg)!important;
+    left: 1px!important;
+    top: 14px!important;
+    width : 100%!important;
+  }
+  .navbar-toggler.action .navbar-torigger-icon.last {
+    display: none!important;
+  }
+}
+
+@media screen and (max-width: 896px) and (min-width: 481px) {
   .collapse {
     display: block!important;
   }
@@ -766,7 +798,7 @@ pre tt:after {
   overflow: hidden;
 }
 
-@media (max-width: 420px){
+@media (max-width: 480px){
   .section-head .inner {
     height: 120vh!important;
   }
@@ -796,7 +828,7 @@ pre tt:after {
   /* margin-top: 155px; */
 }
 
-@media (max-width: 420px){
+@media (max-width: 480px){
   .section-head .l-inner {
     padding: 0;
     margin-top: 0;
@@ -899,7 +931,7 @@ pre tt:after {
   }
 }
 
-@media screen and (max-width: 896px) and (min-width: 421px) {
+@media screen and (max-width: 896px) and (min-width: 481px) {
   .insta_view_block .post {
     width: 25%!important;
     height: 200px!important;
@@ -909,7 +941,7 @@ pre tt:after {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
   .insta_view_block .post {
     width: 30%!important;
     height: 135px!important;
@@ -1165,7 +1197,7 @@ footer .copyright ._hov {
   list-style: disc!important;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .pageBt a button {
     width: 100px;
   }
@@ -1195,7 +1227,7 @@ footer .copyright ._hov {
   text-shadow: 0px 0px 5px #fff;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .navbar-light .navbar-nav .nav-link.active {
     color: #fff!important;
   }
@@ -1248,7 +1280,7 @@ footer .copyright ._hov {
   z-index: 90;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .sideBar{
     display: none!important;
   }
@@ -1286,22 +1318,28 @@ footer .copyright ._hov {
   display: none;
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 480px){
   #cursor-pointer,
   #pointer {
     display: none!important;
   }
 }
 
-@media screen and (max-width: 896px) and (min-width: 421px){
+@media screen and (max-width: 896px) and (min-width: 481px){
   #cursor-pointer,
   #pointer {
     display: none!important;
   }
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 480px){
   #posts iframe {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 896px) and (min-width: 481px){
+  #posts iframe {
+    width: 120%;
   }
 }

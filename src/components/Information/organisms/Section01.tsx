@@ -120,12 +120,15 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             padding-top: 230px!important;
         }
         @media (max-width: 800px) {
             padding-top : 50px;
             padding-bottom: 60px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            padding-top: 230px!important;
         }
         padding-top: 300px;
         padding-bottom: 150px;
@@ -214,7 +217,7 @@ const SectionContent = {
         width: 90%;
         margin : auto;
         margin-bottom: 100px;
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             margin-bottom: 80px;
         }
     `,
@@ -240,7 +243,7 @@ const SectionContent = {
         justify-content: flex-start;
         align-items: flex-start;
         height: 50px;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             margin: 0;
             justify-content: center;
         }
@@ -250,7 +253,10 @@ const SectionContent = {
     ` ,
     linner: css`
         padding-right: 0px!important;
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
+            padding: 0;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             padding: 0;
         }
     `,

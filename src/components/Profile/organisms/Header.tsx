@@ -60,7 +60,7 @@ const design = {
     width: 100%;
     background: rgb(32,166,242,.6)!important;
     position: relative;
-    @media (max-width: 420px) {
+    @media (max-width: 480px) {
       background: transparent!important;
       position: absolute!important;
     }
@@ -68,8 +68,12 @@ const design = {
   headerLogo: css`
     position: relative;
     color: #222;
-    @media (max-width: 420px) {
+    @media (max-width: 480px) {
       display: none;
+    }
+    @media screen and (max-width: 896px) and (min-width: 481px) {
+      position: fixed!important;
+      z-index: 80!important;
     }
     &:active,
     &:hover {
@@ -79,7 +83,18 @@ const design = {
   ul: css`
     position: relative!important;
     top: unset!important;
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 480px) {
+      transition: .5s;
+      top: 0!important;
+      background: rgb(0,0,0,.8);
+      width: 200px!important;
+      left: 0;
+      padding: 50px 0;
+      border-radius: 5px;
+      transform: translate(-250px,-250px);
+      position: fixed!important;
+    }
+    @media screen and (max-width: 896px) and (min-width: 481px) {
       transition: .5s;
       top: 0!important;
       background: rgb(0,0,0,.8);

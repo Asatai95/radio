@@ -130,7 +130,7 @@ const SectionSns = styled.div`
 
 const SectionContent = {
     main: css`
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             background: transparent;
         }
     `,
@@ -139,7 +139,7 @@ const SectionContent = {
         background: url(https://res.cloudinary.com/hchyaihwv/image/upload/e_art:peacock,q_100/v1572851882/IMG_0033.jpg);
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             background: transparent;
         }
     `,
@@ -156,7 +156,7 @@ const SectionContent = {
         z-index: 10;
         position: relative;
         padding: 30px 0;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             background: transparent;
         }
     `,
@@ -166,7 +166,7 @@ const SectionContent = {
         position: absolute;
         background: rgb(255,255,255,0.8);
         z-index: -1;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             background: transparent;
         }
     `,
@@ -176,7 +176,7 @@ const SectionContent = {
         margin: auto;
         margin-bottom: 40px;
         width: 80%;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             text-align: center;
         }
     `,
@@ -187,15 +187,21 @@ const SectionContent = {
         width: 35%;
         height: 530px;
         text-align: center;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 90%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 80%;
         }
     `,
     profile: css`
         width: 40%;
         height: 610px;
         text-align: center;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 100%;
         }
     `,
@@ -203,9 +209,12 @@ const SectionContent = {
         width: 40%;
         height: 610px;
         text-align: center;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 100%;
             height: 530px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 100%;
         }
     `,
     img: css`
@@ -234,9 +243,13 @@ const SectionContent = {
         align-items: center;
         justify-content: space-around;
         width: 80%;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             display: block;
             width: 90%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            display: block;
+            width: 80%;
         }
     `,
     sns: css`

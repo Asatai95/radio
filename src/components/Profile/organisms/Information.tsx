@@ -91,7 +91,7 @@ const styled = {
         height: 100%;
         margin: 50px auto;
         margin-bottom: 0;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             margin-top: 0;
         }
     `,
@@ -100,8 +100,13 @@ const styled = {
         text-align: left;
         margin: unset;
         height: 350px;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 100%;
+            height: auto;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 100%;
+            text-align: center;
             height: auto;
         }
     `,
@@ -111,10 +116,15 @@ const styled = {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             display: block;
             text-align: center;
             width: 90%;
+            height: auto;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            display: block;
+            text-align: center;
             height: auto;
         }
     `,
@@ -122,7 +132,7 @@ const styled = {
         font-size: 1.6rem;
         font-weight: 800;
         margin-bottom: 30px;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             text-align: center;
         }
     `,
@@ -157,7 +167,10 @@ const styled = {
         width: 35%;
         height: 350px;
         position: relative;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 100%;
         }
     `,
@@ -195,9 +208,12 @@ const styled = {
         font-weight: 800;
     `,
     iframe: css`
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             height: 1050px;
             width: 340px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 100%;
         }
     `,
     formcontent: css`
@@ -206,9 +222,12 @@ const styled = {
         text-align: center;
         width: 50%;
         height: auto;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 90%;
             margin-top: 100px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 95%;
         }
     `,
 }
