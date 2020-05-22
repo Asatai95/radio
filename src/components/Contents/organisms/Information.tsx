@@ -98,9 +98,10 @@ const styled = {
         text-align: left;
         margin: unset;
         height: 350px;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             height: auto;
             width: 100%;
+            text-align: center;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 100%;
@@ -110,15 +111,15 @@ const styled = {
     `,
     googleSp: css`
         display: none;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             display: block;
         }
     `,
     googlePc: css`
-        @media (min-width: 420px) {
+        @media (min-width: 480px) {
             display: block;
         }
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             display: none;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
@@ -131,7 +132,7 @@ const styled = {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 90%;
             display: block;
             height: auto;
@@ -162,7 +163,7 @@ const styled = {
         padding: 0;
         font-size: 17px;
         font-weight: 800;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             font-size: 16px;
         }
     `,
@@ -180,7 +181,7 @@ const styled = {
         width: 35%;
         height: 350px;
         position: relative;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 100%;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
@@ -226,7 +227,7 @@ const styled = {
         text-align: center;
         width: 50%;
         height: auto;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 90%;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
