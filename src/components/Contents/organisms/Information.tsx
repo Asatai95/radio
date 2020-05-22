@@ -110,12 +110,14 @@ const styled = {
         }
     `,
     googleSp: css`
+        margin: auto;
         display: none;
         @media (max-width: 480px) {
             display: block;
         }
     `,
     googlePc: css`
+        margin: auto;
         @media (min-width: 480px) {
             display: block;
         }

@@ -191,6 +191,7 @@ const styled = {
         }
     `,
     iframe: css`
+        margin: auto;
         @media (max-width: 480px) {
             width: 340px;
             height: 1050px;

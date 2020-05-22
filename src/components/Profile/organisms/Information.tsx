@@ -208,6 +208,7 @@ const styled = {
         font-weight: 800;
     `,
     iframe: css`
+        margin: auto;
         @media (max-width: 480px) {
             height: 1050px;
             width: 340px;
