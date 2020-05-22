@@ -214,25 +214,25 @@ export const Section01 = ({children}: Layoutprops) => {
                 <div css={SectionContent.BtBox} className="pageBt">
                     {linkItempre() === true && (
                         <a href="#" onClick={(e) => handlePreClick(e)}>
-                            <Button className={BtStyle().buttonBack}>PREVIOUS</Button>
+                            <Button className={BtStyles().buttonBack}>PREVIOUS</Button>
                         </a>
                     )}
                     {linkItempre() === false && (
                         <a href="#" onClick={(e) => handledisAbledClick(e)} css={disabledBt}>
-                            <Button disabled={true} className={BtStyle().buttonDisable}>PREVIOUS</Button>
+                            <Button disabled={true} className={BtStyles().buttonDisable}>PREVIOUS</Button>
                         </a>
                     )}
                     <a href="/info" css={backListlink} className="backlink">
-                        <Button className={BtStyle().buttonBacklist}>Back List</Button>
+                        <Button className={BtStyles().buttonBacklist}>Back List</Button>
                     </a>
                     {linkItemne() === true && (
                         <a href="#" onClick={(e) => handleNextClick(e)}>
-                            <Button className={BtStyle().buttonNext}>NEXT</Button>
+                            <Button className={BtStyles().buttonNext}>NEXT</Button>
                         </a>
                     )}
                     {linkItemne() === false && (
                         <a href="#" onClick={(e) => handledisAbledClick(e)} css={disabledBt}>
-                            <Button disabled={true} className={BtStyle().buttonDisable}>NEXT</Button>
+                            <Button disabled={true} className={BtStyles().buttonDisable}>NEXT</Button>
                         </a>
                     )}
                 </div>
@@ -259,7 +259,7 @@ export const Section01 = ({children}: Layoutprops) => {
 }
 
 
-const BtStyle = makeStyles({
+const BtStyles = makeStyles({
     buttonBack: {
         color: "#fff",
         background: "linear-gradient(45deg, rgb(33, 150, 243) 30%, rgb(33, 203, 243) 90%)",
