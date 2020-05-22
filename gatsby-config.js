@@ -9,6 +9,13 @@ module.exports = {
     description: `沖縄のことをゆるーくお届けするラジオ`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        head: true,
+      }
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
