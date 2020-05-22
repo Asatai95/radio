@@ -56,7 +56,7 @@ const styled = {
     section: css`
         display: block;
         margin: 50px 0;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             margin-top: 100px;
         }
     `,
@@ -72,10 +72,15 @@ const tips = {
         margin-top: 50px;
         margin-bottom: 100px;
         z-index: 50;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             flex-direction: column;
             text-align: center;
             width: 91%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            display: block;
+            text-align: center;
+            width: 90%;
         }
     `,
     facebook: css`
@@ -88,10 +93,16 @@ const tips = {
     facebookfeed: css`
         max-height: 500px;
         max-width : 500px;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            margin: auto ;
+        }
     `,
     support: css`
         z-index: 50;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
+            margin-top: 80px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             margin-top: 80px;
         }
     `,
@@ -124,8 +135,11 @@ const tips = {
         font-weight: 800;
         padding: 0;
         line-height: 2.5rem;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             font-size: 13px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            font-size: 16px;
         }
     `,
     backbg: css`
@@ -133,5 +147,9 @@ const tips = {
         background-repeat: no-repeat;
         background-size: 100% 100%;
         border-radius: 5px;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 300px;
+            margin: auto;
+        }
     `
 }

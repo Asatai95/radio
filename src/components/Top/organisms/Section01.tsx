@@ -85,11 +85,12 @@ const SectionContent = {
         @media (max-width: 1100px) {
             right: -2%;
         }
-        @media screen and (max-width: 896px) and (min-width: 421px) {
-            top: 600px;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            top: 250px;
             bottom: unset!important;
+            position: fixed;
         }
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             top: 0;
             top: 600px;
         }

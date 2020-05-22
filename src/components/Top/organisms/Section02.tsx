@@ -93,7 +93,7 @@ const SectionContent = {
         @media (max-width: 1100px) {
             width: 230px;
         }
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             float: none;
             margin-bottom: 25px;
             margin-left: 30px;
@@ -108,7 +108,7 @@ const SectionContent = {
         font-size: 41px;
         font-weight: 800;
         letter-spacing: 0.05em;
-        @media screen and (max-width: 896px) and (min-width: 421px){
+        @media screen and (max-width: 896px) and (min-width: 481px){
             font-size: 40px;
         }
     `,
@@ -136,7 +136,7 @@ const SectionContent = {
         transition: background .3s ease-out, border .3s ease-out;
     `,
     navdiscography: css`
-        @media screen and (max-width: 896px) and (min-width: 421px){
+        @media screen and (max-width: 896px) and (min-width: 481px){
             width: 15%;
             height: 58px;
             display: flex;
@@ -146,7 +146,7 @@ const SectionContent = {
             padding-left: 30px;
             padding-top: 0;
         }
-        @media screen and (max-width: 420px){
+        @media screen and (max-width: 480px){
             height: 58px;
             display: flex;
             align-items: center;
@@ -188,7 +188,7 @@ const SectionContent = {
         text-align: center;
         padding: 0 18px;
         transition: background .3s ease-out, border .3s ease-out;
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             padding: 2px 18px;
         }
     `,
@@ -213,8 +213,11 @@ const SectionContent = {
         z-index: 4;
         left: 50%;
         transform: translateX(-50%);
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             padding-top: 35px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            padding-top: 55px;
         }
     ` ,
     metainfo: css`
@@ -232,7 +235,7 @@ const SectionContent = {
         font-size: 35px;
         margin-bottom: 15px;
         color: #fff;
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             font-size: 25px;
         }
     `,
@@ -284,7 +287,7 @@ const SectionContent = {
         background: rgb(0,0,0,.8);
         z-index: 3;
         transition: .8s;
-        @media screen and (max-width: 420px){
+        @media screen and (max-width: 480px){
             background: rgb(0,0,0,.6);
         }
     `,
@@ -297,8 +300,12 @@ const SectionContent = {
         left: 50%;
         margin-left: -50vw;
         overflow: hidden;
-        @media screen and (max-width: 420px){
+        @media screen and (max-width: 480px){
             height: 210px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            height: 200px;
+            width: 150vw;
         }
     `,
     wrapsli: css`
@@ -308,7 +315,7 @@ const SectionContent = {
         margin: 0 0 0 0;
         list-style: none;
         text-align: center;
-        @media screen and (max-width: 420px){
+        @media screen and (max-width: 480px){
             width: calc(100vw / 4);
             min-width: 200px;
         }

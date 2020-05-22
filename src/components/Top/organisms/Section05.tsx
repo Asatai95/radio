@@ -192,13 +192,16 @@ const tips = {
         @media screen and (max-width: 420px) {
             font-size: 13px;
         }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            font-size: 16px;
+        }
     `,
     backbg: css`
         background: url("https://res.cloudinary.com/hchyaihwv/image/upload/e_art:peacock,q_100/v1572851882/IMG_0033.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         border-radius: 5px;
-        @media screen and (max-width: 992px) and (min-width: 421px) {
+        @media screen and (max-width: 992px) and (min-width: 481px) {
             width: 350px;
             margin: auto;
         }

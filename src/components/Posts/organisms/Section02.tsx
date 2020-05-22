@@ -56,7 +56,7 @@ const styled = {
     section: css`
         display: block;
         margin: 50px 0;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             margin-top: 80px;
         }
     `,
@@ -72,7 +72,7 @@ const tips = {
         margin-top: 50px;
         margin-bottom: 100px;
         z-index: 50;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             flex-direction: column;
             text-align: center;
             width: 91%;
@@ -98,7 +98,7 @@ const tips = {
     `,
     support: css`
         z-index: 50;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             margin-top: 80px;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
@@ -134,7 +134,7 @@ const tips = {
         font-weight: 800;
         padding: 0;
         line-height: 2.5rem;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             font-size: 13px;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {

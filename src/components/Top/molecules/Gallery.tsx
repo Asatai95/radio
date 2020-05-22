@@ -124,6 +124,9 @@ const styled = {
         color: #fff;
         z-index: 10;
         margin: 0;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            font-size: 15px;
+        }
     `,
     showsmllink: css`
         position: relative;

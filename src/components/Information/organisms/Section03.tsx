@@ -28,6 +28,14 @@ const styled = {
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             height: 200px;
+            width: 95%;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background: rgb(32,166,242,.5);
+            color: #FFF;
+            border-bottom: solid 4px #627295;
+            border-radius: 3px;
+            margin: auto;
         }
     `,
     link: css`
@@ -40,6 +48,9 @@ const styled = {
         font-size: 34px;
         transition: background .3s ease-out;
         @media screen and (max-width: 480px){
+            background-color: unset;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             background-color: unset;
         }
     `,

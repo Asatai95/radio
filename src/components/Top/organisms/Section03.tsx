@@ -72,11 +72,11 @@ export const Section03 =  () => {
 
 const SectionContent = {
     main : css`
-        @media screen and (max-width: 896px) and (min-width: 421px) {
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             padding: 80px 0;
             padding-top: 30px;
         }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             padding-top: 30px;
             padding-bottom: 80px;
         }
@@ -90,14 +90,14 @@ const SectionContent = {
             justify-content: space-between;
             align-items: center;
         }
-        @media screen and (max-width: 896px) and (min-width: 421px) {
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             margin-bottom: 26px;
             padding-left: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        @media screen and (max-width: 420px){
+        @media screen and (max-width: 480px){
             padding-left: 30px;
         }
         margin-bottom: 50px;
@@ -136,7 +136,7 @@ const SectionContent = {
         text-align: center;
         padding: 0 18px;
         transition: background .3s ease-out, border .3s ease-out
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             padding: 2px 18px;
         }
     `,
@@ -148,14 +148,14 @@ const SectionContent = {
         min-height: 1%;
     `,
     clearfixleft: css`
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             padding-left: 30px;
             float: none;
             max-width: 100%;
             width: 100%;
             margin-bottom: 35px;
         }
-        @media screen and (max-width: 896px) and (min-width: 421px) {
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             float: none;
             max-width: 100%;
             width: 100%;
@@ -205,10 +205,10 @@ const SectionContent = {
     ` ,
     linner: css`
         padding-right: 0px!important;
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             padding: 0px!important;
         }
-        @media screen and (max-width: 896px) and (min-width: 421px){
+        @media screen and (max-width: 896px) and (min-width: 481px){
             padding: 0px!important;
             margin: 0!important;
         }

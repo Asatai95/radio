@@ -69,7 +69,7 @@ const tips = {
         margin-top: 100px;
         margin-bottom: 50px;
         z-index: 50;
-        @media screen and (max-width: 420px){
+        @media screen and (max-width: 480px){
             width: 91%;
             display: flex;
             flex-direction: column;
@@ -96,7 +96,7 @@ const tips = {
     `,
     support: css`
         z-index: 50;
-        @media screen and (max-width: 420px){
+        @media screen and (max-width: 480px){
             margin-top: 80px;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
@@ -132,7 +132,7 @@ const tips = {
         font-weight: 800;
         padding: 0;
         line-height: 2.5rem;
-        @media screen and (max-width: 420px){
+        @media screen and (max-width: 480px){
             font-size: 13px;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {

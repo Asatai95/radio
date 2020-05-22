@@ -25,7 +25,7 @@ export const naviItem = {
         z-index: 99;
         top:60px;
         right: 80px;
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             padding: 3px;
             border: 2px solid rgba(0,0,0,.3);
             border-radius: 5px;
@@ -37,7 +37,7 @@ export const naviItem = {
             right: 50px;
             background: rgb(81,165, 255,.8);
         }
-        @media screen and (max-width: 896px) and (min-width: 421px) {
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             padding: 3px;
             border: 2px solid rgba(0,0,0,.3);
             border-radius: 5px;

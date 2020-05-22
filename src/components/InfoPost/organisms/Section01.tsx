@@ -322,7 +322,7 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     main : css`
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             padding-top: 200px!important;
         }
         @media (max-width: 800px) {
@@ -334,12 +334,19 @@ const SectionContent = {
             padding-top: 300px;
             padding-bottom: 150px;
         }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            padding-top: 250px!important;
+        }
     `,
     mainContent: css`
         width: 75%;
         padding: 10px;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 100%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 95%;
+            margin: auto;
         }
     `,
     BtBox: css`
@@ -349,10 +356,14 @@ const SectionContent = {
         width: 70%;
         margin: 70px auto;
         margin-bottom: 0;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 100%;
             margin: 70px auto!important;
             margin-top: 50px!important;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 90%;
+            margin-bottom: 70px;
         }
     `,
     imgBox: css`
@@ -362,8 +373,11 @@ const SectionContent = {
         margin-top: 0;
         border-radius: 5px;
         text-align: center;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             width: 100%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 80%;
         }
     `,
     shareTextp: css`
@@ -398,13 +412,21 @@ const SectionContent = {
         width: 100%;
         margin-top: 50px;
         margin-bottom: 30px;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            display: block;
+        }
     `,
     shareBoxdiv: css`
         display: flex;
         align-items: flex-start;
         width: 25%;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             display: none;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 30px;
         }
     `,
     shareul: css`
@@ -414,6 +436,9 @@ const SectionContent = {
         justify-content: flex-start;
         width: 100%;
         margin-left: 10px;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: auto;
+        }
     `,
     shareli: css`
         list-style: none;
@@ -429,7 +454,10 @@ const SectionContent = {
         width: 70%;
         height: 100%;
         border-radius: 5px;
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 100%;
         }
     `,
@@ -471,14 +499,21 @@ const SectionContent = {
        flex-direction: column;
        margin: auto;
        padding: 30px 0;
-       @media (max-width: 420px) {
+       @media (max-width: 480px) {
+            width: 90%;
+       }
+       @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 90%;
        }
     `,
     titleBox: css`
-        @media (max-width: 420px) {
+        @media (max-width: 480px) {
             border-bottom: 2px solid rgb(81,165,255, .8);
             padding-bottom: 30px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 95%;
+            margin: auto;
         }
     `,
     scroll: css`
@@ -496,5 +531,8 @@ const SectionContent = {
         bottom: unset!important;
         position: fixed!important;
         width: 110px!important;
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            top: 250px;
+        }
     `
 };
