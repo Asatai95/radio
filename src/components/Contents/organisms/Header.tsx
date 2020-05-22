@@ -77,7 +77,7 @@ const Posts = {
     color: #222;
     @media (max-width: 480px) {
       display: none;
-    }cas
+    }
     @media screen and (max-width: 992px) and (min-width: 897px) {
       position: fixed!important;
       z-index: 80!important;
