@@ -190,6 +190,9 @@ const SectionContent = {
         @media (max-width: 480px) {
             width: 90%;
         }
+        @media screen and (max-width: 1200px) and (min-width: 897px) {
+            width: 50%;
+        }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 80%;
         }
@@ -200,6 +203,10 @@ const SectionContent = {
         text-align: center;
         @media (max-width: 480px) {
             width: 100%;
+        }
+        @media screen and (max-width: 1200px) and (min-width: 897px) {
+            margin: auto;
+            width: 50%;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 100%;
@@ -212,6 +219,11 @@ const SectionContent = {
         @media (max-width: 480px) {
             width: 100%;
             height: 530px;
+        }
+        @media screen and (max-width: 1200px) and (min-width: 897px) {
+            margin: auto;
+            margin-top: 30px;
+            width: 50%;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 100%;
@@ -246,6 +258,10 @@ const SectionContent = {
         @media (max-width: 480px) {
             display: block;
             width: 90%;
+        }
+        @media screen and (max-width: 1200px) and (min-width: 897px) {
+            display: block;
+            margin-top: 30px;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             display: block;

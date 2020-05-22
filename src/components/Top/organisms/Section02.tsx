@@ -216,6 +216,9 @@ const SectionContent = {
         @media screen and (max-width: 480px) {
             padding-top: 35px;
         }
+        @media screen and (max-width: 992px) and (min-width: 897px) {
+            padding-top: 75px;
+        }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             padding-top: 55px;
         }
@@ -302,6 +305,9 @@ const SectionContent = {
         overflow: hidden;
         @media screen and (max-width: 480px){
             height: 210px;
+        }
+        @media screen and (max-width: 992px) and (min-width: 897px) {
+            height: 250px;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             height: 200px;

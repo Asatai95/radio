@@ -82,7 +82,7 @@ const instagramfield = {
     block: css`
         height: 400px;
         transition: all 1.5s ease-in-out;
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             padding: 100px 0;
             padding-top: 0;
         }
@@ -133,13 +133,18 @@ const tips = {
         margin-top: 100px;
         margin-bottom: 50px;
         z-index: 50;
-        @media screen and (max-width: 992px) {
+        @media (max-width: 480px) {
             display: block;
             text-align: center;
-            margin-top : 0;
+            width: 91%;
         }
-        @media screen and (max-width: 420px) {
-            height: auto;
+        @media screen and (max-width: 1000px) and (min-width: 897px) {
+            display: block;
+            text-align: center;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            display: block;
+            text-align: center;
         }
     `,
     facebook: css`
@@ -152,13 +157,24 @@ const tips = {
     facebookfeed: css`
         max-height: 500px;
         max-width : 500px;
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width: 1000px) and (min-width: 897px) {
             margin: auto;
-            margin-bottom: 50px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            margin: auto;
         }
     `,
     support: css`
         z-index: 50;
+        @media (max-width: 480px) {
+            margin-top: 80px;
+        }
+        @media screen and (max-width: 1000px) and (min-width: 897px) {
+            margin-top: 80px;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            margin-top: 80px;
+        }
     `,
     title: css`
         font-size: 25px;
@@ -189,7 +205,7 @@ const tips = {
         font-weight: 800;
         padding: 0;
         line-height: 2.5rem;
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 480px) {
             font-size: 13px;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
@@ -201,11 +217,11 @@ const tips = {
         background-repeat: no-repeat;
         background-size: 100% 100%;
         border-radius: 5px;
-        @media screen and (max-width: 992px) and (min-width: 481px) {
-            width: 350px;
+        @media screen and (max-width: 1000px) and (min-width: 897px) {
+            width: 300px;
             margin: auto;
         }
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 300px;
             margin: auto;
         }

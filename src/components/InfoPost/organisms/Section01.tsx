@@ -457,6 +457,9 @@ const SectionContent = {
         @media (max-width: 480px) {
             width: 100%;
         }
+        @media screen and (max-width: 1200px) and (min-width: 897px) {
+            width: 90%;
+        }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 100%;
         }

@@ -17,6 +17,7 @@ const styled = {
     section: css`
         height: 280px;
         overflow: hidden;
+        margin-bottom: 80px;
         @media (max-width: 480px) {
             height: 200px;
             padding: 0.5em 1em;

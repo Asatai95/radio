@@ -226,6 +226,9 @@ const styled = {
             width: 90%;
             margin-top: 100px;
         }
+        @media screen and (max-width: 1200px) and (min-width: 897px) {
+            width: 70%;
+        }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 95%;
         }

@@ -9,7 +9,7 @@ window.onload = function () {
             document.addEventListener("mousemove", function (e) {
                 pointer.style.transform = "translate(" + e.clientX + "px, " + e.clientY + "px)";
                 var cursorevent = function(){
-                cursor.style.transform = "translate(" + e.clientX + "px, " + e.clientY + "px)";
+                    cursor.style.transform = "translate(" + e.clientX + "px, " + e.clientY + "px)";
                 }
                 setTimeout(cursorevent, 100);
             });
@@ -21,7 +21,16 @@ window.onload = function () {
                 linkElem[i].addEventListener("mouseout", function (e) {
                     cursor.classList.remove("hov_");
                 });
-            }
+            };
+            const hamburgerBt = document.getElementById("hamburger")
+            try{
+                hamburgerBt.addEventListener("mouseover", function (e) {
+                    cursor.classList.add("hov_")
+                });
+                hamburgerBt.addEventListener("mouseout", function (e) {
+                    cursor.classList.remove("hov_")
+                });
+            } catch {}
             const feed = document.getElementsByClassName("feedInfo");
             for(var n = 0; n < feed.length; n++){
                 const number = n;
@@ -110,6 +119,6 @@ window.onload = function () {
         }
     }
     function stopTextColor() {
-    clearInterval(item);
+        clearInterval(item);
     }
 };

@@ -77,6 +77,10 @@ const tips = {
             text-align: center;
             width: 91%;
         }
+        @media screen and (max-width: 1000px) and (min-width: 897px) {
+            display: block;
+            text-align: center;
+        }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             display: block;
             text-align: center;
@@ -92,6 +96,9 @@ const tips = {
     facebookfeed: css`
         max-height: 500px;
         max-width : 500px;
+        @media screen and (max-width: 1000px) and (min-width: 897px) {
+            margin: auto;
+        }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             margin: auto;
         }
@@ -99,6 +106,9 @@ const tips = {
     support: css`
         z-index: 50;
         @media (max-width: 480px) {
+            margin-top: 80px;
+        }
+        @media screen and (max-width: 1000px) and (min-width: 897px) {
             margin-top: 80px;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
@@ -146,6 +156,10 @@ const tips = {
         background-repeat: no-repeat;
         background-size: 100% 100%;
         border-radius: 5px;
+        @media screen and (max-width: 1000px) and (min-width: 897px) {
+            width: 300px;
+            margin: auto;
+        }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 300px;
             margin: auto;

@@ -64,7 +64,7 @@ const blockkeyframe =keyframes`
 
 const SectionContent = {
     section: css`
-        height: 800px;
+        height: 900px;
         display: flex;
         align-items: center;
         position: relative;

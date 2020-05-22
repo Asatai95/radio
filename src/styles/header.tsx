@@ -37,6 +37,18 @@ export const naviItem = {
             right: 50px;
             background: rgb(81,165, 255,.8);
         }
+        @media screen and (max-width: 992px) and (min-width: 897px) {
+            padding: 3px;
+            border: 2px solid rgba(0,0,0,.3);
+            border-radius: 5px;
+            height: 50px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            top: 30px;
+            right: 50px;
+            background: rgb(81,165, 255,.8);
+        }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             padding: 3px;
             border: 2px solid rgba(0,0,0,.3);

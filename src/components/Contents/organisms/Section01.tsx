@@ -315,6 +315,9 @@ const SectionContent = {
             width: 100%;
             height: 300px;
         }
+        @media screen and (max-width: 1200px) and (min-width: 897px) {
+            width: 90%;
+        }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             width: 90%;
         }
@@ -323,6 +326,15 @@ const SectionContent = {
         width: 100%;
         height: 100%;
         border-radius: 5px;
+        @media (max-width: 480px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 1200px) and (min-width: 897px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 896px) and (min-width: 481px) {
+            width: 100%;
+        }
     `,
     next: css`
         margin: 50px auto;
