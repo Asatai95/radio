@@ -177,7 +177,7 @@ export const Section01 = ({children}: Layoutprops) => {
                             <Button disabled={true} className={BtStyle().buttonDisable}>PREVIOUS</Button>
                         </a>
                     )}
-                    <a href="/info" css={backListlink} className="backlink">
+                    <a href="/posts" css={backListlink} className="backlink">
                         <Button className={BtStyle().buttonBacklist}>Back List</Button>
                     </a>
                     {linkItemne() === true && (

@@ -206,7 +206,7 @@ const tips = {
         padding: 0;
         line-height: 2.5rem;
         @media screen and (max-width: 480px) {
-            font-size: 13px;
+            font-size: 14px;
         }
         @media screen and (max-width: 896px) and (min-width: 481px) {
             font-size: 16px;

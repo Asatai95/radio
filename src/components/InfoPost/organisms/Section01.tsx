@@ -212,7 +212,6 @@ export const Section01 = ({children}: Layoutprops) => {
                     </div>
                 </div>
                 <div css={SectionContent.BtBox} className="pageBt">
-
                     {linkItempre() === true && (
                         <a href="#" onClick={(e) => handlePreClick(e)}>
                             <Button className={BtStyle().buttonBack}>PREVIOUS</Button>
@@ -258,6 +257,7 @@ export const Section01 = ({children}: Layoutprops) => {
         </section>
     )
 }
+
 
 const BtStyle = makeStyles({
     buttonBack: {

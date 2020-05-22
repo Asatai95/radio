@@ -87,7 +87,7 @@ const SectionContent = {
         margin-bottom: 80px;
         text-align: center;
         @media (max-width: 480px) {
-            font-size: 30px;
+            font-size:  27px;
         }
     `,
     p: css`
